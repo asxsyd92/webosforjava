@@ -42,10 +42,10 @@ public class WebosConfig extends JFinalConfig {
         //me.setBaseViewPath("/webapp");
       me.add("/api/getnews", HomeController.class);
         me.add("/api/Article", NewController.class);
-me.add("/api/taobao",NewController.class);
+        me.add("/api/taobao",NewController.class);
         me.add("/", HomeController.class);
         me.add("/api/ApiLogin", com.asxsyd92.Controllers.webos.LoginControllers.class);
-me.add("/ueditor", UeditorController.class);
+        me.add("/ueditor", UeditorController.class);
         me.add("/api/Users", com.asxsyd92.Controllers.webos.UsersControllers.class);
     }
 
