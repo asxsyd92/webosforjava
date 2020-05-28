@@ -1,0 +1,59 @@
+﻿ <!-- main部分 -->
+
+<link href="/Common/layim/dist/css/layui.css" rel="stylesheet" />
+<link href="/Common/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+<link href="/Common/bootstrap/css/font-awesome.css" rel="stylesheet" />
+<link href="/Common/layim/layui_exts/css/winui.css" rel="stylesheet" />    <link href="/Common/layim/layui_exts/formSelects-v4.css" rel="stylesheet" />
+<script id="_a_type" type="text/html">
+    {{#  layui.each(d.list, function(index, item){ }}
+    <option value="{{item.ID}}">
+        {{item.Title}}
+    </option>
+    {{#  }); }}
+    {{#  if(d.list.length === 0){ }}
+    无数据
+    {{#  } }}
+
+</script>
+<div class="main-newsdate"></div>
+<div class="layui-container">
+
+    <form class="layui-form" lay-filter="addinfos">
+
+        <div class="layui-row layui-col-space15 layui-form-item">
+            <!--多行输入框-->
+            <div class="_two"><div onclick="FormDesign.SingleClick(this)" class="layui-col-md6"><label class="layui-form-label">主键：</label><div class="layui-input-block"><input lay-verify="required" value="00000000-0000-0000-0000-000000000000" placeholder="请输入主键：" name="ID" id="ID" lay-filter="column" class="layui-input"></div></div><div onclick="FormDesign.SingleClick(this)" class="layui-col-md6"><label class="layui-form-label">姓名：</label><div class="layui-input-block"><input lay-verify="required" placeholder="请输入姓名：" name="Title" id="Title" lay-filter="column" class="layui-input"></div></div><div onclick="FormDesign.DoubleClick(this)" class="layui-form-item layui-form-text"><label class="layui-form-label">性别：</label><div class="layui-input-block"><textarea placeholder="请输入性别：" name="Contents" id="Contents" class="layui-textarea baiduEditor"></textarea></div> </div><div onclick="FormDesign.SingleClick(this)" class="layui-col-md6"><label class="layui-form-label">添加时间</label><div class="layui-input-block"><input lay-verify="required" placeholder="请输入添加时间" name="addtime" id="addtime" lay-filter="column" class="layui-input as-datetime"></div></div><div onclick="FormDesign.SingleClick(this)" class="layui-col-md6"><label class="layui-form-label">其他</label><div class="layui-input-block"><input lay-verify="required" placeholder="请输入其他" name="qt" id="qt" lay-filter="column" class="layui-input"></div></div></div>
+            <!--一行行输入框-->
+            <div class="_one"></div>
+            <input lay-verify="required" name="_table" id="_table" value="test" lay-filter="column" class="layui-input" style="display: none;">
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit="" lay-filter="_submit">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+        <input id="stepid" style="display:none" />
+        <input id="nextstepid" style="display:none" />
+        <input id="_tsuers" style="display:none" />
+        <div id="_sendUser" style="display:none">
+            <select name="_sendUser_" xm-select="_sendUser_">
+                <option value="">请选择处理人</option>
+            </select>
+        </div>
+    </form>
+</div>
+<!-- 加载编辑器的容器 -->
+<textarea id="uploadEditor" style="display: none;"></textarea>
+<script src="/Common/ueditor/ueditor.config.js"></script>
+<script src="/Common/ueditor/ueditor.all.min.js"></script>
+<script src="/Common/ueditor/ueditor.all.js"></script>
+<script src="/Common/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script src="/Common/layim/dist/layui.all.js"></script>
+<script>
+    layui.config({
+        base: '/Common/layim/layui_exts/'
+    }).use('FromSubmitByWeb');
+
+</script>

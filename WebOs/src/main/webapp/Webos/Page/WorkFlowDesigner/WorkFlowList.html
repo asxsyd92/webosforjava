@@ -1,0 +1,48 @@
+﻿<link href="/Common/layim/dist/css/layui.css" rel="stylesheet" />
+<link href="/Common/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+<link href="/Common/bootstrap/css/font-awesome.css" rel="stylesheet" />
+<link href="/Common/layim/layui_exts/css/winui.css" rel="stylesheet" />
+<table class="layui-hide" id="WorkFlowList" lay-filter="WorkFlowList"></table>
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+
+        <input class="layui-btn layui-btn-sm" type="text" name="title" id="title" placeholder="请输入标题" style="text-align: left;color: #009688; background-color: #fff;" />
+        <button class="layui-btn layui-btn-sm" lay-event="a_search">查询</button>
+        <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">添加</button>
+    </div>
+</script>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script type="text/html" id="switchTpl">
+    <!-- 这里的 checked 的状态只是演示 -->
+    <!--由于模板遵循 laytpl 语法（建议细读 laytpl文档 ），因此在模板中你可以写任意脚本语句（如 if else/for等）：-->
+    {{#  if(d.tuijian ==true){ }}
+    <span>是</span>
+    {{#  } else { }}
+    <span>否</span>
+    {{#  } }}
+
+
+</script>
+<script type="text/html" id="switchTpl1">
+    <!-- 这里的 checked 的状态只是演示 -->
+    <!--由于模板遵循 laytpl 语法（建议细读 laytpl文档 ），因此在模板中你可以写任意脚本语句（如 if else/for等）：-->
+    {{#  if(d.isindex ==true){ }}
+    <span>是</span>
+    {{#  } else { }}
+    <span>否</span>
+    {{#  } }}
+
+
+</script><!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script src="/Common/layim/dist/layui.all.js"></script>
+<script>
+    layui.config({
+        base: '/Common/layim/plugin/webos/WorkFlowDesigner/'
+    }).use('WorkFlowList');
+
+</script>

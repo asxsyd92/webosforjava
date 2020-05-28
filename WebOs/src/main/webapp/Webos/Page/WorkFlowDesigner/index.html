@@ -1,0 +1,390 @@
+﻿<link href="/Common/layim/dist/css/layui.css" rel="stylesheet" />
+<link href="/Common/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+<link href="/Common/bootstrap/css/font-awesome.css" rel="stylesheet" />
+<div class="layui-btn-container">
+    <div style="    background: #e6e6e6;">
+        &nbsp; &nbsp; &nbsp; &nbsp;
+        <button onclick=" window.history.back()" class="layui-btn layui-btn-sm "> 返回</button>
+        <button onclick=" workflow.flowAttrSetting(); return false;" class="layui-btn layui-btn-sm "> 属性</button>
+        <button onclick=" workflow.addStep(); return false;" class="layui-btn layui-btn-sm "> 步骤</button>
+        <!--<button onclick=" workflow.addSubFlow(); return false;" class="layui-btn layui-btn-sm "> 子流程</button>-->
+        <button onclick=" workflow.addConn(); return false;" class="layui-btn layui-btn-sm ">  连线</button>
+        <button onclick=" workflow.copyStep(); return false;" class="layui-btn layui-btn-sm "> 复制</button>
+        <button onclick=" workflow.removeObj(); return false;" title="删除对象" class="layui-btn layui-btn-sm ">  删除对象</button>
+        <button onclick=" workflow.saveFlow('save'); return false;" class="layui-btn layui-btn-sm "> 保存</button>
+        <!--<a  onclick="saveAs(); return false;" class="layui-btn layui-btn-sm "> 另存为</a>-->
+        <button onclick=" workflow.saveFlow('install'); return false;" class="layui-btn layui-btn-sm "> 安装</button>
+        <button onclick=" workflow.saveFlow('uninstall'); return false;" class="layui-btn layui-btn-sm "> 卸载</button>
+        <button onclick=" workflow.saveFlow('delete'); return false;" title="删除流程" class="layui-btn layui-btn-sm ">删除流程</button>
+
+    </div>
+</div>
+
+<div id="flowdiv" style="margin:0; padding:0;"></div>
+
+<!--流程设置-->
+<script type="text/html" id="flowadd">
+    <div class="layui-form layui-form-pane"  id="flowadd" lay-filter="example">
+        <div class="layui-tab layui-tab-brief" lay-filter="demo">
+            <ul class="layui-tab-title">
+                <li class="layui-this">基本信息</li>
+                <li>数据连接</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+
+                    <div class="layui-row layui-col-space15 layui-form-item">
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">流程ID</label>
+                            <div class="layui-input-block">
+                                <input type="text" disabled="disabled" id="base_ID" value="00000000-0000-0000-0000-000000000000" name="base_ID" placeholder="流程ID" required="" lay-verify="required" autocomplete="off" class="layui-input" />
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label for="L_title" class="layui-form-label">流程名称</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="base_Name" name="base_Name" placeholder="流程名称" required="" lay-verify="required" autocomplete="off" class="layui-input" />
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">流程分类</label>
+                            <div class="layui-input-block">
+                                <select lay-verify="required" id="base_Type" name="base_Type" lay-filter="column"></select>
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">管理者</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="base_Manager" name="base_Manager" placeholder="管理者" required="" lay-verify="required" autocomplete="off" class="layui-input" />
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">实例管理者</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="base_InstanceManager" name="base_InstanceManager" placeholder="实例管理者" required="" lay-verify="required" autocomplete="off" class="layui-input" />
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">删除已完成</label>
+                            <div class="layui-input-block">
+                                <select id="base_RemoveCompleted" name="base_RemoveCompleted" class="myselect" style="width:120px;">
+                                    <option value="0">不删除</option>
+                                    <option value="1">删除</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">调试模式</label>
+                            <div class="layui-input-block">
+                                <select class="myselect" id="base_Debug">
+                                    <option value="0">关闭</option>
+                                    <option value="1">开启(有调试窗口)</option>
+                                    <option value="2">开启(无调试窗口)</option>
+                                </select>
+                                <input type="text" id="base_DebugUsers" title="选择调试人员" class="mymember" /> //调试人员
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">备注</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="base_Note" name="base_Note" placeholder="备注" autocomplete="off" class="layui-input" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-tab-item">
+                    <div class="layui-row layui-col-space15 layui-form-item">
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">数据表</label>
+                            <div class="layui-input-block">
+                                <select id="title_tables" lay-filter="title_table_change" name="title_tables"></select>
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">完成标识</label>
+                            <div class="layui-input-block">
+                                <select id="title_title" name="title_title"></select>
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">主键</label>
+                            <div class="layui-input-block">
+                                <select id="primaryKey" name="primaryKey"></select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div style="width:99%; margin:8px auto 0 auto; text-align:center;">
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" onclick="flowsconfirm1()">确定</button>
+                    <button class="layui-btn" onclick="layer.close(_addindex); return false;">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </script>
+    <!--步骤设置-->
+<script type="text/html" id="setstep">
+    <div class="layui-form layui-form-pane"  lay-filter="setstep">
+        <div class="layui-tab layui-tab-brief" lay-filter="demo">
+            <ul class="layui-tab-title">
+                <li class="layui-this">基本信息</li>
+                <li>策略</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <div class="layui-row layui-col-space15 layui-form-item">
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">步骤ID</label>
+                            <div class="layui-input-block">
+                                <input disabled="disabled" type="text" id="step_ID" name="step_ID" value="00000000-0000-0000-0000-000000000000" placeholder="步骤ID" required="" lay-verify="required" autocomplete="off" class="layui-input" />
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">步骤名称</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="step_Name" name="step_Name" placeholder="步骤名称" required="" lay-verify="required" autocomplete="off" class="layui-input" />
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">意见显示</label>
+                            <div class="layui-input-block">
+                                <select id="step_OpinionDisplay" name="step_OpinionDisplay" class="myselect" style="width:120px;">
+                                    <option value="0">显示</option>
+                                    <option value="1">不显示</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">超期提示</label>
+                            <div class="layui-input-block">
+                                <select id="step_ExpiredPrompt" name="step_ExpiredPrompt" class="myselect" style="width:120px;">
+                                    <option value="0">提示</option>
+                                    <option value="1">提示</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">审签类型</label>
+                            <div class="layui-input-block">
+                                <select id="step_SignatureType" name="step_SignatureType" class="myselect" style="width:120px;">
+                                    <option value="0">无签批意见栏</option>
+                                    <option value="1">有签批意见(无须签章)</option>
+                                    <option value="2">有签批意见(须签章)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">工时(小时)</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="step_Archives" name="step_Archives" placeholder="工时(小时)" required="" lay-verify="required" autocomplete="off" class="layui-input" />
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">是否归档</label>
+                            <div class="layui-input-block">
+                                <select value1="0" id="step_Archives">
+                                    <option value="0">不归档</option>
+                                    <option value="1">归档</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">表单</label>
+                            <div class="layui-input-block">
+                                <select onchange="form_types_change(this.value);" id="form_types">
+                                    <option value=""></option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">说明</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="step_Note" name="step_Note" placeholder="说明" required="" lay-verify="required" autocomplete="off" class="layui-input" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-tab-item">
+                    <div class="layui-row layui-col-space15 layui-form-item">
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">流转类型</label>
+                            <div class="layui-input-block">
+                                <select id="behavior_FlowType">
+                                    <option value="1">单选一个分支流转</option>
+                                    <option value="0">系统控制</option>
+                                    <option value="2">多选几个分支流转</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">运行时选择</label>
+                            <div class="layui-input-block">
+                                <select class="myselect" id="behavior_RunSelect">
+                                    <option value="1">允许</option>
+                                    <option value="0">不允许</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">处理者类型</label>
+                            <div class="layui-input-block">
+                                <select class="myselect" id="behavior_HandlerType">
+                                    <option value="0">所有成员</option>
+                                    <option value="1">部门</option>
+                                    <option value="2">岗位</option>
+                                    <option value="3">工作组</option>
+                                    <option value="4">人员</option>
+                                    <option value="5">发起者</option>
+                                    <option value="6">前一步骤处理者</option>
+                                    <option value="7">某一步骤处理者</option>
+                                    <option value="8">字段值</option>
+                                    <option value="9">发起者领导</option>
+                                    <option value="10">发起者分管领导</option>
+                                    <option value="11">前一步处理者领导</option>
+                                    <option value="12">前一步处理者分管领导</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">选择范围</label>
+                            <div class="layui-input-block">
+                                <input class="layui-input" type="text" id="behavior_SelectRange" onchange="handlerTypeCng()" user="1" more="1" dept="1" station="1" workgroup="1" />
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">处理者步骤</label>
+                            <div class="layui-input-block">
+                                <select id="behavior_HandlerStep"></select>
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">值字段</label>
+                            <div class="layui-input-block">
+                                <select id="behavior_ValueField"></select>
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">默认处理者</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" dept="1" station="1" workgroup="1" user="1" more="1" id="behavior_DefaultHandler" />
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">退回策略</label>
+                            <div class="layui-input-block">
+                                <select id="behavior_BackModel">
+                                    <option value="1">根据处理策略退回</option>
+                                    <option value="0">不能退回</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">处理策略</label>
+                            <div class="layui-input-block">
+                                <select id="behavior_HanlderModel">
+                                    <option value="0">所有人必须同意</option>
+                                    <option value="1">一人同意即可</option>
+                                    <option value="2">依据人数比例</option>
+                                    <option value="3">独立处理</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">退回类型</label>
+                            <div class="layui-input-block">
+                                <select id="behavior_BackType">
+                                    <option value="0">退回前一步</option>
+                                    <option value="1">退回第一步</option>
+                                    <option value="2">退回某一步</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">策略百分比</label>
+                                <div class="layui-input-block">
+                                    <input class="layui-input" type="text" id="behavior_Percentage" />
+                                </div>
+                            </div>
+
+                            <div class="layui-inline">
+                                %
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">退回步骤</label>
+                            <div class="layui-input-block">
+                                <select id="behavior_BackStep"></select>
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">会签策略</label>
+                            <div class="layui-input-block">
+                                <select value1="0" id="behavior_Countersignature">
+                                    <option value="0">不会签</option>
+                                    <option value="1">所有步骤同意</option>
+                                    <option value="2">一个步骤同意即可</option>
+                                    <option value="3">依据比例</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">会签百分比</label>
+                                <div class="layui-input-block">
+                                    <input type="text" class="layui-input" id="behavior_CountersignaturePercentage" />
+
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                %
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">抄送</label>
+                            <div class="layui-input-block">
+                                <input type="text" class="layui-input" dept="1" station="1" workgroup="1" user="1" more="1" id="behavior_CopyFor" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--隐藏坐标-->
+        <div style="display:none">
+            <input id="_x" type="number" />
+            <input id="_y" type="number" />
+            <input id="_width" type="number" />
+            <input id="_height" type="number" />
+
+        </div>
+        <div style="width:99%; margin:8px auto 0 auto; text-align:center;">
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" onclick="setstepconfirm1()">确定</button>
+                    <button class="layui-btn" onclick="layer.close(_setflowindex);  $('#setstep').hide(); return false;">取消</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</script>
+    <script src="/Common/layim/dist/layui.all.js"></script>
+    <script>
+        layui.config({
+            base: '/Common/layim/plugin/webos/WorkFlowDesigner/'
+        }).use('index');
+
+    </script>

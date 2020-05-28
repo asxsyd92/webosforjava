@@ -1,0 +1,125 @@
+﻿<script src="/Common/layim/dist/layui.js"></script>
+<link href="Common/layim/dist/css/layui.css" rel="stylesheet" />
+<script type="text/javascript" charset="utf-8" src="http://connect.qq.com/qc_jssdk.js" data-appid="101456811" data-redirecturi="http://com.asxsyd92.com/qqlogin"></script>
+<form class="layui-form layui-form-pane" lay-filter="bangding" id="bangding" style="display:none">
+    <div class="layui-form-item">
+        <!--多行输入框-->
+        <div class="_two">
+            <input id="openid" name="openid" style="display:none" />
+            <input id="avatar" name="avatar" style="display:none" />
+            <div class="asxsyd92move" style="text-align: center;" id="_asxsfromname"><fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;"><legend>帐号绑定</legend></fieldset> </div><div class="layui-col-md6"><div class="layui-form-item"><label class="layui-form-label">帐号</label><div class="layui-input-block"><input lay-verify="required" lay-filter="column" data-target="" class="layui-input" id="Account" name="Account" type="text" placeholder="请输入帐号"></div></div></div><div class="layui-col-md6"><div class="layui-form-item"><label class="layui-form-label">密码</label><div class="layui-input-block"><input lay-verify="required" lay-filter="column" data-target="" class="layui-input" id="Password" name="Password" type="password" placeholder="请输入密码"></div></div></div>
+
+        </div>
+
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit="" lay-filter="_submit">立即绑定</button>
+            <button class="layui-btn"  lay-filter="_ok">直接注册（无需填写）</button>
+        </div>
+    </div>
+</form>
+<script type="text/javascript">
+    layui.use(['layer', 'element', 'jquery', 'form'], function () {
+        var form = layui.form, layer = layui.layer; $ = layui.$;
+        //定义全局用户数据
+        var qqdata = null;
+        getInfo();
+        function getInfo() {
+            if (QC.Login.check()) {
+                QC.api("get_user_info").success(function (s) {//成功回调
+
+                    QC.Login.getMe(function (openId, accessToken) {
+                        localStorage.setItem("qqaccess_token", accessToken);
+                        localStorage.setItem("qqopenid", openId);
+
+                        var data = { username: s.data.nickname, avatar: s.data.figureurl, openid: openId }
+                        qqdata = data;
+                        $.post('/api/ApiLogin/qqLogin', { data: JSON.stringify(data) },
+                            function (data) {
+                                if (data.success) {
+                                    window.localStorage["user"] = data.name;
+                                    window.localStorage["userid"] = data.userid;
+                                    window.localStorage["orname"] = data.orname;
+                                    window.localStorage["orid"] = data.orid;
+                                    window.localStorage["_token"] = data.access_token;
+                                    window.localStorage["account"] = data.account;
+                                    window.localStorage["picture"] = data.picture;
+                                    window.location.href = "/";
+                                } else {
+                                    //绑定帐号
+                                    layer.open({
+
+                                        title: "绑定帐号",
+                                        type: 1,
+                                        area: ['650px', '490px'],
+                                        fixed: false, //不固定
+                                        maxmin: true,
+                                        content: $("#bangding"), success: function (layero) {
+                                            $("#openid").val(openId);
+                                                $("#avatar").val(s.data.figureurl);
+                                            form.render(); //更新全部
+                                        }, cancel: function () {
+                                            ////右上角关闭回调
+                                            $("#bangding").hide();
+
+                                        }
+                                    });
+                                }
+
+                            })
+                    })
+                }).error(function (f) {//失败回调
+                    alert("获取用户信息失败！登录失败！");
+                }).complete(function (c) {//完成请求回调
+
+                });
+            } else { alert("请登录！"); }
+        }
+        /**
+ * "{"ret":0,"msg":"","is_lost":0,"nickname":"爱上歆随懿恫","gender":"男","province":"云南","city":"昆明","year":"1992","figureurl":"http://qzapp.qlogo.cn/qzapp/101456811/BF4F583D660EF142AF409CBC05E405E9/30","figureurl_1":"http://qzapp.qlogo.cn/qzapp/101456811/BF4F583D660EF142AF409CBC05E405E9/50","figureurl_2":"http://qzapp.qlogo.cn/qzapp/101456811/BF4F583D660EF142AF409CBC05E405E9/100","figureurl_qq_1":"http://q.qlogo.cn/qqapp/101456811/BF4F583D660EF142AF409CBC05E405E9/40","figureurl_qq_2":"http://q.qlogo.cn/qqapp/101456811/BF4F583D660EF142AF409CBC05E405E9/100","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0"}"
+ */
+        //监听提交
+        form.on('submit(_submit)', function (data) {
+            var lay = layer.msg('绑定中...', { icon: 16, shade: 0.5, time: 20000000 });
+            $.post("/api/ApiLogin/QqBinding", { Account: data.field.Account, Password: data.field.Password, openid: data.field.openid, avatar: data.field.avatar }, function (resp) {
+                layer.close(lay);
+                if (resp.success) {
+                    window.localStorage["user"] = data.name;
+                    window.localStorage["userid"] = data.userid;
+                    window.localStorage["orname"] = data.orname;
+                    window.localStorage["orid"] = data.orid;
+                    window.localStorage["_token"] = data.access_token;
+                    window.localStorage["account"] = data.account;
+                    window.localStorage["picture"] = data.picture;
+                    window.location.href = "/";
+                }
+            })
+            return false;
+        });
+        form.on('submit(_ok)', function (data) {
+            if (qqdata != null) {
+                var lay = layer.msg('注册中...', { icon: 16, shade: 0.5, time: 20000000 });
+                $.post("/api/ApiLogin/QqReg", { data: JSON.stringify(qqdata) }, function (resp) {
+                    layer.close(lay);
+                    if (resp.success) {
+
+                        window.localStorage["user"] = data.name;
+                        window.localStorage["userid"] = data.userid;
+                        window.localStorage["orname"] = data.orname;
+                        window.localStorage["orid"] = data.orid;
+                        window.localStorage["_token"] = data.access_token;
+                        window.localStorage["account"] = data.account;
+                        window.localStorage["picture"] = data.picture;
+                        window.location.href = "/";
+                    }
+                })
+            }
+
+            return false;
+        });
+
+    });
+
+
+</script>

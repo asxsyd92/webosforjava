@@ -1,0 +1,267 @@
+﻿<template>
+    <div id="_soso">
+        <div class="layui-row layui-col-space15 clearfix">
+           
+            <!--左边文章列表-->
+            <div class="layui-col-md8">
+
+                <div class="left-box">
+                    <p class="left-box-title shadow"><i class="fa fa-sun-o fa-spin" aria-hidden="true"></i>企鹅号</p>
+
+                    <div class="article shadow clearfix sr-listshow" v-for="item in videolist">
+                        <div class="article-left">
+                            <img :src="item.pic" :alt="item.title" />
+                        </div>
+                        <div class="article-right">
+                            <div class="article-title">
+                                <a href="javascript:;" v-on:click="play(item)">{{item.title}}</a>
+                            </div>
+                            <div class="article-abstract">
+                                {{item.title}}
+                            </div>
+                            <div class="article-footer">
+                                <span class="layui-hide-xs"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a style="color:#009688" href="javascript:;">腾讯视频</a></span>
+                        
+                                <a class="read layui-btn layui-btn-xs layui-btn-normal layui-hide-xs" href="javascript:;" v-on:click="play(item)" :title=" item.title">播放</a>
+                            </div>
+                        </div>
+                        <div class="flag flag-left">自媒体</div>
+                    </div>
+
+                    <div class="blog-pagebox">
+                        <div id="newspage">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md4">
+                <div class="layui-row layui-col-space10">
+
+                    <div class="layui-col-sm6 layui-col-md12">
+                        <div class="blog-card shadow sr-rightmodule">
+
+                            <div class="layui-carousel" id="_news_taobao">
+                                <div carousel-item="">
+
+                                    <div v-for="pp in data">
+                                        <a :href="pp.url" data-type="0" biz-itemid="null" data-tmpl="470x190" data-tmplid="635" data-rd="2" data-style="2" data-border="1" :title="pp.title" target="_blank">
+                                            <img :src="pp.pict_url" style="width:100%;height:100%">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="layui-col-sm6 layui-col-md12">
+                        <div class="blog-card shadow sr-rightmodule">
+                            <div class="blog-card-title">
+                                <span class="icon"><i class="layui-icon" aria-hidden="true">&#xe6c6;</i></span>
+                                <span class="text">微信关注</span>
+                            </div>
+                            <ul class="blog-card-ul">
+                                <li style="text-align: center;">
+                                    <img src="/images/qrcode_for_gh_8044f5512351_258.jpg" />
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="layui-col-sm6 layui-col-md12">
+                        <div class="blog-card shadow sr-rightmodule">
+                            <div class="blog-card-title">
+                                <span class="icon"><i class="layui-icon" aria-hidden="true">&#xe6c6;</i></span>
+                                <span class="text">磁力链接</span>
+                            </div>
+                            <ul class="blog-card-ul">
+                                <li style="color:red">
+                                    暂停不能下载
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="layui-col-sm6 layui-col-md12">
+                        <div class="blog-card shadow sr-rightmodule">
+                            <div class="blog-card-title">
+                                <span class="icon"><i class="layui-icon" aria-hidden="true">&#xe6c6;</i></span>
+                                <span class="text">获取更多</span>
+                            </div>
+                            <ul class="blog-card-ul">
+                                <li>
+                                    <a v-on:click="update()">获取更多</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="layui-col-sm6 layui-col-md12">
+                        <div class="blog-card shadow sr-rightmodule" data-scroll-reveal>
+                            <div class="blog-card-title">
+                                <span class="icon"><i class="layui-icon" aria-hidden="true">&#xe64c;</i></span>
+                                <span class="text">推荐学习</span>
+                            </div>
+                            <ul class="blogroll">
+                                <li><a target="_blank" href="http://www.layui.com/" title="layui官网">layui官网</a></li>
+                                <li><a target="_blank" href="http://oa.asxsyd92.com/" title="net core 版OA系统">net core 版OA系统（正在开发）</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</template>
+<script>
+    layui.use(['layer', 'form', 'common', 'laypage'], function () {
+    document.title = "日常视频|王者荣耀|自学天才|爱上歆随懿恫|asxsyd92.com";
+        $ = layui.$; closemuen(); var common = layui.common, page = 0, limit = 15, laypage = layui.laypage, carousel = layui.carousel;;
+        module.exports = {
+            name: "_soso",
+            data() {
+                return {
+                    data: [],
+                    videolist: []
+                }
+            }, mounted: function () {
+                var m = this;
+                m.ajax();
+                if (common.getParamsUrl().query.key != null) { $("#search").val(common.getParamsUrl().query.key) }
+            },
+            methods: {
+            
+                ajax: function () {
+                    var lay = layer.msg('正在拼命加载...', { icon: 16, shade: 0.5, time: 20000000 });
+                    var sj = "";
+                    fetch("/api/taobao/TaoBaoSearch?title=" + sj + "&page=" + 1 + "&limit=12").then((data) => data.text()).then((data) => {
+                        var my = JSON.parse(data);
+                        this.data = my.data;
+                        setTimeout(function () {
+                            //图片轮播
+                            carousel.render({
+                                elem: '#_news_taobao'
+                                , width: '100%'
+                                , height: '350px'
+                                , interval: 5000
+                            });
+                        }, 500);
+                    })
+                    fetch("/api/Article/GetTencentVideoList?title=&page=" + 1 + "&limit=10").then((data) => data.text()).then((data) => {
+                        var my = JSON.parse(data);
+                        this.videolist = my.data;
+                        console.log(this.videolist);
+                        var m = this;
+                        setTimeout(function () {
+
+                            $('body,html').animate({ scrollTop: 0 }, 500);
+                            gongdong();
+                        }, 100);
+                        laypage.render({
+                            elem: 'newspage' //注意，这里的 test1 是 ID，不用加 # 号
+                            , count: my.count //数据总数，从服务端得到
+                            , jump: function (obj, first) {
+
+                                page = obj.curr;  //改变当前页码
+                                limit = obj.limit;
+                                //首次不执行
+                                if (!first) {
+                                    //do something
+                                    fetch("/api/Article/GetTencentVideoList?title=&page=" + page + "&limit=10").then((data) => data.text()).then((data) => {
+                                        var my = JSON.parse(data);
+                                        m.videolist = my.data;
+                                        console.log(this.videolist);
+                                   
+                                        setTimeout(function () {
+
+                                            $('body,html').animate({ scrollTop: 0 }, 500);
+                                            gongdong();
+                                        }, 100);
+                                    });
+                                }
+                            }
+                        });
+                        layer.close(lay);
+                    })
+
+
+                }
+               ,play: function (_this) {
+                    // `this` 在方法里指向当前 Vue 实例
+                    console.log(_this);
+                    var shiping = 'https://v.qq.com/iframe/player.html?vid=' + _this.vid + '&tiny=0&auto=0'
+                    if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) { //移动端
+                        layer.open({
+                            type: 2,
+                            title: false,
+                            shade: 0.8,
+                            shadeClose: true,
+                            content: shiping
+                        });
+                    } else {
+                        layer.open({
+                            type: 2,
+                            title: false,
+                            area: ['80%', '80%'],
+                            shade: 0.8,
+                            shadeClose: true,
+                            content: shiping
+                        });
+                    }
+                }
+                , update: function () {
+                    fetch("/api/Article/GetTent?title=&page=" + 1 + "&limit=10").then((data) => data.text()).then((data) => {
+                        this.ajax();
+
+                    })
+
+                }
+            },
+            created() {
+     
+                  closemuen();
+            }
+        }
+        function gongdong() {
+
+            /msie[6 | 7 | 8 | 9]/i.test(navigator.userAgent) || (window.sr = new ScrollReveal({
+                reset: !1
+            }), sr.reveal(".sr-left", {
+                origin: "left",
+                scale: 1,
+                opacity: .1,
+                duration: 1200
+            }), sr.reveal(".sr-bottom", {
+                scale: 1,
+                opacity: .1,
+                distance: "60px",
+                duration: 1e3
+            }), sr.reveal(".sr-listshow", {
+                distance: "30px",
+                duration: 1e3,
+                scale: 1,
+                opacity: .1
+            }), sr.reveal(".sr-rightmodule", {
+                origin: "top",
+                distance: "60px",
+                duration: 1e3,
+                scale: 1,
+                opacity: .1
+            }));
+            layer.photos({
+                photos: ".article-left",
+                anim: 5
+            });
+            layer.photos({
+                photos: ".article-detail-content",
+                anim: 5,
+                move: !1
+            })
+
+        }
+    })
+</script>
