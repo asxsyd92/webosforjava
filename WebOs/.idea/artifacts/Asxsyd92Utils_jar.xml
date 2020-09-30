@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="Asxsyd92Utils:jar">
-    <output-path>$PROJECT_DIR$/out</output-path>
-    <root id="archive" name="Asxsyd92Utils.jar">
-      <element id="module-output" name="Asxsyd92Utils" />
-    </root>
-  </artifact>
-</component>
