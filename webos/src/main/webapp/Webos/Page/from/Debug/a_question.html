@@ -1,0 +1,108 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="webkit" name="renderer" />
+    <meta content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width" name="viewport" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="webkit" name="renderer">
+    <meta content="portrait" name="x5-orientation">
+    <meta content="true" name="x5-fullscreen">
+    <meta content="portrait" name="screen-orientation">
+    <meta content="yes" name="full-screen">
+    <meta content="no-siteapp" http-equiv="Cache-Control">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <!-- main部分 -->
+    <link href="/Common/layim/dist/css/layui.css" rel="stylesheet" />
+    <link href="/Common/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+    <script id="_a_type" type="text/html">
+        {{#  layui.each(d.list, function(index, item){ }}
+        <option value="{{item.ID}}">
+            {{item.Title}}
+        </option>
+        {{#  }); }}
+        {{#  if(d.list.length === 0){ }}
+        无数据
+        {{#  } }}
+
+    </script>
+    <div class="main-newsdate"></div>
+    <div class="layui-container" style="top:50px">
+        <form class="layui-form layui-form-pane" lay-filter="addinfos">
+            
+                                <div id="asxsyd92heater"></div>
+
+                                <div class="layui-row layui-col-space15 layui-form-item">
+                                    <!--多行输入框-->
+                                    <div class="_two"><div class="asxsyd92move as_a_spanclick" style="text-align: center;" id="_asxsfromname"><fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;"><legend>题库录入</legend></fieldset> </div><div class="layui-col-md6 ashide as_a_singleclick"><div class="layui-form-item"><label class="layui-form-label">主键</label><div class="layui-input-block"><input lay-verify="required" value="00000000-0000-0000-0000-000000000000" placeholder="请输入主键" name="ID" id="ID" lay-filter="column" class="layui-input" type="text"></div></div></div><div class="layui-col-md12 as_a_singleclick" style="visibility: visible;"><div class="layui-form-item"><label class="layui-form-label">题目</label><div class="layui-input-block"><input lay-verify="required" lay-filter="column" data-target="" class="layui-input" id="Question" name="Question" type="text" placeholder="请输入题目" value=""></div></div></div><div class="layui-col-md6 asxsyd92move as_a_dropdown" style="visibility: visible;"><div class="layui-form-item"><label class="layui-form-label">分类</label> <div class="layui-input-inline"><select lay-search="" name="ParentName" data-target="" class="asselect" id="ParentName"><option value="0">数学</option>
+<option value="1">人文地理</option>
+<option value="2">古诗</option>
+<option value="3">编程</option>
+<option value="7">软件应用</option>
+<option value="8">其他</option></select><div class="layui-form-select"><div class="layui-select-title"><input type="text" placeholder="请选择" value="数学" class="layui-input"><i class="layui-edge"></i></div><dl class="layui-anim layui-anim-upbit"><dd lay-value="0" class="layui-">数学</dd><dd lay-value="1" class="">人文地理</dd><dd lay-value="2" class="">古诗</dd><dd lay-value="3" class="">编程</dd><dd lay-value="7" class="">软件应用</dd><dd lay-value="8" class="">其他</dd></dl></div></div></div></div><div class="layui-col-md6 ashide as_a_singleclick"><div class="layui-form-item"><label class="layui-form-label">添加时间</label><div class="layui-input-block"><input lay-verify="required" placeholder="请输入添加时间" name="Addtime" id="Addtime" lay-filter="column" class="layui-input as-datetime" type="text" value="_SYS_DATETIME" disabled="disabled"></div></div></div><div class="layui-col-md6  asxsyd92move as_a_radiodown" style="visibility: visible;">
+            <div class="layui-form-item"> <label class="layui-form-label">答案</label><div class="layui-input-block asRadio"><input type="radio" name="Answer" value="A" title="A"><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><div>A</div></div><input type="radio" name="Answer" value="B" title="B"><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><div>B</div></div><input type="radio" name="Answer" value="C" title="C"><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><div>C</div></div><input type="radio" name="Answer" value="D" title="D"><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><div>D</div></div></div> </div>
+        </div><div class="layui-col-md6 as_a_singleclick"><div class="layui-form-item"><label class="layui-form-label">选项A</label><div class="layui-input-block"><input placeholder="请输入选项A" name="Q_A" id="Q_A" lay-filter="column" class="layui-input" type="text" value=""></div></div></div><div class="layui-col-md6 as_a_singleclick"><div class="layui-form-item"><label class="layui-form-label">选项B</label><div class="layui-input-block"><input placeholder="请输入选项B" name="Q_B" id="Q_B" lay-filter="column" class="layui-input" type="text" value=""></div></div></div><div class="layui-col-md6 as_a_singleclick"><div class="layui-form-item"><label class="layui-form-label">选项C</label><div class="layui-input-block"><input placeholder="请输入选项C" name="Q_C" id="Q_C" lay-filter="column" class="layui-input" type="text" value=""></div></div></div><div class="layui-col-md6 as_a_singleclick"><div class="layui-form-item"><label class="layui-form-label">选项D</label><div class="layui-input-block"><input placeholder="请输入选项D" name="Q_D" id="Q_D" lay-filter="column" class="layui-input" type="text" value=""></div></div></div><div class="layui-col-md6 ashide as_a_singleclick"><div class="layui-form-item"><label class="layui-form-label">添加人</label><div class="layui-input-block"><input lay-verify="required" value="_SYS_GETUSERID" placeholder="请输入添加人" name="UsersID" id="UsersID" lay-filter="column" class="layui-input" type="text" disabled="disabled"></div></div></div><div class="layui-col-md6 as_a_singleclick"><div class="layui-form-item"><label class="layui-form-label">权重：难度</label><div class="layui-input-block"><input lay-verify="required" placeholder="请输入权重：难度" name="Q_Weight" id="Q_Weight" lay-filter="column" class="layui-input" type="number" value=""></div></div></div><div class="layui-col-md12 as_a_singleclick" style="visibility: visible;"><div class="layui-form-item"><label class="layui-form-label">解析</label><div class="layui-input-block"><input lay-filter="column" data-target="" class="layui-input" id="Q_Shar" name="Q_Shar" type="text" placeholder="请输入解析" value=""></div></div></div><div class="asxsyd92move as_a_spanclick" id="_asxstisp" style="visibility: visible;"><div class="layui-form-item"><blockquote class="layui-elem-quote" style="text-align: left;color:red">这里是填写注意事项说明：<br>1、这里是描述；<br>2、说明。</blockquote><div></div></div></div>
+        
+    
+
+        
+    
+
+        
+    
+        
+    </div>
+                                    <!--一行行输入框-->
+                                    <div class="_one"></div>
+                                <input lay-verify="required" name="_table" id="_table" value="A_Question" lay-filter="column" class="layui-input" style="display: none;"><input lay-verify="required" name="_table" id="_table" value="A_Question" lay-filter="column" class="layui-input" style="display: none;"><input lay-verify="required" name="_table" id="_table" value="A_Question" lay-filter="column" class="layui-input" style="display: none;"><input lay-verify="required" name="_table" id="_table" value="A_Question" lay-filter="column" class="layui-input" style="display: none;"><input lay-verify="required" name="_table" id="_table" value="A_Question" lay-filter="column" class="layui-input" style="display: none;"><input lay-verify="required" name="_table" id="_table" value="A_Question" lay-filter="column" class="layui-input" style="display: none;"><input lay-verify="required" name="_table" id="_table" value="A_Question" lay-filter="column" class="layui-input" style="display: none;"><input lay-verify="required" name="_table" id="_table" value="A_Question" lay-filter="column" class="layui-input" style="display: none;"><input lay-verify="required" name="_table" id="_table" value="A_Question" lay-filter="column" class="layui-input" style="display: none;"><input lay-verify="required" name="_table" id="_table" value="A_Question" lay-filter="column" class="layui-input" style="display: none;"><input lay-verify="required" name="_table" id="_table" value="A_Question" lay-filter="column" class="layui-input" style="display: none;"><input lay-verify="required" name="_table" id="_table" value="A_Question" lay-filter="column" class="layui-input" style="display: none;"><input lay-verify="required" name="_table" id="_table" value="A_Question" lay-filter="column" class="layui-input" style="display: none;"><input lay-verify="required" name="_table" id="_table" value="A_Question" lay-filter="column" class="layui-input" style="display: none;"><input lay-verify="required" name="_table" id="_table" value="A_Question" lay-filter="column" class="layui-input" style="display: none;"><input lay-verify="required" name="_table" id="_table" value="A_Question" lay-filter="column" class="layui-input" style="display: none;"></div>
+
+                            
+
+            <div class="layui-btn-container submittools" style="z-index: 200; width:100%;position: fixed;top:0;background: #e6e6e6;">
+                <button class="layui-btn layui-btn-sm" onclick="window.close()">关闭</button>
+                <button class="layui-btn layui-btn-sm" onclick="window.location.reload()">刷新</button>
+                <button class="layui-btn layui-btn-sm" lay-filter="_submit" lay-submit="">处理</button>
+                <button class="layui-btn layui-btn-sm" lay-filter="_submit" lay-submit="">完成</button>
+                <button class="layui-btn layui-btn-sm" lay-filter="_submit" lay-submit="">退回</button>
+                <button class="layui-btn layui-btn-sm" lay-filter="_submit" lay-submit="">打印</button>
+                <button class="layui-btn layui-btn-sm" lay-filter="_submit" lay-submit="">终止</button>
+                <button class="layui-btn layui-btn-sm" lay-filter="_submit" lay-submit="">盖章</button>
+                <button class="layui-btn layui-btn-sm" lay-filter="_submit" lay-submit="">套红</button>
+                <button class="layui-btn layui-btn-sm" lay-filter="_submit" lay-submit="">关联表单</button>
+            </div>
+            <input id="stepid" style="display:none" />
+            <input id="nextstepid" style="display:none" />
+            <input id="_tsuers" style="display:none" />
+
+
+
+        </form>
+        <script id="_sendUser" type="text/html">
+            <div style="width:99%" id="_sendUser_" class="xm-select"></div>
+        </script>
+    </div>
+    <!-- 加载编辑器的容器 -->
+<textarea id="uploadEditor" style="display: none;"></textarea>
+    <script src="/Common/ueditor/ueditor.config.js"></script>
+    <script src="/Common/ueditor/ueditor.all.js"></script>
+    <!--<script src="/Common/ueditor/ueditor.all.min.js"></script>-->
+    <script src="/Common/ueditor/ueditor.all.js"></script>
+    <script src="/Common/ueditor/lang/zh-cn/zh-cn.js"></script>
+    <script src="/Common/layim/dist/layui.all.js"></script>
+    <script>
+        //访问此处必带令牌
+        layui.config({
+            base: '/Common/layim/layui_exts/'
+        }).use('FromSubmitByWeb');
+
+    </script>
+</body>
+</html>

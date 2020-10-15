@@ -1,0 +1,185 @@
+﻿<table class="layui-hide" id="Route" lay-filter="Route"></table>
+<script id="toolbarDemo" type="text/html">
+    <div class="layui-btn-container">
+        <!--<form>-->
+        <input class="layui-btn layui-btn-sm" type="text" name="title" id="title" placeholder="请输入标题" style="text-align: left;color: #009688; background-color: #fff;" />
+        <button class="layui-btn layui-btn-sm" lay-event="a_search">查询</button>
+        <button class="layui-btn layui-btn-sm" lay-event="a_add">添加</button>
+        <button class="layui-btn layui-btn-sm" lay-event="a_run">生成路由</button>
+        <!--</form>-->
+    </div>
+</script>
+<script id="barDemo" type="text/html">
+
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script>
+    layui.use(['form', 'layedit', 'laydate', 'table'], function () {
+        var table = layui.table, form = layui.form
+            , layer = layui.layer
+            , layedit = layui.layedit
+            , laydate = layui.laydate;
+        table.render({
+            elem: '#Route'
+            , url: Common.Host + '/api/Route/GetRoute' //数据接口
+            , toolbar: '#toolbarDemo'
+            , title: '路由管理'
+            , totalRow: true
+            , cols: [[
+                { type: 'checkbox', fixed: 'left' }
+                , { field: 'Name', title: '标题' }
+                , { field: 'RouteUrl', title: '地址' }
+                , { field: 'RouteTitle', title: '跳转名称' }
+                , { field: 'Controller', title: '控制器' }
+                , { fixed: 'right', title: '操作', toolbar: '#barDemo', }
+            ]]
+            , page: true
+        });
+        table.on('toolbar(Route)', function (obj) {
+
+            var checkStatus = table.checkStatus(obj.config.id);
+            switch (obj.event) {
+                case 'a_search':
+                    var title = $("#title").val();
+                    table.reload('Route', {
+                        url: Common.Host + '/api/Route/GetRoute?title=' + title
+                    }); $("#title").val(title);
+                    break;
+                case 'a_add':
+                    layer.open({
+                        id: 1,
+                        type: 0,
+                        title: '添加路由',
+                        skin: 'layui-layer-rim',
+                        area: ['750px', 'auto'],
+                        content: '<div class="row" style="width: 700px;  margin-left:7px; margin-top:10px;">'
+                        + '<div class="col-sm-12">'
+                        + '<div class="input-group">'
+                        + '<span class="input-group-addon"> 路由标题:</span>'
+                        + '<input id="fd_Name" type="text" class="layui-input" placeholder="请输入路由标题">'
+                        + '</div>'
+                        + '</div>'
+                        + '<div class="col-sm-12" style="margin-top: 10px">'
+                        + '<div class="input-group">'
+                        + '<span class="input-group-addon"> 路由地址  :</span>'
+                        + '<input id="fd_RouteUrl" type="text" class="layui-input" placeholder="路由地址:如 from/Debug/表单名称.html">'
+                        + '</div>'
+                        + '</div>'
+                        + '<div class="col-sm-12" style="margin-top: 10px">'
+                        + '<div class="input-group">'
+                        + '<span class="input-group-addon"> 访问名称  :</span>'
+                        + '<input id="fd_RouteTitle" type="text" class="layui-input" placeholder="访问名称：如 /test">'
+                        + '</div>'
+                        + '</div>'
+                        + '</div>'
+                        ,
+                        btn: ['保存', '取消'],
+                        success: function (layero, index) { },
+                        btn1: function (index, layero) {
+                            var ops = {};
+                            ops.ID = "00000000-0000-0000-0000-000000000000";
+                            ops.Name = $("#fd_Name").val(); ops.RouteUrl = $("#fd_RouteUrl").val(); ops.Controller = $("#fd_RouteTitle").val() + "Controller"; ops.RouteTitle = $("#fd_RouteTitle").val();
+                            var lay = layer.msg('正在拼命加载...', { icon: 16, shade: 0.5, time: 20000000 });
+                            $.post(Common.Host + "/api/Route/Insert", { data: JSON.stringify(ops) }, function (resp) {
+                                layer.close(lay); var mysjon = JSON.parse(resp);
+                                if (mysjon.Success) {
+                                    obj.del(); //删除对应行（tr）的DOM结构
+                                    table.reload('Route'); layer.close(index);
+                                }
+                            })
+                        },
+                        btn2: function (index, layero) {
+                            layer.close(index);
+                        },
+
+
+                    });
+                    break;
+                case 'a_run':
+                    var lay = layer.msg('正在拼命加载...', { icon: 16, shade: 0.5, time: 20000000 });
+                    $(Common.Host + "/api/Route/FromJs", {}, function (resp) {
+                        layer.close(lay); var dm = JSON.parse(resp);
+                        if (dm.Success) {
+                            layer.alert(dm.msg);
+                        } else { layer.alert(dm.msg); }
+                    });
+                    break;
+            }
+        });
+
+        //监听行工具事件
+        table.on('tool(Route)', function (obj) { //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
+            var data = obj.data //获得当前行数据
+                , layEvent = obj.event; //获得 lay-event 对应的值
+            if (layEvent === 'del') {
+                var lay = layer.msg('正在拼命加载...', { icon: 16, shade: 0.5, time: 20000000 });
+                layer.confirm('真的删除行么', function (index) {
+                    $.post(Common.Host + "/api/Route/Delete", { data: data.ID }, function (resp) {
+                        layer.close(lay); var mysjon = JSON.parse(resp);
+                        if (mysjon.Success) {
+                            layer.close(index);
+                            obj.del(); //删除对应行（tr）的DOM结构
+                            table.reload('Route');
+                        }
+                    })
+                });
+            } else if (layEvent === 'edit') {
+                layer.open({
+                    id: 1,
+                    type: 0,
+                    title: '添加路由',
+                    skin: 'layui-layer-rim',
+                    area: ['750px', 'auto'],
+                    content: ' <div class="row" style="width: 700px;  margin-left:7px; margin-top:10px;">'
+                    + '<div class="col-sm-12">'
+                    + '<div class="input-group">'
+                    + '<span class="input-group-addon"> 路由标题:</span>'
+                    + '<input id="fd_Name" type="text" class="layui-input" placeholder="请输入路由标题">'
+                    + '</div>'
+                    + '</div>'
+                    + '<div class="col-sm-12" style="margin-top: 10px">'
+                    + '<div class="input-group">'
+                    + '<span class="input-group-addon"> 路由地址  :</span>'
+                    + '<input id="fd_RouteUrl" type="text" class="layui-input" placeholder="路由地址:如 from/Debug/表单名称.html">'
+                    + '</div>'
+                    + '</div>'
+                    + '<div class="col-sm-12" style="margin-top: 10px">'
+                    + '<div class="input-group">'
+                    + '<span class="input-group-addon"> 访问名称  :</span>'
+                    + '<input id="fd_RouteTitle" type="text" class="layui-input" placeholder="访问名称：如 /test">'
+                    + '</div>'
+                    + '</div>'
+
+
+                    + '</div>'
+                    ,
+                    btn: ['保存', '取消'],
+                    success: function (layero, index) {
+                        $("#fd_Name").val(data.Name); $("#fd_RouteUrl").val(data.RouteUrl); $("#fd_RouteTitle").val(data.RouteTitle);
+                    },
+                    btn1: function (index, layero) {
+                        var ops = {};
+                        ops.ID = data.ID;
+                        ops.Name = $("#fd_Name").val(); ops.RouteUrl = $("#fd_RouteUrl").val(); ops.Controller = $("#fd_RouteTitle").val() + "Controller"; ops.RouteTitle = $("#fd_RouteTitle").val();
+                        var lay = layer.msg('正在拼命加载...', { icon: 16, shade: 0.5, time: 20000000 });
+                        $.post(Common.Host + "/api/Route/Update", { data: JSON.stringify(ops) }, function (resp) {
+                            layer.close(lay); var mysjon = JSON.parse(resp);
+                            if (mysjon.Success) {
+                                layer.close(index);
+                                obj.del(); //删除对应行（tr）的DOM结构
+                                table.reload('Route');
+                            }
+                        })
+
+                    },
+                    btn2: function (index, layero) {
+                        layer.close(index);
+                    },
+
+
+                });
+            }
+        });
+    });
+</script>

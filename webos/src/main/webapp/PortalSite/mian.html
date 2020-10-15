@@ -1,0 +1,405 @@
+﻿<template>
+    <div class="layui-row layui-col-space15 clearfix" id="_mian">
+        <div class="layui-col-md12">
+        
+            <div class="home-tips shadow">
+                <i style="float:left;line-height:17px;" class="fa fa-volume-up"></i>
+                <div class="home-tips-container">
+                    <span style="color: #009688"><p>全新网站模块上线，基于layui整合数据双向绑定和路由控制后端net core。</p></span>
+                    <span style="color: red">vue数据双向绑定，减小代码编写提高工作效率。</span>
+                    <span style="color: red">自适手机端、pc端、iPad端，路由控制按需加载，更多用法即将登场。</span>
+                </div>
+            </div>
+        </div>
+ 
+        <!--左边文章列表-->
+        <div class="layui-col-md8">
+            <div class="left-box shadow" style="padding:5px;background-color:#fff;">
+                <div class="carousel-box" style="position:relative;background-color: #fff;overflow:hidden">
+                    <div class="layui-carousel" id="_newstaobao">
+                        <div carousel-item="">
+
+                            <div v-for="pp in data">
+                                <a :href="pp.url" data-type="0" biz-itemid="null" data-tmpl="470x190" data-tmplid="635" data-rd="2" data-style="2" data-border="1" :title="pp.title" target="_blank">
+                                    <img :src="pp.pict_url" style="width:100%;height:100%">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="left-box">
+                <p class="left-box-title shadow"><i class="fa fa-diamond fa-fw" aria-hidden="true"></i>置顶博文</p>
+
+                <div class="article shadow clearfix sr-listshow" v-for="item in news">
+                    <div class="article-left">
+                        <div style="width:100%;height:100%; margin: 0 auto;text-align:center">
+                            <i :class="'fa '+item.Pic+' fa-5x'" :alt="item.Title" v-bind:style="{color:SetColor(item)}"></i>
+                        </div>
+                    </div>
+                    <div class="article-right">
+                        <div class="article-title">
+                            <a :href="'#/newsDetail/'+item.ID">{{item.Title}}</a>
+                        </div>
+                        <div class="article-abstract">
+                            {{item.Title}}
+                        </div>
+                        <div class="article-footer">
+                            <span class="layui-hide-xs"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a style="color:#009688" href="#"></a></span>
+                            <span><i class="fa fa-clock-o" aria-hidden="true"></i>{{item.Adddate}}</span>
+                            <span class="article-viewinfo">{{item.views}}阅读</span>
+                            <!--<span class="article-viewinfo">1评论</span>
+                    <span class="article-viewinfo">6赞</span>-->
+                            <a class="read layui-btn layui-btn-xs layui-btn-normal layui-hide-xs" :href="'#/newsDetail/'+item.ID" :title=" item.Title">阅读全文</a>
+                        </div>
+                    </div>
+                    <div class="flag flag-left">推荐</div>
+                </div>
+            </div>
+            <div class="left-box">
+                <p class="left-box-title shadow sr-listshow"><i class="fa fa-signal fa-fw" aria-hidden="true"></i>最新博文</p>
+                <div class="article shadow clearfix sr-listshow" v-for="item in newsmian">
+                    <div class="article-left">
+                        <div style="width:100%;height:100%; margin: 0 auto;text-align:center">
+                            <i :class="'fa '+item.Pic+' fa-5x'" :alt="item.Title" v-bind:style="{color:SetColor(item)}"></i>
+                        </div>
+                    </div>
+                    <div class="article-right">
+                        <div class="article-title">
+                            <a :href="'#/newsDetail/'+item.ID">{{item.Title}}</a>
+                        </div>
+                        <div class="article-abstract">
+                            {{item.Title}}
+                        </div>
+                        <div class="article-footer">
+                            <span class="layui-hide-xs"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a style="color:#009688" href="#"></a></span>
+                            <span><i class="fa fa-clock-o" aria-hidden="true"></i>{{item.Adddate}}</span>
+                            <span class="article-viewinfo">{{item.views}}阅读</span>
+                            <!--<span class="article-viewinfo">0评论</span>
+                <span class="article-viewinfo">1赞</span>-->
+                            <a class="read layui-btn layui-btn-xs layui-btn-normal layui-hide-xs" :href="'#/newsDetail/'+item.ID" :title="item.Title">阅读全文</a>
+                        </div>
+                    </div>
+                    <div class="flag flag-left">推荐</div>
+                </div>
+
+                <div  id="jdads"></div>
+            </div>
+         
+        </div>
+        <!--右边小栏目-->
+        <div class="layui-col-md4">
+            <div class="layui-row layui-col-space10">
+                <div class="layui-col-sm12 layui-col-md12">
+                    <div class="blogerinfo shadow">
+                        <div style=" font-family: digital-7;color: #4cff00; font-size: 40px;text-align: center;   background-color: #000000;">
+                            <div id="show_time" style="padding-top: 25px;"></div>
+                            <div class="date" id="datatime"> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-sm12 layui-col-md12">
+                    <div class="blogerinfo shadow" >
+                        <div class="blogerinfo-figure" style="width:100%">
+                            <img class="layui-nav-img" src="/images/0.jpg" alt="爱上歆随懿恫" />
+                        </div>
+                        <div class="blogerinfo-info" style="    text-align: center;">
+                            <p class="blogerinfo-nickname">爱上歆随懿恫</p>
+                     
+                            <p class="blogerinfo-introduce" style="margin: 0;  line-height: 3em;  text-align: left;text-indent: 2em;">
+                                <span >成功不是将来才有的，而是从决定去做的那一刻起，持续累积而成。我这个人呢优点挺多的，唯一不足的就是余额不足，我原本可以快乐的生活，都是没钱害了我，所以今年冬天我就决定走复古路线，穿去年的衣服，我不是因为钱，我只是怀旧，我发现我的近视越来越严重了，打开钱包竟然看不到钱，如果有钱也是一种错误,我宁愿一错再错,鱼和熊掌不可兼得,而我的单身和穷却可以,我十几岁就出来工作，从一无所有，发展到身无分文，再从身无分文，发展到负债累累。这就是我，不一样的烟火，我就是我，看到自己都冒火。</span>
+                            </p>
+                       
+                            <p class="blogerinfo-location"><i class="fa fa-location-arrow"></i>&nbsp;云南 - 昭通</p>
+                        </div>
+                        <div class="blogerinfo-contact">
+                            <a target="_blank" title="QQ交流" href="http://wpa.qq.com/msgrd?v=3&uin=1316227882&site=qq&menu=yes"><i class="fa fa-qq fa-2x"></i></a>
+                            <a target="_blank" title="QQ群" href="http://shang.qq.com/wpa/qunwpa?idkey=cab375a32d606f1b8224984033d56ba5ce7fe5a1359cf43f4d9ab851ef9d89bb" style="text-decoration:none;"><i class="fa fa-weixin fa-2x"></i></a>
+                            <a target="_blank" title="新浪微博" href="https://m.weibo.cn/u/3902792590?from=1096295010&wm=9006_2001&sourceType=qq&uid=3902792590"><i class="fa fa-weibo fa-2x"></i></a>
+                            <a target="_blank" title="GitHub" href="https://gitee.com/asxsyd92"><i class="fa fa-github fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-sm6 layui-col-md12">
+                    <div class="blog-card shadow">
+                        <div class="blog-card-title">
+                            <span class="icon"><i class="layui-icon" aria-hidden="true">&#xe756;</i></span>
+                            <span class="text">自媒体视频</span>
+                        </div>
+                        <ul class="blog-card-ul">
+                            <li v-for="item in videolist">
+                                <span class="layui-badge ">自</span><a href="javascript:;" :title="item.title" v-on:click="play(item)">{{item.title}}</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="layui-col-sm6 layui-col-md12">
+                    <div class="blog-card shadow sr-rightmodule">
+                        <div class="blog-card-title">
+                            <span class="icon"><i class="layui-icon" aria-hidden="true">&#xe63d;</i></span>
+                            <span class="text">百度分享</span>
+                        </div>
+                        <ul class="blog-card-ul">
+                            <li v-for="item in download">
+                                <span class="layui-badge ">云</span><a href="javascript:;" v-on:click="downloadbaidu(item)" :title="item.Title">{{item.Title}}</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="layui-col-sm6 layui-col-md12">
+                    <div class="blog-card shadow sr-rightmodule">
+                        <div class="blog-card-title">
+                            <span class="icon"><i class="layui-icon" aria-hidden="true">&#xe6c6;</i></span>
+                            <span class="text">猜你想看</span>
+                        </div>
+                        <ul class="blog-card-ul">
+                            <li v-for="item in newslist">
+                                <span class="layui-badge  ">荐</span><a :href="'#/newsDetail/'+item.ID" :title="item.Title">{{item.Title}}</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="layui-col-sm6 layui-col-md12">
+                    <div class="blog-card shadow sr-rightmodule">
+                        <div class="blog-card-title">
+                            <span class="icon"><i class="layui-icon" aria-hidden="true">&#xe6c6;</i></span>
+                            <span class="text">微信关注</span>
+                        </div>
+                        <ul class="blog-card-ul">
+                            <li style="text-align: center;">
+                               <img  src="/images/qrcode_for_gh_8044f5512351_258.jpg"/>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="layui-col-sm6 layui-col-md12">
+                    <div class="blog-card shadow sr-rightmodule" data-scroll-reveal>
+                        <div class="blog-card-title">
+                            <span class="icon"><i class="layui-icon" aria-hidden="true">&#xe64c;</i></span>
+                            <span class="text">推荐学习</span>
+                        </div>
+                        <ul class="blogroll">
+                            <li><a target="_blank" href="http://www.layui.com/" title="layui官网">layui官网</a></li>
+                            <li><a target="_blank" href="/" title="net core 版OA系统">net core 版OA系统（正在开发）</a></li>
+                        </ul>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+    layui.use(["jquery", 'layer','common'], function () {
+
+        document.title = "爱上歆随懿恫|asxsyd92.com|asxsyd92|软件开发|C#|ASP.NET|Android|刷机";
+        var $ = layui.jquery, layer = layui.layer,common=layui.common;
+   module.exports = {
+            name: '_mian',
+            data() {
+                return {
+                    data: [],
+                    news: [],
+                    newsmian: [],
+                    videolist: [],
+                    download: [],
+                    newslist: []
+                }
+            }, mounted: function () {
+                this.ajax(); 
+            },
+            methods: {
+                ajax: function () {
+                    closemuen();
+                    var _this = this; if (this.news.length <= 0) {
+                        var lay = layer.msg('正在拼命加载...', { icon: 16, shade: 0.5, time: 20000000 });
+
+                        fetch("/api/Article/GetNew?title=&type=B496AAC6-B704-4FCE-AD36-CACCEDF3232B&page=" + 1 + "&limit=5").then((data) => data.text()).then((data) => {
+                            try {
+                                layer.close(lay);
+                                var my = JSON.parse(data);
+
+                                this.news = my.data;
+                            } catch (e) { console.log(e) }
+
+                        })
+                    }
+                    if (this.newsmian.length <= 0) {
+                        fetch("/api/Article/GetNew?title=&type=24244800-AC73-43BC-9E8B-FEA34B296DF3&page=" + 1 + "&limit=5").then((data) => data.text()).then((data) => {
+                            try {
+                                var my = JSON.parse(data);
+
+                                this.newsmian = my.data;
+                                setTimeout(function () {
+
+                                    $('body,html').animate({ scrollTop: 0 }, 500);
+                                    gongdong();
+
+                                    setInterval(function () {
+                                        showTime();
+                                    }, 1000);
+                                }, 100);
+                            } catch (e) { console.log(e) }
+
+
+                        })
+                    }
+                    var t = "";
+                    if (this.videolist.length <= 0) {
+                        fetch("/api/Article/GetTencentVideoList?title=" + t + "&page=" + 1 + "&limit=10").then((data) => data.text()).then((data) => {
+                            try {
+                                var my = JSON.parse(data);
+                                _this.videolist = my.data;
+                            } catch (e) { console.log(e) }
+
+                        })
+                    }
+                    if (this.download.length <= 0) {
+                        fetch("/api/ApiData/GetDownload?title=&page=1&limit=10&desc=NEWID()").then((data) => data.text()).then((data) => {
+                            try {
+                                var my = JSON.parse(data);
+                                _this.download = my.data;
+                                if (_this.download.length > 0) {
+                                    //var ks = common.randomNum(1, _this.download.length);
+                   
+                                }
+                            } catch (e) { console.log(e) }
+
+                        })
+                    }
+                    if (this.newslist.length <= 0) {
+                            //随机推荐
+                    fetch("/api/Article/GetRandomNew?title=&page=" + 1 + "&limit=12").then((data) => data.text()).then((data) => {
+
+                        try {
+                            var my = JSON.parse(data);
+
+                            this.newslist = my.data;
+                        } catch (e) { console.log(e) }
+                    })
+                    }
+                
+                    if (this.data.length <= 0) {
+                             fetch("/api/taobao/TaoBaoSearch?title=" + t+"&page=" + 1 + "&limit=12").then((data) => data.text()).then((data) => {
+                        try {
+                            var my = JSON.parse(data);
+                            console.log(my);
+                            this.data = my.data;
+
+                     
+                            setTimeout(function () {
+                                var carousel = layui.carousel;    //图片轮播
+                                carousel.render({
+                                    elem: '#_newstaobao'
+                                    , width: '100%'
+                                    , height: '350px'
+                                    , interval: 5000
+                                });
+                                tips();
+                                showTime();
+
+                            }, 50);
+                        } catch (e) { console.log(e) }
+                 
+                    })
+
+                    }
+               
+               },
+                play: function (_this) {
+                    // `this` 在方法里指向当前 Vue 实例
+                    console.log(_this);
+                    var shiping = 'https://v.qq.com/iframe/player.html?vid=' + _this.vid + '&tiny=0&auto=0'
+                    layer.open({
+                        type: 2,
+                        title: false,
+                        area: ['80%', '80%'],
+                        shade: 0.8,
+                        shadeClose: true,
+                        content: shiping
+                    });
+                }
+                , downloadbaidu: function (_this) {
+                    layer.open({
+                        type: 2, maxmin: true, //开启最大化最小化按钮
+                        title: "下载" + _this.Title,
+                        shade: 0.8,
+                        area: ['80%', '80%'],
+                        shadeClose: true,
+                        content: _this.Url,
+                        skin: 'layui-layer-lan'
+                        , closeBtn: 1
+                        , anim: 4 //动画类型
+                    });
+                }
+                , SetColor: function (_this) {
+              
+                if (_this.TitleColor === null || _this.TitleColor === undefined) {
+                    return "#009688";
+                } else return _this.TitleColor;
+
+            }
+            },
+            created() {
+     
+                  closemuen();
+            }
+        }
+        function tips() {
+            var n = 0,
+                i = $(".home-tips-container>span");
+            setInterval(function () {
+                n++;
+                n >= i.length && (n = 0);
+          
+                i.eq(n).stop(!0, !0).fadeIn().siblings("span").fadeOut()
+            },
+                5000)
+        }
+    
+        function gongdong() {
+
+            /msie[6 | 7 | 8 | 9]/i.test(navigator.userAgent) || (window.sr = new ScrollReveal({
+                reset: !1
+            }), sr.reveal(".sr-left", {
+                origin: "left",
+                scale: 1,
+                opacity: .1,
+                duration: 1200
+            }), sr.reveal(".sr-bottom", {
+                scale: 1,
+                opacity: .1,
+                distance: "60px",
+                duration: 1e3
+            }), sr.reveal(".sr-listshow", {
+                distance: "30px",
+                duration: 1e3,
+                scale: 1,
+                opacity: .1
+            }), sr.reveal(".sr-rightmodule", {
+                origin: "top",
+                distance: "60px",
+                duration: 1e3,
+                scale: 1,
+                opacity: .1
+            }));
+            layer.photos({
+                photos: ".article-left",
+                anim: 5
+            });
+            layer.photos({
+                photos: ".article-detail-content",
+                anim: 5,
+                move: !1
+            })
+
+        }
+    });
+  
+ 
+</script>

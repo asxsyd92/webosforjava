@@ -1,0 +1,49 @@
+﻿<link href="/Common/layim/dist/css/layui.css" rel="stylesheet" />
+<div class="layui-btn-container"  style="    margin-top: 10px;margin-left: 5px;"> 
+<button class="layui-btn layui-btn-sm" onclick="a_add()">添加</button> 
+</div>
+<table class="layui-table layui-form" id="tree-table" lay-size="sm"></table>
+
+<div id="adddictionary" style="display:none">
+    <!--填加图标css-->
+    <link href="/Common/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <script id="QXS" type="text/html">
+        {{#  layui.each(d.list, function(index, item){ }}
+        <option value="{{item.ID}}">
+            {{item.Title}}
+        </option>
+        {{#  }); }}
+        {{#  if(d.list.length === 0){ }}
+        无数据
+        {{#  } }}
+
+    </script>
+    <form action="" class="layui-form" lay-filter="addclass">
+
+        <div class="_two"><div class="layui-col-md6  asxsyd92move" ><div class="layui-form-item"><label class="layui-form-label">ID</label><div class="layui-input-block"><input  class="layui-input" disabled="disabled" id="ID" lay-filter="column" name="ID" placeholder="请输入ID" value="00000000-0000-0000-0000-000000000000"></div></div></div><div class="layui-col-md6  asxsyd92move"><div class="layui-form-item"><label class="layui-form-label">上级菜单</label><div class="layui-input-block">
+    <select id="ParentID" lay-filter="ParentID" lay-search name="ParentID"></select>
+</div></div></div><div class="layui-col-md6 asxsyd92move"><div class="layui-form-item"><label class="layui-form-label">标题</label><div class="layui-input-block"><input  class="layui-input" id="Title" lay-filter="column" lay-verify="required" name="Title" placeholder="请输入标题"></div></div></div><div class="layui-col-md6 asxsyd92move"><div class="layui-form-item"><label class="layui-form-label">Code</label><div class="layui-input-block"><input  class="layui-input" id="Code" lay-filter="column" name="Code" placeholder="请输入Code"></div></div></div><div class="layui-col-md6 asxsyd92move"><div class="layui-form-item"><label class="layui-form-label">值</label><div class="layui-input-block"><input  class="layui-input" id="Value" lay-filter="column" name="Value" placeholder="请输入值"></div></div></div><div class="layui-col-md6 asxsyd92move"><div class="layui-form-item"><label class="layui-form-label">备注</label><div class="layui-input-block"><input  class="layui-input" id="Note" lay-filter="column" name="Note" placeholder="请输入备注"></div></div></div><div class="layui-col-md6 asxsyd92move"><div class="layui-form-item"><label class="layui-form-label">其他</label><div class="layui-input-block"><input  class="layui-input" id="Other" lay-filter="column" name="Other" placeholder="请输入其他"></div></div></div><div class="layui-col-md6 asxsyd92move"><div class="layui-form-item"><label class="layui-form-label">排序</label><div class="layui-input-block"><input  class="layui-input" id="Sort" lay-filter="column" name="Sort" placeholder="请输入排序" type="number"></div></div></div></div>
+        <div class="layui-col-md6 asxsyd92move">
+            <div class="layui-form-item">
+                <label class="layui-form-label">是否启用</label>
+                <div class="layui-input-block">
+                    <input id="IsUse" name="IsUse" title="禁用" type="radio" value="0">
+                    <input id="IsUse" name="IsUse" title="启用" type="radio" value="1">
+                </div>
+            </div>
+        </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+
+                    <button class="layui-btn" lay-filter="add" lay-submit="">确定</button>
+
+                </div>
+            </div>
+</form>
+</div>
+<script src="/Common/layim/dist/layui.all.js"></script>
+<script>
+    layui.config({
+        base: '/Common/layim/plugin/webos/SysSet/'
+    }).use('Dictionary');
+</script>

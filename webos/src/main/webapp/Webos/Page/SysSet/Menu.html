@@ -1,0 +1,107 @@
+﻿<link href="/Common/layim/dist/css/layui.css" rel="stylesheet" />
+<div class="layui-btn-container" style="    margin-top: 10px;margin-left: 5px;">
+    <button class="layui-btn layui-btn-sm" onclick="a_add()">添加</button>
+</div>
+<table class="layui-table layui-form" id="tree-table" lay-size="sm"></table>
+
+
+<div id="addmenu" style="display:none">
+    <!--填加图标css-->
+    <link href="/Common/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <script id="QXS" type="text/html">
+        {{#  layui.each(d.list, function(index, item){ }}
+        
+        <option value="{{item.ID}}">
+            {{item.Title}}
+        </option>
+        {{#  }); }}
+        {{#  if(d.list.length === 0){ }}
+        无数据
+        {{#  } }}
+
+    </script>
+    <form action="" class="layui-form" lay-filter="addclass">
+
+        <input autocomplete="off" class="layui-input" lay-verify="required" name="type" placeholder="" style="display:none" type="text" value="2">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">上级</label>
+                <div class="layui-input-inline">
+                    <select id="ParentID" lay-filter="ParentID" name="ParentID"></select>
+                    <!--<input type="text" name="parentid" placeholder="目录id" autocomplete="off" class="layui-input">-->
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">主键</label>
+                <div class="layui-input-inline">
+                    <input autocomplete="off" class="layui-input layui-disabled" name="ID" placeholder="ID" type="text" value="00000000-0000-0000-0000-000000000000">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">标题</label>
+                <div class="layui-input-inline">
+                    <input autocomplete="off" class="layui-input" lay-verify="required" name="Title" placeholder="标题" type="text">
+
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">路径</label>
+                <div class="layui-input-inline">
+                    <input autocomplete="off" class="layui-input" name="tag" placeholder="tag" type="text">
+
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">角色</label>
+                <div class="layui-input-inline">
+                    <input autocomplete="off" class="layui-input" name="RoleID" placeholder="角色id必须为guid" type="text" value="00000000-0000-0000-0000-000000000000">
+
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">图标</label>
+                <div class="layui-input-inline">
+                    <input autocomplete="off" class="layui-input" id="icon" lay-filter="icon" name="icon" placeholder="layui小图标css样式" type="text">
+
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">参数</label>
+                <div class="layui-input-inline">
+                    <input autocomplete="off" class="layui-input" name="Params" placeholder="参数" type="text">
+
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">排序</label>
+                <div class="layui-input-inline">
+                    <input class="layui-input" name="Sort" type="number">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">颜色</label>
+                    <div class="layui-input-inline" style="width: 120px;">
+                        <input class="layui-input" id="Color" name="Color" placeholder="请选择颜色" type="text" value="">
+                    </div>
+                    <div class="layui-inline" style="left: -11px;">
+                        <div id="_Color"></div>
+                    </div>
+                </div>
+     
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-filter="add" lay-submit="">确定</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="/Common/layim/dist/layui.all.js"></script>
+<script>
+    layui.config({
+        base: '/Common/layim/plugin/webos/SysSet/'
+    }).use('Menu');
+</script>
+

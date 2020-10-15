@@ -1,0 +1,39 @@
+﻿ <!-- main部分 -->
+<div class="main-newsdate"></div>
+<div class="layui-container">
+
+    <form class="layui-form">
+        
+                <div class="layui-row layui-col-space15 layui-form-item">
+
+                <div class="layui-col-md6"><label class="layui-form-label">姓名</label><div class="layui-input-block"><input class="layui-input" id="XM" lay-filter="column" name="XM" placeholder="请输入姓名" type="text"></div></div><div class="layui-col-md6"><label class="layui-form-label">许别</label><div class="layui-input-block"><input class="layui-input" id="XB" lay-filter="column" name="XB" placeholder="请输入许别" type="text"></div></div><div class="layui-col-md6"><label class="layui-form-label">主键</label><div class="layui-input-block"><input class="layui-input" id="ID" lay-filter="column" name="ID" placeholder="请输入主键" type="text"></div></div><div class="layui-col-md6"><label class="layui-form-label">表</label><div class="layui-input-block"><input class="layui-input" id="table" lay-filter="column" name="table" placeholder="请输入表" type="text"></div></div></div>
+            
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-filter="_submit" lay-submit="">立即提交</button>
+                <button class="layui-btn layui-btn-primary" type="reset">重置</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+
+    layui.use(['form', 'laydate', 'table', 'laytpl', 'layedit', 'layer'], function () {
+        var table = layui.table, form = layui.form
+            , layer = layui.layer
+            , laydate = layui.laydate; laytpl = layui.laytpl; layedit = layui.layedit;
+        form.on('submit(_submit)', function (data) {
+            $.post("/api/Form/FormSave", {table: $("#table").val(),data: JSON.stringify(data.field) }, function (resp) {
+              //  resp = JSON.parse(resp);
+                //if (resp.Success) {
+                //    window.location.href = "#article";
+                //}
+            });
+
+            return false;
+        });
+
+
+
+    });
+</script>

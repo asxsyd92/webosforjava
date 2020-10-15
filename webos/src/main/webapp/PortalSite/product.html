@@ -1,0 +1,127 @@
+﻿
+    <template>
+      
+        <div class="layui-row layui-col-space15 clearfix" id="product">
+
+            <div class="layui-col-lg3 layui-col-sm4">
+                <div class="production-box">
+                    <div class="production-cover">
+                        <a href="" target="_blank">
+                            <img src="../res/images/prd.jpg" alt="WinAdmin后台模板">
+                        </a>
+                    </div>
+                    <h1 class="production-title"><a href="http://www.win-ui.com" target="_blank">WinAdmin后台模板</a></h1>
+                    <p class="production-abstract">Win10风格后台模板</p>
+                    <div class="production-footer">
+                        <a class="layui-btn layui-btn-sm layui-btn-primary" href="http://www.win-ui.com" target="_blank"><i class="fa fa-eye fa-fw"></i>查看</a>
+                        <a class="layui-btn layui-btn-sm layui-btn-primary" target="_blank"><i class="fa fa-download fa-fw"></i>下载</a>
+                    </div>
+                </div>
+            </div>
+ 
+        </div>
+    </template>
+    <script>
+    layui.use(["jquery", 'layer', 'laypage'], function () {
+        document.title = "工作产品|自学天才|爱上歆随懿恫|asxsyd92.com";
+        var $ = layui.jquery, layer = layui.layer, laypage = layui.laypage;;
+        module.exports = {
+            name: 'product',
+            data() {
+                return {
+                    data: []
+                }
+            }, mounted: function () {
+                var m = this;
+                m.ajax();
+            },
+            methods: {
+                ajax: function () {
+                    var m = this;
+                    if (this.data.length <= 0) {
+                        var lay = layer.msg('正在拼命加载...', { icon: 16, shade: 0.5, time: 20000000 });
+
+                        fetch("/api/Article/GetNew?page=" + 1 + "&limit=5&type=70895c54-2cad-4bd2-bbc6-9be4367551fa").then((data) => data.text()).then((data) => {
+                            var my = JSON.parse(data);
+                            layer.close(lay);
+                            m.data = my.data;
+                            setTimeout(function () {
+
+                                $('body,html').animate({ scrollTop: 0 }, 500);
+                                gongdong();
+                            }, 100);
+                            //执行一个laypage实例
+                            laypage.render({
+                                elem: 'newspage' //注意，这里的 test1 是 ID，不用加 # 号
+                                , count: my.count //数据总数，从服务端得到
+                                , jump: function (obj, first) {
+
+                                    page = obj.curr;  //改变当前页码
+                                    limit = obj.limit;
+                                    //首次不执行
+                                    if (!first) {
+                                        //do something
+                                        fetch("/api/Article/GetNew?page=" + page + "&limit=" + limit).then((data) => data.text()).then((data) => {
+                                            var my = JSON.parse(data);
+                                            m.data = my.data;
+                                            setTimeout(function () {
+
+                                                $('body,html').animate({ scrollTop: 0 }, 500);
+                                                gongdong();
+                                            }, 100);
+                                        });
+                                    }
+                                }
+                            });
+                            this.news = my.data;
+                        })
+                    }
+
+                }
+            }
+            ,
+            created() {
+                closemuen();
+            }
+        }
+
+
+        function gongdong() {
+
+            /msie[6 | 7 | 8 | 9]/i.test(navigator.userAgent) || (window.sr = new ScrollReveal({
+                reset: !1
+            }), sr.reveal(".sr-left", {
+                origin: "left",
+                scale: 1,
+                opacity: .1,
+                duration: 1200
+            }), sr.reveal(".sr-bottom", {
+                scale: 1,
+                opacity: .1,
+                distance: "60px",
+                duration: 1e3
+            }), sr.reveal(".sr-listshow", {
+                distance: "30px",
+                duration: 1e3,
+                scale: 1,
+                opacity: .1
+            }), sr.reveal(".sr-rightmodule", {
+                origin: "top",
+                distance: "60px",
+                duration: 1e3,
+                scale: 1,
+                opacity: .1
+            }));
+            layer.photos({
+                photos: ".article-left",
+                anim: 5
+            });
+            layer.photos({
+                photos: ".article-detail-content",
+                anim: 5,
+                move: !1
+            })
+
+        }
+    });
+    </script>

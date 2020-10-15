@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="webkit" name="renderer" />
+    <meta content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width" name="viewport" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="232fd13e627a76e18f104ec80281dd2c" name="360-site-verification" />
+    <meta content="webkit" name="renderer">
+    <meta content="portrait" name="x5-orientation">
+    <meta content="true" name="x5-fullscreen">
+    <meta content="portrait" name="screen-orientation">
+    <meta content="yes" name="full-screen">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta content="no-siteapp" http-equiv="Cache-Control">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="8zN10JrA7B" name="baidu-site-verification" />
+    <meta content="647c481ba323692e0dd89f0ba8f76608" name="360-site-verification" />
+    <meta content='8a9f90c1def2d74c4c8640b8972fcc38' name='360_ssp_verify' />
+    <meta content="8zN10JrA7B" name="baidu-site-verification" />
+    <meta content="3f8a0c35aa42ffd776d5c3ad062f9c7c" name="baidu_union_verify">
+    <link href="Common/layim/dist/css/layui.css" rel="stylesheet" />
+    <link href="Common/admin/css/global.css" rel="stylesheet" />
+    <link href="Common/web/css/web.css" rel="stylesheet" />
+    <link href="Common/web/css/supersized.css" rel="stylesheet" />
+    <title>开源工作流系统OA爱上歆随懿恫|基于RoadFlow2.1开源修改|软件开发|爱上歆随懿恫官网|ASP.NET Core</title>
+    <meta content="基于RoadFlow2.1开源修改 ASP.NET Core|" name="keywords" />
+    <meta content="开源工作流系统OA爱上歆随懿恫|基于RoadFlow2.1开源修改|软件开发|爱上歆随懿恫官网|ASP.NET Core" name="description" />
+
+    <link href="Common/oa/login/css/login.css" rel="stylesheet" />
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script src="js/html5.js"></script>
+    <![endif]-->
+
+    </head>
+<body>
+    <div class="page-container">
+        <div class="main_box">
+            <div class="uc-logincode">
+                <a class="btn-code" href="javascript:void(0)" id="_qrcode" title="扫码安全登录"></a>
+            </div>
+            <div class="login_box">
+                <div class="login_logo">
+                    <img src="images/logo.png" style="height:80px">
+                </div>
+                <div class="erwm" hidden id="qrcodeTable">
+                    <div id="_pcqrcode" style="width:70%;margin:40px auto;"></div>
+                    <div style="width:100%">
+                        <img src="images/uc-twocode-icon.png" style="float:left" />
+                        <h2>手机扫描一键登录<a href="javascript:void(0)">下载手机客户端</a></h2>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="login_form" id="login">
+                    <input hidden id="zy" type="text" value="zh" />
+
+                    <form action="" id="login_form" method="post">
+                        <div class="form-group">
+                            <label class="t" for="j_username"></label>
+                            <input autocomplete="off" class="form-control x319 in" id="email" name="email" placeholder="演示账号：com.asxsyd92.com"
+                                   type="text" value="">
+                        </div>
+                        <div class="form-group">
+                            <label class="t" for="j_password"></label>
+                            <input class="password form-control x319 in" id="password" name="password" placeholder="演示账号：com.asxsyd92.com"
+                                   type="password" value="">
+                        </div>
+                        <div class="form-group">
+                            <label class="t" for="j_captcha"></label>
+                            <input class="form-control x164 in" id="j_captcha" name="j_captcha" onclick="com.asxsyd92.createCode()" placeholder="请输入验证码！" type="text">
+                            <div class="m" id="checkCode" onclick="createCode()" style="font-family: Arial; font-style: italic;color: blue;font-size: 20px;float:right;letter-spacing: 3px; font-weight: bolder;"></div>
+                            <!--<img id="captcha_img" alt="点击更换" title="点击更换" src="images/captcha.jpeg" class="m">-->
+                        </div>
+                        <div class="form-group">
+                            <label class="t"></label>
+                            <label class="code" for="j_remember">
+                                <input id="j_remember" type="checkbox" value="true">&nbsp;记住登陆账号!
+                            </label>
+                        </div>
+                        <div class="form-group space" style="text-align:center">
+                            <label class="t"></label>
+                            <button class="btn btn-primary btn-lg" id="submit_btn"
+                                    type="button">
+                                &nbsp;登&nbsp;录&nbsp;
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="Common/jquery/jquery-2.1.1.min.js"></script>
+    <script src="Common/layim/dist/layui.all.js"></script>
+    <script src="Common/bootstrap/js/bootstrap.min.js"></script>
+    <script src="Common/jquery/jquery.isotope.min.js"></script>
+    <script src="Common/web/js/wow.min.js"></script>
+    <script src="Common/common.js"></script>
+    <script src="Common/angular/angular.min.js"></script>
+    <script src="Common/angular/angular-route.min.js"></script>
+    <script src="Common/oa/js/oa.js"></script>
+    <script src="Common/jquery/jquery.zclip.js"></script>
+    <script src="Common/jquery/jQuery.cookie.js"></script>
+    <script src="Common/web/js/CookieUtils.js"></script>
+    <script src="Common/web/js/supersized.3.2.7.min.js"></script>
+    <script src="Common/web/js/supersized-init.js"></script>
+    <script src="Common/jquery/jquery.qrcode.min.js"></script>
+
+    <script src="Common/oa/js/tooltips.js"></script>
+    <script src="Common/oa/js/login.js"></script>
+</body>
+</html>

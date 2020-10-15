@@ -1,0 +1,75 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+   
+
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.bootcss.com/require.js/2.3.5/require.js"></script>
+    <div id="dynamic-component-demo" class="demo">
+        <button v-for="tab in tabs"
+                :class="['tab-button', { active: currentTab === tab.des}]"
+                @click="currentTab = tab.des">
+            {{ tab.msg }}
+        </button>
+
+        <component :is="currentTabComponent"
+                   class="tab"></component>
+    </div>
+    <!--<div id="dynamic-component-demo">
+        <button v-for="tab in tabs"
+                v-bind:key="tab"
+                v-bind:class="['tab-button', { active: currentTab === tab }]"
+                v-on:click="currentTab = tab">
+
+        </button>
+        <keep-alive>
+            <component v-bind:is="currentTabComponent"
+                       class="tab"></component>
+        </keep-alive>
+    </div>-->
+    <script>
+        //Vue.component('tab-home', {
+        //    template: '<div>第一页   <h1>dfsdfsdfsd</h1> ' +
+        //        '</div>'
+        //})
+
+        Vue.component('tab-home', function (resolve) {
+            // 这个特殊的 `require` 语法将会告诉 webpack
+            // 自动将你的构建代码切割成多个包，这些包
+            // 会通过 Ajax 请求加载
+            require(['/PortalSite/zj.html'], resolve);
+
+        })
+        Vue.component('tab-posts', {
+            template: '<div>第二页</div>'
+        })
+        Vue.component('tab-archive', {
+            template: '<div>第三页</div>'
+        })
+
+        new Vue({
+            el: '#dynamic-component-demo',
+            data: {
+                currentTab: 'home',
+                tabs: [
+                    { "des": "home", "msg": "第一页" },
+                    { "des": "posts", "msg": "第二页" },
+                    { "des": "archive", "msg": "第三页" },
+
+                ]
+            },
+            computed: {
+                currentTabComponent: function () {
+                    return 'tab-' + this.currentTab.toLowerCase()
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

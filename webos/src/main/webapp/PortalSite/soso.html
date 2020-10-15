@@ -1,0 +1,273 @@
+﻿<template>
+    <div id="_soso">
+        <div class="layui-row layui-col-space15 clearfix">
+            <div class="layui-col-md12">
+                <div class="home-tips shadow" style="background:rgb(230, 230, 230);">
+                    <div class="home-tips-container" style="    height: auto;">
+                        <div class="demoTable">
+                            <div class="layui-inline" style="width:70%">
+                                <input class="layui-btn layui-btn-sm" type="text" name="search" id="search" placeholder="磁力资源搜索" style="text-align: left;color: #009688; background-color: #fff;width:100%">
+                            </div>
+                            <button class="layui-btn layui-btn-sm" v-on:click="a_search()">搜索</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--左边文章列表-->
+            <div class="layui-col-md8">
+
+                <div class="left-box">
+                    <p class="left-box-title shadow"><i class="fa fa-download fa-spin" aria-hidden="true"></i>分享下载</p>
+
+                    <div class="article shadow clearfix sr-listshow" v-for="item in download">
+                        <div class="article-left">
+                            <!--<div style="width:100%;height:100%; margin: 0 auto;text-align:center">
+        <i :class=' switch(item.Type){case 1: "fa fa-file-movie-o"; break; case 2: "fa fa-music"; break; case 3: "fa fa-book"; break; case 4: "fa fa-window-maximize"; break; case 5: "fa fa-file-picture-o"; break; case 6: "fa fa-file-zip-o";break;}' :alt="item.Title" style="color:rgb(0, 150, 136);"></i>
+    </div>-->
+                            <div style="width:100%;height:100%; margin: 0 auto;text-align:center">
+                                <i :class="item.Img" :alt="item.Title" v-bind:style="{color:RGB()}"></i>
+                            </div>
+                        </div>
+                        <div class="article-right">
+                            <div class="article-title">
+                                <a :href="'PortalSite/DownDetail?id='+item.ID" target="_blank">{{item.Title}}</a>
+                            </div>
+                            <div class="article-abstract">
+                                {{item.Description}}
+                            </div>
+                            <div class="article-footer">
+                                <span class="layui-hide-xs"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a style="color:#009688" href="javascript:;">百度云</a></span>
+                                <!--<span><i class="fa fa-clock-o" aria-hidden="true"></i>{{item.Adddate}}</span>
+                        <span class="article-viewinfo">{{item.Description}}阅读</span>-->
+                                <a class="read layui-btn layui-btn-xs layui-btn-normal layui-hide-xs" href="javascript:;" v-on:click="downloadbaidu(item)" :title=" item.Title">下载</a>
+                            </div>
+                        </div>
+                        <div class="flag flag-left">百度云</div>
+                    </div>
+
+                    <div class="blog-pagebox">
+                        <div id="newspage">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md4">
+                <div class="layui-row layui-col-space10">
+
+                    <div class="layui-col-sm6 layui-col-md12">
+                        <div class="blog-card shadow sr-rightmodule">
+
+                            <div class="layui-carousel" id="_news_taobao">
+                                <div carousel-item="">
+
+                                    <div v-for="pp in data">
+                                        <a :href="pp.url" data-type="0" biz-itemid="null" data-tmpl="470x190" data-tmplid="635" data-rd="2" data-style="2" data-border="1" :title="pp.title" target="_blank">
+                                            <img :src="pp.pict_url" style="width:100%;height:100%">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="layui-col-sm6 layui-col-md12">
+                        <div class="blog-card shadow sr-rightmodule">
+                            <div class="blog-card-title">
+                                <span class="icon"><i class="layui-icon" aria-hidden="true">&#xe6c6;</i></span>
+                                <span class="text">广告为</span>
+                            </div>
+                            <ul class="blog-card-ul">
+                                <li style="color:red">
+                                    广告招租
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="layui-col-sm6 layui-col-md12">
+                        <div class="blog-card shadow sr-rightmodule">
+                            <div class="blog-card-title">
+                                <span class="icon"><i class="layui-icon" aria-hidden="true">&#xe6c6;</i></span>
+                                <span class="text">微信关注</span>
+                            </div>
+                            <ul class="blog-card-ul">
+                                <li style="text-align: center;">
+                                    <img src="/images/qrcode_for_gh_8044f5512351_258.jpg" />
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="layui-col-sm6 layui-col-md12">
+                        <div class="blog-card shadow sr-rightmodule" data-scroll-reveal>
+                            <div class="blog-card-title">
+                                <span class="icon"><i class="layui-icon" aria-hidden="true">&#xe64c;</i></span>
+                                <span class="text">推荐学习</span>
+                            </div>
+                            <ul class="blogroll">
+                                <li><a target="_blank" href="http://www.layui.com/" title="layui官网">layui官网</a></li>
+                                <li><a target="_blank" href="http://oa.asxsyd92.com/" title="net core 版OA系统">net core 版OA系统（正在开发）</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>  
+ 
+    </div>
+
+</template>
+<script>   
+    layui.use(['layer', 'form', 'common', 'laypage'], function () {
+    document.title = "源码下载|学习源码|常用工具整理|爱上歆随懿恫|淘券券|asxsyd92.com";
+        $ = layui.$; closemuen(); var common = layui.common, page = 0, limit = 15, laypage = layui.laypage,carousel = layui.carousel;  ;
+        module.exports = {
+            name: "_soso",
+            data() {
+                return {
+                    data: [],
+                    download:[]
+                }
+            }, mounted: function () {
+                var m = this;
+                m.ajax();
+                if (common.getParamsUrl().query.key != null) { $("#search").val(encodeURIComponent(common.getParamsUrl().query.key));}
+            },
+            methods: {
+                a_search: function (event) {
+                   // layer.alert("抱歉，由于网站全面更新，搜索功能暂时不开放，感谢您的支持！");
+                    //window.location.href = '#/soso?key=' + $('#search').val();
+                    this.ajax();
+                },
+                ajax: function () {
+                    var lay = layer.msg('正在拼命加载...', { icon: 16, shade: 0.5, time: 20000000 });
+
+                    var t = $("#search").val();
+                    fetch("api/ApiData/GetDownload?title=" + t + "&page=" + 1 + "&limit=10").then((data) => data.text()).then((data) => {
+                        var my = JSON.parse(data); if (my.data == "[]") {
+                            return false; layer.close(lay); layer.msg("没有任何资源");
+                        }
+                        this.download = my.data;
+                        var m = this; layer.close(lay);
+                        setTimeout(function () {
+
+                            $('body,html').animate({ scrollTop: 0 }, 500);
+                            gongdong();
+                        }, 100);
+                        laypage.render({
+                            elem: 'newspage' //注意，这里的 test1 是 ID，不用加 # 号
+                            , count: my.count //数据总数，从服务端得到
+                            , jump: function (obj, first) {
+
+                                page = obj.curr;  //改变当前页码
+                                limit = obj.limit;
+                                //首次不执行
+                                if (!first) {
+                                    var t = $("#search").val();
+                                    //do something
+                                    fetch("api/ApiData/GetDownload?title=" + t + "&page=" + page + "&limit=10").then((data) => data.text()).then((data) => {
+                                        var my = JSON.parse(data); if (my.data == "[]") {
+                                            layer.close(lay); layer.msg("没有任何资源"); return false;
+                                        }
+                                        m.download = my.data;
+                                        setTimeout(function () {
+
+                                            $('body,html').animate({ scrollTop: 0 }, 500);
+                                            gongdong();
+                                        }, 100);
+                                    });
+                                }
+                            }
+                        });
+
+
+                    })
+                    var sj = "";
+                    if (this.data.length <= 0) {
+                        fetch("/api/taobao/TaoBaoSearch?title=" + sj + "&page=" + 1 + "&limit=12").then((data) => data.text()).then((data) => {
+                            var my = JSON.parse(data); if (my.data == "[]") {
+                                layer.close(lay); layer.msg("没有任何资源"); return false;
+                            }
+                            this.data = my.data;
+                            setTimeout(function () {
+                                //图片轮播
+                                carousel.render({
+                                    elem: '#_news_taobao'
+                                    , width: '100%'
+                                    , height: '350px'
+                                    , interval: 5000
+                                });
+                            }, 500);
+                        })
+                    }
+                }
+                , downloadbaidu: function (_this) {
+                    layer.open({
+                        type: 2, maxmin: true, //开启最大化最小化按钮
+                        title: "下载" + _this.Title,
+                        shade: 0.8,
+                        area: ['80%', '80%'],
+                        shadeClose: true,
+                        content: _this.Url,
+                        skin: 'layui-layer-lan'
+                        , closeBtn: 1
+                        , anim: 4 //动画类型
+                    });
+                }, RGB: function () {//rgb颜色随机
+                    var r = Math.floor(Math.random() * 256);
+                    var g = Math.floor(Math.random() * 256);
+                    var b = Math.floor(Math.random() * 256);
+                    var rgb = 'rgb(' + r + ',' + g + ',' + b + ')';
+                 
+                    return rgb;
+                }
+            },
+            created() {
+              
+                  closemuen();
+            }
+        }
+        function gongdong() {
+
+            /msie[6 | 7 | 8 | 9]/i.test(navigator.userAgent) || (window.sr = new ScrollReveal({
+                reset: !1
+            }), sr.reveal(".sr-left", {
+                origin: "left",
+                scale: 1,
+                opacity: .1,
+                duration: 1200
+            }), sr.reveal(".sr-bottom", {
+                scale: 1,
+                opacity: .1,
+                distance: "60px",
+                duration: 1e3
+            }), sr.reveal(".sr-listshow", {
+                distance: "30px",
+                duration: 1e3,
+                scale: 1,
+                opacity: .1
+            }), sr.reveal(".sr-rightmodule", {
+                origin: "top",
+                distance: "60px",
+                duration: 1e3,
+                scale: 1,
+                opacity: .1
+            }));
+            layer.photos({
+                photos: ".article-left",
+                anim: 5
+            });
+            layer.photos({
+                photos: ".article-detail-content",
+                anim: 5,
+                move: !1
+            })
+
+        }
+    })
+</script>
+<style scoped>
+</style>

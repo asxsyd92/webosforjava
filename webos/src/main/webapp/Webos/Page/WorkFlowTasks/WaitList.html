@@ -1,0 +1,30 @@
+﻿
+<link href="/Common/layim/dist/css/layui.css" rel="stylesheet" />
+<link href="/Common/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+<link href="/Common/bootstrap/css/font-awesome.css" rel="stylesheet" />
+<table class="layui-hide" id="WaitList" lay-filter="WaitList"></table>
+
+<script id="toolbarDemo" type="text/html">
+    <div class="layui-btn-container">
+
+        <input class="layui-btn layui-btn-sm" type="text" name="title" id="title" placeholder="请输入标题" style="text-align: left;color: #009688; background-color: #fff;" />
+        <button class="layui-btn layui-btn-sm" lay-event="a_search">查询</button>
+        <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">处理</button>
+        <button class="layui-btn layui-btn-sm" lay-event="isAll">退出</button>
+    </div>
+</script>
+<script id="barDemo" type="text/html">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script src="/Common/layim/dist/layui.all.js"></script>
+<script>
+    layui.config({
+        base: '/Common/layim/plugin/webos/WorkFlowTasks/'
+    }).use('WaitList');
+
+</script>

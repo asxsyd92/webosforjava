@@ -1,0 +1,58 @@
+﻿<script src="/Common/layim/dist/layui.all.js"></script>
+<link href="/Common/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+<link href="/Common/layim/dist/css/layui.css" rel="stylesheet" />
+<script id="barDemo" type="text/html">
+
+    <a class="layui-btn layui-btn-xs" lay-event="set">设置权限</a>
+    <a class="layui-btn layui-btn-xs layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<table class="layui-hide" id="rolsetting" lay-filter="rolsetting"></table>
+<script id="toolbarDemo" type="text/html">
+    <div class="layui-btn-container">
+        <input class="layui-btn layui-btn-sm" type="text" name="title" id="title" placeholder="请输入角色" style="text-align: left;color: #009688; background-color: #fff;" />
+        <button class="layui-btn layui-btn-sm" lay-event="a_search">查询</button>
+        <button class="layui-btn layui-btn-sm" lay-event="a_add">添加</button>
+    </div>
+</script>
+
+<script id="_addrole" type="text/html">
+    <!--<div class="layui-container">-->
+    <form class="layui-form  layui-form-pane" lay-filter="asrole">
+
+
+        <div class="layui-form-item">
+            <!--多行输入框-->
+
+            <div class="layui-inline" style="display:none">
+                <label class="layui-form-label">主键</label><div class="layui-input-inline"><input lay-verify="required" lay-filter="column" data-target="" class="layui-input" id="ID" name="ID" type="text" value="00000000-0000-0000-0000-000000000000" placeholder="请输入主键"></div>
+            </div>
+            <div class="layui-inline">
+            <label class="layui-form-label">标题</label>
+            <div class="layui-input-inline">
+                <input lay-verify="required" lay-filter="column" data-target="" class="layui-input" id="Name" name="Name" type="text" placeholder="请输入标题">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline"><label class="layui-form-label">标识符</label><div class="layui-input-inline"><input lay-filter="column" data-target="" class="layui-input" id="identifier" name="identifier" type="number" placeholder="请输入标识符"></div></div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline"><label class="layui-form-label">备注</label><div class="layui-input-inline"><input lay-filter="column" data-target="" class="layui-input" id="Note" name="Note" type="text" placeholder="请输入备注"></div></div>
+        </div>
+
+            <blockquote class="layui-elem-quote" style="text-align: left;color:red">注意事项说明：<br>1、标志不能重复；<br>2、标志用于识别数据权限。</blockquote>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit="" lay-filter="_submit">立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+</form>
+    <!--</div>-->
+</script>
+<script>
+     layui.config({
+        base: '/Common/layim/plugin/webos/SysSet/'
+    }).use('SetRole');
+</script>

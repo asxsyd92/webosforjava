@@ -1,0 +1,119 @@
+﻿<div class="main-newsdate"></div>
+<script id="toolbarDemo" type="text/html">
+    <div class="layui-btn-container">
+            <button class="layui-btn layui-btn-sm" lay-event="a_add">添加</button>
+            <button class="layui-btn layui-btn-sm" lay-event="a_edit">编辑</button>
+    </div>
+</script>
+<div class="layui-container">
+    <table class="layui-hide" id="table" lay-filter="table"></table>
+</div>
+<script>
+    layui.use(['form', 'layedit', 'laydate', 'table'], function () {
+        var table = layui.table
+            , form = layui.form
+            , layer = layui.layer
+            , layedit = layui.layedit
+            , laydate = layui.laydate;
+        data = [];
+        ///界面
+       var tks= ' <div class="row" style="width: 700px;  margin-left:7px; margin-top:10px;">'
+            + '<div class="col-sm-12">'
+            + '<div class="input-group">'
+            + '<span class="input-group-addon"> 字段名称:</span>'
+            + '<input id="fd_title" type="text" class="layui-input" placeholder="请输入显示标题">'
+            + '</div>'
+            + '</div>'
+            + '<div class="col-sm-12" style="margin-top: 10px">'
+            + '<div class="input-group">'
+            + '<span class="input-group-addon">类型:</span>'
+            + '<select  id="fd_type" lay-verify="" style="height: 34px;width:100%; padding: 6px 12px; font-size: 14px; line-height: 1.42857143;color: #555;background-color: #fff; background-image: none;border: 1px solid #ccc; border-radius: 4px;" ><option>uniqueidentifier</option><option>nvarchar(500)</option><option>int</option><option>bigint</option><option>datetime</option><option>float</option><option>nchar(10)</option> <option>bit</option><option>char(10)</option><option>decimal(18, 0)</option><option>date</option><option>text</option><option>varchar(50)</option></select>'
+            + '</div>'
+            + '</div>'
+            + '<div class="col-sm-12" style="margin-top: 10px">'
+            + '<div class="input-group">'
+            + '<span class="input-group-addon"> 说明  :</span>'
+            + '<input id="fd_note" type="text" class="layui-input" placeholder="字段说明建议一两个字">'
+            + '</div>'
+            + '</div>'
+            + '</div>';
+        ///
+        var key = Common.getRequestNg().key;
+        if (key == null) {
+            //所获得的 tableIns 即为当前容器的实例
+            data = [{ "TableName":"test","ColumnsName": "F_ID", "ColumnType": "uniqueidentifier", "Description": "主键" }];
+   
+            var tableIns = table.render({
+                elem: '#table'
+                , toolbar: '#toolbarDemo'
+                , cols: [[{ field: "TableName", title: '表名' }, { field: 'ColumnsName', title: '字段', edit: 'text' }, { field: 'ColumnType', title: '数据类型', edit: 'text' }, { field: 'Description', title: '说明', edit: 'text' }]]// data //设置表头
+                , id: 'table'
+                , data: data
+            });
+      
+        } else {
+            $.get('/api/Form/FormTable?table=' + key, {}, function (res) {
+                var dat = JSON.parse(res);
+
+                table.render({
+                    elem: '#table'
+                    , toolbar: '#toolbarDemo'
+                   // , url: '/api/Form/FormTable?table=' + key
+                    , cols: [[{ field: "TableName", title: '表名' }, { field: 'ColumnsName', title: '字段', edit: 'text' }, { field: 'ColumnType', title: '数据类型', edit: 'text' }, { field: 'Description', title: '说明', edit: 'text' }]]// data //设置表头
+                    , id: 'table'
+                    , data: dat.data
+                    , done: function (res, curr, count) {
+                        //如果是异步请求数据方式，res即为你接口返回的信息。
+                        //如果是直接赋值的方式，res即为：{data: [], count: 99} data为当前页数据、count为数据总长度
+                        console.log(res);
+                        data = res.data
+                        //得到当前页码
+
+                    }
+                });
+            });
+
+         
+        }
+        table.on('toolbar(table)', function (obj) {
+
+            //  var checkStatus = table.checkStatus(obj.config.id);
+            switch (obj.event) {
+                case 'a_add':
+                    layer.open({
+                        id: 1,
+                        type: 0,
+                        title: '字段属性设置',
+                        skin: 'layui-layer-rim',
+                        area: ['750px', 'auto'],
+                        content: tks,
+                        btn: ['确定', '取消'],
+                        success: function (layero, index) {
+                        },
+                        btn1: function (index, layero) {
+                            //执行重载
+                            if ($("#fd_title").val().length > 0) {
+                                var obj = Object();
+                                obj.TableName = data[0].TableName;
+                                obj.ColumnsName = $("#fd_title").val(); obj.ColumnType = $("#fd_type").val(); obj.Description = $("#fd_note").val();
+                                data.push(obj);
+                                console.log(data);
+                                table.reload('table', {  data: data });
+                                layer.close(index);
+                            } else {
+                                layer.msg("请填写字段名称");
+                            }
+
+                        },
+                        btn2: function (index, layero) {
+                            layer.close(index);
+                        }
+
+                    });
+                    break;
+                case 'a_edit':// add(-1);
+                    break;
+            }
+        });
+    });
+</script>

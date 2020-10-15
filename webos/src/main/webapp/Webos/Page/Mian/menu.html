@@ -1,0 +1,173 @@
+﻿<link href="/Common/layim/dist/css/layui.css" rel="stylesheet" />
+<div style="display: inline-block; width: 19%; height: auto; padding: 10px; border: 1px solid #ddd; overflow: auto;  overflow-x: hidden;">
+    <ul id="class"></ul>
+</div>
+<div class="site-tips" id="class-view" style="display: inline-block; width: 66%; padding: 10px; margin-left: 10px; vertical-align: top;">
+    <form action="" class="layui-form" lay-filter="addclass">
+
+        <input autocomplete="off" class="layui-input" lay-verify="required" name="type" placeholder="" style="display:none" type="text" value="2">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">上级</label>
+                <div class="layui-input-inline">
+                    <select id="ParentID" lay-filter="ParentID" name="ParentID"></select>
+                    <!--<input type="text" name="parentid" placeholder="目录id" autocomplete="off" class="layui-input">-->
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">主键</label>
+                <div class="layui-input-inline">
+                    <input autocomplete="off" class="layui-input layui-disabled" name="ID" placeholder="ID" type="text">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">标题</label>
+                <div class="layui-input-inline">
+                    <input autocomplete="off" class="layui-input" lay-verify="required" name="Title" placeholder="标题" type="text">
+
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">路径</label>
+                <div class="layui-input-inline">
+                    <input autocomplete="off" class="layui-input" name="tag" placeholder="tag" type="text">
+
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">角色</label>
+                <div class="layui-input-inline">
+                    <input autocomplete="off" class="layui-input" name="RoleID" placeholder="角色id必须为guid" type="text" value="00000000-0000-0000-0000-000000000000">
+
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">图标</label>
+                <div class="layui-input-inline">
+                    <input autocomplete="off" class="layui-input" name="icon" placeholder="layui小图标css样式" type="text">
+
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">参数</label>
+                <div class="layui-input-inline">
+                    <input autocomplete="off" class="layui-input" name="Params" placeholder="参数" type="text">
+
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">排序</label>
+                <div class="layui-input-inline">
+                    <input class="layui-input" name="Sort" type="number">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-filter="edit" lay-submit="">修改</button>
+                <button class="layui-btn" lay-filter="add" lay-submit="">新增</button>
+                <button class="layui-btn" lay-filter="del" lay-submit="">删除</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script id="QXS" type="text/html">
+    {{#  layui.each(d.list, function(index, item){ }}
+    <option value="{{item.ID}}">
+        {{item.Title}}
+    </option>
+    {{#  }); }}
+    {{#  if(d.list.length === 0){ }}
+    无数据
+    {{#  } }}
+
+</script>
+<script src="/Common/layim/dist/layui.all.js"></script>
+
+<script>
+    layui.config({
+        base: '/Common/layim/dist/lay/modules/'
+        , version: '1567944922395'
+    }).use(['tree', 'form', 'layer', 'laytpl', 'util'], function () {
+        $ = layui.$;
+        $.ajaxSetup({
+            headers: { "Authorization": "bearer " + window.sessionStorage["_token"] }
+        });
+        var form = layui.form; var layer = layui.layer; var laytpl = layui.laytpl, tree = layui.tree, util = layui.util;
+        $.get("/api/Users/GetToMenu", {}, function (resp) {
+            var my = JSON.parse(resp);
+            var datas = { //数据
+                "title": "Layui常用模块"
+                , "list": my.data
+            };
+            var getTpl = QXS.innerHTML,
+                view = document.getElementById('ParentID');
+            laytpl(getTpl).render(datas, function (html) {
+                view.innerHTML = html;
+            });
+            tree.render({
+                elem: '#class' //指定元素
+                , target: '_blank' //是否新选项卡打开（比如节点返回href才有效）
+                , onlyIconControl: true  //是否仅允许节点左侧图标控制展开收缩
+                , showLine: false  //是否开启连接线
+                , click: function (item) { //点击节点回调
+
+                    form.val("addclass", item.data);
+                    form.render(); //更新全部
+                    //$('#class-view').html('当前节名称：' + item.name + '<br>全部参数：' + JSON.stringify(item));
+                },
+                data: my.data
+            });
+   
+        });
+
+
+
+        //监听提交
+        form.on('submit(edit)', function (data) {
+            if (data.field.ParentID == "") { data.field.ParentID = "00000000-0000-0000-0000-000000000000"; }
+            if (data.field.ParentID == data.field.ID) {
+                layer.alert("上级和主键冲突，请重新设置上级");
+                return false;
+            }
+            $.post("/api/Users/AddMenu", { data: JSON.stringify(data.field) }, function (resp) {
+                resp = JSON.parse(resp);
+                if (resp.Success) {
+                    layer.alert(resp.msg);
+                    window.location.href = "#menu"
+
+                }
+            });
+            return false;
+        });
+
+
+        //监听提交
+        form.on('submit(add)', function (data) {
+            data.field.ID = "00000000-0000-0000-0000-000000000000";
+            if (data.field.ParentID == "") { data.field.ParentID = "00000000-0000-0000-0000-000000000000"; }
+            $.post("/api/Users/AddMenu", { data: JSON.stringify(data.field) }, function (resp) {
+                resp = JSON.parse(resp);
+                if (resp.Success) {
+                    layer.alert(resp.msg);
+                    window.location.href = "#menu"
+
+                }
+            });
+            return false;
+        });
+        //监听提交
+        form.on('submit(del)', function (data) {
+            console.log(data);
+            $.post("/api/Users/DelMenu", { ID: data.field.ID }, function (resp) {
+                resp = JSON.parse(resp);
+                if (resp.Success) {
+                    layer.alert(resp.msg);
+                    window.location.href = "#menu"
+
+                }
+            });
+            return false;
+        });
+    });
+</script>

@@ -1,0 +1,16 @@
+﻿<link href="/Common/layim/dist/css/layui.css" rel="stylesheet" />
+<script src="/Common/layim/dist/layui.all.js"></script>
+
+   
+<div class="layui-container">
+    <div id="settree"></div>
+    <button class="layui-btn layui-btn-sm" lay-demo="getChecked" type="button">设置</button>
+    <!--<button type="button" class="layui-btn layui-btn-sm" lay-demo="setChecked">勾选指定节点</button>-->
+    <button class="layui-btn layui-btn-sm" lay-demo="reload" type="button">重载</button>
+</div>
+
+<script>
+    layui.config({
+        base: '/Common/layim/plugin/webos/SysSet/'
+    }).use('SetRole');
+</script>
