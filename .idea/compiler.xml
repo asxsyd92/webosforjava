@@ -12,9 +12,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="asxsydutils" target="1.5" />
+      <module name="asxsydutils" target="11" />
       <module name="webcore" target="11" />
-      <module name="webos" target="1.5" />
+      <module name="webos" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

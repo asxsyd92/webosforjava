@@ -114,13 +114,20 @@ layui.config({
 
                 if (resp.Success) {
                     layer.close();
-                    layer.alert(resp.msg, {
+                    top.  layer.alert(resp.msg, {
                         skin: 'layui-layer-lan'
                         , closeBtn: 0
                         , anim: 4 //动画类型
                     });
 
                     window.location.href = "/webos/Page/CommonTask/CommonTask.html";
+                }else {
+                    layer.close();
+                   top. layer.alert(resp.msg, {
+                        skin: 'layui-layer-lan'
+                        , closeBtn: 0
+                        , anim: 4 //动画类型
+                    });
                 }
             });
 

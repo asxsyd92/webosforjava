@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="webos-1.0-SNAPSHOT.war">
+    <root id="archive" name="webos.war">
       <element id="artifact" artifact-name="webos:war exploded" />
     </root>
   </artifact>

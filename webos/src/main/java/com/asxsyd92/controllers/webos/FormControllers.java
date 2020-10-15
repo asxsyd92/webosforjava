@@ -28,7 +28,7 @@ import java.util.Map;
 @Route(Key = "/api/Form")
 public class FormControllers extends Controller {
 
-
+     @NotAction
     public static String read(String path) {
         StringBuffer res = new StringBuffer();
         String line = null;
@@ -210,9 +210,9 @@ public class FormControllers extends Controller {
 
         }
 
-        renderJson("/webos/page/from/" + name + ".html");
-       // setAttr("url","/webos/page/from/" + name + ".html");
-
+        //renderJson("/webos/page/from/" + name + ".html");
+       setAttr("url","/webos/page/from/" + name + ".html");
+        renderJson();
     }
 
     @NotAction
@@ -356,7 +356,7 @@ public class FormControllers extends Controller {
 //        var id = Asxsyd92Core.Utils.Data.SQLServer.SqlFromData.SaveFromData(table, data);
 
         if (id.equals(StringUtil.GuidEmpty()) )
-        {
+        {   setAttr("msg", "添加失败！");
             setAttr("Success", false);
             renderJson();
         }else {

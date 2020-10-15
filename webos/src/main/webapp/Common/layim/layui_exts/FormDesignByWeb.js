@@ -635,6 +635,14 @@ layui.define(['jquery', 'layer', 'form', 'common', 'element', 'laytpl', 'tree', 
             $(".as_a_radiodown").click(function (a_this) {
                 utils.RadioDown(a_this.currentTarget);
             });
+
+            //div移动
+            $(".asxsyd92move").mousedown(function (e) { //e鼠标事件
+
+                $(".asxsyd92move").css("cursor", "move"); //改变鼠标指针的形状
+
+
+            });
         }
         ,
         jiazha: function () {
@@ -677,14 +685,19 @@ layui.define(['jquery', 'layer', 'form', 'common', 'element', 'laytpl', 'tree', 
             var obj = new Object(); obj.DesignHtml = $(".asxsud92form").html(); obj.RunHtml = formhtml;
             obj.Title = $(".asxsyd92move").length > 0 ? $(".asxsyd92move")[0].innerText : "未命名的表单";
             obj.DateTime = common.SysOperation._SYS_DATETIME; obj.UserID = common.SysOperation._SYS_GETUSERID; obj.Tab = $("#_fmname").val(); obj.Url = "_sys_url"; obj.ID = "_sys_id";
+            var indexlays =  top.layer.msg("正在请稍等。。。", { icon: 16, shade: 0.5, time: 20000000 });
             $.post("/api/Form/FormDesignHtml", { html: formhtml, name: $("#_rormname").val(), title: obj.Title, type: true, data: JSON.stringify(obj), flow: $("#liucheng").val() }, function (data) {
                 console.log(data);
+                top.layer.close(indexlays);
                 top.window.layer.open({
                     type: 2,
-                    skin: 'layui-layer-rim', //加上边框
-                    area: ['100%', '100%'], //宽高
+                    title: false,
+                    closeBtn: 0,
+                    shadeClose: true,
+                  //  skin: 'layui-layer-rim', //加上边框
+                    area: ['60%', '65%'], //宽高
                     //  content: "/" + data
-                    content: data
+                    content: data.url
                 });
             });
         },
@@ -740,12 +753,13 @@ layui.define(['jquery', 'layer', 'form', 'common', 'element', 'laytpl', 'tree', 
                         utils.ListeningButton();
                     } else {
                         $(".asxsud92form").html(dat.data.designhtml);
-                        $('.asxsyd92move').arrangeable();
+
                         $("#_rormname").val(dat.data.url.split("Debug/")[1].replace(".html", ""));
                         //设置自读项
                         $("#_fmname").attr("disabled", "disabled");
                         form.render(); //更新全部 
                         utils.ListeningButton();
+                        $('.asxsyd92move').arrangeable();
                     }
 
                 });

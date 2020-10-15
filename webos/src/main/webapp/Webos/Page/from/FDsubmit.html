@@ -21,8 +21,23 @@
     <!-- main部分 -->
     <link href="/Common/layim/dist/css/layui.css" rel="stylesheet" />
     <link href="/Common/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <style>
+        .layui-footer {
+            z-index: 400;
+            width: 100%;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            height: 44px;
+            line-height: 44px;
+            background-color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
 </head>
 <body>
+
     <script id="_a_type" type="text/html">
         {{#  layui.each(d.list, function(index, item){ }}
         <option value="{{item.ID}}">
@@ -35,21 +50,21 @@
 
     </script>
     <div class="main-newsdate"></div>
-    <div class="layui-container" style="top:50px">
-        <form class="layui-form layui-form-pane" lay-filter="addinfos">
+    <div class="layui-container">
+        <form class="layui-form " lay-filter="addinfos">
             $FDsubmit$
 
-            <div class="layui-btn-container submittools" style="width:100%;position: fixed;top:0;background: #e6e6e6;">
-                <button class="layui-btn layui-btn-sm" onclick="window.close()">关闭</button>
-                <button class="layui-btn layui-btn-sm" onclick="window.location.reload()">刷新</button>
-                <button class="layui-btn layui-btn-sm" lay-filter="_submit" lay-submit="">处理</button>
-                <button class="layui-btn layui-btn-sm" lay-filter="_submit" lay-submit="">完成</button>
-                <button class="layui-btn layui-btn-sm" lay-filter="_submit" lay-submit="">退回</button>
-                <button class="layui-btn layui-btn-sm" lay-filter="_submit" lay-submit="">打印</button>
-                <button class="layui-btn layui-btn-sm" lay-filter="_submit" lay-submit="">终止</button>
-                <button class="layui-btn layui-btn-sm" lay-filter="_submit" lay-submit="">盖章</button>
-                <button class="layui-btn layui-btn-sm" lay-filter="_submit" lay-submit="">套红</button>
-                <button class="layui-btn layui-btn-sm" lay-filter="_submit" lay-submit="">关联表单</button>
+            <div class="layui-footer layui-btn-container submittools">
+                <button class="layui-btn" onclick="window.close()">关闭</button>
+                <button class="layui-btn " onclick="window.location.reload()">刷新</button>
+                <button class="layui-btn " lay-filter="_submit" lay-submit="">处理</button>
+                <button class="layui-btn " lay-filter="_submit" lay-submit="">完成</button>
+                <button class="layui-btn " lay-filter="_submit" lay-submit="">退回</button>
+                <button class="layui-btn " lay-filter="_submit" lay-submit="">打印</button>
+                <button class="layui-btn " lay-filter="_submit" lay-submit="">终止</button>
+                <button class="layui-btn " lay-filter="_submit" lay-submit="">盖章</button>
+                <button class="layui-btn " lay-filter="_submit" lay-submit="">套红</button>
+                <button class="layui-btn " lay-filter="_submit" lay-submit="">关联表单</button>
             </div>
             <input id="stepid" style="display:none" />
             <input id="nextstepid" style="display:none" />
