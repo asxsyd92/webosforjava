@@ -82,7 +82,6 @@ public class FormControllers extends Controller {
             setAttr("str", ex.getMessage());
         }
         renderJson();
-
     }
 
     @Before({JwtInterceptor.class, POST.class})
