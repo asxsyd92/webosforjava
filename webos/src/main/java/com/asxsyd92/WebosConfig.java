@@ -1,12 +1,9 @@
 package com.asxsyd92;
 
-import com.asxsyd92.controllers.HomeController;
-import com.asxsyd92.controllers.NewController;
+import com.asxsyd92.config.RouteConfig;
+import com.asxsyd92.config.TableConfig;
 import com.asxsyd92.controllers.UeditorController;
-import com.asxsyd92.controllers.webos.FormControllers;
 import com.asxsyd92.controllers.webos.LoginControllers;
-import com.asxsyd92.controllers.webos.UsersControllers;
-import com.asxsyd92.dal.RoleAppDal;
 import com.jfinal.config.*;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.activerecord.CaseInsensitiveContainerFactory;
@@ -14,6 +11,7 @@ import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.server.undertow.UndertowServer;
 import com.jfinal.template.Engine;
 import com.jwt.JwtInterceptor;
+
 
 
 public class WebosConfig extends JFinalConfig {
@@ -26,6 +24,7 @@ public class WebosConfig extends JFinalConfig {
      *      启动入口类放置用于启动的 main 方法
      */
     public static void main(String[] args) {
+
         UndertowServer.start(WebosConfig.class, 89, true);
     }
 
@@ -37,21 +36,19 @@ public class WebosConfig extends JFinalConfig {
 
 
       me.setDevMode(true);
+        //开启支持注解，支持 Controller、Interceptor 之中使用 @Inject 注入业务层，并且自动实现 AOP
+        me.setInjectDependency(true);
         me.setError404View("/error.html");
         me.setError500View("/error.html");
+     //   me.setJsonFactory(new FastJsonFactory());
     }
 
     public void configRoute(Routes me) {
         //me.setBaseViewPath("/webapp");
         me.add(new RouteConfig());
-      me.add("/api/getnews", HomeController.class);
-      //  me.add("/api/form", FormControllers.class);
-        me.add("/api/Article", NewController.class);
-        me.add("/api/taobao",NewController.class);
-        me.add("/", HomeController.class);
-        me.add("/api/ApiLogin", LoginControllers.class);
-        me.add("/ueditor", UeditorController.class);
-        me.add("/api/Users", UsersControllers.class);
+
+       me.add("/api/ueditor", UeditorController.class);
+       // me.add("/api/Users", UsersControllers.class);
 
     }
 
@@ -69,19 +66,25 @@ public class WebosConfig extends JFinalConfig {
         String url=getProperty("jdbcUrl");
         String user=getProperty("user");
         String pw=getProperty("password");
-        DruidPlugin druidPlugin = new DruidPlugin(url,user, pw);
+        String driver=getProperty("driver");
+        DruidPlugin druidPlugin = new DruidPlugin(url,user, pw,driver);
+
 
         me.add(druidPlugin);
-
 
         ActiveRecordPlugin arp = new ActiveRecordPlugin(druidPlugin);
        arp. setContainerFactory(new CaseInsensitiveContainerFactory(true));
        // arp.getEngine().setToClassPathSourceFactory();
         arp.setShowSql(true);
         arp.addSqlTemplate("/sql/webos.sql");
-        arp.addMapping("RoleApp", RoleAppDal.class);
+        arp.addSqlTemplate("/sql/oa.sql");
+       // arp.setDialect(new SqlServerDialect());
+       // arp.addMapping("RoleApp", RoleAppDal.class);
        // arp.setShowSql(getPropertyToBoolean("showSql",true));
+        TableConfig.mapping("com.asxsyd92.modle",arp);
+
         me.add(arp);
+        System.out.println(arp.getConfig());
 
 
 
@@ -90,11 +93,13 @@ public class WebosConfig extends JFinalConfig {
     }
     public void configInterceptor(Interceptors me)
     {
-    //me.add(new JwtTokenInterceptor());
         me.add(new JwtInterceptor()); // 权限拦截器
     }
     public void configHandler(Handlers me) {
+       // me.add(new UrlSkipHandler("^/websocket.ws", false));
+       // me.add(new WebSocketHandler("/websocket"));
 
+        me.add(new WebSocketHandler("^/websocket"));
     }
 
 

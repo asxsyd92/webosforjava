@@ -14,6 +14,10 @@
           <element id="module-output" name="webos" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />
+          <element id="library" level="project" name="Maven: com.taobao.api:taobao-sdk-java-auto:1564051214605.20201229" />
+          <element id="library" level="project" name="Maven: com.thetransactioncompany:cors-filter:2.5" />
+          <element id="library" level="project" name="Maven: com.thetransactioncompany:java-property-utils:1.9.1" />
           <element id="library" level="project" name="Maven: javax.xml.bind:jaxb-api:2.3.0" />
           <element id="library" level="project" name="Maven: com.sun.xml.bind:jaxb-impl:2.3.0" />
           <element id="library" level="project" name="Maven: com.sun.xml.bind:jaxb-core:2.3.0" />
@@ -21,11 +25,11 @@
           <element id="archive" name="webcore-1.0.jar">
             <element id="module-output" name="webcore" />
           </element>
-          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:4.0.1" />
           <element id="library" level="project" name="Maven: org.apache.directory.studio:org.apache.commons.codec:1.8" />
           <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.4" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.2" />
-          <element id="library" level="project" name="Maven: com.alibaba:druid:1.0.29" />
+          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:4.0.1" />
+          <element id="library" level="project" name="Maven: com.alibaba:druid:1.0.23" />
           <element id="library" level="project" name="Maven: org.json:org.json:chargebee-1.0" />
           <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.68" />
           <element id="library" level="project" name="Maven: io.jsonwebtoken:jjwt:0.9.1" />
@@ -35,6 +39,7 @@
           <element id="library" level="project" name="Maven: com.auth0:java-jwt:3.3.0" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.11" />
           <element id="library" level="project" name="Maven: e-iceblue:spire.office.free:3.1.1" />
+          <element id="library" level="project" name="Maven: com.microsoft.sqlserver:sqljdbc4:4.0" />
           <element id="library" level="project" name="Maven: com.jfinal:jfinal-undertow:2.2" />
           <element id="library" level="project" name="Maven: io.undertow:undertow-core:2.0.32.Final" />
           <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.4.0.Final" />
@@ -48,6 +53,9 @@
           <element id="archive" name="asxsydutils-1.0.jar">
             <element id="module-output" name="asxsydutils" />
           </element>
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.16" />
+          <element id="library" level="project" name="Maven: org.ehcache:ehcache:3.5.2" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
         </element>
       </element>
       <element id="directory" name="META-INF">

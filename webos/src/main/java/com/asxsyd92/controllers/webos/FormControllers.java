@@ -2,30 +2,36 @@ package com.asxsyd92.controllers.webos;
 
 
 import com.alibaba.fastjson.JSON;
-import com.asxsyd92.bll.DictionaryBll;
-import com.asxsyd92.utils.Unity;
 import com.asxsyd92.annotation.Route;
+import com.asxsyd92.service.DictionaryService;
+import com.asxsyd92.service.TaskService;
+import com.asxsyd92.modle.CommonTask;
+import com.asxsyd92.modle.Dictionary;
+import com.asxsyd92.utils.JosnUtils;
 import com.asxsyd92.utils.StringUtil;
+import com.asxsyd92.utils.Unity;
 import com.asxsyd92.utils.data.MySql;
 import com.asxsyd92.utils.data.mysqlserver.FromData;
 import com.jfinal.aop.Before;
+import com.jfinal.aop.Clear;
 import com.jfinal.core.Controller;
 import com.jfinal.core.NotAction;
 import com.jfinal.ext.interceptor.GET;
 import com.jfinal.ext.interceptor.POST;
-import com.jfinal.kit.Kv;
+import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
 import com.jwt.JwtInterceptor;
 import io.jsonwebtoken.Claims;
 
-import javax.servlet.ServletContext;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-@Route(Key = "/api/Form")
+
+@Route(Key = "/api/form")
 public class FormControllers extends Controller {
 
      @NotAction
@@ -50,11 +56,12 @@ public class FormControllers extends Controller {
     public  void FormDesignYL()
     {
         try {
+            PropKit.use("config.properties");
             String html = getPara("html");
-            ServletContext s1 = this.getRequest().getServletContext();
-            String temp = s1.getRealPath("/"); //(关键)
-            String m_localPath = temp + "/webos/page/from/FDsubmit.html";
-            String path = m_localPath;
+            String temp= PropKit.get("fromurl");
+                   // PropKit.get("fromurl");
+
+            String path = temp + "/webos/page/from/FDsubmit.html";
 
             File file = new File(path);
             if (!file.exists()) {
@@ -88,6 +95,8 @@ public class FormControllers extends Controller {
 
     public void FormDesignHtml()
     {
+        PropKit.use("config.properties");
+       // loadPropertyFile("config.properties");
         String html = getPara("html");
         String name = getPara("name");
         String title = getPara("title");
@@ -96,12 +105,11 @@ public class FormControllers extends Controller {
         String flow = getPara("flow");
 
         name = name.toLowerCase();
-        var r = name;
+        //Record r = name;
         if (type) { name = "Debug/" + name; } else { name = "Release/" + name; }
-        var tl = FormDesign(html);
-        ServletContext s1 = getRequest().getServletContext();
-        String m_localPath = s1.getRealPath("/"); //(关键)
-     //   String m_localPath = AppDomain.CurrentDomain.BaseDirectory;
+        String tl = FormDesign(html);
+
+        String m_localPath=PropKit.get("fromurl");
         String path = m_localPath + "/webos/page/from/" + name + ".html";
 
         // 判断文件是否存在，不存在则创建，否则读取值显示到窗体
@@ -116,31 +124,51 @@ public class FormControllers extends Controller {
         //var fmdata= SqlFromData.GetFromData("SysFormDesign",new { Url = "/webos/page/from/" + name + ".html" }).FirstOrDefault();
         String ulr = "";
         if (flow.equals(StringUtil.GuidEmpty())) {
-            ulr = "?flowid=" + flow;
+            ulr = "flowid=" + flow+"&istask=true";
         }
         if (fmdata != null)
         {
             Record os=new Record();
 
             Map h5 = JSON.parseObject(data, Map.class);
-            os.set("id",fmdata.getStr("id"));
+            os.setColumns(h5);
           //  data = Models.Unity.OperationJson(data,User);
           //  var os = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<object, object>>(data);
           //  var obj = fmdata as Dictionary<Object, Object>;
           //  os["ID"] = obj["ID"];
           //  SqlFromData.SaveFromData("SysFormDesign", os.ToJson());
-            String id= FromData.save(os,"sysformdesign");
+            try {
+                FromData.save(os,"sysformdesign");
+            }catch (Exception ex){
+                System.out.println(ex);
+            }
+
 
             Record rp= Db.findById("roleapp","tag","/page/from/" + name + ".html" + ulr);
-        if (rp!=null){
+        if (rp!=null) {
+            Record rps = new Record();
+            rps.set("id", rp.get("id"));
+            rps.set("title", title);
+            rps.set("tag", "/page/from/" + name + ".html" + ulr);
+            rps.set("ParentID", "1ca18548-e361-4c42-bfa1-f086f14e0669");
+            try {
+                FromData.save(rps, "roleapp");
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }else
+        {
             Record rps=new Record();
             rps.set("id",StringUtil.getPrimaryKey());
             rps.set("title",title);
             rps.set("tag","/page/from/" + name + ".html" + ulr);
             rps.set("ParentID","1ca18548-e361-4c42-bfa1-f086f14e0669");
-            FromData.save(os,"roleapp");
+            try {
+                FromData.save(rps,"roleapp");
+            }catch (Exception ex){
+                System.out.println(ex.getMessage());
             }
-
+        }
         }
         else {
             String keyid =StringUtil.GuidEmpty();
@@ -150,13 +178,23 @@ public class FormControllers extends Controller {
             Map h5 = JSON.parseObject(data, Map.class);
             os.setColumns(h5);
             os.set("id",keyid);
-            String id= FromData.save(os,"sysformdesign");
+            try {
+                String id= FromData.save(os,"sysformdesign");
+            }catch (Exception ex){
+                System.out.println(ex);
+            }
+
             Record rps=new Record();
             rps.set("id",StringUtil.getPrimaryKey());
             rps.set("title",title);
             rps.set("tag","/page/from/" + name + ".html" + ulr);
             rps.set("ParentID","1ca18548-e361-4c42-bfa1-f086f14e0669");
-            FromData.save(os,"roleapp");
+            try {
+                FromData.save(rps,"roleapp");
+            }catch (Exception ex){
+                System.out.println(ex.getMessage());
+            }
+
           //  SqlFromData.SaveFromData("RoleApp", new { ID = keyid, Title= title, ParentID ="1ca18548-e361-4c42-bfa1-f086f14e0669".ToGuid(), tag= "/page/from/" + name + ".html"+ ulr }.ToJson());
         }
         File file = new File(path);
@@ -210,7 +248,7 @@ public class FormControllers extends Controller {
         }
 
         //renderJson("/webos/page/from/" + name + ".html");
-       setAttr("url","/webos/page/from/" + name + ".html");
+       setAttr("url","/webos/page/from/" + name + ".html?istask="+true);
         renderJson();
     }
 
@@ -218,11 +256,9 @@ public class FormControllers extends Controller {
     public    String FormDesign(String html)
     {
         try {
+            PropKit.use("config.properties");
+            String temp=PropKit.get("fromurl");
 
-//            ServletContext s1 = this.getRequest().getServletContext();
-////            String temp = s1.getRealPath("/"); //(关键)
-            ServletContext s1 = getRequest().getServletContext();
-            String temp = s1.getRealPath("/"); //(关键)
             String m_localPath = temp + "/webos/page/from/FDsubmit.html";
             String path = m_localPath;
 
@@ -254,43 +290,7 @@ public class FormControllers extends Controller {
         }
 
             return  "";
-//        string m_localPath = AppDomain.CurrentDomain.BaseDirectory;
-//        string path = m_localPath + "wwwroot/webos/page/from/FDsubmit.html";
-//        Encoding code = Encoding.GetEncoding("utf-8");
-//        // 读取模板文件
-//        // string temp = HttpContext.Current.Server.MapPath("Text.htm");
-//        StreamReader sr = null;
-//        string str = "";
-//        try
-//        {
-//            sr = new StreamReader(path, code);
-//            str = sr.ReadToEnd(); // 读取文件
-//            sr.Close();
-//        }
-//        catch (Exception exp)
-//        {
-//            //sr.Close();
-//            return exp.Message; ;
-//
-//        }
-//
-//        // 替换内容
-//        // 这时,模板文件已经读入到名称为str的变量中了
-//        str = str.Replace("$FDsubmit$", html);
-//        // 写文件
-//        try
-//        {
-//
-//            return str;
-//        }
-//        catch (Exception ex)
-//        {
-//            return ex.Message;
-//        }
-//        finally
-//        {
-//            // sw.Close();
-     //  }
+
     }
 
     public  void  FormTable(){
@@ -298,7 +298,7 @@ public class FormControllers extends Controller {
         String table = getPara("table");
         String title = getPara("title");
         if (id != null && id != "") {
-           Record da= Db.findById("SysFormDesign",id);
+           Record da= Db.findById("sysformdesign",id);
            if(da!=null){
                setAttr("code", 0);
                setAttr("msg", "获取成功");
@@ -314,7 +314,7 @@ public class FormControllers extends Controller {
 
     }else {
         //第一步查询SysFormDesign是否已经存在已有表单
-        Record ta= Db.findById("SysFormDesign","Tab",table);
+        Record ta= Db.findById("sysformdesign","Tab",table);
         if (ta != null)
         {
             setAttr("code", 0);
@@ -322,7 +322,11 @@ public class FormControllers extends Controller {
             setAttr("data", ta);
         }
         else {
-            // var list = SqlFromData.GetTableStructure(table);
+            List<Record> list=  MySql.getMySqlableStructure(table);
+            setAttr("code", 0);
+            setAttr("msg", "-1");
+            setAttr("data", list);
+        //    var list = SqlFromData.GetTableStructure(table);
             //return JSONhelper.ToJson(new { code = 0, msg = "-1", data = list });
         }
         }
@@ -336,8 +340,8 @@ public class FormControllers extends Controller {
 
         Claims claims = getAttr("claims");
         Unity.getJsonSetData(data,claims);
-      //  boolean istask= getParaToBoolean("istask");;
-        int tag = 0;
+        boolean istask= getParaToBoolean("istask");;
+        String tag = "";
         Record os=new Record();
 
         Map user = JSON.parseObject(data, Map.class);
@@ -351,63 +355,94 @@ public class FormControllers extends Controller {
         }
       Object cls=  os.get("Classid");
         //var cls=  os.FirstOrDefault(c => c.Key.ToString() == "");
-       String id= FromData.save(os,table);
-//        var id = Asxsyd92Core.Utils.Data.SQLServer.SqlFromData.SaveFromData(table, data);
-
+        String id=StringUtil.GuidEmpty();
+        try {
+            id= FromData.save(os,table);
+        }catch (Exception ex){
+            setAttr("msg", ex.getMessage());
+            setAttr("Success", false);
+            renderJson();
+        }
         if (id.equals(StringUtil.GuidEmpty()) )
         {   setAttr("msg", "添加失败！");
             setAttr("Success", false);
             renderJson();
         }else {
-            setAttr("Success", true);
-            setAttr("msg", "添加成功");
-            renderJson();
+            //是否存导公共task表中统一管理
+            if (istask) {
+
+                CommonTask DAS = TaskService.Get(id);
+                Object _user =  claims.get("id");
+                Object username =claims.get("name");
+                if (DAS == null) {
+                    CommonTask task = new CommonTask();
+                    task.setID(StringUtil.getPrimaryKey());
+                    task.setInstanceID(id);
+                    task.setTTable(table);
+                    task.setSenderName(username.toString());
+                    task.setSenderID(_user.toString()) ;
+                    task.setAddTime(new Date());
+                    if (cls!=null){
+                        task.setClassid(cls.toString());
+                    }else {
+                        task.setClassid(StringUtil.GuidEmpty());
+                    }
+
+                    try {
+                        if (os.get("title")!=null){
+                            task.setTitle(os.get("title"));
+                        }
+
+                    } catch(Exception ex)
+                    {
+                        System.out.println(ex.getMessage());
+                        task.setTitle(os.get("标题不错在"));
+
+                    }
+                    try {
+                        tag= FromData.save(task.toRecord(),"commontask");
+                    }catch (Exception ex){
+                        setAttr("msg", ex.getMessage());
+                        setAttr("Success", false);
+                        renderJson();
+                    }
 
 
-//            if (istask) {
-//
-//                var DAS = CommonTaskDal.Instance.Get(new {
-//                    InstanceID = id
-//                });
-//                var jsonData = LitJSONCore.JsonMapper.ToObject(data);
-//                var user = User.Claims.FirstOrDefault(c = > c.Type == JwtClaimTypes.Id).Value;
-//                var username = User.Claims.FirstOrDefault(c = > c.Type == JwtClaimTypes.Name).Value;
-//                if (DAS == null) {
-//                    WebOS.Modle.CommonTask task = new WebOS.Modle.CommonTask();
-//                    task.ID = Guid.NewGuid();
-//                    task.InstanceID = id;
-//                    task.t_Table = table;
-//                    task.SenderName = username;
-//                    task.SenderID = user.ToGuid();
-//                    task.AddTime = System.DateTime.Now;
-//                    task.Classid = cls.Key == null ? Guid.Empty : cls.Value.ToString().ToGuid();
-//                    try {
-//                        task.Title = jsonData["Title"].ToString();
-//                    } catch
-//                    {
-//                        task.Title = "标题不错在！";
-//                    }
-//                    tag = CommonTaskDal.Instance.Insert(task);
-//
-//                } else {
-//                    try {
-//                        DAS.Title = jsonData["Title"].ToString();
-//                    } catch
-//                    {
-//                        DAS.Title = "标题不错在！";
-//                    }
-//                    tag = CommonTaskDal.Instance.Update(DAS);
-//
-//                }
-//                if (tag > 0) {
-//                    return JSONhelper.ToJson(new {
-//                        msg = "添加成功！", Success = true
-//                    });
-//                } else return JSONhelper.ToJson(new {
-//                    msg = "添加失败！", Success = false
-//                });
-//            }
+                } else {
+                    try {
+                        if (os.get("title")!=null){
+                            DAS.setTitle(os.get("title"));
+                        }
 
+                    } catch(Exception ex)
+                    {
+                        System.out.println(ex.getMessage());
+                        DAS.setTitle(os.get("标题不错在"));
+
+                    }
+                    try {
+                        tag= FromData.save(DAS.toRecord(),"commontask");
+                    }catch (Exception ex){
+                        setAttr("msg", ex.getMessage());
+                        setAttr("Success", false);
+                        renderJson();
+                    }
+
+                }
+                if (!tag.equals(StringUtil.GuidEmpty())) {
+                    setAttr("Success", true);
+                    setAttr("msg", "成功");
+                    renderJson();
+                } else {
+                    setAttr("Success", false);
+                    setAttr("msg", "失败");
+                    renderJson();
+                };
+            }
+else {
+                setAttr("Success", true);
+                setAttr("msg", "成功");
+            }
 
         }
         renderJson();
@@ -416,10 +451,10 @@ public class FormControllers extends Controller {
 
     @Before({JwtInterceptor.class, GET.class})
     public void  GetCheckName() {
+        PropKit.use("config.properties");
         String Name = getPara("Name");
-        ServletContext s1 = this.getRequest().getServletContext();
-        String m_localPath = s1.getRealPath("/"); //(关键)
-        //   string m_localPath = AppDomain.CurrentDomain.BaseDirectory;
+        String m_localPath=PropKit.get("fromurl");
+
         String path = m_localPath + "/webos/page/from/Debug/" + Name.toLowerCase() + ".html";
         File file = new File(path);
         if (!file.exists()) {
@@ -433,11 +468,47 @@ public class FormControllers extends Controller {
         }
         renderJson();
     }
-    public void GetDictionaryByID( )
-    {
+    @Clear
+    public void GetDictionaryByID() throws Exception {
         String id = getPara("id");
-        setAttr("data", DictionaryBll.Instance().GetDictionaryByID(id));
+        Object da=   new JosnUtils<Dictionary>().toJson(DictionaryService.GetDictionaryByID(id));
+        setAttr("data", da);
         renderJson();
+    }
+    @Before({JwtInterceptor.class, POST.class})
+    public  void  FormDel(){
+        PropKit.use("config.properties");
+        String key = getPara("key");
+        String url = getPara("url");
+        boolean tag0 = Db.deleteById("SysFormDesign","ID",key);
+        Db.deleteById("RoleApp","ID",key);
+
+        if (tag0)
+        {
+
+            String temp =   PropKit.get("fromurl");
+            String m_localPath = temp + url;
+            String path = m_localPath;
+
+            File file = new File(path);
+
+            try {
+                if (!file.exists()){}else {
+                    file.delete();
+                }
+
+            } catch (Exception ex) {
+                setAttr("msg", "删除成功！但是文件处理失败！"+ex.getMessage());
+        }
+            setAttr("msg", "删除成功！");
+            setAttr("success", true);
+
+        }else {
+            setAttr("msg", "删除失败！");
+            setAttr("success", false);
+        }
+
+     renderJson();
     }
 }
 

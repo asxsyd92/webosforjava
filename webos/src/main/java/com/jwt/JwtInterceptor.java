@@ -15,10 +15,13 @@ public class JwtInterceptor implements Interceptor {
 
     // 拦截每个请求
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Invocation inv) {
-        System.out.println("开始进入拦截器检验jwt头部是否含有Authorization方法！");
+
+
+      //  inv.getController().getResponse().addHeader("Access-Control-Allow-Origin", "*");
         // 通过url得到token请求头是否包含Authorization
         String jwt = request.getHeader("Authorization");
         System.out.println(jwt);
+
         try {
             // 检测请求头是否为空
             if (jwt == null) {
@@ -51,6 +54,7 @@ public class JwtInterceptor implements Interceptor {
     public void intercept(Invocation inv) {
         Controller controller = inv.getController();
         Method method = inv.getMethod();
+        System.out.println(controller.getRequest().getRequestURI());
         preHandle(controller.getRequest(),controller.getResponse(),inv);
         //Class clazz = inv.getTarget().getClass();
      /*   if (handleClass(clazz, method, controller) && handleMethod(method, controller)) {
@@ -62,4 +66,6 @@ public class JwtInterceptor implements Interceptor {
         inv.getController().getRequest().removeAttribute("claims");
 
     }
+
+
 }

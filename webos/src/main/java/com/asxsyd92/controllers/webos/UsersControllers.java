@@ -1,28 +1,36 @@
 package com.asxsyd92.controllers.webos;
 
 import com.alibaba.fastjson.JSON;
+
 import com.asxsyd92.annotation.Route;
-import com.asxsyd92.bll.RoleAppBll;
-import com.asxsyd92.bll.UsersBll;
+import com.asxsyd92.service.RoleAppService;
+import com.asxsyd92.service.UsersService;
+import com.asxsyd92.modle.RoleApp;
+import com.asxsyd92.modle.Users;
+import com.asxsyd92.modle.xRoleApp;
+import com.asxsyd92.socket.user.FriendItem;
+import com.asxsyd92.socket.user.Im;
+import com.asxsyd92.socket.user.Mine;
+import com.asxsyd92.utils.JosnUtils;
 import com.jfinal.aop.Before;
-import com.jfinal.core.ActionKey;
 import com.jfinal.core.Controller;
 import com.jfinal.ext.interceptor.GET;
 import com.jfinal.ext.interceptor.POST;
+import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
+
 import com.jwt.JwtInterceptor;
 import io.jsonwebtoken.Claims;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.security.NoSuchAlgorithmException;
+import java.util.*;
+import java.util.stream.Collectors;
 
 import static com.asxsyd92.utils.MD5.MD5_32bit;
 
 
-@Route(Key = "/api/User")
+@Route(Key = "/api/users")
 public class UsersControllers extends Controller {
 
     @Before({JwtInterceptor.class, POST.class})
@@ -34,12 +42,14 @@ public class UsersControllers extends Controller {
             String Role = claims.get("role").toString();
             int role = Integer.parseInt(Role);
             List<Record> list = new ArrayList<>();
-            List<Record> da = UsersBll.Instance().GetAppList(role);
-            for (Record perm : da) {
-                List<Record> id = UsersBll.Instance().getChildren(perm.getStr("ID"), Integer.parseInt(Role));
-                perm.set("children", id);
-                list.add(perm);
+            Object da = null;
+            if (role == 1) {
+                da = new JosnUtils<xRoleApp>().toJson(RoleAppService.GetxAppList(role));
+            } else {
+                da = new JosnUtils<RoleApp>().toJson(RoleAppService.GetAppList(role));
             }
+
+
             setAttr("msg", "");
             setAttr("code", 0);
             setAttr("count", 0);
@@ -55,14 +65,15 @@ public class UsersControllers extends Controller {
         }
         renderJson();
     }
-    @Before({JwtInterceptor.class, GET.class})
 
-    public void UserList() {
+    @Before({JwtInterceptor.class, GET.class})
+    public void UsersList() {
         try {
+            //   Record record=   getModel(Record.class, "");
             int page = getParaToInt("page");
             int limit = getParaToInt("limit");
-           // String title = getPara("title");
-            Page<Record> tag = UsersBll.Instance().GetUserList(page, limit, "");
+            // String title = getPara("title");
+            Page<Record> tag = UsersService.GetUserList(page, limit, "");
             setAttr("msg", "");
             setAttr("code", 0);
             setAttr("count", tag.getTotalPage());
@@ -78,15 +89,13 @@ public class UsersControllers extends Controller {
         renderJson();
 
     }
-    @Before({JwtInterceptor.class, POST.class})
-   // @ActionKey("api/Users/OrganizeAndRole")
 
-    public void OrganizeAndRole()
-    {
+    @Before({JwtInterceptor.class, POST.class})
+    public void OrganizeAndRole() {
 
         try {
 
-            List<Record> tag = UsersBll.Instance().GetOrganizeAndRole();
+            List<Record> tag = UsersService.GetOrganizeAndRole();
             setAttr("msg", "1部门，0角色");
             setAttr("code", 0);
             setAttr("count", 0);
@@ -102,63 +111,57 @@ public class UsersControllers extends Controller {
         renderJson();
 
     }
-    @Before({JwtInterceptor.class, POST.class})
-    //@ActionKey("api/Users/UsersSave")
-    public  void UsersSave(){
-        try {
-            String data=getPara("data");
 
-            Record record=new Record();
+    @Before({JwtInterceptor.class, POST.class})
+    public void UsersSave() {
+        try {
+            String data = getPara("data");
+
+            Record record = new Record();
 
             Map user = JSON.parseObject(data, Map.class);
             record.setColumns(user);
-          if (record.getStr("ID")=="00000000-0000-0000-0000-000000000000"){
-              //检查帐号是否重复
-              Record us = UsersBll.Instance().GetUserByAccount(record.getStr( "Account")); //SqlFromData.GetFromData("S_Teacher", new { S_Account = ter["S_Account"].ToString().ToLower() }).FirstOrDefault();
-              if (us != null)
-              {   setAttr("msg", "系统中存在相同帐号，请更换账号再试！");
-                  setAttr("Success", false);
+            if (record.getStr("ID") == "00000000-0000-0000-0000-000000000000") {
+                //检查帐号是否重复
+                Record us = UsersService.GetUserByAccount(record.getStr("Account")); //SqlFromData.GetFromData("S_Teacher", new { S_Account = ter["S_Account"].ToString().ToLower() }).FirstOrDefault();
+                if (us != null) {
+                    setAttr("msg", "系统中存在相同帐号，请更换账号再试！");
+                    setAttr("Success", false);
 
-              }else {
-                  String id=UUID.randomUUID().toString();
-                  record.set("ID",id);
-                  String str = id.toLowerCase() + "123456";
-                  String newstr= MD5_32bit(str);
-                  //获取配置中的密码
-                  record.set("Account",user.get("Account").toString().toLowerCase());
-                  record.set("Password" , newstr);
+                } else {
+                    String id = UUID.randomUUID().toString();
+                    record.set("ID", id);
+                    String str = id.toLowerCase() + "123456";
+                    String newstr = MD5_32bit(str);
+                    //获取配置中的密码
+                    record.set("Account", user.get("Account").toString().toLowerCase());
+                    record.set("Password", newstr);
 
-                  Boolean ids = UsersBll.Instance().Insert(record);
-                  if (ids)
-                  {
+                    Boolean ids = UsersService.Insert(record);
+                    if (ids) {
 
-                      setAttr("msg", "保存成功");
-                      setAttr("Success", true);
-                  }
-                  else {
-                      setAttr("msg", "保存失败");
-                      setAttr("Success", true);
-                  }
+                        setAttr("msg", "保存成功");
+                        setAttr("Success", true);
+                    } else {
+                        setAttr("msg", "保存失败");
+                        setAttr("Success", true);
+                    }
 
-              }
+                }
 
 
+            } else {
+                Boolean ids = UsersService.Insert(record);
+                if (ids) {
 
-          }
-else {
-              Boolean ids = UsersBll.Instance().Insert(record);
-              if (ids)
-              {
-
-                  setAttr("msg", "保存成功");
-                  setAttr("Success", true);
-              }
-              else {
-                  setAttr("msg", "保存失败");
-                  setAttr("Success", true);
-              }
-          }
-        }catch (Exception ex){
+                    setAttr("msg", "保存成功");
+                    setAttr("Success", true);
+                } else {
+                    setAttr("msg", "保存失败");
+                    setAttr("Success", true);
+                }
+            }
+        } catch (Exception ex) {
             setAttr("msg", ex.getMessage());
             setAttr("Success", true);
         }
@@ -249,8 +252,124 @@ else {
         renderJson();
     }
 
+    @Before({JwtInterceptor.class, POST.class})
+    public void EditPw() {
+        Claims claims = getAttr("claims");
+        String id = claims.get("id").toString();
+        String old = getPara("old");
+        String pw = getPara("pw");
 
-    public  void  GetToMenu(){
-         RoleAppBll.Instance().GetAllApp();
+        try {
+            Record da = Db.findById("Users", "id", id);
+            if (da != null) {
+                //加密后的字符串
+                String str = da.getStr("ID").toLowerCase() + old;
+                String newstr = MD5_32bit(str);
+                if (da.getStr("Password").equals(newstr)) {
+                    String nstr = da.getStr("ID").toLowerCase() + pw;
+                    String newstrs = MD5_32bit(nstr);
+                    da.set("Password", newstrs);
+                    if (Db.update("Users", "ID", da)) {
+                        setAttr("msg", "修改成功！");
+                        setAttr("success", true);
+                    } else {
+
+                        setAttr("msg", "修改失败！");
+                        setAttr("success", false);
+                    }
+
+                } else {
+                    setAttr("msg", "原密码错误！");
+                    setAttr("success", false);
+                }
+            }
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+
+        renderJson();
     }
+
+    @Before({JwtInterceptor.class, POST.class})
+    public void DelMenu() {
+        String iD = getPara("id");
+        if (RoleAppService.DelByID(iD)) {
+            setAttr("msg", "成功！");
+            setAttr("success", true);
+        } else {
+            setAttr("msg", "失败！");
+            setAttr("success", false);
+        }
+        renderJson();
+    }
+
+    public void GetUsersTreeAsync() {
+        try {
+            List<Users> users = UsersService.GetUsersTreeAsync();
+            setAttr("msg", "获取成功");
+            setAttr("code", 0);
+            setAttr("count", 0);
+            setAttr("data", users);
+            setAttr("success", true);
+        } catch (Exception ex) {
+            setAttr("msg", "获取成功");
+            setAttr("code", 0);
+            setAttr("count", 0);
+            setAttr("data", null);
+
+        }
+        renderJson();
+    }
+
+    public void GetUsersListAsync()
+    {
+     try {
+            System.out.println("jn");
+        List<Record> da = UsersService.getUserAll();//.GetUsersList("", "", 0, 100);
+       // Claims claims = getAttr("claims");
+            String id = getPara("id");
+        List<Record> my=  da.stream().filter(c->c.get("id").equals(id)).collect(Collectors.toList());
+        Mine mine = new Mine();
+        if (my.size()>0){
+            Record m=my.get(0);
+            mine.username = m.getStr("name");
+            mine.avatar = "http://cdn.firstlinkapp.com/upload/2016_6/1465575923433_33812.jpg";
+            mine.id = m.getStr("id");
+            mine.sign = m.getStr("sign");
+            mine.status = "1";
+        }
+
+        //查找组织架构
+
+    Map<String, List<Record>> map =da.stream().collect(Collectors.groupingBy(c->c.get("organize")));
+        Set<Map.Entry<String, List<Record>>> entry =  map.entrySet();
+        List<FriendItem>  j= new ArrayList();
+        for (Map.Entry<String, List<Record>> m : entry) {
+            FriendItem o=new FriendItem();
+            o.groupname=m.getKey();
+            o.id=m.getValue().get(0).getStr("id");
+          o.online=1;
+          o.list=m.getValue();
+          j.add(o);
+        }
+        List<Im> list = new ArrayList<Im>();
+        Im o=new Im();
+        o.mine=mine;
+        o.group="";
+        o.friend=j;
+            setAttr("msg", "获取成功");
+            setAttr("code", 0);
+            setAttr("count", 0);
+            setAttr("data", o);
+        }catch (Exception ex){
+
+            setAttr("msg", "获取成功");
+            setAttr("code", 0);
+            setAttr("count", 0);
+            setAttr("data", null);
+        }
+        renderJson();
+     //   return Asxsyd92Core.Utils.JSONhelper.ToJson(new { code = 0, msg = "", count = da.Count == 0 ? 0 : da.First().Count, data = list[0] }, false);
+    }
+
 }

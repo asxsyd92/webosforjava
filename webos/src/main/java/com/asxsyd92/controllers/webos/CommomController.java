@@ -1,7 +1,14 @@
 package com.asxsyd92.controllers.webos;
 
+import com.alibaba.fastjson.JSON;
 import com.asxsyd92.annotation.Route;
-import com.asxsyd92.bll.CommomBll;
+import com.asxsyd92.service.CommomService;
+import com.asxsyd92.service.DictionaryService;
+import com.asxsyd92.modle.Dictionary;
+import com.asxsyd92.utils.JosnUtils;
+import com.asxsyd92.utils.StringUtil;
+import com.asxsyd92.utils.Unity;
+import com.asxsyd92.utils.data.mysqlserver.FromData;
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
 import com.jfinal.ext.interceptor.GET;
@@ -10,11 +17,75 @@ import com.jfinal.kit.Kv;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
-import com.jfinal.plugin.activerecord.SqlPara;
 import com.jwt.JwtInterceptor;
+import io.jsonwebtoken.Claims;
 
-@Route(Key = "/Common")
+import java.util.Map;
+
+@Route(Key = "/api/common")
 public class CommomController extends Controller {
+
+    /// <summary>
+    /// 公共单表保存
+    /// </summary>
+    /// <param name="tab"></param>
+    /// <param name="data"></param>
+    /// <returns></returns>
+    @Before({JwtInterceptor.class, POST.class})
+    public void save()
+    {
+        String tab= getPara("tab");
+        String data= getPara("data");
+        if (tab == null || tab == "") {
+            setAttr("success", false);
+            setAttr("msg", "标准符错误！");
+        }else {
+            Claims claims = getAttr("claims");
+            Unity.getJsonSetData(data,claims);
+            Record os=new Record();
+            Map da = JSON.parseObject(data, Map.class);
+            os.setColumns(da);
+            String id="";
+            try {
+                id= FromData.save(os,tab);
+            }catch (Exception ex){
+                setAttr("msg", ex.getMessage());
+                setAttr("success", false);
+                renderJson();
+            }
+            if (id.equals(StringUtil.GuidEmpty())){
+                setAttr("success", false);
+                setAttr("msg", "添加失败！");
+            }else {
+                setAttr("success", true);
+                setAttr("msg", "添加成功！");
+            }
+        }
+      renderJson();
+    }
+
+    public void Del()
+    {
+        String key= getPara("key");
+        String table= getPara("table");
+        if (table.isEmpty())
+          {
+              setAttr("success", false);
+              setAttr("msg", "标准符错误！");
+          }
+            else
+        {
+           if( Db.delete(table,"id",key)>0){
+               setAttr("success", true);
+               setAttr("msg", "删除成功！");
+           }else {
+               setAttr("success", false);
+               setAttr("msg", "删除失败！");
+           }
+
+        }
+      renderJson();
+    }
     /// <summary>
     ///
     /// </summary>
@@ -42,46 +113,33 @@ public class CommomController extends Controller {
 
         }else {
             Kv kv=Kv.by("tab",tab).set("type",type).set("title",title).set("desc",desc);
-            Page<Record> da= CommomBll.Instance().GetCommonList(kv,page,limit);
-
+            Page<Record> da= CommomService.Instance().GetCommonList(kv,page,limit);
             setAttr("code", 0);
             setAttr("msg", "成功！");
             setAttr("count", da.getTotalPage());
             setAttr("data", da.getList());
 
-//        if (title == null || title == "")
-//        {
-//            if (type != Guid.Empty)
-//            {
-//                o = Asxsyd92Core.Utils.Data.SQLServer.SqlFromData.GetPage(tab, page, limit, desc, new { Classid = type });
-//            }
-//            else {
-//                o = Asxsyd92Core.Utils.Data.SQLServer.SqlFromData.GetPage(tab, page, limit, desc);
-//
-//            }
-//        }
-//        else
-//        {
-//            if (type != Guid.Empty)
-//            {
-//                o = Asxsyd92Core.Utils.Data.SQLServer.SqlFromData.GetPage(tab, page, limit, desc, new { Classid = type },new { },new { Name =  title });
-//            }
-//            else
-//            {
-//                o = Asxsyd92Core.Utils.Data.SQLServer.SqlFromData.GetPage(tab, page, limit, desc, new {  }, new { }, new { Name =  title });
-//            }
-//
-//        }
-//
-//        if (o.FirstOrDefault() != null)
-//        {
-//
-//            var os = Models.Unity.ObjModel(o.FirstOrDefault());
-//            return Asxsyd92Core.Utils.JSONhelper.ToJson(new { code = 0, msg = "", count = os.FirstOrDefault(c => c.Key.ToString() == "Count").Value, data = o });
-//        }
-//        return Asxsyd92Core.Utils.JSONhelper.ToJson(new { code = 0, msg = "", count = 0, data = o });
 
     }
     renderJson();
+    }
+
+    @Before({JwtInterceptor.class, POST.class})
+    public void GetDictionary(){
+
+
+        Kv kv=Kv.by("parentid",StringUtil.GuidEmpty());
+        try {
+            setAttr("count",10);
+            setAttr("code", 0);
+            setAttr("msg", "成功！");
+            setAttr("data", new JosnUtils<Dictionary>().toJson(DictionaryService.GetDictionary(kv)));
+        }
+        catch (Exception ex){
+            setAttr("data",ex.getLocalizedMessage());
+        }
+
+        renderJson();
+
     }
 }

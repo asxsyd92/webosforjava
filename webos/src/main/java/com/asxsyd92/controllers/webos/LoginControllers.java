@@ -1,7 +1,8 @@
 package com.asxsyd92.controllers.webos;
 
 
-import com.asxsyd92.bll.UsersBll;
+import com.asxsyd92.annotation.Route;
+import com.asxsyd92.service.UsersService;
 import com.jfinal.aop.Before;
 import com.jfinal.aop.Clear;
 import com.jfinal.core.Controller;
@@ -18,7 +19,7 @@ import java.util.Map;
 
 import static com.asxsyd92.utils.MD5.MD5_32bit;
 
-
+@Route(Key = "/api/login")
 public class LoginControllers extends Controller  {
     private static final String CLAIM_KEY_USERNAME = "sub";
     private static final String CLAIM_KEY_CREATED = "created";
@@ -70,7 +71,7 @@ public class LoginControllers extends Controller  {
         try{
         String user = getPara("user");
         String pw = getPara("pw");
-        Record us = UsersBll.Instance().Login(user);
+        Record us = UsersService.Login(user);
         if (us!=null){
         if(us.getInt("Status")==1){
             setAttr("msg","账号被冻结，请联系管理员！");
