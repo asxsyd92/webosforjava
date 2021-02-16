@@ -55,7 +55,7 @@ try {
 
         renderJson();
     }
-
+    @Before({JwtInterceptor.class})
     public void CompletedList()
     {
         try {
