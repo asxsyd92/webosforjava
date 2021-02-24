@@ -1,16 +1,22 @@
 package com.asxsyd92.controllers.oa;
 
 import com.asxsyd92.annotation.Route;
+import com.asxsyd92.service.DictionaryService;
 import com.asxsyd92.service.WorkflowService;
 import com.asxsyd92.modle.Workflow;
 import com.asxsyd92.utils.data.MySql;
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
+import com.jfinal.json.Json;
 import com.jfinal.kit.Kv;
+import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
+import com.jfinal.plugin.activerecord.Record;
 import com.jwt.JwtInterceptor;
 import io.jsonwebtoken.Claims;
+import org.json.JSONObject;
 
+import java.util.List;
 @Route(Key="/api/workflow")
 @Before({JwtInterceptor.class})
 public class WorkFlowController extends Controller {
@@ -92,6 +98,14 @@ public class WorkFlowController extends Controller {
     }
     public void GetTypeOptions()
     {
+        try {
+            String value = getPara("value");
+           Record d= DictionaryService.GetOptionsByCode("FlowTypes", value);
+            renderJson(d);
+        } catch (Exception ex) {
+
+            renderJson("{}");
+        }
         //return  DictionaryService.Instance.GetOptionsByCode("FlowTypes", value);
     }
     public void GetTable_SqlServer()
@@ -100,7 +114,30 @@ public class WorkFlowController extends Controller {
     }
     public void GetFields() {
         String table = getPara("table");
-     renderJson( MySql.getMySqlableStructure(table));  ;
 
+        List<Record> da= Db.find("SELECT COLUMN_NAME f_name,COLUMN_COMMENT value FROM INFORMATION_SCHEMA.COLUMNS where table_name  = '"+table.toLowerCase()+"'");
+        renderJson( da );  ;
+
+    }
+    public  void  Delinfo(){
+        String id = getPara("keyid");
+try{
+
+ boolean mm=   WorkflowService.Del(id);
+    setAttr("code", 0);
+    setAttr("count", 0);
+    setAttr("data", null);
+    setAttr("msg", mm ?"删除成功":"删除失败");
+    setAttr("success", true);
+}catch (Exception ex){
+    setAttr("code", 0);
+    setAttr("count", 0);
+    setAttr("data", null);
+    setAttr("msg", ex.getMessage());
+    setAttr("success", false);
+
+}
+
+renderJson();
     }
 }
