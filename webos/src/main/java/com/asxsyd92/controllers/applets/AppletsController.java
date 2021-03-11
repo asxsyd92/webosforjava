@@ -19,10 +19,16 @@ import java.util.List;
 public class AppletsController  extends Controller {
 
     public void qqlogin() {
-        String code = getPara("code");
-        String data= HttpHelper.doGet("https://api.q.qq.com/sns/jscode2session?appid=1110632218&secret=qxn51EHWjKJXtqJ3&js_code="+ code + "&grant_type=authorization_code");
+        try {
+            String code = getPara("code");
 
-        renderJson(data);
+            String data= HttpHelper.sendGet("https://api.q.qq.com/sns/jscode2session","appid=1110632218&secret=qxn51EHWjKJXtqJ3&js_code="+ code + "&grant_type=authorization_code");
+
+            renderJson(data);
+        }catch (Exception ex){
+
+        }
+
 
     }
 
