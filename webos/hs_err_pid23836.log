@@ -14,10 +14,10 @@
 
 ---------------  S U M M A R Y ------------
 
-Command Line: -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:64643,suspend=y,server=n -javaagent:C:\Users\asxsy\AppData\Local\JetBrains\IntelliJIdea2020.3\captureAgent\debugger-agent.jar -Dfile.encoding=UTF-8 com.asxsyd92.WebosConfig
+Command Line: -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:64643,suspend=y,server=n -javaagent:C:\Users\asxsy\AppData\Local\JetBrains\IntelliJIdea2020.3\captureAgent\debugger-agent.jar -Dfile.encoding=UTF-8 com.webos.WebosConfig
 
 Host: Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz, 8 cores, 7G,  Windows 10 , 64 bit Build 18362 (10.0.18362.1316)
-Time: Thu Jan 21 16:33:30 2021 ?D1¨²¡À¨º¡Á?¨º¡À?? elapsed time: 51 seconds (0d 0h 0m 51s)
+Time: Thu Jan 21 16:33:30 2021 ?D1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½ï¿½ï¿½?? elapsed time: 51 seconds (0d 0h 0m 51s)
 
 ---------------  T H R E A D  ---------------
 
@@ -507,7 +507,7 @@ symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Pr
 
 VM Arguments:
 jvm_args: -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:64643,suspend=y,server=n -javaagent:C:\Users\asxsy\AppData\Local\JetBrains\IntelliJIdea2020.3\captureAgent\debugger-agent.jar -Dfile.encoding=UTF-8 
-java_command: com.asxsyd92.WebosConfig
+java_command: com.webos.WebosConfig
 java_class_path (initial): E:\Work\webosforjava\webos\webos\target\classes;E:\Work\javajar\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;E:\Work\javajar\com\thetransactioncompany\cors-filter\2.5\cors-filter-2.5.jar;E:\Work\javajar\com\thetransactioncompany\java-property-utils\1.9.1\java-property-utils-1.9.1.jar;E:\Work\javajar\javax\xml\bind\jaxb-api\2.3.0\jaxb-api-2.3.0.jar;E:\Work\javajar\com\sun\xml\bind\jaxb-impl\2.3.0\jaxb-impl-2.3.0.jar;E:\Work\javajar\com\sun\xml\bind\jaxb-core\2.3.0\jaxb-core-2.3.0.jar;E:\Work\javajar\javax\activation\activation\1.1.1\activation-1.1.1.jar;E:\Work\webosforjava\webcore\target\classes;E:\Work\javajar\org\apache\directory\studio\org.apache.commons.codec\1.8\org.apache.commons.codec-1.8.jar;E:\Work\javajar\commons-fileupload\commons-fileupload\1.4\commons-fileupload-1.4.jar;E:\Work\javajar\commons-io\commons-io\2.2\commons-io-2.2.jar;E:\Work\javajar\javax\servlet\javax.servlet-api\4.0.1\javax.servlet-api-4.0.1.jar;E:\Work\javajar\com\alibaba\druid\1.0.23\druid-1.0.23.jar;E:\Work\javajar\org\json\org.json\chargebee-1.0\org.json-chargebee-1.0.jar;E:\Work\javajar\com\alibaba\fastjson\1.2.68\fastjson-1.2.68.jar;E:\Work\javajar\io\jsonwebtoken\jjwt\0.9.1\jjwt-0.9.1.jar;E:\Work\javajar\com\fasterxml\jackson\core\jackson-databind\2.9.6\jackson-databind-2.9.6.jar;E:\Work\javajar\com\fasterxml\jackson\core\jackson-annotations\2.9.0\jackson-annotations-2.9.0.jar;E:\Work\javajar\com\fasterxml\jackson\core\jackson-core\2.9.6\jackson-core-2.9.6.jar;E:\Work\javajar\com\auth0\java-jwt\3.3.0\java-jwt-3.3.0.jar;E:\Work\javajar\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;E:\Work\javajar\e-iceblue\spire.office.free\3.1.1\spire.office.free-3.1.1.jar;E:\Work\javajar\com\microsoft\sqlserver\sqljdbc4\4.0\sqljdbc4-4.0.jar;E:\Work\javajar\com\jfinal\jfinal-undertow\2.2\jfinal-undertow-2.2.jar;E:\Work\javajar\io\undertow\undertow-core\2.0.32.Final\undertow-core-2.0.32.Final.jar;E:\Work\javajar\org\jboss\logging\jboss-logging\3.
 Launcher Type: SUN_STANDARD
 

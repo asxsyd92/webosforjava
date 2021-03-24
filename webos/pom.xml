@@ -60,10 +60,15 @@
         <dependency>
             <groupId>com.asxsyd92</groupId>
             <artifactId>webcore</artifactId>
-            <version>1.0</version>
+            <version>1.2</version>
             <scope>compile</scope>
         </dependency>
-
+        <dependency>
+            <groupId>com.asxsyd92</groupId>
+            <artifactId>asxsydutils</artifactId>
+            <version>1.2</version>
+            <scope>compile</scope>
+        </dependency>
         <dependency>
 
             <groupId>javax.servlet</groupId>
@@ -156,12 +161,7 @@
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.asxsyd92</groupId>
-            <artifactId>asxsydutils</artifactId>
-            <version>1.0</version>
-            <scope>compile</scope>
-        </dependency>
+
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
@@ -233,7 +233,7 @@
                         <failOnMissingWebXml>false</failOnMissingWebXml>
                         <overlays>
                             <overlay>
-                                <groupId>com.asxsyd92.webcore</groupId>
+                                <groupId>com.webos.webcore</groupId>
                                 <artifactId>WebCore</artifactId>
                             </overlay>
                         </overlays>

@@ -12,7 +12,7 @@
     <init-param>
       <param-name>configClass</param-name>
       <!--注意此处的路径配置，必须正确！-->
-      <param-value>com.asxsyd92.WebosConfig</param-value>
+      <param-value>com.webos.WebosConfig</param-value>
     </init-param>
   </filter>
   <filter-mapping>
