@@ -115,7 +115,7 @@ public class FormControllers extends Controller {
 
         // 判断文件是否存在，不存在则创建，否则读取值显示到窗体
         Claims claims = getAttr("claims");
-        data= Unity.getJsonSetData(data,claims);
+        //data= Unity.getJsonSetData(data,claims);
         data= data.replace("_sys_url", "/webos/page/from/" + name + ".html");
 
 

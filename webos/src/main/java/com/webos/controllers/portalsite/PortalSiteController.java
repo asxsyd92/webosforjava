@@ -50,7 +50,7 @@ public class PortalSiteController extends Controller {
     public void GetNewIndex() {
         String rewen = getPara("rewen");
         String tuijian = getPara("tuijian");
-        String sql = "select * from ( SELECT   *,'cai'  type FROM a_article     order by rand() desc LIMIT 10) as t UNION (SELECT  *,'rewen' as type FROM a_article where Classid='"+rewen+ "')UNION (SELECT *,'tuijian' as type FROM a_article where Classid='" + tuijian+ "')";
+        String sql = "select * from ( SELECT   *,'cai'  type FROM a_article     order by rand() desc LIMIT 10) as t UNION (SELECT  *,'rewen' as type FROM a_article where Classid='"+rewen+ "'  LIMIT 10)UNION (SELECT *,'tuijian' as type FROM a_article where Classid='" + tuijian+ "'  LIMIT 10)";
       //  String sql = "select * from ( SELECT TOP 10 'cai' as type, *FROM A_Article    order by newid()) as t UNION (SELECT TOP 10 'rewen' as type,*FROM A_Article where Classid='"+rewen+ "')UNION (SELECT TOP 10 'tuijian' as type,*FROM A_Article where Classid='" + tuijian+ "')";
         setAttr("data",   Db.find(sql));
         setAttr("Success", true);

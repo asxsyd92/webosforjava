@@ -43,7 +43,7 @@ public class JwtInterceptor implements Interceptor {
                 inv.getController().renderError(500);  e.printStackTrace();
 
             }else {
-                inv.getController().renderError(403);  e.printStackTrace();
+                inv.getController().renderError(401);  e.printStackTrace();
 
             }
     }

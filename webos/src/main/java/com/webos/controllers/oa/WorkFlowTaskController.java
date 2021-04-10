@@ -19,6 +19,7 @@ import com.webcore.oa.workflow.RunModel;
 import com.webcore.oa.workflow.Steps;
 import com.webcore.service.WorkFlowTaskService;
 import com.webcore.service.WorkflowService;
+import com.webcore.utils.Unity;
 import io.jsonwebtoken.Claims;
 
 import java.util.stream.Collectors;
@@ -158,7 +159,7 @@ try {
             setAttr("currentStep", currentStep);
             setAttr("currentdata", currentdata);
             setAttr("msg","成功") ;
-            setAttr("success",false);
+            setAttr("success",true);
           //  return JSONhelper.ToJson(new { code = 0, msg = "成功", count = 1, data = nextSteps, currentStep = currentStep }, false);
 
         }
@@ -182,6 +183,8 @@ try {
             String query = getPara("query");
             String table = getPara("table");
             String data = getPara("data");
+
+            data= Unity.getJsonSetData(data,claims);
             String params1 = getPara("params1");
             Result result = WorkFlowTaskService.sendTask(receiveid, query, table, data, params1);
 

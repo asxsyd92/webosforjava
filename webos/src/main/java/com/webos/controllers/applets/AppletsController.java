@@ -102,11 +102,11 @@ public class AppletsController  extends Controller {
         String userid = getPara("userid");
         Integer jf = getParaToInt("jf");
         if (userid==null){
-
-        }else {
             setAttr("msg", "请重新登陆再试！");
             setAttr("success", true);
             setAttr("data", null);
+        }else {
+
         //更新点赞次数
         try
         {
@@ -149,8 +149,15 @@ public class AppletsController  extends Controller {
 
     public void GetUserUsersIntegral() {
         String id = getPara("id");
+Record da=Db.findById("usersintegral","Userid",id);
+if (da==null){
+    da=new Record();
+    da.set("integral",0);
+    renderJson( da );
+}else {
+    renderJson( da );
+}
 
-        renderJson(  Db.findById("usersintegral","Userid",id));
     }
 
     public void Integral()
@@ -187,6 +194,38 @@ public class AppletsController  extends Controller {
         }
 
 
+        renderJson();
+    }
+
+    /**
+     * 签到
+     */
+    public void Signin(){
+        try
+        {
+        String userid = getPara("userid");
+   String sql="select * from u_signin where to_days(SignDate) = to_days(now()) and Userid='"+userid+"'";
+   Record record= Db.findFirst(sql);
+   if (record==null){
+       Record o=new Record();
+       o.set("ID",StringUtil.getPrimaryKey());
+       o.set("SignDate",new Date());
+       o.set("Userid",userid);
+       Db.save("u_signin",o);
+       UsersIntegralService.AddIntegral(userid, 10);
+       setAttr("msg", "签到成功！");
+       setAttr("success", true);
+       setAttr("data", "");
+   }else {
+       setAttr("msg", "今日已签到！");
+       setAttr("success", true);
+       setAttr("data", "");
+   }
+        }catch (Exception ex){
+            setAttr("msg", "签到失败！");
+            setAttr("success", true);
+            setAttr("data", null);
+        }
         renderJson();
     }
 }
