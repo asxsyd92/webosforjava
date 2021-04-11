@@ -1,5 +1,6 @@
 package com.webos.controllers.oa;
 
+import com.alibaba.fastjson.JSON;
 import com.asxsydutils.utils.JosnUtils;
 import com.asxsydutils.utils.StringUtil;
 import com.jfinal.aop.Before;
@@ -13,6 +14,7 @@ import com.spire.ms.System.Collections.ArrayList;
 import com.webcore.annotation.Route;
 import com.webcore.modle.WorkFlowTask;
 import com.webcore.modle.Workflow;
+import com.webcore.oa.task.Query;
 import com.webcore.oa.task.Result;
 import com.webcore.oa.workflow.Lines;
 import com.webcore.oa.workflow.RunModel;
@@ -22,6 +24,7 @@ import com.webcore.service.WorkflowService;
 import com.webcore.utils.Unity;
 import io.jsonwebtoken.Claims;
 
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.Date;
 import java.util.List;
@@ -173,7 +176,9 @@ try {
         }
         renderJson();
     }
-
+/*
+流程处理
+ */
     @Before({JwtInterceptor.class, POST.class})
     public  void sendTask() {
         try {
@@ -204,6 +209,9 @@ try {
         }
         renderJson();
     }
+    /*
+    获取业务表单数据
+     */
     @Before({JwtInterceptor.class, POST.class})
     public void getOaData(){
         try {
@@ -222,5 +230,63 @@ try {
         setAttr("success", false);
     }
     renderJson();
+    }
+/*
+/流程退回
+ */
+    public void FlowBack(){
+        try {
+            String receiveid = "";
+            Claims claims = getAttr("claims");
+            receiveid = claims.get("id").toString();
+            String query = getPara("query");
+            String table = getPara("table");
+            String data = getPara("data");
+
+           // data= Unity.getJsonSetData(data,claims);
+            String params1 = getPara("params1");
+            Result result = WorkFlowTaskService.sendTask(receiveid, query, table, data, params1);
+
+            setAttr("code", 0);
+            setAttr("count", 0);
+            setAttr("data", result.getNexttasks());
+            setAttr("msg", result.getMessages());
+            setAttr("success", result.getIssuccess());
+
+
+        } catch (Exception ex) {
+            setAttr("code", 0);
+            setAttr("count", 0);
+            setAttr("data", null);
+            setAttr("msg", ex.getMessage());
+            setAttr("success", false);
+        }
+        renderJson();
+    }
+    /*
+    /获取可退回的步骤
+     */
+    public void getBackStepList() {
+        try {
+            String query = getPara("query");
+            Query querys = JSON.parseObject(query, Query.class);
+            String flowid = querys.getFlowid();
+            Integer type = getParaToInt("type");
+            Workflow wfl = WorkflowService.Get(flowid.toLowerCase());
+            RunModel wfInstalled = JosnUtils.stringToBean(wfl.getRunJSON(), RunModel.class);
+            Map<String, String> da = WorkFlowTaskService.GetBackSteps(querys.getTaskid(), type, querys.getStepid(), wfInstalled);
+            setAttr("code", 0);
+            setAttr("count", 0);
+            setAttr("data", da);
+            setAttr("msg","成功");
+            setAttr("success", true);
+        } catch (Exception ex) {
+            setAttr("code", 0);
+            setAttr("count", 0);
+            setAttr("data", null);
+            setAttr("msg", ex.getMessage());
+            setAttr("success", false);
+        }
+        renderJson();
     }
 }
