@@ -2,7 +2,9 @@ package com.webos.controllers.webos;
 
 
 import com.alibaba.fastjson.JSON;
+import com.jfinal.aop.Inject;
 import com.webcore.annotation.Route;
+import com.webcore.service.LogService;
 import com.webcore.service.TaskService;
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
@@ -14,6 +16,8 @@ import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 
 import com.jwt.JwtInterceptor;
+import com.webos.Common;
+import io.jsonwebtoken.Claims;
 
 
 import java.util.ArrayList;
@@ -24,6 +28,8 @@ import java.util.Map;
 
 @Route(Key = "/api/tasks")
 public class TasksController  extends Controller {
+    @Inject
+    LogService logService;
     @Before({JwtInterceptor.class, GET.class})
     public void WaitList()
     {
@@ -54,9 +60,10 @@ public class TasksController  extends Controller {
         }
         renderJson();
     }
-
+    @Before({JwtInterceptor.class, GET.class})
     public void DelFormData()
     {
+        Claims claims = getAttr("claims");
         String key = getPara("key");
         String table = getPara("table");
         if (table.isEmpty()){
@@ -66,6 +73,8 @@ public class TasksController  extends Controller {
         {
             //删除主表数据成功之后删除业务表中数据，附件在附件管理中删除
             boolean tag =  Db.deleteById("commontask","InstanceID",key);
+
+            logService.addLog("删除业务数据", "commontask中数据删除！", Common.getRemoteLoginUserIp(this.getRequest()), claims.get("name").toString(), claims.get("id").toString(), "删除", "", "", "");
 
             if (tag)
             {

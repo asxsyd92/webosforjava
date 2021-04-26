@@ -274,7 +274,7 @@ try {
             Integer type = getParaToInt("type");
             Workflow wfl = WorkflowService.Get(flowid.toLowerCase());
             RunModel wfInstalled = JosnUtils.stringToBean(wfl.getRunJSON(), RunModel.class);
-            Map<String, String> da = WorkFlowTaskService.GetBackSteps(querys.getTaskid(), type, querys.getStepid(), wfInstalled);
+            Record da = WorkFlowTaskService.GetBackSteps(querys.getTaskid(), type, querys.getStepid(), wfInstalled);
             setAttr("code", 0);
             setAttr("count", 0);
             setAttr("data", da);
@@ -289,4 +289,24 @@ try {
         }
         renderJson();
     }
+    public void GetTaskList(){
+        try {
+            String flowid = getPara("flowid");
+            String groupid = getPara("groupid");
+           List<WorkFlowTask> da=WorkFlowTaskService.GetTaskList(flowid, groupid).stream().sorted((a, b) -> a.getSort().compareTo(b.getSort())).collect(Collectors.toList());
+            setAttr("code", 0);
+            setAttr("count", 0);
+            setAttr("data", da);
+            setAttr("msg","成功");
+            setAttr("success", true);
+        }catch (Exception ex){
+            setAttr("code", 0);
+            setAttr("count", 0);
+            setAttr("data", null);
+            setAttr("msg", ex.getMessage());
+            setAttr("success", false);
+
+        }
+        renderJson();
+        }
 }

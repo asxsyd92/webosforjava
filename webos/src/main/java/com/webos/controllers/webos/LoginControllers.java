@@ -3,6 +3,7 @@ package com.webos.controllers.webos;
 
 import com.jfinal.aop.Before;
 import com.jfinal.aop.Clear;
+import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.plugin.activerecord.Record;
@@ -21,7 +22,8 @@ import static com.asxsydutils.utils.MD5.MD5_32bit;
 
 @Route(Key = "/api/login")
 public class LoginControllers extends Controller {
-
+    @Inject
+    LogService logService;
     /**
      * 用户登陆
      */
@@ -56,11 +58,10 @@ public class LoginControllers extends Controller {
                     setAttr("msg", "账号被锁定，请联系管理员！");
                     setAttr("Success", false);
 
-                    try {
-                        LogService.addLog("登陆失败", "账号被锁定，请联系管理员！", Common.getRemoteLoginUserIp(this.getRequest()), us.getStr("name"), us.getStr("id"), "用户登陆", "", "", "");
 
-                    } catch (Exception ex) {
-                    }
+                    logService.addLog("登陆失败", "账号被锁定，请联系管理员！", Common.getRemoteLoginUserIp(this.getRequest()), us.getStr("name"), us.getStr("id"), "用户登陆", "", "", "");
+
+
                     renderJson();
                     return;
                 }
@@ -68,11 +69,9 @@ public class LoginControllers extends Controller {
                     setAttr("msg", "账号被冻结，请联系管理员！");
                     setAttr("Success", false);
 
-                    try {
-                        LogService.addLog("登陆失败", "账号被冻结，请联系管理员！", Common.getRemoteLoginUserIp(this.getRequest()), us.getStr("name"), us.getStr("id"), "用户登陆", "", "", "");
+                    logService.addLog("登陆失败", "账号被冻结，请联系管理员！", Common.getRemoteLoginUserIp(this.getRequest()), us.getStr("name"), us.getStr("id"), "用户登陆", "", "", "");
 
-                    } catch (Exception ex) {
-                    }
+
                 } else {
 
                     //加密后的字符串
@@ -103,13 +102,13 @@ public class LoginControllers extends Controller {
                         setAttr("picture", us.getStr("avatar"));
                         setAttr("success", true);
                         try {
-                            LogService.addLog("登录成功", "登录成功！", Common.getRemoteLoginUserIp(this.getRequest()), us.getStr("name"), us.getStr("id"), "用户登陆", "", "", "");
+                            logService.addLog("登录成功", "登录成功！", Common.getRemoteLoginUserIp(this.getRequest()), us.getStr("name"), us.getStr("id"), "用户登陆", "", "", "");
                             UsersService.InsertIslock(us.getStr("id"), false);
                         } catch (Exception ex) {
                         }
                     } else {
                         try {
-                            LogService.addLog("登录失败", "密码错误！", Common.getRemoteLoginUserIp(this.getRequest()), us.getStr("name"), us.getStr("id"), "用户登陆", "", "", "");
+                            logService.addLog("登录失败", "密码错误！", Common.getRemoteLoginUserIp(this.getRequest()), us.getStr("name"), us.getStr("id"), "用户登陆", "", "", "");
                             UsersService.InsertIslock(us.getStr("id"), true);
                         } catch (Exception ex) {
                         }
@@ -125,11 +124,10 @@ public class LoginControllers extends Controller {
                 setAttr("success", false);
             }
         }catch (Exception ex) {
-            try {
-                LogService.addLog("系统日志", "系统异常！", Common.getRemoteLoginUserIp(this.getRequest()), "", "", "系统日志", ex.toString(), "", "");
 
-            } catch (Exception esx) {
-            }
+            logService.addLog("系统日志", "系统异常！", Common.getRemoteLoginUserIp(this.getRequest()), "", "", "系统日志", ex.toString(), "", "");
+
+
             setAttr("msg", "系统异常");
             setAttr("success", false);
         }

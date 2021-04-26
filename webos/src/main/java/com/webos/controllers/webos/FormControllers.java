@@ -4,8 +4,10 @@ package com.webos.controllers.webos;
 import com.alibaba.fastjson.JSON;
 import com.asxsydutils.utils.JosnUtils;
 import com.asxsydutils.utils.StringUtil;
+import com.jfinal.aop.Inject;
 import com.webcore.annotation.Route;
 import com.webcore.service.DictionaryService;
+import com.webcore.service.LogService;
 import com.webcore.service.TaskService;
 import com.webcore.modle.CommonTask;
 import com.webcore.modle.Dictionary;
@@ -23,6 +25,7 @@ import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
 import com.jwt.JwtInterceptor;
+import com.webos.Common;
 import io.jsonwebtoken.Claims;
 
 import java.io.*;
@@ -31,10 +34,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-
+@Before({JwtInterceptor.class, POST.class})
 @Route(Key = "/api/form")
 public class FormControllers extends Controller {
-
+    @Inject
+    LogService logService;
      @NotAction
     public static String read(String path) {
         StringBuffer res = new StringBuffer();
@@ -53,7 +57,7 @@ public class FormControllers extends Controller {
         return res.toString();
     }
 
-    @Before({JwtInterceptor.class, POST.class})
+
     public  void FormDesignYL()
     {
         try {
@@ -250,6 +254,8 @@ public class FormControllers extends Controller {
 
         //renderJson("/webos/page/from/" + name + ".html");
        setAttr("url","/webos/page/from/" + name + ".html?istask="+true);
+        logService.addLog("发布表单", "发布表单！", Common.getRemoteLoginUserIp(this.getRequest()), claims.get("name").toString(), claims.get("id").toString(), "发布", "", "", "");
+
         renderJson();
     }
 

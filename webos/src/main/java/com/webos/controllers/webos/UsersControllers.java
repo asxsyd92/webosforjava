@@ -3,12 +3,16 @@ package com.webos.controllers.webos;
 import com.alibaba.fastjson.JSON;
 
 import com.asxsydutils.utils.JosnUtils;
+import com.asxsydutils.utils.StringUtil;
+import com.jfinal.aop.Inject;
 import com.webcore.annotation.Route;
+import com.webcore.service.LogService;
 import com.webcore.service.RoleAppService;
 import com.webcore.service.UsersService;
 import com.webcore.modle.RoleApp;
 import com.webcore.modle.Users;
 import com.webcore.modle.xRoleApp;
+import com.webos.Common;
 import com.webos.socket.user.FriendItem;
 import com.webos.socket.user.Im;
 import com.webos.socket.user.Mine;
@@ -33,7 +37,8 @@ import static com.asxsydutils.utils.MD5.MD5_32bit;
 
 @Route(Key = "/api/users")
 public class UsersControllers extends Controller {
-
+    @Inject
+    LogService logService;
     @Before({JwtInterceptor.class, POST.class})
 
     public void GetAppList() {
@@ -117,12 +122,12 @@ public class UsersControllers extends Controller {
     public void UsersSave() {
         try {
             String data = getPara("data");
-
+            Claims claims = getAttr("claims");
             Record record = new Record();
 
             Map user = JSON.parseObject(data, Map.class);
             record.setColumns(user);
-            if (record.getStr("ID") == "00000000-0000-0000-0000-000000000000") {
+            if (record.getStr("ID").equals(StringUtil.GuidEmpty())) {
                 //检查帐号是否重复
                 Record us = UsersService.GetUserByAccount(record.getStr("Account")); //SqlFromData.GetFromData("S_Teacher", new { S_Account = ter["S_Account"].ToString().ToLower() }).FirstOrDefault();
                 if (us != null) {
@@ -130,6 +135,8 @@ public class UsersControllers extends Controller {
                     setAttr("Success", false);
 
                 } else {
+                    logService.addLog("新增用户", "新增用户！", Common.getRemoteLoginUserIp(this.getRequest()), claims.get("name").toString(), claims.get("id").toString(), "新增", "", "", "");
+
                     String id = UUID.randomUUID().toString();
                     record.set("ID", id);
                     String str = id.toLowerCase() + "123456";
@@ -261,6 +268,7 @@ public class UsersControllers extends Controller {
         String pw = getPara("pw");
 
         try {
+
             Record da = Db.findById("Users", "id", id);
             if (da != null) {
                 //加密后的字符串
@@ -273,7 +281,10 @@ public class UsersControllers extends Controller {
                     if (Db.update("Users", "ID", da)) {
                         setAttr("msg", "修改成功！");
                         setAttr("success", true);
+                        logService.addLog("用户修改密码", "修改成功！", Common.getRemoteLoginUserIp(this.getRequest()), claims.get("name").toString(), claims.get("id").toString(), "修改", "", "", "");
+
                     } else {
+                        logService.addLog("用户修改密码", "修改失败！", Common.getRemoteLoginUserIp(this.getRequest()), claims.get("name").toString(), claims.get("id").toString(), "修改", "", "", "");
 
                         setAttr("msg", "修改失败！");
                         setAttr("success", false);
