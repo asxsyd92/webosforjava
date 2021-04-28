@@ -109,7 +109,7 @@ public class DictionaryController  extends Controller {
                 setAttr("data", null);
                 setAttr("success", true);
               //  String logmsg = dictionary.getID().equals("")  ? "新增:" + dictionary.getTitle() : "修改:" + dictionary.getTitle();
-                logService.addLog("数据字典", "删除字典项："+dictionary.getTitle(), Common.getRemoteLoginUserIp(this.getRequest()), claims.get("name").toString(), claims.get("id").toString(), "2", "", "", "");
+                logService.addLog("数据字典", "删除字典项："+dictionary.getTitle(), Common.getRemoteLoginUserIp(this.getRequest()), claims.get("name").toString(), claims.get("id").toString(), "2", "", JSON.toJSONString(dictionary), "");
                 renderJson();
             } else {
                 setAttr("msg", "修改失败");
@@ -121,7 +121,7 @@ public class DictionaryController  extends Controller {
             }
         } catch (Exception ex) {
             // String logmsg=dictionary.getID()==null?"新增:"+dictionary.getTitle():"修改:"+dictionary.getTitle();
-            logService.addLog("数据字典", "删除数据字典报错：" + ex.getMessage(), Common.getRemoteLoginUserIp(this.getRequest()), claims.get("name").toString(), claims.get("id").toString(), "1", "", "", "");
+            logService.addLog("数据字典", "删除数据字典报错：" + ex.getMessage(), Common.getRemoteLoginUserIp(this.getRequest()), claims.get("name").toString(), claims.get("id").toString(), "1", "", JSON.toJSONString(ex), "");
 
             setAttr("msg", ex.getLocalizedMessage());
             setAttr("code", 0);

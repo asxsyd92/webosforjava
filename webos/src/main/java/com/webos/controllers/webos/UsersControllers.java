@@ -6,6 +6,7 @@ import com.asxsydutils.utils.JosnUtils;
 import com.asxsydutils.utils.StringUtil;
 import com.jfinal.aop.Inject;
 import com.webcore.annotation.Route;
+import com.webcore.modle.Dictionary;
 import com.webcore.service.LogService;
 import com.webcore.service.RoleAppService;
 import com.webcore.service.UsersService;
@@ -34,12 +35,13 @@ import java.util.stream.Collectors;
 
 import static com.asxsydutils.utils.MD5.MD5_32bit;
 
-
+@Before({JwtInterceptor.class, POST.class})
 @Route(Key = "/api/users")
 public class UsersControllers extends Controller {
     @Inject
     LogService logService;
-    @Before({JwtInterceptor.class, POST.class})
+@Inject
+    RoleAppService roleAppService;
 
     public void GetAppList() {
         try {
@@ -50,9 +52,9 @@ public class UsersControllers extends Controller {
             List<Record> list = new ArrayList<>();
             Object da = null;
             if (role == 1) {
-                da = new JosnUtils<xRoleApp>().toJson(RoleAppService.GetxAppList(role));
+                da = new JosnUtils<xRoleApp>().toJson(roleAppService.GetxAppList(""));
             } else {
-                da = new JosnUtils<RoleApp>().toJson(RoleAppService.GetAppList(role));
+                da = new JosnUtils<RoleApp>().toJson(roleAppService.GetAppList(role));
             }
 
 
@@ -72,7 +74,56 @@ public class UsersControllers extends Controller {
         renderJson();
     }
 
-    @Before({JwtInterceptor.class, GET.class})
+    /**
+     * 获取菜单项
+     */
+
+    public void getAppList(){
+        try {
+
+            Claims claims = getAttr("claims");
+            String Role = claims.get("role").toString();
+            int role = Integer.parseInt(Role);
+            List<Record> list = new ArrayList<>();
+
+          Object  da = new JosnUtils<xRoleApp>().toJson(roleAppService.GetxAppList(""));
+            setAttr("msg", "");
+            setAttr("code", 0);
+            setAttr("count", 0);
+            setAttr("data", da);
+            setAttr("success", true);
+        } catch (Exception ex) {
+
+            setAttr("msg", "");
+            setAttr("code", 0);
+            setAttr("count", 0);
+            setAttr("data", ex.getMessage());
+            setAttr("success", false);
+        }
+        renderJson();
+    }
+public void getPageById(){
+    try {
+        String id = getPara("id");
+        int page = getInt("page");
+        int limit = getInt("limit");
+        Page<xRoleApp> da =  roleAppService.getPageById(page,limit,id);
+        setAttr("msg", "获取成功");
+        setAttr("code", 0);
+        setAttr("count",da.getTotalRow());
+        setAttr("data", da.getList());
+        setAttr("success", true);
+    }catch (Exception ex){
+        setAttr("msg", ex.getLocalizedMessage());
+        setAttr("code", 0);
+        setAttr("count",0);
+        setAttr("data", null);
+        setAttr("success", false);
+    }
+
+
+    renderJson();
+}
     public void UsersList() {
         try {
             //   Record record=   getModel(Record.class, "");
@@ -96,7 +147,7 @@ public class UsersControllers extends Controller {
 
     }
 
-    @Before({JwtInterceptor.class, POST.class})
+
     public void OrganizeAndRole() {
 
         try {
@@ -118,8 +169,7 @@ public class UsersControllers extends Controller {
 
     }
 
-    @Before({JwtInterceptor.class, POST.class})
-    public void UsersSave() {
+     public void UsersSave() {
         try {
             String data = getPara("data");
             Claims claims = getAttr("claims");
@@ -302,19 +352,69 @@ public class UsersControllers extends Controller {
         renderJson();
     }
 
-    @Before({JwtInterceptor.class, POST.class})
-    public void DelMenu() {
-        String iD = getPara("id");
-        if (RoleAppService.DelByID(iD)) {
+
+    public void delMenu() {
+        Claims claims = getAttr("claims");
+        try {
+            String data = getPara("data");
+
+            RoleApp roleApp = JSON.parseObject(data, RoleApp.class);
+
+        if (roleAppService.DelByID(roleApp)) {
             setAttr("msg", "成功！");
             setAttr("success", true);
+            logService.addLog("菜单管理", "删除菜单管理："+roleApp.getTitle(), Common.getRemoteLoginUserIp(this.getRequest()), claims.get("name").toString(), claims.get("id").toString(), "2", "", JSON.toJSONString(roleApp), "");
+
         } else {
             setAttr("msg", "失败！");
             setAttr("success", false);
         }
+
+        }catch (Exception ex){
+            setAttr("msg", "失败！");
+            setAttr("success", false);
+            logService.addLog("菜单管理", "删除菜单管理报错：" + ex.getMessage(), Common.getRemoteLoginUserIp(this.getRequest()), claims.get("name").toString(), claims.get("id").toString(), "1", "", JSON.toJSONString(ex), "");
+
+        }
         renderJson();
     }
+    public void ddMenu() {
+        Claims claims = getAttr("claims");
+        try {
+            String data = getPara("data");
+            RoleApp dictionary = JSON.parseObject(data, RoleApp.class);
 
+            if (roleAppService.Save(dictionary)) {
+                setAttr("msg", "修改成功");
+                setAttr("code", 0);
+                setAttr("count", 0);
+                setAttr("data", null);
+                setAttr("success", true);
+                String logmsg = dictionary.getID().equals("") ? "新增:" + dictionary.getTitle() : "修改:" + dictionary.getTitle();
+                logService.addLog("菜单管理", logmsg, Common.getRemoteLoginUserIp(this.getRequest()), claims.get("name").toString(), claims.get("id").toString(), "1", "", "", "");
+                renderJson();
+            } else {
+                setAttr("msg", "修改失败");
+                setAttr("code", 0);
+                setAttr("count", 0);
+                setAttr("data", null);
+                setAttr("success", false);
+                renderJson();
+            }
+        } catch (Exception ex) {
+            // String logmsg=dictionary.getID()==null?"新增:"+dictionary.getTitle():"修改:"+dictionary.getTitle();
+            logService.addLog("菜单管理", "菜单管理报错：" + ex.getMessage(), Common.getRemoteLoginUserIp(this.getRequest()), claims.get("name").toString(), claims.get("id").toString(), "1", "", "", "");
+
+            setAttr("msg", ex.getLocalizedMessage());
+            setAttr("code", 0);
+            setAttr("count", 0);
+            setAttr("data", null);
+            setAttr("success", false);
+            renderJson();
+        }
+        renderJson();
+
+    }
     public void GetUsersTreeAsync() {
         try {
             List<Users> users = UsersService.GetUsersTreeAsync();
