@@ -12,6 +12,7 @@ import com.jfinal.kit.Kv;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
+import com.jfinal.plugin.ehcache.CacheKit;
 import com.taobao.api.DefaultTaobaoClient;
 import com.taobao.api.TaobaoClient;
 import com.taobao.api.request.TbkDgMaterialOptionalRequest;
@@ -48,11 +49,16 @@ public class PortalSiteController extends Controller {
     }
 
     public void GetNewIndex() {
-        String rewen = getPara("rewen");
-        String tuijian = getPara("tuijian");
-        String sql = "select * from ( SELECT   *,'cai'  type FROM a_article     order by rand() desc LIMIT 10) as t UNION (SELECT  *,'rewen' as type FROM a_article where Classid='"+rewen+ "'  LIMIT 10)UNION (SELECT *,'tuijian' as type FROM a_article where Classid='" + tuijian+ "'  LIMIT 10)";
-      //  String sql = "select * from ( SELECT TOP 10 'cai' as type, *FROM A_Article    order by newid()) as t UNION (SELECT TOP 10 'rewen' as type,*FROM A_Article where Classid='"+rewen+ "')UNION (SELECT TOP 10 'tuijian' as type,*FROM A_Article where Classid='" + tuijian+ "')";
-        setAttr("data",   Db.find(sql));
+        //获取缓存中数据
+       // List<Record> index=   CacheKit.get("logincache","getsiteindex");
+
+            String rewen = getPara("rewen");
+            String tuijian = getPara("tuijian");
+            String sql = "select * from ( SELECT   *,'cai'  type FROM a_article     order by rand() desc LIMIT 10) as t UNION (SELECT  *,'rewen' as type FROM a_article where Classid='" + rewen + "'  LIMIT 10)UNION (SELECT *,'tuijian' as type FROM a_article where Classid='" + tuijian + "'  LIMIT 10)";
+            //  String sql = "select * from ( SELECT TOP 10 'cai' as type, *FROM A_Article    order by newid()) as t UNION (SELECT TOP 10 'rewen' as type,*FROM A_Article where Classid='"+rewen+ "')UNION (SELECT TOP 10 'tuijian' as type,*FROM A_Article where Classid='" + tuijian+ "')";
+        List<Record>  index=  Db.findByCache("getsiteindex","getsiteindex",sql);
+
+        setAttr("data",   index);
         setAttr("Success", true);
         renderJson();
     }

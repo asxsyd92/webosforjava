@@ -7,6 +7,7 @@ import com.jfinal.kit.Kv;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
+import com.jfinal.plugin.ehcache.CacheKit;
 import com.jwt.JwtInterceptor;
 import com.webcore.annotation.Route;
 import com.webcore.modle.Workflow;
@@ -52,7 +53,12 @@ public class WorkFlowController extends Controller {
             String flowid = getPara("flowid");
             String type = getPara("type");
 
-            Workflow da = WorkflowService.Get(flowid);
+
+            Workflow da=   CacheKit.get("flowcache",flowid);
+            if (da==null){
+                da = WorkflowService.Get(flowid);
+                CacheKit.put("flowcache",flowid,da);
+            }
             String d = "0".equals(type) ? da.getRunJSON() : da.getDesignJSON();
             renderJson(d);
         } catch (Exception ex) {

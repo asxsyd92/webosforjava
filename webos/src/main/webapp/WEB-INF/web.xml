@@ -7,7 +7,7 @@
 
 
   <filter>
-    <filter-name>jfinal</filter-name>
+    <filter-name>webos</filter-name>
     <filter-class>com.jfinal.core.JFinalFilter</filter-class>
     <init-param>
       <param-name>configClass</param-name>
@@ -15,12 +15,16 @@
       <param-value>com.webos.WebosConfig</param-value>
     </init-param>
   </filter>
+
   <filter-mapping>
-    <filter-name>jfinal</filter-name>
+    <filter-name>webos</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+
+
 
     <welcome-file-list>
         <welcome-file>/index.html</welcome-file>
     </welcome-file-list>
+
 </web-app>

@@ -4,11 +4,13 @@ import com.alibaba.fastjson.JSON;
 import com.asxsydutils.utils.JosnUtils;
 import com.asxsydutils.utils.StringUtil;
 import com.jfinal.aop.Before;
+import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.kit.Kv;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
+import com.jfinal.plugin.ehcache.CacheKit;
 import com.jwt.JwtInterceptor;
 import com.spire.ms.System.Collections.ArrayList;
 import com.webcore.annotation.Route;
@@ -32,6 +34,8 @@ import java.util.List;
 
 @Route(Key="/api/workflowtasks")
 public class WorkFlowTaskController extends Controller {
+    @Inject
+    WorkFlowTaskService workFlowTaskService;
     //获取待办事项
     @Before({JwtInterceptor.class})
     public  void  WaitList(){
@@ -45,7 +49,7 @@ try {
     String receiveid="";  Claims claims = getAttr("claims");
     receiveid=claims.get("id").toString();
     Kv kv= Kv.by("title",title).set("type",type).set("receiveid",receiveid);
-    Page<WorkFlowTask> da= WorkFlowTaskService.getWaitList(kv,page,limit);
+    Page<WorkFlowTask> da= workFlowTaskService.getWaitList(kv,page,limit);
     setAttr("code", 0);
     setAttr("msg", "成功！");
     setAttr("count", da.getTotalRow());
@@ -77,7 +81,7 @@ try {
         String receiveid="";  Claims claims = getAttr("claims");
         receiveid=claims.get("id").toString();
         Kv kv= Kv.by("title",title).set("flowid",flowid).set("user",user).set("date1",date1).set("date2",date2).set("receiveid",receiveid);
-        Page<WorkFlowTask> da= WorkFlowTaskService.CompletedList(kv,page,limit);
+        Page<WorkFlowTask> da= workFlowTaskService.CompletedList(kv,page,limit);
         setAttr("code", 0);
         setAttr("msg", "成功！");
         setAttr("count", da.getTotalPage());
@@ -102,7 +106,12 @@ try {
         {
             String flowid = getPara("flowid");
             String stepid = getPara("stepid");
-            Workflow wfl = WorkflowService.Get(flowid);
+            Workflow wfl=   CacheKit.get("flowcache",flowid.toLowerCase());
+            if (wfl==null){
+                wfl= WorkflowService.Get(flowid.toLowerCase());
+                CacheKit.put("flowcache",flowid.toLowerCase(),wfl);
+            }
+           // Workflow wfl = WorkflowService.Get(flowid);
             String error = "";
             String wfInstalled = wfl.getRunJSON();
             RunModel wfInstalleds= JosnUtils.stringToBean(wfInstalled,RunModel.class);
@@ -191,7 +200,7 @@ try {
 
             data= Unity.getJsonSetData(data,claims);
             String params1 = getPara("params1");
-            Result result = WorkFlowTaskService.sendTask(receiveid, query, table, data, params1);
+            Result result = workFlowTaskService.sendTask(receiveid, query, table, data, params1);
 
             setAttr("code", 0);
             setAttr("count", 0);
@@ -216,7 +225,7 @@ try {
     public void getOaData(){
         try {
         String query = getPara("query");
-       Record da= WorkFlowTaskService.getOaData(query);
+       Record da= workFlowTaskService.getOaData(query);
             setAttr("code", 0);
             setAttr("count", 1);
             setAttr("data", da);
@@ -245,7 +254,7 @@ try {
 
            // data= Unity.getJsonSetData(data,claims);
             String params1 = getPara("params1");
-            Result result = WorkFlowTaskService.sendTask(receiveid, query, table, data, params1);
+            Result result = workFlowTaskService.sendTask(receiveid, query, table, data, params1);
 
             setAttr("code", 0);
             setAttr("count", 0);
@@ -272,14 +281,40 @@ try {
             Query querys = JSON.parseObject(query, Query.class);
             String flowid = querys.getFlowid();
             Integer type = getParaToInt("type");
-            Workflow wfl = WorkflowService.Get(flowid.toLowerCase());
+
+            Workflow wfl=   CacheKit.get("flowcache",flowid.toLowerCase());
+            if (wfl==null){
+                wfl= WorkflowService.Get(flowid.toLowerCase());
+                CacheKit.put("flowcache",flowid.toLowerCase(),wfl);
+            }
+
             RunModel wfInstalled = JosnUtils.stringToBean(wfl.getRunJSON(), RunModel.class);
-            Record da = WorkFlowTaskService.GetBackSteps(querys.getTaskid(), type, querys.getStepid(), wfInstalled);
-            setAttr("code", 0);
-            setAttr("count", 0);
-            setAttr("data", da);
-            setAttr("msg","成功");
-            setAttr("success", true);
+            List<Record> da = workFlowTaskService.GetBackSteps(querys.getTaskid(), type, querys.getStepid(), wfInstalled);
+            if (da.size()>0) {
+                //当第一步骤不能退回
+                if (da.get(0).getStr("id").equals(StringUtil.GuidEmpty())) {
+                    setAttr("code", 0);
+                    setAttr("count", 0);
+                    setAttr("data", da);
+                    setAttr("msg", "第一个步骤不能退回");
+                    setAttr("success", false);
+                } else {
+                    setAttr("code", 0);
+                    setAttr("count", 0);
+                    setAttr("data", da);
+                    setAttr("msg", "成功");
+                    setAttr("success", true);
+                }
+            }
+            else{
+                    setAttr("code", 0);
+                    setAttr("count", 0);
+                    setAttr("data", da);
+                    setAttr("msg", "没有找到可退回的步骤");
+                    setAttr("success", false);
+                }
+
+
         } catch (Exception ex) {
             setAttr("code", 0);
             setAttr("count", 0);
@@ -293,7 +328,7 @@ try {
         try {
             String flowid = getPara("flowid");
             String groupid = getPara("groupid");
-           List<WorkFlowTask> da=WorkFlowTaskService.GetTaskList(flowid, groupid).stream().sorted((a, b) -> a.getSort().compareTo(b.getSort())).collect(Collectors.toList());
+           List<WorkFlowTask> da=workFlowTaskService.GetTaskList(flowid, groupid).stream().sorted((a, b) -> a.getSort().compareTo(b.getSort())).collect(Collectors.toList());
             setAttr("code", 0);
             setAttr("count", 0);
             setAttr("data", da);

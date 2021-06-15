@@ -1,73 +1,68 @@
 package com.webos.controllers.webos;
 
-
 import com.jfinal.aop.Before;
 import com.jfinal.aop.Clear;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.plugin.activerecord.Record;
+import com.jfinal.plugin.ehcache.CacheKit;
 import com.jwt.JwtUtils;
 import com.webcore.annotation.Route;
 import com.webcore.service.LogService;
 import com.webcore.service.UsersService;
 import com.webos.Common;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import live.autu.plugin.jfinal.swagger.annotation.Api;
+import live.autu.plugin.jfinal.swagger.annotation.ApiImplicitParam;
+import live.autu.plugin.jfinal.swagger.annotation.ApiImplicitParams;
+import live.autu.plugin.jfinal.swagger.annotation.ApiOperation;
+import live.autu.plugin.jfinal.swagger.config.RequestMethod;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import static com.asxsydutils.utils.MD5.MD5_32bit;
 
-
+@Api(tags = "test", description = "登陆控制器")
 @Route(Key = "/api/login")
 public class LoginControllers extends Controller {
     @Inject
     LogService logService;
+    @Inject
+    UsersService usersService;
     /**
      * 用户登陆
      */
     @Clear
     @Before(POST.class)
+    @ApiOperation(tags = "index", methods = RequestMethod.POST, description = "用户登陆")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "user", description = "用户名", required = true, dataType = "String"),
+            @ApiImplicitParam(name = "pw", description = "密码", required = true, dataType = "String")
+    })
     public void Login() {
         try {
             String user = getPara("user");
             String pw = getPara("pw");
-            Record us = UsersService.Login(user);
+            Record us = usersService.Login(user);
             if (us != null) {
-                Date locktime = null;
-                int islock = 0;
 
-                try {
-                    islock = Integer.parseInt(us.getStr("Islock"));
-                    locktime = us.getDate("locktime");
-                } catch (Exception E) {
-                }
-                String startTime = "", startTime1 = "";
+                Integer islock=   CacheKit.get("logincache",user);
+                if (islock!=null) {
 
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
-                try {
-                    startTime = sdf.format(locktime);
-                    startTime1 = sdf1.format(new Date());
-                } catch (Exception e) {
-                    System.out.println(e);
-                }
+                    if (islock > 10) {
+                        logService.addLog( "登陆失败", user+"锁定30分钟", Common.getRemoteLoginUserIp(this.getRequest()), us.getStr("name"), us.getStr("id"), "用户登陆", "", "", "");
 
-                if (islock >= 10 && startTime.equals(startTime1)) {
-                    setAttr("msg", "账号被锁定，请联系管理员！");
-                    setAttr("Success", false);
-
-
-                    logService.addLog("登陆失败", "账号被锁定，请联系管理员！", Common.getRemoteLoginUserIp(this.getRequest()), us.getStr("name"), us.getStr("id"), "用户登陆", "", "", "");
-
-
-                    renderJson();
-                    return;
+                        setAttr("msg", "账户被锁定30分钟，请30分钟后重试");
+                        setAttr("default", false);
+                        setAttr("success", false);
+                        renderJson();
+                        return;
+                    }
                 }
                 if (us.getInt("Status") == 1) {
                     setAttr("msg", "账号被冻结，请联系管理员！");
-                    setAttr("Success", false);
+                    setAttr("success", false);
 
                     logService.addLog("登陆失败", "账号被冻结，请联系管理员！", Common.getRemoteLoginUserIp(this.getRequest()), us.getStr("name"), us.getStr("id"), "用户登陆", "", "", "");
 
@@ -103,17 +98,27 @@ public class LoginControllers extends Controller {
                         setAttr("success", true);
                         try {
                             logService.addLog("登录成功", "登录成功！", Common.getRemoteLoginUserIp(this.getRequest()), us.getStr("name"), us.getStr("id"), "用户登陆", "", "", "");
-                            UsersService.InsertIslock(us.getStr("id"), false);
+                            usersService.InsertIslock(us.getStr("id"), false);
                         } catch (Exception ex) {
                         }
                     } else {
                         try {
-                            logService.addLog("登录失败", "密码错误！", Common.getRemoteLoginUserIp(this.getRequest()), us.getStr("name"), us.getStr("id"), "用户登陆", "", "", "");
-                            UsersService.InsertIslock(us.getStr("id"), true);
+                            Integer u=   CacheKit.get("logincache",user);
+                            logService.addLog("登录失败", "密码错误！连续10错误账户将锁定30分钟", Common.getRemoteLoginUserIp(this.getRequest()), us.getStr("name"), us.getStr("id"), "用户登陆", "", "", "");
+
+                            if (u!=null){
+
+                                u++;
+                                CacheKit.put("logincache",user,u);
+                            }else {
+                                CacheKit.put("logincache",user,1);
+                            }
+                            int s=10-u;
+                            setAttr("msg", "密码错误！连续10错误账户将锁定30分钟,剩余次数："+s);
                         } catch (Exception ex) {
                         }
 
-                        setAttr("msg", "密码错误！");
+
                         setAttr("success", false);
 
                     }

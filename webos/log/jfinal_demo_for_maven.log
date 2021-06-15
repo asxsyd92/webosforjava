@@ -1,0 +1,862 @@
+
+2021-06-15 10:16:56
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 10:16:56
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 10:16:56
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 10:17:02
+[WARN]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetAppList
+
+2021-06-15 10:48:47
+[WARN]-[Thread: XNIO-1 task-3]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetAppList
+
+2021-06-15 10:53:32
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 10:53:32
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 10:53:32
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 11:02:43
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 11:02:43
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 11:02:43
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 11:26:14
+[WARN]-[Thread: XNIO-1 task-4]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/workflowtasks/getBackStepList
+
+2021-06-15 11:45:23
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 11:45:23
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 11:45:23
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 11:45:41
+[WARN]-[Thread: XNIO-1 task-4]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /api/workflow/GetFlowAllList
+
+2021-06-15 11:45:41
+[ERROR]-[Thread: XNIO-1 task-4]-[com.jfinal.core.JFinalFilter.doFilter()]: /api/workflow/GetFlowAllList
+java.lang.RuntimeException: File not found : E:/Work/webosforjava/webos/webos/src/main/webapp/error.html
+	at com.jfinal.template.source.FileSource.getContent(FileSource.java:69)
+	at com.jfinal.template.Engine.buildTemplateBySourceFactory(Engine.java:165)
+	at com.jfinal.template.Engine.getTemplate(Engine.java:150)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:62)
+	at com.jfinal.render.ErrorRender.render(ErrorRender.java:51)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:76)
+	at com.webos.WebSocketHandler.handle(WebSocketHandler.java:24)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2021-06-15 11:46:44
+[WARN]-[Thread: XNIO-1 task-3]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /api/workflow/GetFlowAllList
+
+2021-06-15 11:46:44
+[ERROR]-[Thread: XNIO-1 task-3]-[com.jfinal.core.JFinalFilter.doFilter()]: /api/workflow/GetFlowAllList
+java.lang.RuntimeException: File not found : E:/Work/webosforjava/webos/webos/src/main/webapp/error.html
+	at com.jfinal.template.source.FileSource.getContent(FileSource.java:69)
+	at com.jfinal.template.Engine.buildTemplateBySourceFactory(Engine.java:165)
+	at com.jfinal.template.Engine.getTemplate(Engine.java:150)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:62)
+	at com.jfinal.render.ErrorRender.render(ErrorRender.java:51)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:76)
+	at com.webos.WebSocketHandler.handle(WebSocketHandler.java:24)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2021-06-15 11:54:25
+[WARN]-[Thread: XNIO-1 task-4]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /api/workflow/GetFlowAllList
+
+2021-06-15 11:54:25
+[ERROR]-[Thread: XNIO-1 task-4]-[com.jfinal.core.JFinalFilter.doFilter()]: /api/workflow/GetFlowAllList
+java.lang.RuntimeException: File not found : E:/Work/webosforjava/webos/webos/src/main/webapp/error.html
+	at com.jfinal.template.source.FileSource.getContent(FileSource.java:69)
+	at com.jfinal.template.Engine.buildTemplateBySourceFactory(Engine.java:165)
+	at com.jfinal.template.Engine.getTemplate(Engine.java:150)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:62)
+	at com.jfinal.render.ErrorRender.render(ErrorRender.java:51)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:76)
+	at com.webos.WebSocketHandler.handle(WebSocketHandler.java:24)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2021-06-15 15:20:10
+[WARN]-[Thread: XNIO-1 task-3]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /api/workflow/GetFlowAllList
+
+2021-06-15 15:20:10
+[ERROR]-[Thread: XNIO-1 task-3]-[com.jfinal.core.JFinalFilter.doFilter()]: /api/workflow/GetFlowAllList
+java.lang.RuntimeException: File not found : E:/Work/webosforjava/webos/webos/src/main/webapp/error.html
+	at com.jfinal.template.source.FileSource.getContent(FileSource.java:69)
+	at com.jfinal.template.Engine.buildTemplateBySourceFactory(Engine.java:165)
+	at com.jfinal.template.Engine.getTemplate(Engine.java:150)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:62)
+	at com.jfinal.render.ErrorRender.render(ErrorRender.java:51)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:76)
+	at com.webos.WebSocketHandler.handle(WebSocketHandler.java:24)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2021-06-15 15:20:10
+[WARN]-[Thread: XNIO-1 task-4]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/form/FormTable?table=oa_qingjia&id=a9f7df3f-8eb1-4e87-9e89-b48a7bdbbd07
+
+2021-06-15 15:20:33
+[WARN]-[Thread: XNIO-1 task-4]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /api/workflow/GetFlowAllList
+
+2021-06-15 15:20:33
+[ERROR]-[Thread: XNIO-1 task-4]-[com.jfinal.core.JFinalFilter.doFilter()]: /api/workflow/GetFlowAllList
+java.lang.RuntimeException: File not found : E:/Work/webosforjava/webos/webos/src/main/webapp/error.html
+	at com.jfinal.template.source.FileSource.getContent(FileSource.java:69)
+	at com.jfinal.template.Engine.buildTemplateBySourceFactory(Engine.java:165)
+	at com.jfinal.template.Engine.getTemplate(Engine.java:150)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:62)
+	at com.jfinal.render.ErrorRender.render(ErrorRender.java:51)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:76)
+	at com.webos.WebSocketHandler.handle(WebSocketHandler.java:24)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2021-06-15 15:54:30
+[WARN]-[Thread: XNIO-1 task-3]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/form/FormDesignHtml
+
+2021-06-15 15:55:44
+[WARN]-[Thread: XNIO-1 task-3]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /api/workflow/GetFlowAllList
+
+2021-06-15 15:55:44
+[ERROR]-[Thread: XNIO-1 task-3]-[com.jfinal.core.JFinalFilter.doFilter()]: /api/workflow/GetFlowAllList
+java.lang.RuntimeException: File not found : E:/Work/webosforjava/webos/webos/src/main/webapp/error.html
+	at com.jfinal.template.source.FileSource.getContent(FileSource.java:69)
+	at com.jfinal.template.Engine.buildTemplateBySourceFactory(Engine.java:165)
+	at com.jfinal.template.Engine.getTemplate(Engine.java:150)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:62)
+	at com.jfinal.render.ErrorRender.render(ErrorRender.java:51)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:76)
+	at com.webos.WebSocketHandler.handle(WebSocketHandler.java:24)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2021-06-15 16:09:04
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:09:04
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:09:04
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:15:56
+[WARN]-[Thread: XNIO-1 task-3]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /api/workflow/GetFlowAllList
+
+2021-06-15 16:15:56
+[ERROR]-[Thread: XNIO-1 task-3]-[com.jfinal.core.JFinalFilter.doFilter()]: /api/workflow/GetFlowAllList
+java.lang.RuntimeException: File not found : E:/Work/webosforjava/webos/webos/src/main/webapp/error.html
+	at com.jfinal.template.source.FileSource.getContent(FileSource.java:69)
+	at com.jfinal.template.Engine.buildTemplateBySourceFactory(Engine.java:165)
+	at com.jfinal.template.Engine.getTemplate(Engine.java:150)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:62)
+	at com.jfinal.render.ErrorRender.render(ErrorRender.java:51)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:76)
+	at com.webos.WebSocketHandler.handle(WebSocketHandler.java:24)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2021-06-15 16:16:24
+[WARN]-[Thread: XNIO-1 task-3]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /api/workflow/GetFlowAllList
+
+2021-06-15 16:16:24
+[ERROR]-[Thread: XNIO-1 task-3]-[com.jfinal.core.JFinalFilter.doFilter()]: /api/workflow/GetFlowAllList
+java.lang.RuntimeException: File not found : E:/Work/webosforjava/webos/webos/src/main/webapp/error.html
+	at com.jfinal.template.source.FileSource.getContent(FileSource.java:69)
+	at com.jfinal.template.Engine.buildTemplateBySourceFactory(Engine.java:165)
+	at com.jfinal.template.Engine.getTemplate(Engine.java:150)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:62)
+	at com.jfinal.render.ErrorRender.render(ErrorRender.java:51)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:76)
+	at com.webos.WebSocketHandler.handle(WebSocketHandler.java:24)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2021-06-15 16:16:31
+[ERROR]-[Thread: XNIO-1 task-4]-[com.jfinal.core.ActionHandler.handleActionException()]: 500 Error: /api/form/GetCheckName?Name=oa_qingjia
+com.jfinal.core.ActionException
+
+2021-06-15 16:16:31
+[ERROR]-[Thread: XNIO-1 task-4]-[com.jfinal.core.JFinalFilter.doFilter()]: /api/form/GetCheckName?Name=oa_qingjia
+java.lang.RuntimeException: File not found : E:/Work/webosforjava/webos/webos/src/main/webapp/error.html
+	at com.jfinal.template.source.FileSource.getContent(FileSource.java:69)
+	at com.jfinal.template.Engine.buildTemplateBySourceFactory(Engine.java:165)
+	at com.jfinal.template.Engine.getTemplate(Engine.java:150)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:62)
+	at com.jfinal.render.ErrorRender.render(ErrorRender.java:51)
+	at com.jfinal.core.ActionHandler.handleActionException(ActionHandler.java:174)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:122)
+	at com.webos.WebSocketHandler.handle(WebSocketHandler.java:24)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2021-06-15 16:28:29
+[WARN]-[Thread: XNIO-1 task-4]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/form/FormDesignYL
+
+2021-06-15 16:29:49
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:29:49
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:29:49
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:31:29
+[WARN]-[Thread: XNIO-1 task-3]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /api/workflow/GetFlowAllList
+
+2021-06-15 16:31:29
+[ERROR]-[Thread: XNIO-1 task-3]-[com.jfinal.core.JFinalFilter.doFilter()]: /api/workflow/GetFlowAllList
+java.lang.RuntimeException: File not found : E:/Work/webosforjava/webos/webos/src/main/webapp/error.html
+	at com.jfinal.template.source.FileSource.getContent(FileSource.java:69)
+	at com.jfinal.template.Engine.buildTemplateBySourceFactory(Engine.java:165)
+	at com.jfinal.template.Engine.getTemplate(Engine.java:150)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:62)
+	at com.jfinal.render.ErrorRender.render(ErrorRender.java:51)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:76)
+	at com.webos.WebSocketHandler.handle(WebSocketHandler.java:24)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2021-06-15 16:31:33
+[ERROR]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handleActionException()]: 500 Error: /api/form/GetCheckName?Name=oa_qingjia
+com.jfinal.core.ActionException
+
+2021-06-15 16:31:33
+[ERROR]-[Thread: XNIO-1 task-1]-[com.jfinal.core.JFinalFilter.doFilter()]: /api/form/GetCheckName?Name=oa_qingjia
+java.lang.RuntimeException: File not found : E:/Work/webosforjava/webos/webos/src/main/webapp/error.html
+	at com.jfinal.template.source.FileSource.getContent(FileSource.java:69)
+	at com.jfinal.template.Engine.buildTemplateBySourceFactory(Engine.java:165)
+	at com.jfinal.template.Engine.getTemplate(Engine.java:150)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:62)
+	at com.jfinal.render.ErrorRender.render(ErrorRender.java:51)
+	at com.jfinal.core.ActionHandler.handleActionException(ActionHandler.java:174)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:122)
+	at com.webos.WebSocketHandler.handle(WebSocketHandler.java:24)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2021-06-15 16:31:51
+[WARN]-[Thread: XNIO-1 task-4]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /api/workflow/GetFlowAllList
+
+2021-06-15 16:31:51
+[ERROR]-[Thread: XNIO-1 task-4]-[com.jfinal.core.JFinalFilter.doFilter()]: /api/workflow/GetFlowAllList
+java.lang.RuntimeException: File not found : E:/Work/webosforjava/webos/webos/src/main/webapp/error.html
+	at com.jfinal.template.source.FileSource.getContent(FileSource.java:69)
+	at com.jfinal.template.Engine.buildTemplateBySourceFactory(Engine.java:165)
+	at com.jfinal.template.Engine.getTemplate(Engine.java:150)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:62)
+	at com.jfinal.render.ErrorRender.render(ErrorRender.java:51)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:76)
+	at com.webos.WebSocketHandler.handle(WebSocketHandler.java:24)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2021-06-15 16:36:18
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:36:18
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:36:18
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:37:22
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:37:22
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:37:22
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:46:34
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:46:34
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:46:34
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:46:36
+[WARN]-[Thread: HotSwapWatcher]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:46:36
+[WARN]-[Thread: HotSwapWatcher]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:46:36
+[WARN]-[Thread: HotSwapWatcher]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:47:05
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:47:05
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:47:05
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:49:45
+[ERROR]-[Thread: XNIO-1 task-1]-[io.undertow.server.HttpServerExchange.endExchange()]: UT005090: Unexpected failure
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at org.xnio.channels.EmptyStreamSourceChannel.shutdownReads(EmptyStreamSourceChannel.java:184)
+	at io.undertow.servlet.spec.ServletInputStreamImpl.close(ServletInputStreamImpl.java:278)
+	at io.undertow.servlet.spec.HttpServletRequestImpl.closeAndDrainRequest(HttpServletRequestImpl.java:692)
+	at io.undertow.servlet.core.ServletBlockingHttpExchange.close(ServletBlockingHttpExchange.java:89)
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1626)
+	at io.undertow.server.AbstractServerConnection$CloseSetter.handleEvent(AbstractServerConnection.java:316)
+	at io.undertow.server.AbstractServerConnection$CloseSetter.handleEvent(AbstractServerConnection.java:296)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.StreamConnection.invokeCloseListener(StreamConnection.java:80)
+	at org.xnio.Connection.close(Connection.java:142)
+	at io.undertow.server.AbstractServerConnection.close(AbstractServerConnection.java:159)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at io.undertow.server.protocol.http.HttpResponseConduit.write(HttpResponseConduit.java:624)
+	at org.xnio.conduits.AbstractStreamSinkConduit.write(AbstractStreamSinkConduit.java:51)
+	at org.xnio.conduits.ConduitStreamSinkChannel.write(ConduitStreamSinkChannel.java:150)
+	at io.undertow.channels.DetachableStreamSinkChannel.write(DetachableStreamSinkChannel.java:240)
+	at io.undertow.server.HttpServerExchange$WriteDispatchChannel.write(HttpServerExchange.java:2107)
+	at io.undertow.servlet.spec.ServletOutputStreamImpl.writeBufferBlocking(ServletOutputStreamImpl.java:575)
+	at io.undertow.servlet.spec.ServletOutputStreamImpl.flushInternal(ServletOutputStreamImpl.java:490)
+	at io.undertow.servlet.spec.ServletOutputStreamImpl.flush(ServletOutputStreamImpl.java:477)
+	at io.undertow.servlet.spec.ServletPrintWriter.flush(ServletPrintWriter.java:72)
+	at io.undertow.servlet.spec.ServletPrintWriterDelegate.flush(ServletPrintWriterDelegate.java:76)
+	at com.jfinal.render.JsonRender.render(JsonRender.java:141)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:113)
+	at com.webos.WebSocketHandler.handle(WebSocketHandler.java:24)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2021-06-15 16:50:11
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:50:11
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:50:11
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:50:35
+[WARN]-[Thread: HotSwapWatcher]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:50:35
+[WARN]-[Thread: HotSwapWatcher]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:50:35
+[WARN]-[Thread: HotSwapWatcher]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:50:52
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:50:52
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 16:50:52
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-15 17:13:52
+[WARN]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetAppList

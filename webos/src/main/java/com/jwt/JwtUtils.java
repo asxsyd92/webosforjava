@@ -15,7 +15,7 @@ public class JwtUtils {
     /**
      * JWT_WEB_TTL：WEBAPP应用中token的有效时间,默认30分钟
      */
-    public static final long JWT_WEB_TTL = 30 * 60 * 1000;
+    public static final long JWT_WEB_TTL = 60 * 60 * 1000;
 
     /**
      * 将jwt令牌保存到header中的key

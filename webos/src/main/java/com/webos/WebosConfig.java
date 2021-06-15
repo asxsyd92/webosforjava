@@ -1,6 +1,10 @@
 package com.webos;
 
 
+import com.jfinal.ext.handler.UrlSkipHandler;
+import com.jfinal.kit.Prop;
+import com.jfinal.kit.PropKit;
+import com.jfinal.plugin.ehcache.EhCachePlugin;
 import com.webcore.config.RouteConfig;
 import com.webcore.config.TableConfig;
 import com.webos.controllers.UeditorController;
@@ -11,7 +15,9 @@ import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.server.undertow.UndertowServer;
 import com.jfinal.template.Engine;
 import com.jwt.JwtInterceptor;
-
+import live.autu.plugin.jfinal.swagger.config.SwaggerPlugin;
+import live.autu.plugin.jfinal.swagger.model.SwaggerApiInfo;
+import live.autu.plugin.jfinal.swagger.model.SwaggerDoc;
 
 
 public class WebosConfig extends JFinalConfig {
@@ -25,7 +31,7 @@ public class WebosConfig extends JFinalConfig {
      */
     public static void main(String[] args) {
 
-        UndertowServer.start(WebosConfig.class, 89, true);
+        UndertowServer.start(WebosConfig.class, 88, true);
     }
 
     public void configConstant(Constants me) {
@@ -82,10 +88,11 @@ public class WebosConfig extends JFinalConfig {
        // arp.addMapping("RoleApp", RoleAppDal.class);
        // arp.setShowSql(getPropertyToBoolean("showSql",true));
         TableConfig.mapping("com.webcore.modle",arp);
-
+        me.add(new EhCachePlugin());
         me.add(arp);
         System.out.println(arp.getConfig());
-
+//        me.add(new SwaggerPlugin(new SwaggerDoc().setBasePath("/").setHost("127.0.0.1:99").setSwagger("2.0")
+//                .setInfo(new SwaggerApiInfo("jfinal swagger demo", "1.0", "jfinal swagger", ""))));
 
 
  
@@ -100,6 +107,8 @@ public class WebosConfig extends JFinalConfig {
        // me.add(new WebSocketHandler("/websocket"));
 
         me.add(new WebSocketHandler("^/websocket"));
+
+
     }
 
 

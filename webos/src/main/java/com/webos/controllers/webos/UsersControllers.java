@@ -5,8 +5,9 @@ import com.alibaba.fastjson.JSON;
 import com.asxsydutils.utils.JosnUtils;
 import com.asxsydutils.utils.StringUtil;
 import com.jfinal.aop.Inject;
+import com.jfinal.kit.Kv;
+import com.jfinal.plugin.ehcache.CacheKit;
 import com.webcore.annotation.Route;
-import com.webcore.modle.Dictionary;
 import com.webcore.service.LogService;
 import com.webcore.service.RoleAppService;
 import com.webcore.service.UsersService;
@@ -20,7 +21,6 @@ import com.webos.socket.user.Mine;
 
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
-import com.jfinal.ext.interceptor.GET;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
@@ -42,27 +42,43 @@ public class UsersControllers extends Controller {
     LogService logService;
 @Inject
     RoleAppService roleAppService;
-
+@Inject
+    UsersService usersService;
     public void GetAppList() {
         try {
-
+            //从缓存中读取
             Claims claims = getAttr("claims");
-            String Role = claims.get("role").toString();
-            int role = Integer.parseInt(Role);
-            List<Record> list = new ArrayList<>();
-            Object da = null;
-            if (role == 1) {
-                da = new JosnUtils<xRoleApp>().toJson(roleAppService.GetxAppList(""));
-            } else {
-                da = new JosnUtils<RoleApp>().toJson(roleAppService.GetAppList(role));
+            String userid = claims.get("id").toString();
+            Object  menucache=   CacheKit.get("menucache",userid);
+
+            if (menucache!=null){
+                setAttr("msg", "");
+                setAttr("code", 0);
+                setAttr("count", 0);
+                setAttr("data", menucache);
+                setAttr("success", true);
+
+            }else {
+
+                String Role = claims.get("role").toString();
+                int role = Integer.parseInt(Role);
+                List<Record> list = new ArrayList<>();
+                Object da = null;
+                if (role == 1) {
+                    da = new JosnUtils<xRoleApp>().toJson(roleAppService.GetxAppList(""));
+                } else {
+                    da = new JosnUtils<RoleApp>().toJson(roleAppService.GetAppList(role));
+                }
+                //设置缓存
+                CacheKit.put("menucache",userid,da);
+                setAttr("msg", "");
+                setAttr("code", 0);
+                setAttr("count", 0);
+                setAttr("data", da);
+                setAttr("success", true);
             }
 
 
-            setAttr("msg", "");
-            setAttr("code", 0);
-            setAttr("count", 0);
-            setAttr("data", da);
-            setAttr("success", true);
         } catch (Exception ex) {
 
             setAttr("msg", "");
@@ -129,8 +145,9 @@ public void getPageById(){
             //   Record record=   getModel(Record.class, "");
             int page = getParaToInt("page");
             int limit = getParaToInt("limit");
-            // String title = getPara("title");
-            Page<Record> tag = UsersService.GetUserList(page, limit, "");
+            String organizeid = getPara("organizeid");
+            String title = getPara("title");
+            Page<Record> tag = usersService.GetUserList(page, limit, Kv.by("organizeid",organizeid).set("title",title));
             setAttr("msg", "");
             setAttr("code", 0);
             setAttr("count", tag.getTotalPage());
@@ -152,7 +169,7 @@ public void getPageById(){
 
         try {
 
-            List<Record> tag = UsersService.GetOrganizeAndRole();
+            List<Record> tag = usersService.GetOrganizeAndRole();
             setAttr("msg", "1部门，0角色");
             setAttr("code", 0);
             setAttr("count", 0);
@@ -171,57 +188,95 @@ public void getPageById(){
 
      public void UsersSave() {
         try {
+
             String data = getPara("data");
             Claims claims = getAttr("claims");
             Record record = new Record();
 
             Map user = JSON.parseObject(data, Map.class);
             record.setColumns(user);
-            if (record.getStr("ID").equals(StringUtil.GuidEmpty())) {
-                //检查帐号是否重复
-                Record us = UsersService.GetUserByAccount(record.getStr("Account")); //SqlFromData.GetFromData("S_Teacher", new { S_Account = ter["S_Account"].ToString().ToLower() }).FirstOrDefault();
+            //获取用户实体
+            Users users=JSON.parseObject(data,Users.class);
+
+            //新增
+            if (users.getID().equals(StringUtil.GuidEmpty())){
+                Record us = usersService.GetUserByAccount(users.getAccount()); //SqlFromData.GetFromData("S_Teacher", new { S_Account = ter["S_Account"].ToString().ToLower() }).FirstOrDefault();
                 if (us != null) {
                     setAttr("msg", "系统中存在相同帐号，请更换账号再试！");
-                    setAttr("Success", false);
+                    setAttr("success", false);
+                    renderJson();
+                }
+                users.setID(StringUtil.getPrimaryKey());
+                users.setAddtime(new Date());
+           if (usersService.save(users,user)) {
+               String logmsg =  "新增账号:" + users.getAccount() ;
+               logService.addLog(logmsg, "更新详情："+JSON.toJSONString(users), Common.getRemoteLoginUserIp(this.getRequest()), claims.get("name").toString(), claims.get("id").toString(), "1", JSON.toJSONString(users), "", "");
 
-                } else {
-                    logService.addLog("新增用户", "新增用户！", Common.getRemoteLoginUserIp(this.getRequest()), claims.get("name").toString(), claims.get("id").toString(), "新增", "", "", "");
-
-                    String id = UUID.randomUUID().toString();
-                    record.set("ID", id);
-                    String str = id.toLowerCase() + "123456";
-                    String newstr = MD5_32bit(str);
-                    //获取配置中的密码
-                    record.set("Account", user.get("Account").toString().toLowerCase());
-                    record.set("Password", newstr);
-
-                    Boolean ids = UsersService.Insert(record);
-                    if (ids) {
-
-                        setAttr("msg", "保存成功");
-                        setAttr("Success", true);
+               setAttr("msg", "保存成功");
+                        setAttr("success", true);
                     } else {
                         setAttr("msg", "保存失败");
-                        setAttr("Success", true);
+                        setAttr("success", false);
                     }
-
-                }
-
-
-            } else {
-                Boolean ids = UsersService.Insert(record);
-                if (ids) {
-
+            }
+            else {
+                if ( usersService.update(users)) {
+                    String logmsg =  "更新账号:" + users.getAccount() ;
+                    logService.addLog(logmsg, "更新详情："+JSON.toJSONString(users), Common.getRemoteLoginUserIp(this.getRequest()), claims.get("name").toString(), claims.get("id").toString(), "1", JSON.toJSONString(users), "", "");
                     setAttr("msg", "保存成功");
-                    setAttr("Success", true);
+                    setAttr("success", true);
                 } else {
                     setAttr("msg", "保存失败");
-                    setAttr("Success", true);
+                    setAttr("success", false);
                 }
+
             }
+//            if (record.getStr("ID").equals(StringUtil.GuidEmpty())) {
+//                //检查帐号是否重复
+//                Record us = usersService.GetUserByAccount(record.getStr("Account")); //SqlFromData.GetFromData("S_Teacher", new { S_Account = ter["S_Account"].ToString().ToLower() }).FirstOrDefault();
+//                if (us != null) {
+//                    setAttr("msg", "系统中存在相同帐号，请更换账号再试！");
+//                    setAttr("success", false);
+//
+//                } else {
+//                    logService.addLog("新增用户", "新增用户！", Common.getRemoteLoginUserIp(this.getRequest()), claims.get("name").toString(), claims.get("id").toString(), "新增", "", "", "");
+//
+//                    String id = UUID.randomUUID().toString();
+//                    record.set("ID", id);
+//                    String str = id.toLowerCase() + "123456";
+//                    String newstr = MD5_32bit(str);
+//                    //获取配置中的密码
+//                    record.set("Account", user.get("Account").toString().toLowerCase());
+//                    record.set("Password", newstr);
+//
+//                    Boolean ids = usersService.Insert(record);
+//                    if (ids) {
+//
+//                        setAttr("msg", "保存成功");
+//                        setAttr("Success", true);
+//                    } else {
+//                        setAttr("msg", "保存失败");
+//                        setAttr("Success", false);
+//                    }
+//
+//                }
+//
+//
+//            }
+//            else {
+//                Boolean ids = usersService.Insert(record);
+//                if (ids) {
+//
+//                    setAttr("msg", "保存成功");
+//                    setAttr("success", true);
+//                } else {
+//                    setAttr("msg", "保存失败");
+//                    setAttr("success", false);
+//                }
+//            }
         } catch (Exception ex) {
             setAttr("msg", ex.getMessage());
-            setAttr("Success", true);
+            setAttr("success", false);
         }
 
      /*   data = Models.Unity.OperationJson(data);
@@ -417,7 +472,7 @@ public void getPageById(){
     }
     public void GetUsersTreeAsync() {
         try {
-            List<Users> users = UsersService.GetUsersTreeAsync();
+            List<Users> users = usersService.GetUsersTreeAsync();
             setAttr("msg", "获取成功");
             setAttr("code", 0);
             setAttr("count", 0);
@@ -427,7 +482,7 @@ public void getPageById(){
             setAttr("msg", "获取成功");
             setAttr("code", 0);
             setAttr("count", 0);
-            setAttr("data", null);
+            setAttr("data", null);  setAttr("success", false);
 
         }
         renderJson();
@@ -437,7 +492,7 @@ public void getPageById(){
     {
      try {
             System.out.println("jn");
-        List<Record> da = UsersService.getUserAll();//.GetUsersList("", "", 0, 100);
+        List<Record> da = usersService.getUserAll();//.GetUsersList("", "", 0, 100);
        // Claims claims = getAttr("claims");
             String id = getPara("id");
         List<Record> my=  da.stream().filter(c->c.get("id").equals(id)).collect(Collectors.toList());
