@@ -1,9 +1,8 @@
 package com.webos;
 
 
-import com.jfinal.ext.handler.UrlSkipHandler;
-import com.jfinal.kit.Prop;
-import com.jfinal.kit.PropKit;
+import com.asxsyd92.swagger.config.routes.SwaggerRoutes;
+import com.jfinal.ext.handler.ContextPathHandler;
 import com.jfinal.plugin.ehcache.EhCachePlugin;
 import com.webcore.config.RouteConfig;
 import com.webcore.config.TableConfig;
@@ -15,9 +14,7 @@ import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.server.undertow.UndertowServer;
 import com.jfinal.template.Engine;
 import com.jwt.JwtInterceptor;
-import live.autu.plugin.jfinal.swagger.config.SwaggerPlugin;
-import live.autu.plugin.jfinal.swagger.model.SwaggerApiInfo;
-import live.autu.plugin.jfinal.swagger.model.SwaggerDoc;
+
 
 
 public class WebosConfig extends JFinalConfig {
@@ -55,7 +52,7 @@ public class WebosConfig extends JFinalConfig {
 
        me.add("/api/ueditor", UeditorController.class);
        // me.add("/api/Users", UsersControllers.class);
-
+        me.add(new SwaggerRoutes());
     }
 
     public void configEngine(Engine me) {
@@ -107,7 +104,7 @@ public class WebosConfig extends JFinalConfig {
        // me.add(new WebSocketHandler("/websocket"));
 
         me.add(new WebSocketHandler("^/websocket"));
-
+        me.add(new ContextPathHandler("basePath"));
 
     }
 

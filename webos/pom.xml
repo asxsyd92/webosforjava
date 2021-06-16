@@ -21,11 +21,7 @@
     </repositories>
     <dependencies>
 
-        <dependency>
-            <groupId>live.autu</groupId>
-            <artifactId>jfinal-swagger</artifactId>
-            <version>1.0.0</version>
-        </dependency>
+
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
@@ -67,6 +63,12 @@
             <groupId>com.asxsyd92</groupId>
             <artifactId>webcore</artifactId>
             <version>1.2</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.asxsyd92</groupId>
+            <artifactId>swagger</artifactId>
+            <version>1.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

@@ -346,7 +346,7 @@ public class FormControllers extends Controller {
         String data= getPara("data");
 
         Claims claims = getAttr("claims");
-        Unity.getJsonSetData(data,claims);
+       // Unity.getJsonSetData(data,claims);
         boolean istask= getParaToBoolean("istask");;
         String tag = "";
         Record os=new Record();

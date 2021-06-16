@@ -6,13 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="webos" />
         <module name="webcore" />
+        <module name="webos" />
+        <module name="swagger" />
         <module name="asxsydutils" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
       <module name="asxsydutils" target="1.8" />
+      <module name="swagger" target="8" />
       <module name="webcore" target="1.8" />
       <module name="webos" target="1.8" />
     </bytecodeTargetLevel>

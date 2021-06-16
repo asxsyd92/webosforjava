@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/webos/pom.xml" />
         <option value="$PROJECT_DIR$/../asxsydutils/pom.xml" />
         <option value="$PROJECT_DIR$/../webcore/pom.xml" />
+        <option value="$PROJECT_DIR$/../swagger/pom.xml" />
       </list>
     </option>
   </component>

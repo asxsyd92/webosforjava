@@ -1,5 +1,9 @@
 package com.webos.controllers.webos;
 
+import com.asxsyd92.swagger.annotation.Api;
+import com.asxsyd92.swagger.annotation.ApiOperation;
+import com.asxsyd92.swagger.annotation.Param;
+import com.asxsyd92.swagger.annotation.Params;
 import com.jfinal.aop.Before;
 import com.jfinal.aop.Clear;
 import com.jfinal.aop.Inject;
@@ -12,18 +16,14 @@ import com.webcore.annotation.Route;
 import com.webcore.service.LogService;
 import com.webcore.service.UsersService;
 import com.webos.Common;
-import live.autu.plugin.jfinal.swagger.annotation.Api;
-import live.autu.plugin.jfinal.swagger.annotation.ApiImplicitParam;
-import live.autu.plugin.jfinal.swagger.annotation.ApiImplicitParams;
-import live.autu.plugin.jfinal.swagger.annotation.ApiOperation;
-import live.autu.plugin.jfinal.swagger.config.RequestMethod;
+
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static com.asxsydutils.utils.MD5.MD5_32bit;
 
-@Api(tags = "test", description = "登陆控制器")
+@Api(tag = "test", description = "登陆控制器")
 @Route(Key = "/api/login")
 public class LoginControllers extends Controller {
     @Inject
@@ -35,10 +35,10 @@ public class LoginControllers extends Controller {
      */
     @Clear
     @Before(POST.class)
-    @ApiOperation(tags = "index", methods = RequestMethod.POST, description = "用户登陆")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "user", description = "用户名", required = true, dataType = "String"),
-            @ApiImplicitParam(name = "pw", description = "密码", required = true, dataType = "String")
+    @ApiOperation(url = "/api/login/Login", tag = "Login", httpMethod = "post", description = "用户登陆")
+    @Params({
+            @Param(name = "user", description = "账号", required = true, dataType = "string"),
+            @Param(name = "pw", description = "密码", required = true, dataType = "string")
     })
     public void Login() {
         try {
