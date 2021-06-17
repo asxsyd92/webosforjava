@@ -3,7 +3,7 @@ package com.webos.controllers.webos;
 
 import com.alibaba.fastjson.JSON;
 import com.jfinal.aop.Inject;
-import com.webcore.annotation.Route;
+import com.jfinal.core.Path;
 import com.webcore.service.LogService;
 import com.webcore.service.TaskService;
 import com.jfinal.aop.Before;
@@ -26,7 +26,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-@Route(Key = "/api/tasks")
+@Path("/api/tasks")
 public class TasksController  extends Controller {
     @Inject
     LogService logService;

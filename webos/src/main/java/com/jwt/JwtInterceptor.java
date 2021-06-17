@@ -16,7 +16,7 @@ public class JwtInterceptor implements Interceptor {
     // 拦截每个请求
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Invocation inv) {
 
-
+        System.out.println(request);
       //  inv.getController().getResponse().addHeader("Access-Control-Allow-Origin", "*");
         // 通过url得到token请求头是否包含Authorization
         String jwt = request.getHeader("Authorization");

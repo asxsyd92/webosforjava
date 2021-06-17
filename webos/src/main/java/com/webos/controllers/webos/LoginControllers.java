@@ -8,14 +8,15 @@ import com.jfinal.aop.Before;
 import com.jfinal.aop.Clear;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
+import com.jfinal.core.Path;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.ehcache.CacheKit;
 import com.jwt.JwtUtils;
-import com.webcore.annotation.Route;
 import com.webcore.service.LogService;
 import com.webcore.service.UsersService;
 import com.webos.Common;
+
 
 
 import java.util.HashMap;
@@ -23,8 +24,10 @@ import java.util.Map;
 
 import static com.asxsydutils.utils.MD5.MD5_32bit;
 
+
+
+@Path("/api/login")
 @Api(tag = "test", description = "登陆控制器")
-@Route(Key = "/api/login")
 public class LoginControllers extends Controller {
     @Inject
     LogService logService;
@@ -83,7 +86,7 @@ public class LoginControllers extends Controller {
                         claims.put("name", us.getStr("name"));
                         claims.put("role", us.getStr("Account") == "com/asxsyd92" ? "110" : us.getInt("identifier").toString());
                         claims.put("orname", us.getStr("Organize"));
-
+                        claims.put("avatar", us.getStr("avatar"));
                         String token = JwtUtils.createJwt(claims, JwtUtils.JWT_WEB_TTL);
                         setAttr("access_token", token);
                         setAttr("token_type", "Bearer");

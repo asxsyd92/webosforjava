@@ -4,17 +4,17 @@ package com.webos.controllers.portalsite;
 import com.jfinal.aop.Clear;
 import com.jfinal.core.Controller;
 import com.jfinal.core.NotAction;
+import com.jfinal.core.Path;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
-import com.webcore.annotation.Route;
 import com.webcore.utils.data.mysqlserver.FromData;
 
 import java.util.List;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 @Clear
-@Route(Key = "News")
+@Path("News")
 public class HtmlController extends Controller {
   public void   NewsDetail(){
       String id=getPara("id");

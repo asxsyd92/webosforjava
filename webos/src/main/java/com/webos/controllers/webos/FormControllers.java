@@ -5,14 +5,13 @@ import com.alibaba.fastjson.JSON;
 import com.asxsydutils.utils.JosnUtils;
 import com.asxsydutils.utils.StringUtil;
 import com.jfinal.aop.Inject;
-import com.webcore.annotation.Route;
+import com.jfinal.core.Path;
 import com.webcore.service.DictionaryService;
 import com.webcore.service.LogService;
 import com.webcore.service.TaskService;
 import com.webcore.modle.CommonTask;
 import com.webcore.modle.Dictionary;
 
-import com.webcore.utils.Unity;
 import com.webcore.utils.data.MySql;
 import com.webcore.utils.data.mysqlserver.FromData;
 import com.jfinal.aop.Before;
@@ -35,7 +34,7 @@ import java.util.List;
 import java.util.Map;
 
 @Before({JwtInterceptor.class, POST.class})
-@Route(Key = "/api/form")
+@Path("/api/form")
 public class FormControllers extends Controller {
     @Inject
     LogService logService;

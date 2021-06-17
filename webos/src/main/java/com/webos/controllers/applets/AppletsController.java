@@ -2,7 +2,7 @@ package com.webos.controllers.applets;
 
 import com.asxsydutils.utils.HttpHelper;
 import com.asxsydutils.utils.StringUtil;
-import com.webcore.annotation.Route;
+import com.jfinal.core.Path;
 import com.webcore.service.UsersIntegralService;
 
 import com.jfinal.aop.Before;
@@ -15,7 +15,7 @@ import java.util.Date;
 import java.util.List;
 
 
-@Route(Key = "/api/applets")
+@Path( "/api/applets")
 @Clear
 public class AppletsController  extends Controller {
 

@@ -1,13 +1,14 @@
 package com.webos.controllers.applets;
 
-import com.webcore.annotation.Route;
+import com.jfinal.core.Path;
+
 import com.jfinal.aop.Before;
 import com.jfinal.aop.Clear;
 import com.jfinal.core.Controller;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.plugin.activerecord.Db;
 
-@Route(Key = "/api/question")
+@Path( "/api/question")
 @Clear
 public class QuestionController extends Controller {
     @Before({POST.class})

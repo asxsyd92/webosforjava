@@ -2,22 +2,20 @@ package com.webos.controllers.webos;
 
 import com.alibaba.fastjson.JSON;
 
+import com.asxsyd92.swagger.annotation.Api;
+import com.asxsyd92.swagger.annotation.ApiOperation;
 import com.asxsydutils.utils.JosnUtils;
 import com.asxsydutils.utils.StringUtil;
 import com.jfinal.aop.Inject;
+import com.jfinal.core.Path;
 import com.jfinal.kit.Kv;
 import com.jfinal.plugin.ehcache.CacheKit;
-import com.webcore.annotation.Route;
+import com.webcore.modle.*;
+import com.webcore.service.ImService;
 import com.webcore.service.LogService;
 import com.webcore.service.RoleAppService;
 import com.webcore.service.UsersService;
-import com.webcore.modle.RoleApp;
-import com.webcore.modle.Users;
-import com.webcore.modle.xRoleApp;
 import com.webos.Common;
-import com.webos.socket.user.FriendItem;
-import com.webos.socket.user.Im;
-import com.webos.socket.user.Mine;
 
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
@@ -27,16 +25,16 @@ import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 
 import com.jwt.JwtInterceptor;
+import com.webos.socket.util.util;
 import io.jsonwebtoken.Claims;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.*;
-import java.util.stream.Collectors;
 
 import static com.asxsydutils.utils.MD5.MD5_32bit;
-
+@Api(tag = "Users", description = "用户控制器")
 @Before({JwtInterceptor.class, POST.class})
-@Route(Key = "/api/users")
+@Path("/api/users")
 public class UsersControllers extends Controller {
     @Inject
     LogService logService;
@@ -44,6 +42,8 @@ public class UsersControllers extends Controller {
     RoleAppService roleAppService;
 @Inject
     UsersService usersService;
+@Inject
+    ImService imService;
     public void GetAppList() {
         try {
             //从缓存中读取
@@ -487,53 +487,39 @@ public void getPageById(){
         }
         renderJson();
     }
+    @Before({JwtInterceptor.class, POST.class})
+   @ApiOperation(url = "/api/users/GetUsersListAsync", tag = "GetUsersListAsync", httpMethod = "post", description = "需要授权：im用户列表 ")
 
     public void GetUsersListAsync()
     {
      try {
-            System.out.println("jn");
-        List<Record> da = usersService.getUserAll();//.GetUsersList("", "", 0, 100);
-       // Claims claims = getAttr("claims");
-            String id = getPara("id");
-        List<Record> my=  da.stream().filter(c->c.get("id").equals(id)).collect(Collectors.toList());
-        Mine mine = new Mine();
-        if (my.size()>0){
-            Record m=my.get(0);
-            mine.username = m.getStr("name");
-            mine.avatar = "http://cdn.firstlinkapp.com/upload/2016_6/1465575923433_33812.jpg";
-            mine.id = m.getStr("id");
-            mine.sign = m.getStr("sign");
-            mine.status = "1";
-        }
+         Record data=new Record();
 
-        //查找组织架构
+         //Claims claims = getAttr("claims");
+         String id="EB03262C-AB60-4BC6-A4C0-96E66A4229FE";//claims.get("id").toString();
+        Sysim im= imService.getImUser(id);
 
-    Map<String, List<Record>> map =da.stream().collect(Collectors.groupingBy(c->c.get("organize")));
-        Set<Map.Entry<String, List<Record>>> entry =  map.entrySet();
-        List<FriendItem>  j= new ArrayList();
-        for (Map.Entry<String, List<Record>> m : entry) {
-            FriendItem o=new FriendItem();
-            o.groupname=m.getKey();
-            o.id=m.getValue().get(0).getStr("id");
-          o.online=1;
-          o.list=m.getValue();
-          j.add(o);
-        }
-        List<Im> list = new ArrayList<Im>();
-        Im o=new Im();
-        o.mine=mine;
-        o.group="";
-        o.friend=j;
+         data.set("mine",im);
+         //获取朋友
+
+         Object  friends =  new util<Sysfriend>().toJson(imService.getImFriend(id));
+         data.set("friend",friends);
+         //获取群
+
+         Object  groups =  new util<Sysgroup>().toJson(imService.getImgroup(id));
+         data.set("group",groups);
+
             setAttr("msg", "获取成功");
             setAttr("code", 0);
             setAttr("count", 0);
-            setAttr("data", o);
+            setAttr("data", data);
         }catch (Exception ex){
 
-            setAttr("msg", "获取成功");
+            setAttr("msg", ex.getMessage());
             setAttr("code", 0);
             setAttr("count", 0);
             setAttr("data", null);
+         setAttr("success", false);
         }
         renderJson();
      //   return Asxsyd92Core.Utils.JSONhelper.ToJson(new { code = 0, msg = "", count = da.Count == 0 ? 0 : da.First().Count, data = list[0] }, false);

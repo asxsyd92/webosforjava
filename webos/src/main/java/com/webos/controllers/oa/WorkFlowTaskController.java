@@ -6,6 +6,7 @@ import com.asxsydutils.utils.StringUtil;
 import com.jfinal.aop.Before;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
+import com.jfinal.core.Path;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.kit.Kv;
 import com.jfinal.plugin.activerecord.Page;
@@ -13,7 +14,6 @@ import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.ehcache.CacheKit;
 import com.jwt.JwtInterceptor;
 import com.spire.ms.System.Collections.ArrayList;
-import com.webcore.annotation.Route;
 import com.webcore.modle.WorkFlowTask;
 import com.webcore.modle.Workflow;
 import com.webcore.oa.task.Query;
@@ -26,13 +26,12 @@ import com.webcore.service.WorkflowService;
 import com.webcore.utils.Unity;
 import io.jsonwebtoken.Claims;
 
-import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.Date;
 import java.util.List;
 
 
-@Route(Key="/api/workflowtasks")
+@Path("/api/workflowtasks")
 public class WorkFlowTaskController extends Controller {
     @Inject
     WorkFlowTaskService workFlowTaskService;

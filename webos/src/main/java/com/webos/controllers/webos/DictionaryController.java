@@ -5,17 +5,17 @@ import com.asxsydutils.utils.JosnUtils;
 import com.jfinal.aop.Before;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
+import com.jfinal.core.Path;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.plugin.activerecord.Page;
 import com.jwt.JwtInterceptor;
-import com.webcore.annotation.Route;
 import com.webcore.modle.Dictionary;
 import com.webcore.service.DictionaryService;
 import com.webcore.service.LogService;
 import com.webos.Common;
 import io.jsonwebtoken.Claims;
 
-@Route(Key = "/api/dictionary")
+@Path("/api/dictionary")
 @Before({JwtInterceptor.class,POST.class})
 public class DictionaryController  extends Controller {
     @Inject

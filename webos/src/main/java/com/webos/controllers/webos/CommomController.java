@@ -6,6 +6,7 @@ import com.asxsydutils.utils.JosnUtils;
 import com.asxsydutils.utils.StringUtil;
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
+import com.jfinal.core.Path;
 import com.jfinal.ext.interceptor.GET;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.kit.Kv;
@@ -13,7 +14,6 @@ import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 import com.jwt.JwtInterceptor;
-import com.webcore.annotation.Route;
 import com.webcore.modle.Dictionary;
 import com.webcore.service.CommomService;
 import com.webcore.service.DictionaryService;
@@ -23,7 +23,7 @@ import io.jsonwebtoken.Claims;
 
 import java.util.Map;
 
-@Route(Key = "/api/common")
+@Path("/api/common")
 public class CommomController extends Controller {
 
     /// <summary>

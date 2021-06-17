@@ -8,16 +8,15 @@ import com.alibaba.fastjson.JSONObject;
 import com.asxsydutils.utils.StringUtil;
 import com.jfinal.aop.Clear;
 import com.jfinal.core.Controller;
+import com.jfinal.core.Path;
 import com.jfinal.kit.Kv;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
-import com.jfinal.plugin.ehcache.CacheKit;
 import com.taobao.api.DefaultTaobaoClient;
 import com.taobao.api.TaobaoClient;
 import com.taobao.api.request.TbkDgMaterialOptionalRequest;
 import com.taobao.api.response.TbkDgMaterialOptionalResponse;
-import com.webcore.annotation.Route;
 import com.webcore.service.CommomService;
 import com.webcore.service.TaoBaoService;
 import com.webcore.utils.data.mysqlserver.FromData;
@@ -27,7 +26,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-@Route(Key = "/api/portalsite")
+@Path ("/api/portalsite")
 @Clear
 public class PortalSiteController extends Controller {
     public static String appUrl = "http://gw.api.taobao.com/router/rest";

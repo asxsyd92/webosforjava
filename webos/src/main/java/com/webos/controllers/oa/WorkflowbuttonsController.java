@@ -2,14 +2,14 @@ package com.webos.controllers.oa;
 
 import java.util.List;
 
-import com.webcore.annotation.Route;
+import com.jfinal.core.Path;
 import com.webcore.service.WorkflowbuttonsService;
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
 import com.jfinal.plugin.activerecord.Record;
 import com.jwt.JwtInterceptor;
 
-@Route(Key="/api/workflowbuttons")
+@Path("/api/workflowbuttons")
 @Before({JwtInterceptor.class})
 public class WorkflowbuttonsController extends Controller {
     //获取按钮

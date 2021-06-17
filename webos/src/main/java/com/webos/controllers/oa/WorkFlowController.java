@@ -3,20 +3,20 @@ package com.webos.controllers.oa;
 
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
+import com.jfinal.core.Path;
 import com.jfinal.kit.Kv;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.ehcache.CacheKit;
 import com.jwt.JwtInterceptor;
-import com.webcore.annotation.Route;
 import com.webcore.modle.Workflow;
 import com.webcore.service.DictionaryService;
 import com.webcore.service.WorkflowService;
 import io.jsonwebtoken.Claims;
 
 import java.util.List;
-@Route(Key="/api/workflow")
+@Path("/api/workflow")
 @Before({JwtInterceptor.class})
 public class WorkFlowController extends Controller {
 

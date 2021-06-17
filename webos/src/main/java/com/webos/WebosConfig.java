@@ -3,8 +3,8 @@ package com.webos;
 
 import com.asxsyd92.swagger.config.routes.SwaggerRoutes;
 import com.jfinal.ext.handler.ContextPathHandler;
+import com.jfinal.ext.handler.UrlSkipHandler;
 import com.jfinal.plugin.ehcache.EhCachePlugin;
-import com.webcore.config.RouteConfig;
 import com.webcore.config.TableConfig;
 import com.webos.controllers.UeditorController;
 import com.jfinal.config.*;
@@ -14,7 +14,7 @@ import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.server.undertow.UndertowServer;
 import com.jfinal.template.Engine;
 import com.jwt.JwtInterceptor;
-
+import com.webos.controllers.websocket.WebSocket;
 
 
 public class WebosConfig extends JFinalConfig {
@@ -27,8 +27,13 @@ public class WebosConfig extends JFinalConfig {
      *      启动入口类放置用于启动的 main 方法
      */
     public static void main(String[] args) {
-
-        UndertowServer.start(WebosConfig.class, 88, true);
+        UndertowServer.create(WebosConfig.class)
+                .configWeb(builder -> {
+                    // 配置WebSocket需使用ServerEndpoint注解
+                    builder.addWebSocketEndpoint(WebSocket.class);
+                })
+                .start();
+        //UndertowServer.start(WebosConfig.class, 88, true);
     }
 
     public void configConstant(Constants me) {
@@ -47,12 +52,11 @@ public class WebosConfig extends JFinalConfig {
     }
 
     public void configRoute(Routes me) {
-        //me.setBaseViewPath("/webapp");
-        me.add(new RouteConfig());
 
        me.add("/api/ueditor", UeditorController.class);
        // me.add("/api/Users", UsersControllers.class);
         me.add(new SwaggerRoutes());
+        me.scan("com.webos.controllers");
     }
 
     public void configEngine(Engine me) {
@@ -102,10 +106,14 @@ public class WebosConfig extends JFinalConfig {
     public void configHandler(Handlers me) {
        // me.add(new UrlSkipHandler("^/websocket.ws", false));
        // me.add(new WebSocketHandler("/websocket"));
+        me.add(new UrlSkipHandler("^/websocket.ws", false));
+        //me.add(new WebSocketHandler("^/websocket.ws"));
 
-        me.add(new WebSocketHandler("^/websocket"));
         me.add(new ContextPathHandler("basePath"));
 
+    }
+    public void onStart() {
+        System.out.println("系统启动完成后回调");
     }
 
 
