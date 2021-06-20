@@ -1,0 +1,2247 @@
+
+2021-06-18 10:29:27
+[WARN]-[Thread: XNIO-1 task-2]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetUsersListAsync
+
+2021-06-18 10:29:27
+[WARN]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetAppList
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: 杩欐槸鍦ㄤ富鏈哄悕瑙ｆ瀽鏃堕�氬父鍑虹幇鐨勬殏鏃堕敊璇紝瀹冩剰鍛崇潃鏈湴鏈嶅姟鍣ㄦ病鏈変粠鏉冨▉鏈嶅姟鍣ㄤ笂鏀跺埌鍝嶅簲銆� (asxsyd92.com)
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:928)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1323)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1276)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:29:39
+[ERROR]-[Thread: Druid-ConnectionPool-Create-1047477166]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
+	... 6 more
+Caused by: java.net.UnknownHostException: asxsyd92.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
+	... 9 more
+
+2021-06-18 10:30:14
+[ERROR]-[Thread: XNIO-1 task-3]-[io.undertow.server.HttpServerExchange.endExchange()]: UT005090: Unexpected failure
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at org.xnio.channels.EmptyStreamSourceChannel.shutdownReads(EmptyStreamSourceChannel.java:184)
+	at io.undertow.servlet.spec.ServletInputStreamImpl.close(ServletInputStreamImpl.java:278)
+	at io.undertow.servlet.spec.HttpServletRequestImpl.closeAndDrainRequest(HttpServletRequestImpl.java:692)
+	at io.undertow.servlet.core.ServletBlockingHttpExchange.close(ServletBlockingHttpExchange.java:89)
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1626)
+	at io.undertow.server.AbstractServerConnection$CloseSetter.handleEvent(AbstractServerConnection.java:316)
+	at io.undertow.server.AbstractServerConnection$CloseSetter.handleEvent(AbstractServerConnection.java:296)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.StreamConnection.invokeCloseListener(StreamConnection.java:80)
+	at org.xnio.Connection.close(Connection.java:142)
+	at io.undertow.server.AbstractServerConnection.close(AbstractServerConnection.java:159)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at io.undertow.server.protocol.http.HttpResponseConduit.write(HttpResponseConduit.java:624)
+	at org.xnio.conduits.AbstractStreamSinkConduit.write(AbstractStreamSinkConduit.java:51)
+	at org.xnio.conduits.ConduitStreamSinkChannel.write(ConduitStreamSinkChannel.java:150)
+	at io.undertow.channels.DetachableStreamSinkChannel.write(DetachableStreamSinkChannel.java:240)
+	at io.undertow.server.HttpServerExchange$WriteDispatchChannel.write(HttpServerExchange.java:2107)
+	at io.undertow.servlet.spec.ServletOutputStreamImpl.writeBufferBlocking(ServletOutputStreamImpl.java:575)
+	at io.undertow.servlet.spec.ServletOutputStreamImpl.flushInternal(ServletOutputStreamImpl.java:490)
+	at io.undertow.servlet.spec.ServletOutputStreamImpl.flush(ServletOutputStreamImpl.java:477)
+	at io.undertow.servlet.spec.ServletPrintWriter.flush(ServletPrintWriter.java:72)
+	at io.undertow.servlet.spec.ServletPrintWriterDelegate.flush(ServletPrintWriterDelegate.java:76)
+	at com.jfinal.render.JsonRender.render(JsonRender.java:141)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:113)
+	at com.jfinal.ext.handler.ContextPathHandler.handle(ContextPathHandler.java:48)
+	at com.jfinal.ext.handler.UrlSkipHandler.handle(UrlSkipHandler.java:46)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2021-06-18 10:30:25
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 10:30:25
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 10:30:25
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 10:43:59
+[ERROR]-[Thread: XNIO-1 I/O-1]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 10:50:12
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 10:50:12
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 10:50:12
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 10:59:46
+[ERROR]-[Thread: XNIO-1 I/O-1]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 11:00:06
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 11:00:06
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 11:00:06
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 11:44:25
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 11:44:25
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 11:44:25
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 11:44:33
+[WARN]-[Thread: XNIO-1 task-2]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetUsersListAsync
+
+2021-06-18 11:44:35
+[WARN]-[Thread: XNIO-1 task-3]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetAppList
+
+2021-06-18 15:25:42
+[WARN]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetUsersListAsync
+
+2021-06-18 15:25:42
+[WARN]-[Thread: XNIO-1 task-2]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetAppList
+
+2021-06-18 15:28:02
+[ERROR]-[Thread: XNIO-1 I/O-1]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 15:28:24
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 15:28:24
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 15:28:24
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 15:50:22
+[ERROR]-[Thread: XNIO-1 I/O-2]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 15:58:57
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 15:58:57
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 15:58:57
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 16:05:48
+[ERROR]-[Thread: XNIO-1 I/O-2]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 16:06:40
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 16:06:40
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 16:06:40
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 16:33:54
+[ERROR]-[Thread: XNIO-1 I/O-2]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 16:34:15
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 16:34:15
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 16:34:15
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 16:35:51
+[WARN]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetUsersListAsync
+
+2021-06-18 16:35:51
+[WARN]-[Thread: XNIO-1 task-3]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetAppList
+
+2021-06-18 16:38:59
+[ERROR]-[Thread: XNIO-1 I/O-2]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 16:40:12
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 16:40:12
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 16:40:12
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 16:44:45
+[ERROR]-[Thread: XNIO-1 I/O-2]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 16:45:05
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 16:45:05
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 16:45:05
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 16:49:57
+[ERROR]-[Thread: XNIO-1 I/O-1]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 16:50:17
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 16:50:17
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 16:50:17
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 16:52:45
+[ERROR]-[Thread: XNIO-1 I/O-1]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 16:53:07
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 16:53:07
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 16:53:07
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 17:14:32
+[ERROR]-[Thread: XNIO-1 I/O-2]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 17:15:53
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 17:15:53
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 17:15:53
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 17:25:33
+[ERROR]-[Thread: XNIO-1 I/O-2]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 17:25:52
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 17:25:52
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 17:25:52
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 17:26:31
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 17:26:31
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 17:26:31
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 17:29:20
+[ERROR]-[Thread: XNIO-1 I/O-2]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 17:29:45
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 17:29:45
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 17:29:45
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 17:34:46
+[ERROR]-[Thread: XNIO-1 I/O-2]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 17:35:08
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 17:35:08
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 17:35:08
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 18:46:12
+[WARN]-[Thread: XNIO-1 task-2]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetAppList
+
+2021-06-18 18:46:12
+[WARN]-[Thread: XNIO-1 task-4]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetUsersListAsync
+
+2021-06-18 18:48:21
+[ERROR]-[Thread: XNIO-1 I/O-1]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 18:48:34
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 18:48:34
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 18:48:34
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:15:13
+[ERROR]-[Thread: XNIO-1 I/O-2]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 19:15:30
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:15:30
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:15:30
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:19:03
+[ERROR]-[Thread: XNIO-1 I/O-2]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 19:19:21
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:19:21
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:19:21
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:22:19
+[ERROR]-[Thread: XNIO-1 I/O-1]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 19:22:37
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:22:37
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:22:37
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:26:47
+[ERROR]-[Thread: XNIO-1 I/O-2]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 19:27:04
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:27:04
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:27:04
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:32:37
+[ERROR]-[Thread: XNIO-1 I/O-2]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 19:32:55
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:32:55
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:32:55
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:35:51
+[ERROR]-[Thread: XNIO-1 I/O-1]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 19:36:11
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:36:11
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:36:11
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:37:18
+[ERROR]-[Thread: XNIO-1 I/O-1]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 19:37:36
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:37:36
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:37:36
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:46:57
+[ERROR]-[Thread: XNIO-1 I/O-2]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 19:47:11
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:47:11
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:47:11
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:47:17
+[WARN]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetUsersListAsync
+
+2021-06-18 19:47:17
+[WARN]-[Thread: XNIO-1 task-3]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetAppList
+
+2021-06-18 19:51:58
+[ERROR]-[Thread: XNIO-1 I/O-2]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 19:52:11
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:52:11
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 19:52:11
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 20:02:22
+[WARN]-[Thread: XNIO-1 task-2]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetUsersListAsync
+
+2021-06-18 20:02:22
+[WARN]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetAppList
+
+2021-06-18 20:07:27
+[WARN]-[Thread: Thread-4]-[com.jfinal.server.undertow.session.HotSwapSessionPersistenceManager.persistSessions()]: UT015009: Failed to persist session attribute io.undertow.websocket.current-connections with value [WebSocket13Channel peer /127.0.0.1:50133 local /127.0.0.1:88[ No Receiver [] -- [] -- []], WebSocket13Channel peer /127.0.0.1:64194 local /127.0.0.1:88[ No Receiver [] -- [] -- []], WebSocket13Channel peer /127.0.0.1:62999 local /127.0.0.1:88[ No Receiver [] -- [] -- []]] for session sSYcXSEaKK3jZCtIjRkhTXNaEjP4svgkQKbtjn8P
+java.io.NotSerializableException: io.undertow.websockets.core.protocol.version13.WebSocket13Channel
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at java.util.ArrayList.writeObject(ArrayList.java:766)
+	at sun.reflect.GeneratedMethodAccessor19.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:1128)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at com.jfinal.server.undertow.session.HotSwapSessionPersistenceManager.persistSessions(HotSwapSessionPersistenceManager.java:50)
+	at io.undertow.servlet.handlers.SessionRestoringHandler.stop(SessionRestoringHandler.java:108)
+	at io.undertow.servlet.core.DeploymentManagerImpl$3.call(DeploymentManagerImpl.java:614)
+	at io.undertow.servlet.core.DeploymentManagerImpl$3.call(DeploymentManagerImpl.java:609)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:42)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.core.DeploymentManagerImpl.stop(DeploymentManagerImpl.java:623)
+	at com.jfinal.server.undertow.UndertowServer.doStop(UndertowServer.java:415)
+	at com.jfinal.server.undertow.UndertowServer.stop(UndertowServer.java:394)
+	at com.jfinal.server.undertow.UndertowServer$1.run(UndertowServer.java:169)
+
+2021-06-18 20:07:27
+[ERROR]-[Thread: XNIO-1 I/O-1]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-18 20:07:50
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 20:07:50
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 20:07:50
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-18 23:08:26
+[WARN]-[Thread: XNIO-1 task-4]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetUsersListAsync
+
+2021-06-18 23:08:26
+[WARN]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetAppList

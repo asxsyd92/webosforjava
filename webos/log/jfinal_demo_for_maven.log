@@ -1,1088 +1,282 @@
 
-2021-06-17 09:54:57
+2021-06-20 00:13:59
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 09:54:57
+2021-06-20 00:13:59
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 09:54:57
+2021-06-20 00:13:59
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 10:01:48
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
+2021-06-20 00:16:00
+[WARN]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetUsersListAsync
 
-
-2021-06-17 10:01:48
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:01:48
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:02:30
-[WARN]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /
-
-2021-06-17 10:02:30
-[ERROR]-[Thread: XNIO-1 task-1]-[com.jfinal.core.JFinalFilter.doFilter()]: /
-java.lang.RuntimeException: File not found : E:/Work/webosforjava/webos/webos/src/main/webapp/error.html
-	at com.jfinal.template.source.FileSource.getContent(FileSource.java:69)
-	at com.jfinal.template.Engine.buildTemplateBySourceFactory(Engine.java:165)
-	at com.jfinal.template.Engine.getTemplate(Engine.java:150)
-	at com.jfinal.render.TemplateRender.render(TemplateRender.java:62)
-	at com.jfinal.render.ErrorRender.render(ErrorRender.java:51)
-	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:76)
-	at com.jfinal.ext.handler.ContextPathHandler.handle(ContextPathHandler.java:48)
-	at com.webos.WebSocketHandler.handle(WebSocketHandler.java:24)
-	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
-	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
-	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
-	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
-	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
-	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
-	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
-	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
-	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
-	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
-	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
-	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
-	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
-	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
-	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
-	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
-	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
-	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
-	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-
-2021-06-17 10:03:12
-[ERROR]-[Thread: XNIO-1 task-4]-[com.jfinal.core.ActionHandler.handle()]: com.webos.controllers.webos.UsersControllers.GetUsersListAsync() : /api/users/GetUsersListAsync
-java.lang.IllegalStateException: UT010005: Cannot call getOutputStream(), getWriter() already called
-	at io.undertow.servlet.spec.HttpServletResponseImpl.getOutputStream(HttpServletResponseImpl.java:396)
-	at com.jfinal.render.TemplateRender.render(TemplateRender.java:61)
-	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:113)
-	at com.jfinal.ext.handler.ContextPathHandler.handle(ContextPathHandler.java:48)
-	at com.webos.WebSocketHandler.handle(WebSocketHandler.java:24)
-	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
-	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
-	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
-	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
-	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
-	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
-	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
-	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
-	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
-	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
-	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
-	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
-	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
-	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
-	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
-	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
-	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
-	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
-	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-
-2021-06-17 10:03:12
-[ERROR]-[Thread: XNIO-1 task-4]-[com.jfinal.core.JFinalFilter.doFilter()]: /api/users/GetUsersListAsync
-java.lang.IllegalStateException: UT010005: Cannot call getOutputStream(), getWriter() already called
-	at io.undertow.servlet.spec.HttpServletResponseImpl.getOutputStream(HttpServletResponseImpl.java:396)
-	at com.jfinal.render.TemplateRender.render(TemplateRender.java:61)
-	at com.jfinal.render.ErrorRender.render(ErrorRender.java:51)
-	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:131)
-	at com.jfinal.ext.handler.ContextPathHandler.handle(ContextPathHandler.java:48)
-	at com.webos.WebSocketHandler.handle(WebSocketHandler.java:24)
-	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
-	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
-	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
-	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
-	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
-	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
-	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
-	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
-	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
-	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
-	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
-	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
-	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
-	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
-	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
-	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
-	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
-	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
-	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-
-2021-06-17 10:04:58
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:04:58
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:04:58
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:07:45
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:07:45
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:07:45
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:08:41
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:08:41
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:08:41
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:14:39
-[ERROR]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: init datasource error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
-com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
-	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
-	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
-	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
-	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
-	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
-	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:684)
-	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:991)
-	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:987)
-	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:103)
-	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:43)
-	at com.jfinal.plugin.activerecord.ActiveRecordPlugin.start(ActiveRecordPlugin.java:226)
-	at com.jfinal.core.Config.startPlugins(Config.java:128)
-	at com.jfinal.core.Config.configPluginWithOrder(Config.java:71)
-	at com.jfinal.core.Config.configJFinal(Config.java:59)
-	at com.jfinal.core.JFinal.init(JFinal.java:61)
-	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:64)
-	at io.undertow.servlet.core.LifecyleInterceptorInvocation.proceed(LifecyleInterceptorInvocation.java:111)
-	at io.undertow.servlet.core.ManagedFilter.createFilter(ManagedFilter.java:80)
-	at io.undertow.servlet.core.DeploymentManagerImpl$2.call(DeploymentManagerImpl.java:591)
-	at io.undertow.servlet.core.DeploymentManagerImpl$2.call(DeploymentManagerImpl.java:556)
-	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:42)
-	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
-	at io.undertow.servlet.core.DeploymentManagerImpl.start(DeploymentManagerImpl.java:598)
-	at com.jfinal.server.undertow.UndertowServer.configHttp(UndertowServer.java:287)
-	at com.jfinal.server.undertow.UndertowServer.doStart(UndertowServer.java:265)
-	at com.jfinal.server.undertow.UndertowServer.start(UndertowServer.java:158)
-	at com.jfinal.server.undertow.UndertowServer.start(UndertowServer.java:91)
-	at com.webos.WebosConfig.main(WebosConfig.java:31)
-Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
-	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
-	at com.mysql.cj.protocol.a.NativeProtocol.negotiateSSLConnection(NativeProtocol.java:334)
-	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:164)
-	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1342)
-	at com.mysql.cj.NativeSession.connect(NativeSession.java:157)
-	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
-	... 28 more
-Caused by: javax.net.ssl.SSLException: Unsupported record version Unknown-0.0
-	at sun.security.ssl.InputRecord.checkRecordVersion(InputRecord.java:552)
-	at sun.security.ssl.InputRecord.readV3Record(InputRecord.java:565)
-	at sun.security.ssl.InputRecord.read(InputRecord.java:529)
-	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
-	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
-	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1413)
-	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1397)
-	at com.mysql.cj.protocol.ExportControlled.performTlsHandshake(ExportControlled.java:336)
-	at com.mysql.cj.protocol.StandardSocketFactory.performTlsHandshake(StandardSocketFactory.java:188)
-	at com.mysql.cj.protocol.a.NativeSocketConnection.performTlsHandshake(NativeSocketConnection.java:99)
-	at com.mysql.cj.protocol.a.NativeProtocol.negotiateSSLConnection(NativeProtocol.java:325)
-	... 33 more
-
-2021-06-17 10:14:40
-[ERROR]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} init error
-com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
-	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
-	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
-	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
-	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
-	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
-	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:684)
-	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:991)
-	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:987)
-	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:103)
-	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:43)
-	at com.jfinal.plugin.activerecord.ActiveRecordPlugin.start(ActiveRecordPlugin.java:226)
-	at com.jfinal.core.Config.startPlugins(Config.java:128)
-	at com.jfinal.core.Config.configPluginWithOrder(Config.java:71)
-	at com.jfinal.core.Config.configJFinal(Config.java:59)
-	at com.jfinal.core.JFinal.init(JFinal.java:61)
-	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:64)
-	at io.undertow.servlet.core.LifecyleInterceptorInvocation.proceed(LifecyleInterceptorInvocation.java:111)
-	at io.undertow.servlet.core.ManagedFilter.createFilter(ManagedFilter.java:80)
-	at io.undertow.servlet.core.DeploymentManagerImpl$2.call(DeploymentManagerImpl.java:591)
-	at io.undertow.servlet.core.DeploymentManagerImpl$2.call(DeploymentManagerImpl.java:556)
-	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:42)
-	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
-	at io.undertow.servlet.core.DeploymentManagerImpl.start(DeploymentManagerImpl.java:598)
-	at com.jfinal.server.undertow.UndertowServer.configHttp(UndertowServer.java:287)
-	at com.jfinal.server.undertow.UndertowServer.doStart(UndertowServer.java:265)
-	at com.jfinal.server.undertow.UndertowServer.start(UndertowServer.java:158)
-	at com.jfinal.server.undertow.UndertowServer.start(UndertowServer.java:91)
-	at com.webos.WebosConfig.main(WebosConfig.java:31)
-Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
-	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
-	at com.mysql.cj.protocol.a.NativeProtocol.negotiateSSLConnection(NativeProtocol.java:334)
-	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:164)
-	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1342)
-	at com.mysql.cj.NativeSession.connect(NativeSession.java:157)
-	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
-	... 28 more
-Caused by: javax.net.ssl.SSLException: Unsupported record version Unknown-0.0
-	at sun.security.ssl.InputRecord.checkRecordVersion(InputRecord.java:552)
-	at sun.security.ssl.InputRecord.readV3Record(InputRecord.java:565)
-	at sun.security.ssl.InputRecord.read(InputRecord.java:529)
-	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
-	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
-	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1413)
-	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1397)
-	at com.mysql.cj.protocol.ExportControlled.performTlsHandshake(ExportControlled.java:336)
-	at com.mysql.cj.protocol.StandardSocketFactory.performTlsHandshake(StandardSocketFactory.java:188)
-	at com.mysql.cj.protocol.a.NativeSocketConnection.performTlsHandshake(NativeSocketConnection.java:99)
-	at com.mysql.cj.protocol.a.NativeProtocol.negotiateSSLConnection(NativeProtocol.java:325)
-	... 33 more
-
-2021-06-17 10:14:40
-[ERROR]-[Thread: main]-[com.jfinal.core.Config.startPlugins()]: Plugin start error: com.jfinal.plugin.activerecord.ActiveRecordPlugin. 
-com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-com.jfinal.plugin.activerecord.ActiveRecordException: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:55)
-	at com.jfinal.plugin.activerecord.ActiveRecordPlugin.start(ActiveRecordPlugin.java:226)
-	at com.jfinal.core.Config.startPlugins(Config.java:128)
-	at com.jfinal.core.Config.configPluginWithOrder(Config.java:71)
-	at com.jfinal.core.Config.configJFinal(Config.java:59)
-	at com.jfinal.core.JFinal.init(JFinal.java:61)
-	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:64)
-	at io.undertow.servlet.core.LifecyleInterceptorInvocation.proceed(LifecyleInterceptorInvocation.java:111)
-	at io.undertow.servlet.core.ManagedFilter.createFilter(ManagedFilter.java:80)
-	at io.undertow.servlet.core.DeploymentManagerImpl$2.call(DeploymentManagerImpl.java:591)
-	at io.undertow.servlet.core.DeploymentManagerImpl$2.call(DeploymentManagerImpl.java:556)
-	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:42)
-	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
-	at io.undertow.servlet.core.DeploymentManagerImpl.start(DeploymentManagerImpl.java:598)
-	at com.jfinal.server.undertow.UndertowServer.configHttp(UndertowServer.java:287)
-	at com.jfinal.server.undertow.UndertowServer.doStart(UndertowServer.java:265)
-	at com.jfinal.server.undertow.UndertowServer.start(UndertowServer.java:158)
-	at com.jfinal.server.undertow.UndertowServer.start(UndertowServer.java:91)
-	at com.webos.WebosConfig.main(WebosConfig.java:31)
-Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
-	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
-	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
-	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
-	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
-	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
-	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:684)
-	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:991)
-	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:987)
-	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:103)
-	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:43)
-	... 18 more
-Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
-	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
-	at com.mysql.cj.protocol.a.NativeProtocol.negotiateSSLConnection(NativeProtocol.java:334)
-	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:164)
-	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1342)
-	at com.mysql.cj.NativeSession.connect(NativeSession.java:157)
-	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
-	... 28 more
-Caused by: javax.net.ssl.SSLException: Unsupported record version Unknown-0.0
-	at sun.security.ssl.InputRecord.checkRecordVersion(InputRecord.java:552)
-	at sun.security.ssl.InputRecord.readV3Record(InputRecord.java:565)
-	at sun.security.ssl.InputRecord.read(InputRecord.java:529)
-	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
-	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
-	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1413)
-	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1397)
-	at com.mysql.cj.protocol.ExportControlled.performTlsHandshake(ExportControlled.java:336)
-	at com.mysql.cj.protocol.StandardSocketFactory.performTlsHandshake(StandardSocketFactory.java:188)
-	at com.mysql.cj.protocol.a.NativeSocketConnection.performTlsHandshake(NativeSocketConnection.java:99)
-	at com.mysql.cj.protocol.a.NativeProtocol.negotiateSSLConnection(NativeProtocol.java:325)
-	... 33 more
-
-2021-06-17 10:14:58
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:14:58
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:14:58
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:24:25
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:24:25
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:24:25
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:36:44
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:36:44
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:36:44
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:50:02
-[ERROR]-[Thread: Druid-ConnectionPool-Create-43856716]-[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run()]: create connection error, url: jdbc:mysql://asxsyd92.com:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC, errorCode 0, state 08S01
-com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
-	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
-	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
-	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197)
-	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421)
-	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477)
-	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001)
-Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
-	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
-	at com.mysql.cj.protocol.a.NativeProtocol.negotiateSSLConnection(NativeProtocol.java:334)
-	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:164)
-	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1342)
-	at com.mysql.cj.NativeSession.connect(NativeSession.java:157)
-	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826)
-	... 6 more
-Caused by: java.net.SocketException: Software caused connection abort: recv failed
-	at java.net.SocketInputStream.socketRead0(Native Method)
-	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
-	at java.net.SocketInputStream.read(SocketInputStream.java:171)
-	at java.net.SocketInputStream.read(SocketInputStream.java:141)
-	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
-	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
-	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
-	at sun.security.ssl.SSLSocketImpl.waitForClose(SSLSocketImpl.java:1779)
-	at sun.security.ssl.HandshakeOutStream.flush(HandshakeOutStream.java:124)
-	at sun.security.ssl.Handshaker.kickstart(Handshaker.java:1093)
-	at sun.security.ssl.SSLSocketImpl.kickstartHandshake(SSLSocketImpl.java:1497)
-	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1361)
-	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1413)
-	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1397)
-	at com.mysql.cj.protocol.ExportControlled.performTlsHandshake(ExportControlled.java:336)
-	at com.mysql.cj.protocol.StandardSocketFactory.performTlsHandshake(StandardSocketFactory.java:188)
-	at com.mysql.cj.protocol.a.NativeSocketConnection.performTlsHandshake(NativeSocketConnection.java:99)
-	at com.mysql.cj.protocol.a.NativeProtocol.negotiateSSLConnection(NativeProtocol.java:325)
-	... 11 more
-
-2021-06-17 10:50:51
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:50:51
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:50:51
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:54:13
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:54:13
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:54:13
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:59:39
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:59:39
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 10:59:39
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 11:03:28
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 11:03:28
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 11:03:28
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 11:05:25
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 11:05:25
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 11:05:25
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 11:08:29
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 11:08:29
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 11:08:29
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 11:09:53
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 11:09:53
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 11:09:53
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 11:16:16
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 11:16:16
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 11:16:16
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 11:19:36
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 11:19:36
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 11:19:36
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 13:45:53
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 13:45:53
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 13:45:53
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 13:48:11
-[WARN]-[Thread: XNIO-1 task-2]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /api/users/GetAppDektop
-
-2021-06-17 13:48:11
-[ERROR]-[Thread: XNIO-1 task-2]-[com.jfinal.core.JFinalFilter.doFilter()]: /api/users/GetAppDektop
-java.lang.RuntimeException: File not found : E:/Work/webosforjava/webos/webos/src/main/webapp/error.html
-	at com.jfinal.template.source.FileSource.getContent(FileSource.java:69)
-	at com.jfinal.template.Engine.buildTemplateBySourceFactory(Engine.java:165)
-	at com.jfinal.template.Engine.getTemplate(Engine.java:150)
-	at com.jfinal.render.TemplateRender.render(TemplateRender.java:62)
-	at com.jfinal.render.ErrorRender.render(ErrorRender.java:51)
-	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:76)
-	at com.jfinal.ext.handler.ContextPathHandler.handle(ContextPathHandler.java:48)
-	at com.webos.WebSocketHandler.handle(WebSocketHandler.java:24)
-	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
-	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
-	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
-	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
-	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
-	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
-	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
-	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
-	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
-	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
-	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
-	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
-	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
-	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
-	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
-	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
-	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
-	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
-	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-
-2021-06-17 13:48:11
+2021-06-20 00:16:00
 [WARN]-[Thread: XNIO-1 task-3]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetAppList
 
-2021-06-17 13:48:28
-[WARN]-[Thread: XNIO-1 task-4]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetAppList
+2021-06-20 00:25:40
+[ERROR]-[Thread: XNIO-1 I/O-1]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
 
-2021-06-17 13:53:55
+2021-06-20 00:25:51
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 13:53:55
+2021-06-20 00:25:51
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 13:53:55
+2021-06-20 00:25:51
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 13:56:38
+2021-06-20 00:31:20
+[ERROR]-[Thread: XNIO-1 I/O-1]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-20 00:31:58
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 13:56:38
+2021-06-20 00:31:58
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 13:56:38
+2021-06-20 00:31:58
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 14:03:57
+2021-06-20 00:33:49
+[ERROR]-[Thread: XNIO-1 I/O-1]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-20 00:34:11
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 14:03:57
+2021-06-20 00:34:11
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 14:03:57
+2021-06-20 00:34:11
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 14:17:29
+2021-06-20 00:34:56
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 14:17:29
+2021-06-20 00:34:56
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 14:17:29
+2021-06-20 00:34:56
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 14:17:37
-[WARN]-[Thread: XNIO-1 task-4]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /api/login/Login?user=1&pw=1
-
-2021-06-17 14:17:37
-[ERROR]-[Thread: XNIO-1 task-4]-[com.jfinal.core.JFinalFilter.doFilter()]: /api/login/Login?user=1&pw=1
-java.lang.RuntimeException: File not found : E:/Work/webosforjava/webos/webos/src/main/webapp/error.html
-	at com.jfinal.template.source.FileSource.getContent(FileSource.java:69)
-	at com.jfinal.template.Engine.buildTemplateBySourceFactory(Engine.java:165)
-	at com.jfinal.template.Engine.getTemplate(Engine.java:150)
-	at com.jfinal.render.TemplateRender.render(TemplateRender.java:62)
-	at com.jfinal.render.ErrorRender.render(ErrorRender.java:51)
-	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:76)
-	at com.jfinal.ext.handler.ContextPathHandler.handle(ContextPathHandler.java:48)
-	at com.jfinal.ext.handler.UrlSkipHandler.handle(UrlSkipHandler.java:46)
-	at com.webos.WebSocketHandler.handle(WebSocketHandler.java:24)
-	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
-	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
-	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
-	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
-	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
-	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
-	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
-	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
-	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
-	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
-	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
-	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
-	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
-	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
-	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
-	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
-	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
-	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
-	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-
-2021-06-17 14:21:23
+2021-06-20 00:36:04
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 14:21:23
+2021-06-20 00:36:04
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 14:21:23
+2021-06-20 00:36:04
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 14:21:26
-[WARN]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /api/login/Login?user=1&pw=1
+2021-06-20 00:42:34
+[ERROR]-[Thread: XNIO-1 I/O-1]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
 
-2021-06-17 14:21:26
-[ERROR]-[Thread: XNIO-1 task-1]-[com.jfinal.core.JFinalFilter.doFilter()]: /api/login/Login?user=1&pw=1
-java.lang.RuntimeException: File not found : E:/Work/webosforjava/webos/webos/src/main/webapp/error.html
-	at com.jfinal.template.source.FileSource.getContent(FileSource.java:69)
-	at com.jfinal.template.Engine.buildTemplateBySourceFactory(Engine.java:165)
-	at com.jfinal.template.Engine.getTemplate(Engine.java:150)
-	at com.jfinal.render.TemplateRender.render(TemplateRender.java:62)
-	at com.jfinal.render.ErrorRender.render(ErrorRender.java:51)
-	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:76)
-	at com.jfinal.ext.handler.ContextPathHandler.handle(ContextPathHandler.java:48)
-	at com.jfinal.ext.handler.UrlSkipHandler.handle(UrlSkipHandler.java:46)
-	at com.webos.WebSocketHandler.handle(WebSocketHandler.java:24)
-	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
-	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
-	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
-	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
-	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
-	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
-	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
-	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
-	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
-	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
-	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
-	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
-	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
-	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
-	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
-	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
-	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
-	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
-	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-
-2021-06-17 14:21:47
-[WARN]-[Thread: XNIO-1 task-2]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /api/login/Login
-
-2021-06-17 14:21:47
-[ERROR]-[Thread: XNIO-1 task-2]-[com.jfinal.core.JFinalFilter.doFilter()]: /api/login/Login
-java.lang.RuntimeException: File not found : E:/Work/webosforjava/webos/webos/src/main/webapp/error.html
-	at com.jfinal.template.source.FileSource.getContent(FileSource.java:69)
-	at com.jfinal.template.Engine.buildTemplateBySourceFactory(Engine.java:165)
-	at com.jfinal.template.Engine.getTemplate(Engine.java:150)
-	at com.jfinal.render.TemplateRender.render(TemplateRender.java:62)
-	at com.jfinal.render.ErrorRender.render(ErrorRender.java:51)
-	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:76)
-	at com.jfinal.ext.handler.ContextPathHandler.handle(ContextPathHandler.java:48)
-	at com.jfinal.ext.handler.UrlSkipHandler.handle(UrlSkipHandler.java:46)
-	at com.webos.WebSocketHandler.handle(WebSocketHandler.java:24)
-	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
-	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
-	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
-	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
-	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
-	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
-	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
-	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
-	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
-	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
-	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
-	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
-	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
-	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
-	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
-	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
-	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
-	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
-	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-
-2021-06-17 14:38:19
+2021-06-20 00:42:47
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 14:38:19
+2021-06-20 00:42:47
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 14:38:19
+2021-06-20 00:42:47
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 14:41:08
+2021-06-20 00:49:54
+[ERROR]-[Thread: XNIO-1 I/O-2]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-20 00:50:04
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 14:41:08
+2021-06-20 00:50:04
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 14:41:08
+2021-06-20 00:50:04
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 14:44:38
-[WARN]-[Thread: HotSwapWatcher]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
+2021-06-20 00:53:29
+[ERROR]-[Thread: XNIO-1 I/O-1]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
 
-
-2021-06-17 14:44:38
-[WARN]-[Thread: HotSwapWatcher]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 14:44:38
-[WARN]-[Thread: HotSwapWatcher]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 14:45:42
+2021-06-20 10:05:16
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 14:45:42
+2021-06-20 10:05:16
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 14:45:42
+2021-06-20 10:05:16
 [WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
 Visit https://jfinal.com/doc/3-3 for details 
 
 
-2021-06-17 15:10:57
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
+2021-06-20 10:05:28
+[WARN]-[Thread: XNIO-1 task-3]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetAppList
 
+2021-06-20 10:05:28
+[WARN]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetUsersListAsync
 
-2021-06-17 15:10:57
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
+2021-06-20 10:23:36
+[WARN]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /api/workflow/GetFlowAllList
 
-
-2021-06-17 15:10:57
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 15:13:39
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 15:13:39
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 15:13:39
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 15:15:47
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 15:15:47
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 15:15:47
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 15:18:04
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 15:18:04
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 15:18:04
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 15:23:37
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 15:23:37
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 15:23:37
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 15:23:43
-[WARN]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /websocket
-
-2021-06-17 15:23:43
-[ERROR]-[Thread: XNIO-1 task-1]-[com.jfinal.core.JFinalFilter.doFilter()]: /websocket
+2021-06-20 10:23:36
+[ERROR]-[Thread: XNIO-1 task-1]-[com.jfinal.core.JFinalFilter.doFilter()]: /api/workflow/GetFlowAllList
 java.lang.RuntimeException: File not found : "E:/Work/webosforjava/webos/webos/src/main/webapp/error.html"
 	at com.jfinal.template.source.FileSource.getContent(FileSource.java:69)
 	at com.jfinal.template.Engine.buildTemplateBySourceFactory(Engine.java:165)
@@ -1126,55 +320,18 @@ java.lang.RuntimeException: File not found : "E:/Work/webosforjava/webos/webos/s
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
 
-2021-06-17 15:34:38
-[ERROR]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handle()]: com.webos.controllers.webos.UsersControllers.GetUsersListAsync() : /api/users/GetUsersListAsync?_=1623915276830
-java.lang.IllegalStateException: UT010005: Cannot call getOutputStream(), getWriter() already called
-	at io.undertow.servlet.spec.HttpServletResponseImpl.getOutputStream(HttpServletResponseImpl.java:396)
-	at com.jfinal.render.TemplateRender.render(TemplateRender.java:61)
-	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:113)
-	at com.jfinal.ext.handler.ContextPathHandler.handle(ContextPathHandler.java:48)
-	at com.jfinal.ext.handler.UrlSkipHandler.handle(UrlSkipHandler.java:46)
-	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
-	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
-	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
-	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
-	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
-	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
-	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
-	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
-	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
-	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
-	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
-	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
-	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
-	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
-	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
-	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
-	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
-	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
-	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
+2021-06-20 10:23:41
+[WARN]-[Thread: XNIO-1 task-3]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /api/workflow/GetFlowAllList
 
-2021-06-17 15:34:38
-[ERROR]-[Thread: XNIO-1 task-1]-[com.jfinal.core.JFinalFilter.doFilter()]: /api/users/GetUsersListAsync?_=1623915276830
-java.lang.IllegalStateException: UT010005: Cannot call getOutputStream(), getWriter() already called
-	at io.undertow.servlet.spec.HttpServletResponseImpl.getOutputStream(HttpServletResponseImpl.java:396)
-	at com.jfinal.render.TemplateRender.render(TemplateRender.java:61)
+2021-06-20 10:23:41
+[ERROR]-[Thread: XNIO-1 task-3]-[com.jfinal.core.JFinalFilter.doFilter()]: /api/workflow/GetFlowAllList
+java.lang.RuntimeException: File not found : "E:/Work/webosforjava/webos/webos/src/main/webapp/error.html"
+	at com.jfinal.template.source.FileSource.getContent(FileSource.java:69)
+	at com.jfinal.template.Engine.buildTemplateBySourceFactory(Engine.java:165)
+	at com.jfinal.template.Engine.getTemplate(Engine.java:150)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:62)
 	at com.jfinal.render.ErrorRender.render(ErrorRender.java:51)
-	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:131)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:76)
 	at com.jfinal.ext.handler.ContextPathHandler.handle(ContextPathHandler.java:48)
 	at com.jfinal.ext.handler.UrlSkipHandler.handle(UrlSkipHandler.java:46)
 	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
@@ -1211,113 +368,33 @@ java.lang.IllegalStateException: UT010005: Cannot call getOutputStream(), getWri
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
 
-2021-06-17 15:34:48
-[ERROR]-[Thread: XNIO-1 task-3]-[com.jfinal.core.ActionHandler.handle()]: com.webos.controllers.webos.UsersControllers.GetUsersListAsync() : /api/users/GetUsersListAsync?_=1623915286804
-java.lang.IllegalStateException: UT010005: Cannot call getOutputStream(), getWriter() already called
-	at io.undertow.servlet.spec.HttpServletResponseImpl.getOutputStream(HttpServletResponseImpl.java:396)
-	at com.jfinal.render.TemplateRender.render(TemplateRender.java:61)
-	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:113)
-	at com.jfinal.ext.handler.ContextPathHandler.handle(ContextPathHandler.java:48)
-	at com.jfinal.ext.handler.UrlSkipHandler.handle(UrlSkipHandler.java:46)
-	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
-	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
-	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
-	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
-	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
-	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
-	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
-	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
-	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
-	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
-	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
-	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
-	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
-	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+2021-06-20 10:24:36
+[WARN]-[Thread: HotSwapWatcher]-[com.jfinal.server.undertow.session.HotSwapSessionPersistenceManager.persistSessions()]: UT015009: Failed to persist session attribute io.undertow.websocket.current-connections with value [WebSocket13Channel peer /127.0.0.1:51668 local /127.0.0.1:88[ No Receiver [] -- [] -- []]] for session ZLpFpg3ne0NdRpS1mzLapOLYlX-G5Fov1tsgQ8tP
+java.io.NotSerializableException: io.undertow.websockets.core.protocol.version13.WebSocket13Channel
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at java.util.ArrayList.writeObject(ArrayList.java:766)
+	at sun.reflect.GeneratedMethodAccessor8.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:1128)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1496)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1432)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1178)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at com.jfinal.server.undertow.session.HotSwapSessionPersistenceManager.persistSessions(HotSwapSessionPersistenceManager.java:50)
+	at io.undertow.servlet.handlers.SessionRestoringHandler.stop(SessionRestoringHandler.java:108)
+	at io.undertow.servlet.core.DeploymentManagerImpl$3.call(DeploymentManagerImpl.java:614)
+	at io.undertow.servlet.core.DeploymentManagerImpl$3.call(DeploymentManagerImpl.java:609)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:42)
 	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
-	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
-	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
-	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
-	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
+	at io.undertow.servlet.core.DeploymentManagerImpl.stop(DeploymentManagerImpl.java:623)
+	at com.jfinal.server.undertow.UndertowServer.doStop(UndertowServer.java:415)
+	at com.jfinal.server.undertow.UndertowServer.restart(UndertowServer.java:433)
+	at com.jfinal.server.undertow.hotswap.HotSwapWatcher.doRun(HotSwapWatcher.java:133)
+	at com.jfinal.server.undertow.hotswap.HotSwapWatcher.run(HotSwapWatcher.java:91)
 
-2021-06-17 15:34:48
-[ERROR]-[Thread: XNIO-1 task-3]-[com.jfinal.core.JFinalFilter.doFilter()]: /api/users/GetUsersListAsync?_=1623915286804
-java.lang.IllegalStateException: UT010005: Cannot call getOutputStream(), getWriter() already called
-	at io.undertow.servlet.spec.HttpServletResponseImpl.getOutputStream(HttpServletResponseImpl.java:396)
-	at com.jfinal.render.TemplateRender.render(TemplateRender.java:61)
-	at com.jfinal.render.ErrorRender.render(ErrorRender.java:51)
-	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:131)
-	at com.jfinal.ext.handler.ContextPathHandler.handle(ContextPathHandler.java:48)
-	at com.jfinal.ext.handler.UrlSkipHandler.handle(UrlSkipHandler.java:46)
-	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
-	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
-	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
-	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
-	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
-	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
-	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
-	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
-	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
-	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
-	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
-	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
-	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
-	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
-	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
-	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
-	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
-	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
-	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
-	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
-	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
-	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
-	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
-	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-
-2021-06-17 15:44:16
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 15:44:16
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 15:44:16
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 15:56:48
-[WARN]-[Thread: XNIO-1 task-3]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetUsersListAsync
-
-2021-06-17 15:56:48
-[WARN]-[Thread: XNIO-1 task-4]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetAppList
-
-2021-06-17 16:27:40
+2021-06-20 10:24:36
 [ERROR]-[Thread: XNIO-1 I/O-1]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
 java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
 	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
@@ -1337,183 +414,3 @@ java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminati
 	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
 	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
 	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
-
-2021-06-17 16:28:01
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 16:28:01
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 16:28:01
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 16:29:25
-[ERROR]-[Thread: XNIO-1 I/O-2]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
-java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
-	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
-	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
-	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
-	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
-	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
-	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
-	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
-	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
-	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
-	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
-	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
-	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
-	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
-	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
-	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
-	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
-	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
-
-2021-06-17 16:29:44
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 16:29:44
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 16:29:44
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 16:42:49
-[ERROR]-[Thread: XNIO-1 I/O-1]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
-java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
-	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
-	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
-	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
-	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
-	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
-	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
-	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
-	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
-	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
-	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
-	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
-	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
-	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
-	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
-	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
-	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
-	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
-
-2021-06-17 16:43:10
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 16:43:10
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 16:43:10
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 16:53:14
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 16:53:14
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 16:53:14
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 16:55:49
-[ERROR]-[Thread: XNIO-1 I/O-1]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
-java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
-	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
-	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
-	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
-	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
-	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
-	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
-	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
-	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
-	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
-	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
-	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
-	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
-	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
-	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
-	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
-	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
-	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
-
-2021-06-17 16:56:08
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 16:56:08
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 16:56:08
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 16:57:11
-[ERROR]-[Thread: XNIO-1 I/O-1]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
-java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
-	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
-	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
-	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
-	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
-	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
-	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
-	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
-	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
-	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
-	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
-	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
-	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
-	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
-	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
-	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
-	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
-	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
-
-2021-06-17 16:57:35
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 16:57:35
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 16:57:35
-[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
-Visit https://jfinal.com/doc/3-3 for details 
-
-
-2021-06-17 16:57:42
-[WARN]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetUsersListAsync
-
-2021-06-17 16:57:42
-[WARN]-[Thread: XNIO-1 task-3]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetAppList

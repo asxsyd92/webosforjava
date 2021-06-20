@@ -4,11 +4,11 @@ package com.webos.socket.user.message;
  * Created by pz on 16/11/23.
  */
 public class ToServerMessageTo {
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -44,7 +44,7 @@ public class ToServerMessageTo {
         this.name = username;
     }
 
-    private int id;
+    private String id;
     private String avatar;
     private String sign;
     private String type;

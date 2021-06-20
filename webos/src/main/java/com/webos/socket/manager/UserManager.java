@@ -52,12 +52,12 @@ public class UserManager implements IUserManager {
         return socketUserMap.size();
     }
 
-    public SocketUser getUser(int userId){
-        String key = Integer.toString(userId);
+    public SocketUser getUser(String key){
+
         if(socketUserMap.containsKey(key)){
             return socketUserMap.get(key);
         }
-        return new SocketUser();
+        return null;
     }
 
     private boolean removeUser(String sessionUserId) {

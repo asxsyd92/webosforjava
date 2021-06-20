@@ -493,10 +493,11 @@ public void getPageById(){
     public void GetUsersListAsync()
     {
      try {
+
          Record data=new Record();
 
-         //Claims claims = getAttr("claims");
-         String id="EB03262C-AB60-4BC6-A4C0-96E66A4229FE";//claims.get("id").toString();
+         Claims claims = getAttr("claims");
+         String id=claims.get("id").toString();
         Sysim im= imService.getImUser(id);
 
          data.set("mine",im);
@@ -522,7 +523,39 @@ public void getPageById(){
          setAttr("success", false);
         }
         renderJson();
-     //   return Asxsyd92Core.Utils.JSONhelper.ToJson(new { code = 0, msg = "", count = da.Count == 0 ? 0 : da.First().Count, data = list[0] }, false);
-    }
+  }
+    @Before({JwtInterceptor.class, POST.class})
+    @ApiOperation(url = "/api/users/getMembers", tag = "GetUsersListAsync", httpMethod = "post", description = "需要授权：im用户列表 ")
 
+    public void getMembers()
+    {
+        try {
+            String gid = getPara("id");
+            Record data=new Record();
+
+            Claims claims = getAttr("claims");
+            String id=claims.get("id").toString();
+            Sysim im= imService.getImUser(id);
+            //群主
+            data.set("owner",im);
+
+            //获取群
+
+            Object  groups =  new util<Sysim>().toJson(imService.getImgroupSysim(gid));
+            data.set("list",groups);
+
+            setAttr("msg", "获取成功");
+            setAttr("code", 0);
+            setAttr("count", 0);
+            setAttr("data", data);
+        }catch (Exception ex){
+
+            setAttr("msg", ex.getMessage());
+            setAttr("code", 0);
+            setAttr("count", 0);
+            setAttr("data", null);
+            setAttr("success", false);
+        }
+        renderJson();
+    }
 }

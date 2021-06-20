@@ -12,11 +12,11 @@ public class ToServerMessageMine {
         this.avatar = avatar;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -37,7 +37,7 @@ public class ToServerMessageMine {
     }
 
     private String avatar;
-    private int id;
+    private String id;
     private String content;
     private String username;
 }

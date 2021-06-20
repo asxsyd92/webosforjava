@@ -2,9 +2,14 @@ package com.webos.socket.sender;
 
 
 
+import com.alibaba.fastjson.JSON;
+import com.asxsydutils.utils.HttpHelper;
+import com.asxsydutils.utils.StringUtil;
+import com.jfinal.plugin.activerecord.Record;
 import com.webos.socket.LayIMChatType;
 import com.webos.socket.manager.GroupUserManager;
 import com.webos.socket.user.SocketUser;
+import com.webos.socket.user.UserMessage;
 import com.webos.socket.user.message.ToClientTextMessage;
 import com.webos.socket.user.message.ToDBMessage;
 import com.webos.socket.user.message.ToServerMessageMine;
@@ -12,10 +17,14 @@ import com.webos.socket.user.message.ToServerTextMessage;
 import com.webos.socket.user.result.ToClientMessageResult;
 import com.webos.socket.user.result.ToClientMessageType;
 import com.webos.socket.util.LayIMFactory;
+import okhttp3.FormBody;
+import okhttp3.RequestBody;
 
 import javax.websocket.Session;
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 发送信息类
@@ -28,9 +37,9 @@ public class MessageSender {
     //发送信息业务逻辑
     public void sendMessage(ToServerTextMessage message){
 
-        int toUserId = message.getTo().getId();
+        String toUserId = message.getTo().getId();
         //获取发送人
-        String sendUserId = Integer.toString(message.getMine().getId());
+        String sendUserId = message.getMine().getId();
         String type =  message.getTo().getType();
         //消息提前生成，否则进行循环内生成会浪费资源
         String toClientMessage = getToClientMessage(message);
@@ -44,7 +53,7 @@ public class MessageSender {
             for (String userid : users) {
                 //遍历发送消息 自己过滤，不给自己发送(发送人id和群成员内的某个id相同)
                 if (!sendUserId.equals(userid)) {
-                    sendMessage(Integer.parseInt(userid), toClientMessage);
+                    sendMessage(userid, toClientMessage);
                 }
             }
         }else {
@@ -57,7 +66,7 @@ public class MessageSender {
     }
 
     //给单个用户发
-    private  void sendMessage(Integer userId,String message){
+    private  void sendMessage(String userId,String message){
         SocketUser user = LayIMFactory.createManager().getUser(userId);
         if (user.isExist()) {
             if (user.getSession() == null) {
@@ -73,7 +82,44 @@ public class MessageSender {
           //  LayIMLog.info("该用户不在线 ");
         }
     }
+   public static UserMessage RobotMeesage(UserMessage da) throws IOException {
+       Record ch=new Record();
+       String l = String.valueOf(new Date().getTime()/1000);
+       ch.set("app_id",2129006410);
+       ch.set("nonce_str",da.getMine().getId().replaceAll("-",""));
+       ch.set("question" , da.getMine().getContent() );
+       ch.set("session" , da.getMine().getId().replaceAll("-",""));
+       ch.set("time_stamp",l);
 
+
+       String KK= StringUtil.formatUrlParam(ch.getColumns(),"UTF-8",true);
+       KK=KK+"&app_key=Et09S9YJswQtnlYx";
+
+       String KKS = StringUtil.getMD5Str(KK).toString().toUpperCase();
+
+
+
+       RequestBody body = new FormBody.Builder().add("app_id","2129006410")
+               .add("nonce_str", da.getMine().getId().replaceAll("-",""))
+               .add("question", da.getMine().getContent() )
+               .add("session", da.getMine().getId().replaceAll("-",""))
+               .add("sign", KKS).add("time_stamp", l).build();
+       String con=  HttpHelper.SendPostFormData("https://api.ai.qq.com/fcgi-bin/nlp/nlp_textchat",body);
+       Map<String,Object> C= JSON.parseObject(con,Map.class);
+       Record record=new Record();
+       record.setColumns(C);
+       System.out.println(JSON.toJSONString(record));
+
+       if (record.get("ret").equals(0)){
+
+           Map<String,Object> Cc= JSON.parseObject( record.get("data").toString(),Map.class);
+           da.getTo().setContent(Cc.get("answer").toString());
+           return da;
+       }else {
+           RobotMeesage(da);
+       }
+      return da;
+   }
     //保存到数据库
     //需要加入到队列
     private void saveMessage(ToServerTextMessage message){
@@ -83,7 +129,7 @@ public class MessageSender {
         dbMessage.setAddtime(new Date().getTime());
         dbMessage.setChatType( message.getTo().getType().equals(LayIMChatType.FRIEND) ? LayIMChatType.CHATFRIEND:LayIMChatType.CHATGROUP);
         dbMessage.setMsgType(1);//这个参数先不管就是普通聊天记录
-        long groupId = getGroupId(message.getMine().getId(),message.getTo().getId(),message.getTo().getType());
+        String groupId = getGroupId(message.getMine().getId(),message.getTo().getId(),message.getTo().getType());
         dbMessage.setGroupId(groupId);
         dbMessage.setMsg(message.getMine().getContent());
 
@@ -129,7 +175,7 @@ public class MessageSender {
     }
 
     //生成对应的groupId
-    private long getGroupId(int sendUserId,int toUserId,String type){
+    private String getGroupId(String sendUserId,String toUserId,String type){
 
         //如果是组内聊天，直接返回组id，否则返回 两个id的组合
         if (type.equals(LayIMChatType.GROUP)){
@@ -137,18 +183,19 @@ public class MessageSender {
         }
 
 
-        String sendUserIdStr = Integer.toString(sendUserId);
-        String toUserIdStr = Integer.toString(toUserId);
+        String sendUserIdStr = sendUserId;
+        String toUserIdStr = toUserId;
 
         String groupIdStr = "";
+        return groupIdStr;
         //按照固定次序生成相应的聊天组
-        if (sendUserId > toUserId){
-            groupIdStr = sendUserIdStr + toUserIdStr;
-        }else{
-            groupIdStr = toUserIdStr + sendUserIdStr;
-        }
-
-        long groupId = Long.parseLong(groupIdStr);
-        return groupId;
+//        if (sendUserId > toUserId){
+//            groupIdStr = sendUserIdStr + toUserIdStr;
+//        }else{
+//            groupIdStr = toUserIdStr + sendUserIdStr;
+//        }
+//
+//        long groupId = Long.parseLong(groupIdStr);
+//        return groupId;
     }
 }

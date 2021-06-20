@@ -1,0 +1,63 @@
+
+2021-06-19 01:34:56
+[WARN]-[Thread: XNIO-1 task-2]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetUsersListAsync
+
+2021-06-19 01:34:57
+[WARN]-[Thread: XNIO-1 task-4]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetAppList
+
+2021-06-19 02:01:10
+[ERROR]-[Thread: XNIO-1 I/O-2]-[org.xnio.ChannelListeners.invokeChannelListener()]: XNIO001007: A channel event listener threw an exception
+java.util.concurrent.RejectedExecutionException: XNIO007007: Thread is terminating
+	at org.xnio.nio.WorkerThread.execute(WorkerThread.java:590)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:396)
+	at io.undertow.websockets.jsr.UndertowSession$3.handleEvent(UndertowSession.java:388)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:1075)
+	at io.undertow.server.protocol.framed.AbstractFramedChannel$FrameCloseListener.handleEvent(AbstractFramedChannel.java:990)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.terminated(WriteReadyHandler.java:70)
+	at org.xnio.nio.NioSocketConduit.writeTerminated(NioSocketConduit.java:234)
+	at org.xnio.nio.NioSocketConduit.terminateWrites(NioSocketConduit.java:223)
+	at org.xnio.nio.NioSocketConduit.truncateWrites(NioSocketConduit.java:228)
+	at io.undertow.conduits.IdleTimeoutConduit.truncateWrites(IdleTimeoutConduit.java:387)
+	at org.xnio.conduits.ConduitStreamSinkChannel.close(ConduitStreamSinkChannel.java:186)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:134)
+	at org.xnio.conduits.WriteReadyHandler$ChannelListenerHandler.forceTermination(WriteReadyHandler.java:57)
+	at org.xnio.nio.NioSocketConduit.forceTermination(NioSocketConduit.java:107)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:494)
+
+2021-06-19 02:01:23
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-19 02:01:23
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-19 02:01:23
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-19 23:50:21
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-19 23:50:21
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-19 23:50:21
+[WARN]-[Thread: main]-[com.jfinal.core.paragetter.ParaProcessorBuilder.createParaGetter()]: You should config compiler argument "-parameters" for parameter injection of action : com.webos.controllers.portalsite.HtmlController.WriteFiles(...) 
+Visit https://jfinal.com/doc/3-3 for details 
+
+
+2021-06-19 23:50:29
+[WARN]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetUsersListAsync
+
+2021-06-19 23:50:29
+[WARN]-[Thread: XNIO-1 task-3]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetAppList

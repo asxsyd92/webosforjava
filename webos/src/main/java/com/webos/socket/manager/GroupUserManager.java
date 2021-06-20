@@ -12,18 +12,18 @@ public class GroupUserManager {
     private static final String cacheKey = "GM_";
 
     //每个组存一个
-    private String getCacheKey(int groupId){
+    private String getCacheKey(String groupId){
         return cacheKey + groupId;
     }
 
     //将某个组的用户id存入缓存  key=》list
-    public boolean saveGroupMemeberIds(int groupId, List<String> userIds) {
+    public boolean saveGroupMemeberIds(String groupId, List<String> userIds) {
         String key = getCacheKey(groupId);
         LayIMCache.getInstance().setListCache(cacheName,key,userIds);
         return true;
     }
 
-    public List<String> getGroupMembers(int groupId){
+    public List<String> getGroupMembers(String groupId){
         String key = getCacheKey(groupId);
         List<String> list = LayIMCache.getInstance().getListCache(cacheName,key);
         if (list == null || list.size()==0) {
