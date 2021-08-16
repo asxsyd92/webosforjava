@@ -20,8 +20,6 @@
 
     </repositories>
     <dependencies>
-
-
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
@@ -78,17 +76,10 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-
             <groupId>javax.servlet</groupId>
-
             <artifactId>javax.servlet-api</artifactId>
             <version>4.0.1</version>
-
-
         </dependency>
-
-
-
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
@@ -115,11 +106,6 @@
             <version>${jwt.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId> e-iceblue </groupId>
-            <artifactId>spire.office.free</artifactId>
-            <version>3.1.1</version>
-        </dependency>
 
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
@@ -138,16 +124,17 @@
             <artifactId>jfinal-undertow</artifactId>
             <version>2.2</version>
         </dependency>
-        <dependency>
-            <groupId>com.jfinal</groupId>
-            <artifactId>jfinal</artifactId>
-            <version>4.9.11</version>
-        </dependency>
+
         <!-- 开发 缓存 时开启下面的依赖 -->
         <dependency>
             <groupId>net.sf.ehcache</groupId>
             <artifactId>ehcache-core</artifactId>
             <version>2.6.11</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jfinal</groupId>
+            <artifactId>jfinal</artifactId>
+            <version>4.9.11</version>
         </dependency>
         <!-- 开发 WebSockets 时开启下面的依赖 -->
         <dependency>

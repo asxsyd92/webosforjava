@@ -109,7 +109,7 @@ public class CommomController extends Controller {
 
         if (tab == null || tab == "")
         {
-            setAttr("Success", false);
+            setAttr("success", false);
             setAttr("msg", "标准符错误！");
 
         }else {

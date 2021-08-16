@@ -1,6 +1,5 @@
 package com.webos.controllers.portalsite;
 
-
 import com.jfinal.aop.Clear;
 import com.jfinal.core.Controller;
 import com.jfinal.core.NotAction;
@@ -14,18 +13,18 @@ import java.util.List;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 @Clear
-@Path("News")
+@Path("news")
 public class HtmlController extends Controller {
-  public void   NewsDetail(){
-      String id=getPara("id");
+    public void   newsdetail(){
+        String id=getPara("id");
 
-     String html= StringHTML("a_article", id);
-      renderHtml(html);
-  }
-  @NotAction
+        String html= StringHTML("a_article", id);
+        renderHtml(html);
+    }
+    @NotAction
     public String StringHTML(String table,String id)
     {
-       Record da= Db.findById(table,"ID",id);
+        Record da= Db.findById(table,"ID",id);
         try {
             int views=   da.getInt("views")+1;
             da.set("views",views);
@@ -37,17 +36,18 @@ public class HtmlController extends Controller {
         }catch (Exception ex){
             System.out.println(ex);
         }
-        Record Nextarticle= Db.findFirst("select   *from A_Article where id< '" + id + "'  ORDER BY ID DESC");
+        Record Nextarticle= Db.findFirst("select   *from A_Article where id < '" + id + "'  ORDER BY ID DESC");
 
-        Record Lastarticle= Db.findFirst("select   *from A_Article where id> '" + id + "'  ORDER BY ID DESC");
- String html = "";
+        Record Lastarticle= Db.findFirst("select   *from A_Article where id > '" + id + "'  ORDER BY ID DESC");
+        String html = "";
 
 
-            html = WriteFiles(da, Nextarticle, Lastarticle );
+        html = WriteFiles(da, Nextarticle, Lastarticle );
 
 
         return html;
     }
+    @NotAction
     public static String WriteFiles(Record torrent, Record Nextarticle, Record Lastarticle)
     {
 
@@ -55,7 +55,7 @@ public class HtmlController extends Controller {
         String temp= PropKit.get("fromurl");
         String path = temp +"/portalsite/newsemplate.html";
         //File file = new File(path);
-       String str= read(path);
+        String str= read(path);
 
 
         // 替换内容
@@ -67,15 +67,15 @@ public class HtmlController extends Controller {
         else
         {
             //getrandnews
-          List<Record> sj= Db.find("select  *from a_article order by rand() desc LIMIT 50");
+            List<Record> sj= Db.find("select  *from a_article order by rand() desc LIMIT 50");
 //            var sj = Asxsyd92Core.Utils.Data.SQLServer.SqlFromData.GetPage("A_Article", 1, 10, " NEWID()");
-           if (sj != null)
+            if (sj != null)
             {
                 String htmls = "";
 
                 for (Record item : sj)
                 {
-                        htmls += "<li ><span class='layui-badge'>荐</span><a href='/News/NewsDetail?id=" + item.get("id") + "'>" + item.getStr("title") + "</a> </li>";
+                    htmls += "<li ><span class='layui-badge'>荐</span><a href='http://asxsyd92.com/news/newsdetail?id=" + item.get("id") + "'>" + item.getStr("title") + "</a> </li>";
                 }
                 str = str.replace("$sj$", htmls);
             }
@@ -87,16 +87,16 @@ public class HtmlController extends Controller {
             str = str.replace("$views$", torrent.getStr("views"));
             str = str.replace("$Contents$", torrent.getStr("contents"));
             str = str.replace("$Author$", torrent.getStr("author"));
-            str = str.replace("$Nextarticle.ID$", Nextarticle.getStr("id"));
-            str = str.replace("$Lastarticle.ID$",  Lastarticle.getStr("id"));
-            str = str.replace("$Lastarticle.Title$",  Lastarticle.getStr("title"));
-            str = str.replace("$Nextarticle.Title$",  Nextarticle.getStr("title"));
-            str = str.replace("$Nextarticle.views$",  Nextarticle.getStr("views"));
-            str = str.replace("$Lastarticle.views$",  Lastarticle.getStr("views"));
+            str = str.replace("$Nextarticle.ID$",Nextarticle==null?"": Nextarticle.getStr("id"));
+            str = str.replace("$Lastarticle.ID$", Lastarticle==null?"": Lastarticle.getStr("id"));
+            str = str.replace("$Lastarticle.Title$",Lastarticle==null?"":  Lastarticle.getStr("title"));
+            str = str.replace("$Nextarticle.Title$", Nextarticle==null?"": Nextarticle.getStr("title"));
+            str = str.replace("$Nextarticle.views$", Nextarticle==null?"": Nextarticle.getStr("views"));
+            str = str.replace("$Lastarticle.views$", Lastarticle==null?"": Lastarticle.getStr("views"));
         }
 
 
-            return str;
+        return str;
 
     }
 

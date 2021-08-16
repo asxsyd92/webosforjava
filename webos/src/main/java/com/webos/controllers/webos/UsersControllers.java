@@ -489,24 +489,19 @@ public void getPageById(){
     }
     @Before({JwtInterceptor.class, POST.class})
    @ApiOperation(url = "/api/users/GetUsersListAsync", tag = "GetUsersListAsync", httpMethod = "post", description = "需要授权：im用户列表 ")
-
+    //获取用户朋友、群列表
     public void GetUsersListAsync()
     {
      try {
-
          Record data=new Record();
-
          Claims claims = getAttr("claims");
          String id=claims.get("id").toString();
         Sysim im= imService.getImUser(id);
-
          data.set("mine",im);
          //获取朋友
-
          Object  friends =  new util<Sysfriend>().toJson(imService.getImFriend(id));
          data.set("friend",friends);
          //获取群
-
          Object  groups =  new util<Sysgroup>().toJson(imService.getImgroup(id));
          data.set("group",groups);
 
@@ -526,21 +521,18 @@ public void getPageById(){
   }
     @Before({JwtInterceptor.class, POST.class})
     @ApiOperation(url = "/api/users/getMembers", tag = "GetUsersListAsync", httpMethod = "post", description = "需要授权：im用户列表 ")
-
+    //获取群员
     public void getMembers()
     {
         try {
             String gid = getPara("id");
             Record data=new Record();
-
             Claims claims = getAttr("claims");
             String id=claims.get("id").toString();
             Sysim im= imService.getImUser(id);
             //群主
             data.set("owner",im);
-
             //获取群
-
             Object  groups =  new util<Sysim>().toJson(imService.getImgroupSysim(gid));
             data.set("list",groups);
 

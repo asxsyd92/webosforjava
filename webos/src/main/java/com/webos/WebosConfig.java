@@ -103,12 +103,9 @@ public class WebosConfig extends JFinalConfig {
     {
         me.add(new JwtInterceptor()); // 权限拦截器
     }
-    public void configHandler(Handlers me) {
-       // me.add(new UrlSkipHandler("^/websocket.ws", false));
-       // me.add(new WebSocketHandler("/websocket"));
-        me.add(new UrlSkipHandler("^/websocket.ws", false));
-        //me.add(new WebSocketHandler("^/websocket.ws"));
 
+    public void configHandler(Handlers me) {
+        me.add(new UrlSkipHandler("^/websocket.ws", false));
         me.add(new ContextPathHandler("basePath"));
 
     }

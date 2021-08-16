@@ -1,5 +1,10 @@
 package com.webos;
 
+import com.alibaba.fastjson.JSON;
+import com.jfinal.core.Controller;
+import com.webcore.config.LoginUsers;
+import io.jsonwebtoken.Claims;
+
 import javax.servlet.http.HttpServletRequest;
 
 public class Common {
@@ -18,4 +23,9 @@ public class Common {
         return ip;
 
     }
+public  static LoginUsers getLoginUser(Controller formDesignController){
+    Claims claims =formDesignController.getAttr("claims");
+     String  claimss= JSON.toJSONString(claims);
+    return   JSON.parseObject(claimss, LoginUsers.class);
+}
 }

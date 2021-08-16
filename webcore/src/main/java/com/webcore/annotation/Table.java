@@ -1,0 +1,17 @@
+package com.webcore.annotation;
+
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Target({java.lang.annotation.ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+public @interface Table {
+    String dataSourceName() default "DEFAULT";
+
+    String tableName() default "";
+
+    String primaryKey() default "ID";
+}

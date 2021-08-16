@@ -2,27 +2,13 @@ package com.webos.controllers.websocket;
 
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import com.asxsydutils.utils.HttpHelper;
 import com.asxsydutils.utils.StringUtil;
-import com.jfinal.aop.Inject;
-import com.jfinal.plugin.activerecord.Record;
-import com.jwt.JwtUtils;
 import com.webcore.modle.Sysim;
-import com.webcore.service.ImService;
-import com.webos.socket.manager.OnLineUserManager;
-import com.webos.socket.manager.UserManager;
 import com.webos.socket.sender.MessageSender;
 import com.webos.socket.user.*;
 import com.webos.socket.user.message.MessageType;
-import com.webos.socket.user.message.ToServerTextMessage;
 import com.webos.socket.util.LayIMFactory;
-import io.jsonwebtoken.Claims;
-import okhttp3.FormBody;
-import okhttp3.RequestBody;
-import org.apache.commons.lang3.StringUtils;
 import org.ehcache.impl.internal.concurrent.ConcurrentHashMap;
-
 import javax.websocket.OnClose;
 import javax.websocket.OnError;
 import javax.websocket.OnMessage;
@@ -31,13 +17,8 @@ import javax.websocket.Session;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.util.Date;
 import java.util.Map;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+
 /**
  * 〈webSocket功能〉
  *
@@ -55,9 +36,6 @@ public class WebSocket {
         @OnOpen
         public void onOpen(@PathParam("uid")String uid, Session session) throws IOException {
 
-
-
-
                SocketUser user = new SocketUser();
                 user.setSession(session);
                 user.setUserId(uid);
@@ -65,8 +43,6 @@ public class WebSocket {
                 LayIMFactory.createManager().addUser(user);
                // print("当前在线用户："+LayIMFactory.createManager().getOnlineCount());
                // print("缓存中的用户个数："+new OnLineUserManager().getOnLineUsers().size());
-
-
         }
 
         @OnClose
@@ -153,7 +129,4 @@ public class WebSocket {
 
             }
         }
-
-
-
 }

@@ -13,7 +13,7 @@ import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.ehcache.CacheKit;
 import com.jwt.JwtInterceptor;
-import com.spire.ms.System.Collections.ArrayList;
+
 import com.webcore.modle.WorkFlowTask;
 import com.webcore.modle.Workflow;
 import com.webcore.oa.task.Query;
@@ -25,6 +25,7 @@ import com.webcore.service.WorkFlowTaskService;
 import com.webcore.service.WorkflowService;
 import com.webcore.utils.Unity;
 import io.jsonwebtoken.Claims;
+import kotlin.collections.ArrayDeque;
 
 import java.util.stream.Collectors;
 import java.util.Date;
@@ -150,7 +151,7 @@ try {
            if (currentStep!=null){
                currentdata=da.get(0);
            }
-            List<Steps> nextSteps =new ArrayList();
+            List<Steps> nextSteps =new ArrayDeque<>();
 
             List<Lines> lines = wfInstalleds.getLines().stream().filter(Lines -> Lines.getFrom().equals( currentStep)).collect(Collectors.toList());
             for (Lines item:  lines)
