@@ -11,13 +11,13 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/webos/pom.xml" />
         <option value="$PROJECT_DIR$/../asxsydutils/pom.xml" />
         <option value="$PROJECT_DIR$/../webcore/pom.xml" />
         <option value="$PROJECT_DIR$/../swagger/pom.xml" />
         <option value="$PROJECT_DIR$/asxsydutils/pom.xml" />
         <option value="$PROJECT_DIR$/swagger/pom.xml" />
         <option value="$PROJECT_DIR$/webcore/pom.xml" />
+        <option value="$PROJECT_DIR$/webos/pom.xml" />
       </list>
     </option>
   </component>

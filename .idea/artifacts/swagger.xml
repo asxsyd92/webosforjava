@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="swagger">
+    <output-path>$PROJECT_DIR$/out/artifacts/swagger</output-path>
+    <root id="root">
+      <element id="archive" name="swagger.jar">
+        <element id="module-output" name="swagger" />
+      </element>
+    </root>
+  </artifact>
+</component>

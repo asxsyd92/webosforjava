@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="webos">
+    <output-path>$PROJECT_DIR$/out/artifacts/webos</output-path>
+    <root id="root">
+      <element id="archive" name="webos.jar">
+        <element id="module-output" name="webos" />
+      </element>
+    </root>
+  </artifact>
+</component>
