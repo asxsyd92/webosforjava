@@ -1,4 +1,5 @@
 com\asxsydutils\utils\JosnUtils.class
+com\asxsydutils\utils\PictureHelper.class
 com\asxsydutils\utils\WaterMarkGenerate.class
 com\asxsydutils\utils\StringUtil.class
 com\asxsydutils\utils\ClassUtil$1.class

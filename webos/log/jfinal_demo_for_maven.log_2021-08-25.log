@@ -1,0 +1,141 @@
+
+2021-08-25 23:57:11
+[ERROR]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handle()]: com.webos.controllers.webos.UsersControllers.GetAppList() : /api/users/GetAppList
+java.lang.IllegalStateException: UT010005: Cannot call getOutputStream(), getWriter() already called
+	at io.undertow.servlet.spec.HttpServletResponseImpl.getOutputStream(HttpServletResponseImpl.java:396)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:61)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:113)
+	at com.jfinal.ext.handler.ContextPathHandler.handle(ContextPathHandler.java:48)
+	at com.jfinal.ext.handler.UrlSkipHandler.handle(UrlSkipHandler.java:46)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2021-08-25 23:57:11
+[ERROR]-[Thread: XNIO-1 task-1]-[com.jfinal.core.JFinalFilter.doFilter()]: /api/users/GetAppList
+java.lang.IllegalStateException: UT010005: Cannot call getOutputStream(), getWriter() already called
+	at io.undertow.servlet.spec.HttpServletResponseImpl.getOutputStream(HttpServletResponseImpl.java:396)
+	at com.jfinal.render.TemplateRender.render(TemplateRender.java:61)
+	at com.jfinal.render.ErrorRender.render(ErrorRender.java:51)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:131)
+	at com.jfinal.ext.handler.ContextPathHandler.handle(ContextPathHandler.java:48)
+	at com.jfinal.ext.handler.UrlSkipHandler.handle(UrlSkipHandler.java:46)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:90)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+2021-08-25 23:57:40
+[ERROR]-[Thread: XNIO-1 task-2]-[com.jfinal.core.ActionHandler.handleActionException()]: 405 Error: /api/login/Login
+com.jfinal.core.ActionException
+
+2021-08-25 23:57:43
+[ERROR]-[Thread: XNIO-1 task-3]-[com.jfinal.core.ActionHandler.handleActionException()]: 405 Error: /api/login/Login
+com.jfinal.core.ActionException
+
+2021-08-25 23:58:02
+[ERROR]-[Thread: XNIO-1 task-4]-[com.jfinal.core.ActionHandler.handleActionException()]: 405 Error: /api/login/Login
+com.jfinal.core.ActionException
+
+2021-08-25 23:58:25
+[ERROR]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handleActionException()]: 405 Error: /api/login/Login
+com.jfinal.core.ActionException
+
+2021-08-25 23:58:53
+[ERROR]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handleActionException()]: 405 Error: /api/login/Login
+com.jfinal.core.ActionException
+
+2021-08-25 23:58:54
+[ERROR]-[Thread: XNIO-1 task-2]-[com.jfinal.core.ActionHandler.handleActionException()]: 405 Error: /api/login/Login
+com.jfinal.core.ActionException
+
+2021-08-25 23:58:54
+[ERROR]-[Thread: XNIO-1 task-3]-[com.jfinal.core.ActionHandler.handleActionException()]: 405 Error: /api/login/Login
+com.jfinal.core.ActionException
+
+2021-08-25 23:58:54
+[ERROR]-[Thread: XNIO-1 task-4]-[com.jfinal.core.ActionHandler.handleActionException()]: 405 Error: /api/login/Login
+com.jfinal.core.ActionException
+
+2021-08-25 23:58:55
+[ERROR]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handleActionException()]: 405 Error: /api/login/Login
+com.jfinal.core.ActionException
+
+2021-08-25 23:58:55
+[ERROR]-[Thread: XNIO-1 task-2]-[com.jfinal.core.ActionHandler.handleActionException()]: 405 Error: /api/login/Login
+com.jfinal.core.ActionException
+
+2021-08-25 23:58:55
+[ERROR]-[Thread: XNIO-1 task-3]-[com.jfinal.core.ActionHandler.handleActionException()]: 405 Error: /api/login/Login
+com.jfinal.core.ActionException
+
+2021-08-25 23:58:55
+[ERROR]-[Thread: XNIO-1 task-4]-[com.jfinal.core.ActionHandler.handleActionException()]: 405 Error: /api/login/Login
+com.jfinal.core.ActionException
+
+2021-08-25 23:58:55
+[ERROR]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handleActionException()]: 405 Error: /api/login/Login
+com.jfinal.core.ActionException
+
+2021-08-25 23:58:55
+[ERROR]-[Thread: XNIO-1 task-2]-[com.jfinal.core.ActionHandler.handleActionException()]: 405 Error: /api/login/Login
+com.jfinal.core.ActionException

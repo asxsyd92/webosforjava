@@ -15,10 +15,11 @@ import com.jfinal.plugin.ehcache.CacheKit;
 import com.jwt.JwtUtils;
 import com.webcore.service.LogService;
 import com.webcore.service.UsersService;
+import com.webcore.utils.CaptchaRender;
 import com.webos.Common;
 
 
-
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -47,6 +48,15 @@ public class LoginControllers extends Controller {
         try {
             String user = getPara("user");
             String pw = getPara("pw");
+            String code = getPara("code");
+            boolean validate = CaptchaRender.validate(this, code);//inputRandomCode是用户提交过来的验证码
+           if (!validate){
+               setAttr("msg", "验证码错误！");
+               setAttr("default", false);
+               setAttr("success", false);
+               renderJson();
+               return;
+           }
             Record us = usersService.Login(user);
             if (us != null) {
 
@@ -140,5 +150,10 @@ public class LoginControllers extends Controller {
             setAttr("success", false);
         }
         renderJson();
+    }
+    @Clear
+    public void getCode() throws IOException {
+        // 调用工具类生成的验证码和验证码图片
+        render(new CaptchaRender(65,30,4,true));
     }
 }

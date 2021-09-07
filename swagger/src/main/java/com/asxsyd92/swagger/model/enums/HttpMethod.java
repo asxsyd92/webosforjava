@@ -3,7 +3,7 @@ package com.asxsyd92.swagger.model.enums;
 /**
  * 请求方法
  *
- * @author lee
+ * @author 爱上歆随懿恫
  * @version V1.0.0
  * @date 2017/12/11
  */
