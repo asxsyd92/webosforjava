@@ -380,38 +380,26 @@ public  void  saveFormJson(){
         String id = getPara("id");
         String table = getPara("table");
         String title = getPara("title");
-        if (id != null && id != "") {
+        if (id != null && !id.equals("")) {
            Record da= Db.findById("sysformdesign",id);
            if(da!=null){
                setAttr("code", 0);
                setAttr("msg", "获取成功");
                setAttr("data", da);
-           }else{
-               List<Record> list=  MySql.getMySqlableStructure(table);
-               setAttr("code", 0);
-               setAttr("msg", "-1");
-               setAttr("data", list);
-               //var list = SqlFromData.GetTableStructure(table);
-               //return JSONhelper.ToJson(new { code = 0, msg = "-1", data = list });
+               setAttr("type", 1);
+               setAttr("success", true);
+
            }
 
-    }else {
-        //第一步查询SysFormDesign是否已经存在已有表单
-        Record ta= Db.findById("sysformdesign","Tab",table);
-        if (ta != null)
-        {
-            setAttr("code", 0);
-            setAttr("msg", "获取成功");
-            setAttr("data", ta);
-        }
-        else {
+    }else{
             List<Record> list=  MySql.getMySqlableStructure(table);
             setAttr("code", 0);
-            setAttr("msg", "-1");
+            setAttr("msg", "获取成功");
+            setAttr("type", 0);
             setAttr("data", list);
-        //    var list = SqlFromData.GetTableStructure(table);
+            setAttr("success", true);
+            //var list = SqlFromData.GetTableStructure(table);
             //return JSONhelper.ToJson(new { code = 0, msg = "-1", data = list });
-        }
         }
 
     renderJson();
