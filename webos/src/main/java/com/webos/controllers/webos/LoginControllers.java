@@ -4,6 +4,8 @@ import com.asxsyd92.swagger.annotation.Api;
 import com.asxsyd92.swagger.annotation.ApiOperation;
 import com.asxsyd92.swagger.annotation.Param;
 import com.asxsyd92.swagger.annotation.Params;
+import com.asxsydutils.utils.AESHelper;
+import com.asxsydutils.utils.StringUtil;
 import com.jfinal.aop.Before;
 import com.jfinal.aop.Clear;
 import com.jfinal.aop.Inject;
@@ -15,16 +17,14 @@ import com.jfinal.plugin.ehcache.CacheKit;
 import com.jwt.JwtUtils;
 import com.webcore.service.LogService;
 import com.webcore.service.UsersService;
-import com.webcore.utils.CaptchaRender;
 import com.webos.Common;
 
-
 import java.io.IOException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 import static com.asxsydutils.utils.MD5.MD5_32bit;
-
 
 
 @Path("/api/login")
@@ -49,7 +49,13 @@ public class LoginControllers extends Controller {
             String user = getPara("user");
             String pw = getPara("pw");
             String code = getPara("code");
-            boolean validate = CaptchaRender.validate(this, code);//inputRandomCode是用户提交过来的验证码
+            String key=StringUtil.getDateFormat(new Date(),"yyyyMMdd");
+            key= "webos"+ key+"591";
+            user= AESHelper.aesDecrypt(user,key);
+            pw= AESHelper.aesDecrypt(pw,key);
+            code= AESHelper.aesDecrypt(code,key);
+
+            boolean validate = com.webcore.utils.CaptchaRender.validate(this, code);//inputRandomCode是用户提交过来的验证码
            if (!validate){
                setAttr("msg", "验证码错误！");
                setAttr("default", false);
@@ -57,22 +63,24 @@ public class LoginControllers extends Controller {
                renderJson();
                return;
            }
+            Integer islock=   CacheKit.get("logincache",user);
+            if (islock!=null) {
+
+                if (islock > 10) {
+                    logService.addLog( "用户锁定！", user+"锁定30分钟", Common.getRemoteLoginUserIp(this.getRequest()), user, "", "用户登陆", "", "", "");
+
+                    setAttr("msg", "账户被锁定30分钟，请30分钟后重试");
+                    setAttr("default", false);
+                    setAttr("success", false);
+                    renderJson();
+                    return;
+                }
+            }
             Record us = usersService.Login(user);
             if (us != null) {
 
-                Integer islock=   CacheKit.get("logincache",user);
-                if (islock!=null) {
 
-                    if (islock > 10) {
-                        logService.addLog( "登陆失败", user+"锁定30分钟", Common.getRemoteLoginUserIp(this.getRequest()), us.getStr("name"), us.getStr("id"), "用户登陆", "", "", "");
 
-                        setAttr("msg", "账户被锁定30分钟，请30分钟后重试");
-                        setAttr("default", false);
-                        setAttr("success", false);
-                        renderJson();
-                        return;
-                    }
-                }
                 if (us.getInt("Status") == 1) {
                     setAttr("msg", "账号被冻结，请联系管理员！");
                     setAttr("success", false);
@@ -86,8 +94,6 @@ public class LoginControllers extends Controller {
                     String str = us.getStr("ID").toLowerCase() + pw;
                     String newstr = MD5_32bit(str);
                     if (us.getStr("Password").equals(newstr)) {
-
-
                         Map<String, Object> claims = new HashMap<String, Object>();
                         claims.put("id", us.getStr("ID"));
                         claims.put("account", us.getStr("Account"));
@@ -154,6 +160,6 @@ public class LoginControllers extends Controller {
     @Clear
     public void getCode() throws IOException {
         // 调用工具类生成的验证码和验证码图片
-        render(new CaptchaRender(65,30,4,true));
+        render(new com.webcore.utils.CaptchaRender(65,30,4,true));
     }
 }

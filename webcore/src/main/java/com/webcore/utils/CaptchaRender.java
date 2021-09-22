@@ -17,11 +17,6 @@ import com.jfinal.kit.StrKit;
 import com.jfinal.render.Render;
 
 
-/**
- * @Author www.hiai.top
- * @Email  goodsking@163.com
- * 图形验证类
- */
 
 public class CaptchaRender extends Render{
     @SuppressWarnings("unused")
@@ -151,8 +146,9 @@ public class CaptchaRender extends Render{
     }
 
     public static boolean validate(Controller controller, String inputRandomCode) {
-        if (StrKit.isBlank(inputRandomCode))
-            return false;
+        if (StrKit.isBlank(inputRandomCode)){
+
+            return false;}
         try {
             if(caseInsensitive)
                 inputRandomCode = inputRandomCode.toUpperCase();

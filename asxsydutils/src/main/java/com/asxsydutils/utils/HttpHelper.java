@@ -456,7 +456,7 @@ public static String SendPostFormData(String url,RequestBody body) throws IOExce
      * @author 爱上歆随懿恫
      */
     public static String getLocalMac(InetAddress ia) throws SocketException {
-        // TODO Auto-generated method stub
+
         //获取网卡，获取地址
         byte[] mac = NetworkInterface.getByInetAddress(ia).getHardwareAddress();
         System.out.println("mac数组长度：" + mac.length);

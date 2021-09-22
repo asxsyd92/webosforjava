@@ -55,8 +55,85 @@ public class FormControllers extends Controller {
         }
         return res.toString();
     }
+public  void getFormJson(){
+         try{
+             String key = getPara("key");
+             Record fmdata= Db.findById("sysformdesign","id",key);
+             if (fmdata!=null){
+                 setAttr("success", true);
+                 setAttr("data", fmdata);
+                 setAttr("msg", "表单不存在");
+             }else {
+                 setAttr("success", false);
+                 setAttr("msg", "表单不存在");
+             }
+         }catch (Exception ex){
+             setAttr("success", false);
+             setAttr("msg", "表单查询异常");
+         }
+    renderJson();
+}
+public  void  saveFormJson(){
+    try{
+        String key = getPara("key");
+        String data = getPara("data");
+        String title = getPara("title");
+        String tab=getPara("tab");
+        if (key==null){
+
+            Record os=new Record();
+            os.set("datetime",new java.util.Date());
+            os.set("designhtml",data);
+            os.set("id",StringUtil.GuidEmpty());
+            os.set("tab",tab);
+            os.set("title",title);
+            String fromid="";
+            try {
+                fromid= FromData.save(os,"sysformdesign");
+                setAttr("success", true);
+                setAttr("data", os);
+                setAttr("msg", "保存成功");
+            }catch (Exception ex){
+                setAttr("success", false);
+
+                setAttr("msg", ex.getMessage());
+            }
+            Record rps = new Record();
+            rps.set("id", StringUtil.getPrimaryKey());
+            rps.set("title", title);
+            rps.set("params", fromid);
+            rps.set("tag", "showfrom");
+            rps.set("ParentID", "1ca18548-e361-4c42-bfa1-f086f14e0669");
+            try {
+                FromData.save(rps, "roleapp");
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }else {
+            Record fmdata= Db.findById("sysformdesign","id",key);
+            fmdata.set("designhtml",data);
+            fmdata.set("title",title);
+            fmdata.set("tab",tab);
+            try {
+                FromData.save(fmdata,"sysformdesign");
+                setAttr("success", true);
+                setAttr("data", fmdata);
+                setAttr("msg", "保存成功");
+            }catch (Exception ex){
+                setAttr("success", false);
+
+                setAttr("msg", ex.getMessage());
+            }
+
+        }
 
 
+    }catch (Exception ex){
+        setAttr("success", false);
+        setAttr("msg", "表单保存异常");
+    }
+    renderJson();
+}
     public  void FormDesignYL()
     {
         try {

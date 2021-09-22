@@ -2,20 +2,27 @@ package com.asxsydutils.utils;
 
 
  import org.apache.commons.lang3.StringUtils;
-
  import java.io.UnsupportedEncodingException;
  import java.math.BigInteger;
  import java.net.URLEncoder;
  import java.security.MessageDigest;
  import java.security.NoSuchAlgorithmException;
  import java.sql.Timestamp;
+ import java.text.SimpleDateFormat;
+ import java.time.LocalDateTime;
+ import java.time.ZoneId;
+ import java.time.format.DateTimeFormatter;
  import java.util.*;
  import java.util.regex.Matcher;
  import java.util.regex.Pattern;
-
+ import org.apache.commons.codec.binary.Base64;
+ import javax.crypto.Cipher;
+ import javax.crypto.spec.IvParameterSpec;
+ import javax.crypto.spec.SecretKeySpec;
 
 public class StringUtil {
     public static String SEPARATOR = String.valueOf((char) 29);
+    private static boolean[] bcdLookup;
 
     /**
      * 判断字符串是否为空
@@ -128,7 +135,7 @@ public class StringUtil {
             Collections.sort(itmes, new Comparator<Map.Entry<String, Object>>() {
                 @Override
                 public int compare(Map.Entry<String, Object> o1, Map.Entry<String, Object> o2) {
-                    // TODO Auto-generated method stub
+
                     return (o1.getKey().toString().compareTo(o2.getKey()));
                 }
             });
@@ -158,5 +165,30 @@ public class StringUtil {
         }
         return params;
     }
+
+
+    public static byte[] AES_CBC_Decrypt(byte[] data, byte[] key, byte[] iv) throws Exception{
+        Cipher cipher = getCipher(Cipher.DECRYPT_MODE, key, iv);
+        return cipher.doFinal(data);
+    }
+
+    private static Cipher getCipher(int mode, byte[] key, byte[] iv) throws Exception{
+        Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+
+        //因为AES的加密块大小是128bit(16byte), 所以key是128、192、256bit无关
+        //System.out.println("cipher.getBlockSize()： " + cipher.getBlockSize());
+
+        SecretKeySpec secretKeySpec = new SecretKeySpec(key, "AES");
+        cipher.init(mode, secretKeySpec, new IvParameterSpec(iv));
+
+        return cipher;
+    }
+
+    public static String interceptTime(String timeStr) { if (!StringUtils.isBlank(timeStr)) { if (timeStr.contains("T")) { DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH); LocalDateTime ldt = LocalDateTime.parse(timeStr, df); ZoneId currentZone = ZoneId.of("UTC"); ZoneId newZone = ZoneId.of("Asia/Shanghai"); timeStr = ldt.atZone(currentZone).withZoneSameInstant(newZone).toLocalDateTime().toString(); } if (timeStr.length() >= 10) { return timeStr.substring(0, 10); } } return timeStr; }
+public static  String getDateFormat(java.util.Date date,String format){
+
+    SimpleDateFormat df = new SimpleDateFormat(format);//设置日期格式
+   return df.format(date);
+}
 }
 

@@ -49,7 +49,7 @@ public class UsersControllers extends Controller {
             //从缓存中读取
             Claims claims = getAttr("claims");
             String userid = claims.get("id").toString();
-            Object  menucache=   CacheKit.get("menucache",userid);
+            Object  menucache=  null; //CacheKit.get("menucache",userid);
 
             if (menucache!=null){
                 setAttr("msg", "");

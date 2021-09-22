@@ -6,7 +6,7 @@
 
     <groupId>com.asxsyd92</groupId>
     <artifactId>swagger</artifactId>
-    <version>1.0</version>
+    <version>1.3</version>
     <dependencies>
     <dependency>
         <groupId>com.jfinal</groupId>
