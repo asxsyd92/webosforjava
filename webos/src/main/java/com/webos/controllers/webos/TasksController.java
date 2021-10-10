@@ -4,6 +4,7 @@ package com.webos.controllers.webos;
 import com.alibaba.fastjson.JSON;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Path;
+import com.jfinal.ext.interceptor.POST;
 import com.jfinal.kit.PropKit;
 import com.webcore.service.LogService;
 import com.webcore.service.TaskService;
@@ -115,97 +116,97 @@ public class TasksController  extends Controller {
     }
 
     public void generateMap() {
-        try{
-        PropKit.use("config.properties");
-        String m_localPath = PropKit.get("fromurl");
-        String path = m_localPath + "/map.xml";
-        File file = new File(path);
-        BufferedWriter out = null;
-        if (!file.exists()) {
-            try {
+        try {
+            PropKit.use("config.properties");
+            String m_localPath = PropKit.get("fromurl");
+            String path = m_localPath + "/map.xml";
+            File file = new File(path);
+            BufferedWriter out = null;
+            if (!file.exists()) {
+                try {
 
-                String xml = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
-                        "   <!-- XML文件需以utf-8编码-->\n" +
-                        "   <urlset>";
-                String xmls ="";
-                        List<Record> da = Db.find("SELECT *FROM a_article ORDER BY Adddate DESC LIMIT 50000");
-                for (Record itme : da) {
+                    String xml = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
+                            "   <!-- XML文件需以utf-8编码-->\n" +
+                            "   <urlset>";
+                    String xmls = "";
+                    List<Record> da = Db.find("SELECT *FROM a_article ORDER BY Adddate DESC LIMIT 50000");
+                    for (Record itme : da) {
 
-                    try {
-                        String url = "http://asxsyd92.com/news/newsdetail?id=" + itme.get("id");
+                        try {
+                            String url = "http://asxsyd92.com/news/newsdetail?id=" + itme.get("id");
 
 
-                        xmls += " <url><loc>" + url + "</loc> <lastmod>" + sdf.format(itme.get("Adddate")) + "</lastmod> <changefreq>daily</changefreq><priority>0.8</priority></url>";
+                            xmls += " <url><loc>" + url + "</loc> <lastmod>" + sdf.format(itme.get("Adddate")) + "</lastmod> <changefreq>daily</changefreq><priority>0.8</priority></url>";
 
-                    } catch (Exception ex) {
+                        } catch (Exception ex) {
+                        }
                     }
-                }
-                xml =xml+  xmls+"</urlset>" ;
+                    xml = xml + xmls + "</urlset>";
 
-                file.createNewFile();
-                out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8));
-                out.write(xml, 0, xml.length());
-            } catch (Exception ex) {
-                System.out.print(ex.getMessage());
-            } finally {
-                if (out != null) {
-                    try {
-                        out.flush();
-                        out.close();
-                    } catch (IOException e) {
-                        System.out.print(e.getMessage());
-                        e.printStackTrace();
+                    file.createNewFile();
+                    out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8));
+                    out.write(xml, 0, xml.length());
+                } catch (Exception ex) {
+                    System.out.print(ex.getMessage());
+                } finally {
+                    if (out != null) {
+                        try {
+                            out.flush();
+                            out.close();
+                        } catch (IOException e) {
+                            System.out.print(e.getMessage());
+                            e.printStackTrace();
+                        }
                     }
+                    //map.xml
                 }
-                //map.xml
+            } else {
+
+                try {
+
+                    String xml = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
+                            "   <!-- XML文件需以utf-8编码-->\n" +
+                            "   <urlset>";
+                    String xmls = "";
+                    List<Record> da = Db.findAll("a_article");
+                    for (Record itme : da) {
+
+                        try {
+                            String url = "http://asxsyd92.com/news/newsdetail?id=" + itme.get("id");
+
+
+                            xmls += " <url><loc>" + url + "</loc> <lastmod>" + sdf.format(itme.get("Adddate")) + "</lastmod> <changefreq>daily</changefreq><priority>0.8</priority></url>";
+
+                        } catch (Exception ex) {
+                        }
+                    }
+                    xml = xml + xmls + " </urlset>";
+
+                    file.delete();
+                    file.createNewFile();
+                    out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8));
+                    out.write(xml, 0, xml.length());
+                } catch (Exception ex) {
+                    System.out.print(ex.getMessage());
+                } finally {
+                    if (out != null) {
+                        try {
+                            out.flush();
+                            out.close();
+                        } catch (IOException e) {
+                            System.out.print(e.getMessage());
+                            e.printStackTrace();
+                        }
+                    }
+                    //map.xml
+                }
             }
-        }else {
-
-            try {
-
-                String xml = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
-                        "   <!-- XML文件需以utf-8编码-->\n" +
-                        "   <urlset>";
-                String xmls ="";
-                List<Record> da = Db.findAll("a_article");
-                for (Record itme : da) {
-
-                    try {
-                        String url = "http://asxsyd92.com/news/newsdetail?id=" + itme.get("id");
-
-
-                        xmls += " <url><loc>" + url + "</loc> <lastmod>" + sdf.format(itme.get("Adddate")) + "</lastmod> <changefreq>daily</changefreq><priority>0.8</priority></url>";
-
-                    } catch (Exception ex) {
-                    }
-                }
-                xml =xml+  xmls+" </urlset>" ;
-
-                file.delete();
-                file.createNewFile();
-                out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8));
-                out.write(xml, 0, xml.length());
-            } catch (Exception ex) {
-                System.out.print(ex.getMessage());
-            } finally {
-                if (out != null) {
-                    try {
-                        out.flush();
-                        out.close();
-                    } catch (IOException e) {
-                        System.out.print(e.getMessage());
-                        e.printStackTrace();
-                    }
-                }
-                //map.xml
-            }
-        }
-            setAttr("msg","生成成功，请在百度平台抓取结果获取访问map.xml");
+            setAttr("msg", "生成成功，请在百度平台抓取结果获取访问map.xml");
             setAttr("code", 0);
             setAttr("count", 0);
             setAttr("data", null);
             setAttr("success", true);
-    }catch (Exception ex){
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
             setAttr("msg", ex.getLocalizedMessage());
             setAttr("code", 0);
@@ -216,4 +217,26 @@ public class TasksController  extends Controller {
         renderJson();
     }
 
+    @Before(POST.class)
+    public void getTabelDate() {
+        try {
+            String key = getPara("key");
+            String tab = getPara("tab");
+            Record da = Db.findById(tab, "id", key);
+            setAttr("msg", "获取成功");
+            setAttr("code", 0);
+            setAttr("count", 0);
+            setAttr("data", da);
+            setAttr("success", true);
+        } catch (Exception ex) {
+            setAttr("msg", ex.getLocalizedMessage());
+            setAttr("code", 0);
+            setAttr("count", 0);
+            setAttr("data", null);
+            setAttr("success", false);
+        }
+
+        renderJson();
+
+    }
 }

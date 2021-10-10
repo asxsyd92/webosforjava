@@ -408,6 +408,7 @@ public  void  saveFormJson(){
     public void  FormCommonTaskSave(){
         String table= getPara("table");
         String data= getPara("data");
+        String fromid= getPara("fromid");
 
         Claims claims = getAttr("claims");
        // Unity.getJsonSetData(data,claims);
@@ -431,12 +432,12 @@ public  void  saveFormJson(){
             id= FromData.save(os,table);
         }catch (Exception ex){
             setAttr("msg", ex.getMessage());
-            setAttr("Success", false);
+            setAttr("success", false);
             renderJson();
         }
         if (id.equals(StringUtil.GuidEmpty()) )
         {   setAttr("msg", "添加失败！");
-            setAttr("Success", false);
+            setAttr("success", false);
             renderJson();
         }else {
             //是否存导公共task表中统一管理
@@ -453,6 +454,7 @@ public  void  saveFormJson(){
                     task.setSenderName(username.toString());
                     task.setSenderID(_user.toString()) ;
                     task.setAddTime(new Date());
+                    task.setFromid(fromid);
                     if (cls!=null){
                         task.setClassid(cls.toString());
                     }else {
@@ -474,7 +476,7 @@ public  void  saveFormJson(){
                         tag= FromData.save(task.toRecord(),"commontask");
                     }catch (Exception ex){
                         setAttr("msg", ex.getMessage());
-                        setAttr("Success", false);
+                        setAttr("success", false);
                         renderJson();
                     }
 
@@ -495,23 +497,23 @@ public  void  saveFormJson(){
                         tag= FromData.save(DAS.toRecord(),"commontask");
                     }catch (Exception ex){
                         setAttr("msg", ex.getMessage());
-                        setAttr("Success", false);
+                        setAttr("success", false);
                         renderJson();
                     }
 
                 }
                 if (!tag.equals(StringUtil.GuidEmpty())) {
-                    setAttr("Success", true);
+                    setAttr("success", true);
                     setAttr("msg", "成功");
                     renderJson();
                 } else {
-                    setAttr("Success", false);
+                    setAttr("success", false);
                     setAttr("msg", "失败");
                     renderJson();
                 };
             }
 else {
-                setAttr("Success", true);
+                setAttr("success", true);
                 setAttr("msg", "成功");
             }
 

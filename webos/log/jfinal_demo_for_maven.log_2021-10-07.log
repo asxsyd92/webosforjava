@@ -1,5 +1,5 @@
 
-2021-10-10 12:29:36
+2021-10-07 13:33:19
 [ERROR]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: init datasource error, url: jdbc:mysql://127.0.0.1:3306/webos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
@@ -62,7 +62,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
 	... 30 more
 
-2021-10-10 12:29:36
+2021-10-07 13:33:19
 [ERROR]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} init error
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
@@ -125,7 +125,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
 	... 30 more
 
-2021-10-10 12:29:36
+2021-10-07 13:33:19
 [ERROR]-[Thread: main]-[com.jfinal.core.Config.startPlugins()]: Plugin start error: com.jfinal.plugin.activerecord.ActiveRecordPlugin. 
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
@@ -195,3 +195,6 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:155)
 	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65)
 	... 30 more
+
+2021-10-07 13:35:08
+[WARN]-[Thread: XNIO-1 task-1]-[com.jfinal.core.ActionHandler.handleActionException()]: 401 Unauthorized: /api/users/GetAppList

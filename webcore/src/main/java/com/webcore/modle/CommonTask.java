@@ -107,6 +107,13 @@ public class CommonTask extends Model<CommonTask> {
     public java.lang.String getClassid() {
         return get("Classid");
     }
+    public void setFromid(java.lang.String fromid) {
+        set("fromid", fromid);
+    }
+
+    public java.lang.String getFromid() {
+        return get("fromid");
+    }
 
     //得到业务表单信息
     public Record Instance() {
