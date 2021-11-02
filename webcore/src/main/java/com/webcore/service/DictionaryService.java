@@ -61,11 +61,11 @@ public class DictionaryService {
     /// </summary>
     /// <param name="code"></param>
     /// <returns></returns>
-    public  List<Dictionary> GetByCode(String code)
+    public static List<Dictionary> GetByCode(String code)
     {
-        List<Dictionary> tag0 = null;
 
-        return   tag0 = instance.find("select * from dictionary where  IsUse=1 and ParentID in (select ID from dictionary where Code='" + code + "')");
+
+        return    instance.find("select  id as value  ,title  from dictionary where  IsUse=1 and ParentID in (select ID from dictionary where Code='" + code + "')");
 
     }
 

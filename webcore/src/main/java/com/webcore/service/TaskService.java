@@ -15,7 +15,7 @@ public class TaskService {
       return   Db.paginate(page,limit,sqlPara);
     }
 
-    public static CommonTask Get(String id) {
-      return  instance.findById(id);
+    public static Record Get(String id) {
+      return  Db.findById("commontask","InstanceID",id);
     }
 }

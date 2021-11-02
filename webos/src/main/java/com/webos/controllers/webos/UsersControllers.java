@@ -94,7 +94,7 @@ public class UsersControllers extends Controller {
      * 获取菜单项
      */
 
-    public void getAppList(){
+    public void getMenuList(){
         try {
 
             Claims claims = getAttr("claims");
@@ -103,10 +103,16 @@ public class UsersControllers extends Controller {
             List<Record> list = new ArrayList<>();
 
           Object  da = new JosnUtils<xRoleApp>().toJson(roleAppService.GetxAppList(""));
+          Record o=new Record();
+          o.set("children",da);
+            o.set("id","00000000-0000-0000-0000-000000000000");
+            o.set("parentid","00000000-0000-0000-0000-000000000000");
+            o.set("title","根目录");
+            list.add(o);
             setAttr("msg", "");
             setAttr("code", 0);
             setAttr("count", 0);
-            setAttr("data", da);
+            setAttr("data", list);
             setAttr("success", true);
         } catch (Exception ex) {
 

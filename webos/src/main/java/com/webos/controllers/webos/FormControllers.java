@@ -29,6 +29,7 @@ import io.jsonwebtoken.Claims;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -443,7 +444,7 @@ public  void  saveFormJson(){
             //是否存导公共task表中统一管理
             if (istask) {
 
-                CommonTask DAS = TaskService.Get(id);
+                Record DAS = TaskService.Get(id);
                 Object _user =  claims.get("id");
                 Object username =claims.get("name");
                 if (DAS == null) {
@@ -484,17 +485,17 @@ public  void  saveFormJson(){
                 } else {
                     try {
                         if (os.get("title")!=null){
-                            DAS.setTitle(os.get("title"));
+                            DAS.set("title",os.get("title"));
                         }
 
                     } catch(Exception ex)
                     {
                         System.out.println(ex.getMessage());
-                        DAS.setTitle(os.get("标题不错在"));
+                        DAS.set("title",os.get("标题不错在"));
 
                     }
                     try {
-                        tag= FromData.save(DAS.toRecord(),"commontask");
+                        tag= FromData.save(DAS,"commontask");
                     }catch (Exception ex){
                         setAttr("msg", ex.getMessage());
                         setAttr("success", false);
@@ -542,37 +543,58 @@ else {
         renderJson();
     }
     @Clear
-    public void GetDictionaryByID() throws Exception {
-        String id = getPara("id");
-        Object da=   new JosnUtils<Dictionary>().toJson(DictionaryService.GetDictionaryByID(id));
-        setAttr("data", da);
+    public void GetDictionaryByID()  {
+         try{
+             String id = getPara("id");
+             Object da=   new JosnUtils<Dictionary>().toJson(DictionaryService.GetDictionaryByID(id));
+             Record o=new Record();
+             List<Record> list = new ArrayList<>();
+             o.set("children",da);
+             o.set("id","00000000-0000-0000-0000-000000000000");
+             o.set("parentid","00000000-0000-0000-0000-000000000000");
+             o.set("title","根目录");
+             list.add(o);
+             setAttr("data", list);
+             setAttr("msg", "获取成功！");
+             setAttr("success", true);
+         }catch (Exception ex){
+             setAttr("data", null);
+             setAttr("msg", ex.getMessage());
+             setAttr("success", false);
+         }
+
+        renderJson();
+    }
+    @Clear
+    public void GetDictionaryByCode()  {
+        try{
+            String id = getPara("id");
+            List<Dictionary> da= DictionaryService.GetByCode(id);
+
+            setAttr("data", da);
+            setAttr("msg", "获取成功！");
+            setAttr("success", true);
+        }catch (Exception ex){
+            setAttr("data", null);
+            setAttr("msg", ex.getMessage());
+            setAttr("success", false);
+        }
+
         renderJson();
     }
     @Before({JwtInterceptor.class, POST.class})
     public  void  FormDel(){
-        PropKit.use("config.properties");
-        String key = getPara("key");
-        String url = getPara("url");
+
+        String key = getPara("id");
+
         boolean tag0 = Db.deleteById("SysFormDesign","ID",key);
         Db.deleteById("RoleApp","ID",key);
+        Db.deleteById("UsersRole","MenuID",key);
 
         if (tag0)
         {
 
-            String temp =   PropKit.get("fromurl");
-            String m_localPath = temp + url;
-            String path = m_localPath;
 
-            File file = new File(path);
-
-            try {
-                if (!file.exists()){}else {
-                    file.delete();
-                }
-
-            } catch (Exception ex) {
-                setAttr("msg", "删除成功！但是文件处理失败！"+ex.getMessage());
-        }
             setAttr("msg", "删除成功！");
             setAttr("success", true);
 

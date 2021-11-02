@@ -67,20 +67,21 @@ public class TasksController  extends Controller {
 
     public void DelFormData() {
         Claims claims = getAttr("claims");
-        String key = getPara("key");
+        String id = getPara("id");
+        String instanceid = getPara("instanceid");
         String table = getPara("table");
         if (table.isEmpty()) {
             setAttr("msg", "表数据为空不能删除");
             setAttr("success", false);
         } else {
             //删除主表数据成功之后删除业务表中数据，附件在附件管理中删除
-            boolean tag = Db.deleteById("commontask", "InstanceID", key);
+            boolean tag = Db.deleteById("commontask", "ID", id);
 
             logService.addLog("删除业务数据", "commontask中数据删除！", Common.getRemoteLoginUserIp(this.getRequest()), claims.get("name").toString(), claims.get("id").toString(), "删除", "", "", "");
 
             if (tag) {
 
-                boolean tag0 = Db.deleteById(table, "id", key);// SqlFromData.DelFromData(table, key);
+                boolean tag0 = Db.deleteById(table, "id", instanceid);// SqlFromData.DelFromData(table, key);
                 if (tag0) {
                     setAttr("msg", "删除成功");
                     setAttr("success", true);
@@ -90,30 +91,14 @@ public class TasksController  extends Controller {
 
                 }
             }
-            setAttr("msg", "删除失败！");
-            setAttr("success", false);
+
 
 
         }
         renderJson();
     }
 
-    public void GetFormData() {
 
-        String wheres = getPara("where");
-        Record where = new Record();
-
-        Map h5 = JSON.parseObject(wheres.replace("[", "").replace("]", ""), Map.class);
-        where.setColumns(h5);
-        String table = getPara("table");
-
-//where: [{"TableName":"A_Article","ColumnsName":"ID","ColumnType":"CB6A1DBB-29B1-44C6-922F-378D09A2629A"}]
-        Record da = Db.findById(where.getStr("TableName"), where.getStr("ColumnsName"), where.getStr("ColumnType"));
-        List<Record> list = new ArrayList<>();
-        list.add(da);
-        renderJson(list);
-        //return JSONhelper.ToJson(WebOS.Dal.CommonTaskDal.Instance.GetNoMoldeWhere(table, where));
-    }
 
     public void generateMap() {
         try {
@@ -218,11 +203,21 @@ public class TasksController  extends Controller {
     }
 
     @Before(POST.class)
-    public void getTabelDate() {
+    public void GetFormData() {
         try {
             String key = getPara("key");
             String tab = getPara("tab");
             Record da = Db.findById(tab, "id", key);
+            if (da==null)
+            {
+                setAttr("msg", "未找到数据");
+                setAttr("code", 0);
+                setAttr("count", 0);
+                setAttr("data", null);
+                setAttr("success", false);
+                renderJson();
+                return;
+            }
             setAttr("msg", "获取成功");
             setAttr("code", 0);
             setAttr("count", 0);

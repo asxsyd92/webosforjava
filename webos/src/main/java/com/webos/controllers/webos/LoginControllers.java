@@ -103,6 +103,7 @@ public class LoginControllers extends Controller {
                         claims.put("role", us.getStr("Account") == "com/asxsyd92" ? "110" : us.getInt("identifier").toString());
                         claims.put("orname", us.getStr("Organize"));
                         claims.put("avatar", us.getStr("avatar"));
+                        claims.put("ip",Common.getRemoteLoginUserIp(this.getRequest()));
                         String token = JwtUtils.createJwt(claims, JwtUtils.JWT_WEB_TTL);
                         setAttr("access_token", token);
                         setAttr("token_type", "Bearer");

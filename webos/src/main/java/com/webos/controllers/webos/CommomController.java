@@ -64,7 +64,7 @@ public class CommomController extends Controller {
         }
       renderJson();
     }
-
+    @Before({JwtInterceptor.class, POST.class})
     public void Del()
     {
         String key= getPara("key");
@@ -76,7 +76,7 @@ public class CommomController extends Controller {
           }
             else
         {
-           if( Db.delete(table,"id",key)>0){
+           if( Db.deleteById(table,"id",key)){
                setAttr("success", true);
                setAttr("msg", "删除成功！");
            }else {
@@ -117,7 +117,7 @@ public class CommomController extends Controller {
             Page<Record> da= CommomService.Instance().GetCommonList(kv,page,limit);
             setAttr("code", 0);
             setAttr("msg", "成功！");
-            setAttr("count", da.getTotalPage());
+            setAttr("count", da.getTotalRow());
             setAttr("data", da.getList());
 
 

@@ -3,6 +3,7 @@ package com.jwt;
 import com.jfinal.aop.Interceptor;
 import com.jfinal.aop.Invocation;
 import com.jfinal.core.Controller;
+import com.webos.Common;
 import io.jsonwebtoken.Claims;
 
 import javax.servlet.http.HttpServletRequest;
@@ -28,6 +29,12 @@ public class JwtInterceptor implements Interceptor {
                 System.out.println("用户未登录，验证失败");
             } else {
                 Claims c =JwtUtils.parseJwt(jwt);
+                String ip=  Common.getRemoteLoginUserIp(request);
+                //授权不是一个ip将返回重新授权
+                if(!c.get("ip").equals(ip)){
+                    inv.getController().renderError(401);
+                    return  false;
+                }
                 System.out.println("用户[ " + c.get("name") + " ]已是登录状态");
                 System.out.println("结束进入拦截器检验jwt头部是否含有Authorization方法！");
                 Controller controller = inv.getController();

@@ -1,0 +1,11 @@
+
+2021-10-29 09:12:21
+[ERROR]-[Thread: XNIO-1 I/O-2]-[org.xnio.nio.WorkerThread.safeRun()]: XNIO000011: Task io.undertow.server.session.InMemorySessionManager$SessionImpl$2@a8d2fb6 failed with an exception
+java.util.concurrent.RejectedExecutionException: Task io.undertow.server.session.InMemorySessionManager$SessionImpl$2$1@509ea535 rejected from org.xnio.XnioWorker$TaskPool@ba8020a[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 104]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2057)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:827)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1357)
+	at org.xnio.XnioWorker.execute(XnioWorker.java:749)
+	at io.undertow.server.session.InMemorySessionManager$SessionImpl$2.run(InMemorySessionManager.java:394)
+	at org.xnio.nio.WorkerThread.safeRun(WorkerThread.java:582)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:466)

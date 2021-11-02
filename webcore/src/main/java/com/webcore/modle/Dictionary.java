@@ -31,7 +31,9 @@ public  class  Dictionary extends Model<Dictionary>{
     public java.lang.String getTitle() {
         return get("Title");
     }
-
+    public java.lang.String getName() {
+        return get("Title");
+    }
     public void setCode(java.lang.String Code) {
         set("Code", Code);
     }
