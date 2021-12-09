@@ -9,7 +9,7 @@ import com.jfinal.core.Path;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
-import com.jwt.JwtInterceptor;
+import com.webos.jwt.JwtInterceptor;
 import com.webcore.config.LoginUsers;
 import com.webcore.service.LogService;
 import com.webos.Common;

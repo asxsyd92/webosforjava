@@ -13,7 +13,7 @@ import com.jfinal.plugin.activerecord.CaseInsensitiveContainerFactory;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.server.undertow.UndertowServer;
 import com.jfinal.template.Engine;
-import com.jwt.JwtInterceptor;
+import com.webos.jwt.JwtInterceptor;
 import com.webos.controllers.websocket.WebSocket;
 
 

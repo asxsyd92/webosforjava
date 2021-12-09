@@ -3,6 +3,7 @@ package com.asxsydutils.utils;
 
  import org.apache.commons.lang3.StringUtils;
  import java.io.UnsupportedEncodingException;
+ import java.lang.reflect.Field;
  import java.math.BigInteger;
  import java.net.URLEncoder;
  import java.security.MessageDigest;
@@ -190,5 +191,26 @@ public static  String getDateFormat(java.util.Date date,String format){
     SimpleDateFormat df = new SimpleDateFormat(format);//设置日期格式
    return df.format(date);
 }
+    public static Map<String, Object> ObjectToMap(Object obj)  {
+        try{
+        if(obj == null){
+            return null;
+        }
+
+        Map<String, Object> map = new HashMap<String, Object>();
+
+        Field[] declaredFields = obj.getClass().getDeclaredFields();
+        for (Field field : declaredFields) {
+            field.setAccessible(true);
+            map.put(field.getName(), field.get(obj));
+        }
+
+        return map;
+        }catch (Exception ex){
+
+            System.out.print("ObjectToMap转换错误");
+            return  null;
+        }
+    }
 }
 

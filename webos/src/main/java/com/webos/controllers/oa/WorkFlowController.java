@@ -9,7 +9,7 @@ import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.ehcache.CacheKit;
-import com.jwt.JwtInterceptor;
+import com.webos.jwt.JwtInterceptor;
 import com.webcore.modle.Workflow;
 import com.webcore.service.DictionaryService;
 import com.webcore.service.WorkflowService;

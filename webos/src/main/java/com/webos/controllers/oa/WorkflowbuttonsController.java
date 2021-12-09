@@ -7,7 +7,7 @@ import com.webcore.service.WorkflowbuttonsService;
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
 import com.jfinal.plugin.activerecord.Record;
-import com.jwt.JwtInterceptor;
+import com.webos.jwt.JwtInterceptor;
 
 @Path("/api/workflowbuttons")
 @Before({JwtInterceptor.class})

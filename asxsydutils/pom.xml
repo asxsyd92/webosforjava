@@ -12,8 +12,8 @@
         <slf4j.version>1.6.6</slf4j.version>
         <log4j.version>1.2.12</log4j.version>
     </properties>
-    <groupId>com.asxsyd92</groupId>
-    <artifactId>asxsydutils</artifactId>
+    <groupId>com.asxsyd92.utils</groupId>
+    <artifactId>utils</artifactId>
     <version>1.3</version>
 
     <dependencies>

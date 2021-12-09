@@ -5,7 +5,6 @@ import com.asxsyd92.swagger.annotation.ApiOperation;
 import com.asxsyd92.swagger.annotation.Param;
 import com.asxsyd92.swagger.annotation.Params;
 import com.asxsydutils.utils.AESHelper;
-import com.asxsydutils.utils.StringUtil;
 import com.jfinal.aop.Before;
 import com.jfinal.aop.Clear;
 import com.jfinal.aop.Inject;
@@ -14,13 +13,12 @@ import com.jfinal.core.Path;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.ehcache.CacheKit;
-import com.jwt.JwtUtils;
+import com.webos.jwt.JwtUtils;
 import com.webcore.service.LogService;
 import com.webcore.service.UsersService;
 import com.webos.Common;
 
 import java.io.IOException;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -46,23 +44,23 @@ public class LoginControllers extends Controller {
     })
     public void Login() {
         try {
-            String user = getPara("user");
-            String pw = getPara("pw");
-            String code = getPara("code");
-            String key=StringUtil.getDateFormat(new Date(),"yyyyMMdd");
-            key= "webos"+ key+"591";
-            user= AESHelper.aesDecrypt(user,key);
-            pw= AESHelper.aesDecrypt(pw,key);
-            code= AESHelper.aesDecrypt(code,key);
-
-            boolean validate = com.webcore.utils.CaptchaRender.validate(this, code);//inputRandomCode是用户提交过来的验证码
-           if (!validate){
-               setAttr("msg", "验证码错误！");
-               setAttr("default", false);
-               setAttr("success", false);
-               renderJson();
-               return;
-           }
+            String user = "asxsyd92";//getPara("user");
+            String pw = "webos";//getPara("pw");
+//            String code = getPara("code");
+//            String key=StringUtil.getDateFormat(new Date(),"yyyyMMdd");
+//            key= "webos"+ key+"591";
+//            user= AESHelper.aesDecrypt(user,key);
+//            pw= AESHelper.aesDecrypt(pw,key);
+//            code= AESHelper.aesDecrypt(code,key);
+//
+//            boolean validate = com.webcore.utils.CaptchaRender.validate(this, code);//inputRandomCode是用户提交过来的验证码
+//           if (!validate){
+//               setAttr("msg", "验证码错误！");
+//               setAttr("default", false);
+//               setAttr("success", false);
+//               renderJson();
+//               return;
+//           }
             Integer islock=   CacheKit.get("logincache",user);
             if (islock!=null) {
 

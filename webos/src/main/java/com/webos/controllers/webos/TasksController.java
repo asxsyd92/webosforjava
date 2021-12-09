@@ -1,7 +1,6 @@
 package com.webos.controllers.webos;
 
 
-import com.alibaba.fastjson.JSON;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Path;
 import com.jfinal.ext.interceptor.POST;
@@ -16,7 +15,7 @@ import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 
-import com.jwt.JwtInterceptor;
+import com.webos.jwt.JwtInterceptor;
 import com.webos.Common;
 import io.jsonwebtoken.Claims;
 
@@ -24,11 +23,10 @@ import io.jsonwebtoken.Claims;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 
 import java.util.List;
-import java.util.Map;
+
 @Before({JwtInterceptor.class})
 @Path("/api/tasks")
 public class TasksController  extends Controller {

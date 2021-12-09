@@ -24,7 +24,7 @@ import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 
-import com.jwt.JwtInterceptor;
+import com.webos.jwt.JwtInterceptor;
 import com.webos.socket.util.util;
 import io.jsonwebtoken.Claims;
 

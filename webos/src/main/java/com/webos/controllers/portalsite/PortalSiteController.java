@@ -42,6 +42,7 @@ public class PortalSiteController extends Controller {
         Page<Record> da = CommomService.Instance().GetCommonList(kv, page, limit);
         setAttr("code", 0);
         setAttr("msg", "成功！");
+        setAttr("success", true);
         setAttr("count", da.getTotalRow());
         setAttr("data", da.getList());
         renderJson();
@@ -86,6 +87,7 @@ public class PortalSiteController extends Controller {
             setAttr("msg", "成功！");
             setAttr("count",  1);
             setAttr("data",da );
+            setAttr("success", true);
             setAttr("nextarticle",  Nextarticle);
             setAttr("lastarticle", Lastarticle);
         }

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="swagger">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../swagger" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../swagger/src/main/java" />
+    </SOURCES>
+  </library>
+</component>

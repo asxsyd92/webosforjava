@@ -1,35 +1,38 @@
 package com.webos.controllers.oa;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.asxsydutils.utils.JosnUtils;
 import com.asxsydutils.utils.StringUtil;
 import com.jfinal.aop.Before;
+import com.jfinal.aop.Clear;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
 import com.jfinal.core.Path;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.kit.Kv;
+import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.ehcache.CacheKit;
-import com.jwt.JwtInterceptor;
-
 import com.webcore.modle.WorkFlowTask;
 import com.webcore.modle.Workflow;
 import com.webcore.oa.task.Query;
 import com.webcore.oa.task.Result;
-import com.webcore.oa.workflow.Lines;
-import com.webcore.oa.workflow.RunModel;
-import com.webcore.oa.workflow.Steps;
+import com.webcore.oa.workflow.*;
 import com.webcore.service.WorkFlowTaskService;
 import com.webcore.service.WorkflowService;
 import com.webcore.utils.Unity;
+import com.webos.jwt.JwtInterceptor;
 import io.jsonwebtoken.Claims;
 import kotlin.collections.ArrayDeque;
+import org.checkerframework.framework.qual.DefaultQualifier;
 
-import java.util.stream.Collectors;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
+
+import java.util.stream.Collectors;
 
 
 @Path("/api/workflowtasks")
@@ -100,12 +103,15 @@ try {
 
 
     //初始流程
-    @Before({JwtInterceptor.class, POST.class})
+    //@Before({JwtInterceptor.class, POST.class})
+    @Clear
     public void  FlowInit(){
         try
         {
+            Record formdata=null;
             String flowid = getPara("flowid");
             String stepid = getPara("stepid");
+            String instanceid= getPara("instanceid");
             Workflow wfl=   CacheKit.get("flowcache",flowid.toLowerCase());
             if (wfl==null){
                 wfl= WorkflowService.Get(flowid.toLowerCase());
@@ -139,7 +145,7 @@ try {
                 stepID=   step.get(0).getId();
 
             }else {
-                if (stepid.equals(StringUtil.GuidEmpty())){
+                if (stepid.equals(StringUtil.GuidEmpty())||stepid.equals("undefined")){
                     stepID=   step.get(0).getId();
                 }else {
                 stepID=stepid;}
@@ -162,14 +168,54 @@ try {
                     nextSteps.add(step1.get(0));
                 }
             }
-           // stepList=stepList.stream().sorted(Steps  -> Steps.getPosition())
-         //   String nextSteps = WorkFlowBll.Instance.GetNextSteps(wfInstalled.id.ToGuid(), currentStep.id.ToGuid());
+             // stepList=stepList.stream().sorted(Steps  -> Steps.getPosition())
+             //   String nextSteps = WorkFlowBll.Instance.GetNextSteps(wfInstalled.id.ToGuid(), currentStep.id.ToGuid());
+             //获取表单
+           String key= currentdata.getForms().get(0).getId();
+            Record fmdata= Db.findById("sysformdesign","id",key);
+            if (fmdata!=null){
 
+                RunJson json= JSON.parseObject(fmdata.get("DesignHtml"), RunJson.class);
+                JSONObject from= (JSONObject) json.getFrom().get("data");
+                if (from!=null){
+                   String table= from.get("table").toString();
+                   if (instanceid!=null||instanceid.equals("undefined")||instanceid.equals("")){
+                       formdata= Db.findById(table, "ID", instanceid);
+                   }
+
+                }
+
+                    for (Map<String,Object> item:json.getData()  ) {
+                        //赋值
+                        try {
+                            JSONObject fd = (JSONObject) item.get("data");
+                            if (fd.get("name") != null && fd.get("name").toString() != null) {
+                                if (formdata!=null) {
+                                    fd.put("value", formdata.get(fd.get("name").toString()));
+                                }
+                                //设置字段状态
+                                List<FieldStatus> field = currentdata.getFieldStatus().stream().filter(fiele -> fiele.getField().equals(fd.get("name").toString())).collect(Collectors.toList());
+                                if (field.size() > 0) {
+                                    fd.put("showtext", field.get(0).getStatus());
+                                    fd.put("required", field.get(0).getStatus().equals("0") ? "false" : "true");
+                                }
+                                item.put("data", fd);
+                            }
+                        }catch (Exception ex){
+                            System.out.print(ex.getMessage());
+                        }
+
+
+                    }
+
+
+            }
             setAttr("code", 0);
             setAttr("count", 0);
             setAttr("data", nextSteps);
             setAttr("currentStep", currentStep);
             setAttr("currentdata", currentdata);
+            setAttr("formdata", fmdata);
             setAttr("msg","成功") ;
             setAttr("success",true);
           //  return JSONhelper.ToJson(new { code = 0, msg = "成功", count = 1, data = nextSteps, currentStep = currentStep }, false);

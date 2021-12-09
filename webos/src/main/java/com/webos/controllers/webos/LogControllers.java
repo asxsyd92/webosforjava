@@ -7,7 +7,7 @@ import com.jfinal.core.Path;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.kit.Kv;
 import com.jfinal.plugin.activerecord.Page;
-import com.jwt.JwtInterceptor;
+import com.webos.jwt.JwtInterceptor;
 import com.webcore.modle.Log;
 import com.webcore.service.LogService;
 

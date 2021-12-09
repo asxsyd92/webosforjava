@@ -13,7 +13,7 @@ import com.jfinal.kit.Kv;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
-import com.jwt.JwtInterceptor;
+import com.webos.jwt.JwtInterceptor;
 import com.webcore.modle.Dictionary;
 import com.webcore.service.CommomService;
 import com.webcore.service.DictionaryService;

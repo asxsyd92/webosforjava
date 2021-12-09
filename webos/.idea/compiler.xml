@@ -12,7 +12,7 @@
         <module name="asxsydutils" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="11">
+    <bytecodeTargetLevel>
       <module name="asxsydutils" target="1.8" />
       <module name="swagger" target="8" />
       <module name="webcore" target="1.8" />

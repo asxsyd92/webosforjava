@@ -1,4 +1,4 @@
-package com.jwt;
+package com.webos.jwt;
 
 
 import java.lang.annotation.*;

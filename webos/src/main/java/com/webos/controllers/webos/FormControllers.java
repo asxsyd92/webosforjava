@@ -23,7 +23,7 @@ import com.jfinal.ext.interceptor.POST;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
-import com.jwt.JwtInterceptor;
+import com.webos.jwt.JwtInterceptor;
 import com.webos.Common;
 import io.jsonwebtoken.Claims;
 
@@ -35,6 +35,7 @@ import java.util.List;
 import java.util.Map;
 
 @Before({JwtInterceptor.class, POST.class})
+
 @Path("/api/form")
 public class FormControllers extends Controller {
     @Inject
@@ -56,14 +57,16 @@ public class FormControllers extends Controller {
         }
         return res.toString();
     }
-public  void getFormJson(){
+    @Clear
+
+    public  void getFormJson(){
          try{
              String key = getPara("key");
              Record fmdata= Db.findById("sysformdesign","id",key);
              if (fmdata!=null){
                  setAttr("success", true);
                  setAttr("data", fmdata);
-                 setAttr("msg", "表单不存在");
+                 setAttr("msg", "获取成功");
              }else {
                  setAttr("success", false);
                  setAttr("msg", "表单不存在");
@@ -72,8 +75,10 @@ public  void getFormJson(){
              setAttr("success", false);
              setAttr("msg", "表单查询异常");
          }
+
     renderJson();
 }
+
 public  void  saveFormJson(){
     try{
         String key = getPara("key");
