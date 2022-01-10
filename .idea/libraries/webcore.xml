@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="webcore">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/webcore" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/webcore/src/main/java" />
+    </SOURCES>
+  </library>
+</component>

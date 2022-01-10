@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.asxsydutils.utils.JosnUtils;
 import com.asxsydutils.utils.StringUtil;
+import com.google.gson.GsonBuilder;
 import com.jfinal.aop.Before;
 import com.jfinal.aop.Clear;
 import com.jfinal.aop.Inject;
@@ -15,6 +16,7 @@ import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.ehcache.CacheKit;
+import com.webcore.config.LoginUsers;
 import com.webcore.modle.WorkFlowTask;
 import com.webcore.modle.Workflow;
 import com.webcore.oa.task.Query;
@@ -23,9 +25,11 @@ import com.webcore.oa.workflow.*;
 import com.webcore.service.WorkFlowTaskService;
 import com.webcore.service.WorkflowService;
 import com.webcore.utils.Unity;
+import com.webos.Common;
 import com.webos.jwt.JwtInterceptor;
 import io.jsonwebtoken.Claims;
 import kotlin.collections.ArrayDeque;
+import net.sf.ehcache.util.SetAsList;
 import org.checkerframework.framework.qual.DefaultQualifier;
 
 import java.util.Date;
@@ -57,6 +61,7 @@ try {
     setAttr("msg", "成功！");
     setAttr("count", da.getTotalRow());
     setAttr("data", da.getList());
+    setAttr("success",true);
 }catch (Exception ex){
     setAttr("code", 0);
     setAttr("count", 0);
@@ -89,6 +94,7 @@ try {
         setAttr("msg", "成功！");
         setAttr("count", da.getTotalPage());
         setAttr("data", da.getList());
+            setAttr("success",true);
     }catch (Exception ex){
         setAttr("code", 0);
         setAttr("count", 0);
@@ -104,10 +110,11 @@ try {
 
     //初始流程
     //@Before({JwtInterceptor.class, POST.class})
-    @Clear
+
     public void  FlowInit(){
         try
         {
+            LoginUsers usersModel= Common.getLoginUser(this);
             Record formdata=null;
             String flowid = getPara("flowid");
             String stepid = getPara("stepid");
@@ -145,7 +152,7 @@ try {
                 stepID=   step.get(0).getId();
 
             }else {
-                if (stepid.equals(StringUtil.GuidEmpty())||stepid.equals("undefined")){
+                if (stepid.equals(StringUtil.GuidEmpty())||stepid.equals("undefined")||stepid.equals("")){
                     stepID=   step.get(0).getId();
                 }else {
                 stepID=stepid;}
@@ -179,12 +186,12 @@ try {
                 JSONObject from= (JSONObject) json.getFrom().get("data");
                 if (from!=null){
                    String table= from.get("table").toString();
-                   if (instanceid!=null||instanceid.equals("undefined")||instanceid.equals("")){
+                   if (instanceid!=null&&!instanceid.equals("undefined")&&!instanceid.equals("")){
                        formdata= Db.findById(table, "ID", instanceid);
                    }
 
                 }
-
+                List<Map<String,Object>>listdata=new ArrayDeque<>();
                     for (Map<String,Object> item:json.getData()  ) {
                         //赋值
                         try {
@@ -192,6 +199,34 @@ try {
                             if (fd.get("name") != null && fd.get("name").toString() != null) {
                                 if (formdata!=null) {
                                     fd.put("value", formdata.get(fd.get("name").toString()));
+                                }else {
+                                    switch (fd.get("value").toString())
+                                    {
+
+                                        case "@_SYS_DATETIME":
+                                            fd.put("value", new Date());
+                                           break;
+                                        case "@_SYS_ORGNAME":
+                                            fd.put("value", usersModel.getOrgname());
+                                            break;
+                                        case "@_SYS_GW":
+                                            fd.put("value", "");
+                                            break;
+                                        case "@_SYS_GETUSERID":
+                                            fd.put("value", usersModel.getId());
+                                            break;
+                                        case "@_SYS_ORGID":
+                                            fd.put("value", usersModel.getOrgid());
+                                            break;
+                                        case "@_SYS_GETUSERNICKNAME":
+                                            fd.put("value", usersModel.getName());
+                                            break;
+                                        case "@_SYS_GETUSERNAME":
+                                            fd.put("value", usersModel.getAccount());
+                                            break;
+
+                                    }
+
                                 }
                                 //设置字段状态
                                 List<FieldStatus> field = currentdata.getFieldStatus().stream().filter(fiele -> fiele.getField().equals(fd.get("name").toString())).collect(Collectors.toList());
@@ -200,6 +235,7 @@ try {
                                     fd.put("required", field.get(0).getStatus().equals("0") ? "false" : "true");
                                 }
                                 item.put("data", fd);
+                                listdata.add(item);
                             }
                         }catch (Exception ex){
                             System.out.print(ex.getMessage());
@@ -207,8 +243,8 @@ try {
 
 
                     }
-
-
+                json.setData(listdata);
+                fmdata.set("DesignHtml",new GsonBuilder().serializeNulls().setDateFormat("yyyy-MM-dd HH:mm:ss").create().toJson(json));
             }
             setAttr("code", 0);
             setAttr("count", 0);
@@ -234,17 +270,18 @@ try {
 /*
 流程处理
  */
-    @Before({JwtInterceptor.class, POST.class})
+    //@Before({JwtInterceptor.class, POST.class})
+
     public  void sendTask() {
         try {
             String receiveid = "";
             Claims claims = getAttr("claims");
-            receiveid = claims.get("id").toString();
+            receiveid = "EB03262C-AB60-4BC6-A4C0-96E66A4229FE";//claims.get("id").toString();
             String query = getPara("query");
             String table = getPara("table");
             String data = getPara("data");
 
-            data= Unity.getJsonSetData(data,claims);
+            //data= Unity.getJsonSetData(data,claims);
             String params1 = getPara("params1");
             Result result = workFlowTaskService.sendTask(receiveid, query, table, data, params1);
 
@@ -267,11 +304,11 @@ try {
     /*
     获取业务表单数据
      */
-    @Before({JwtInterceptor.class, POST.class})
-    public void getOaData(){
+
+    public void getcomment(){
         try {
         String query = getPara("query");
-       Record da= workFlowTaskService.getOaData(query);
+            List<WorkFlowTask> da= workFlowTaskService.getcomment(query);
             setAttr("code", 0);
             setAttr("count", 1);
             setAttr("data", da);

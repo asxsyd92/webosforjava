@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="asxsydutils">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/asxsydutils" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/asxsydutils/src/main/java" />
+    </SOURCES>
+  </library>
+</component>

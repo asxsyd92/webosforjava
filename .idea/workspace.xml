@@ -4,178 +4,141 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f86ba1f6-f1c5-4ece-a310-06414c8b69c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webos.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asxsydutils/target/utils-1.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webos/.gradle/6.7/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webos/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webos/.gradle/6.7/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webos/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webos/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webos/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webos/.gradle/configuration-cache/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webos/.gradle/vcs-1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webos/.idea/artifacts/asxsydutils_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webos/.idea/artifacts/swagger_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webos/.idea/artifacts/webcore_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webos/.idea/libraries/asxsydutils.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webos/.idea/libraries/swagger.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webos/.idea/libraries/webcore.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log_2021-11-14.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log_2021-11-27.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log_2021-11-28.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webos/src/main/webapp/web/WEB-INF/web.xml" afterDir="false" />
+    <list default="true" id="309f5146-50be-46d8-b199-1f043f2663fd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/webos_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/webos_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_3_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cglib_cglib_2_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_0_23.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_68.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_asxsyd92_utils_utils_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_auth0_java_jwt_3_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_failureaccess_1_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_30_1_1_jre.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_6_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jfinal_jfinal_4_9_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jfinal_jfinal_undertow_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_microsoft_sqlserver_sqljdbc4_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_4_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_2_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_core_2_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_impl_2_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_taobao_api_taobao_sdk_java_auto_1564051214605_20201229.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_thetransactioncompany_cors_filter_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_thetransactioncompany_java_property_utils_1_9_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_15.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_net_commons_net_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_9_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_undertow_undertow_core_2_0_32_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_undertow_undertow_servlet_2_0_32_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_undertow_undertow_websockets_jsr_2_1_3_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_4_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_16.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ehcache_ehcache_core_2_6_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_directory_studio_org_apache_commons_codec_1_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_websocket_api_7_0_47.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_3_8_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ehcache_ehcache_3_5_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_websocket_jboss_websocket_api_1_1_spec_2_0_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_xnio_xnio_api_3_3_8_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_xnio_xnio_nio_3_3_8_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_13_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_1_3_72.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_70.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_org_json_chargebee_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jsoup_jsoup_1_14_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/asxsydutils.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/swagger.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/webcore.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asxsydutils/target/asxsydutils-1.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/ftp/Ftp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webos/hs_err_pid30000.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log_2021-12-10.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log_2021-12-11.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log_2021-12-12.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log_2021-12-13.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log_2021-12-14.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log_2021-12-15.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webos/replay_pid30000.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/jwt/AuthResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asxsydutils/asxsydutils.iml" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/asxsydutils.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/asxsydutils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asxsydutils/target/asxsydutils-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/ClassUtil$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/ClassUtil$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/ClassUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/ClassUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/HttpHelper$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/HttpHelper$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/HttpHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/HttpHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/JosnUtils$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/JosnUtils$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/JosnUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/JosnUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/MD5.class" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/MD5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asxsydutils/src/main/java/com/asxsydutils/utils/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/src/main/java/com/asxsydutils/utils/StringUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/StringUtil$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/StringUtil$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/StringUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/StringUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/WaterMarkGenerate.class" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/WaterMarkGenerate.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/asxsydutils/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asxsydutils/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asxsydutils/target/utils-1.3.jar" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/target/utils-1.3.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swagger/swagger.iml" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/swagger.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/annotation/Api.class" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/annotation/Api.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/annotation/ApiOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/annotation/ApiOperation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/annotation/Param.class" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/annotation/Param.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/annotation/Params.class" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/annotation/Params.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/config/routes/SwaggerRoutes.class" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/config/routes/SwaggerRoutes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/controller/SwaggerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/controller/SwaggerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/SwaggerDoc$InfoBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/SwaggerDoc$InfoBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/SwaggerDoc$TagBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/SwaggerDoc$TagBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/SwaggerDoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/SwaggerDoc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/SwaggerGlobalPara.class" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/SwaggerGlobalPara.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/SwaggerPath$ApiMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/SwaggerPath$ApiMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/SwaggerPath$Parameter.class" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/SwaggerPath$Parameter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/SwaggerPath.class" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/SwaggerPath.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/SwaggerResponse$Items.class" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/SwaggerResponse$Items.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/SwaggerResponse$Schema.class" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/SwaggerResponse$Schema.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/SwaggerResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/SwaggerResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/enums/HttpMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/enums/HttpMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/enums/Scheme.class" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/model/enums/Scheme.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/utils/ClassHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/target/classes/com/asxsyd92/swagger/utils/ClassHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/target/swagger-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/ActionEnter.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/ActionEnter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/ConfigManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/ConfigManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/Encoder.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/Encoder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/PathFormat.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/PathFormat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/ActionMap$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/ActionMap$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/ActionMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/ActionMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/ActionState.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/ActionState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/AppInfo$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/AppInfo$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/AppInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/AppInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/BaseState.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/BaseState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/FileType$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/FileType$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/FileType.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/FileType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/MIMEType$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/MIMEType$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/MIMEType.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/MIMEType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/MultiState.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/MultiState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/define/State.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/hunter/FileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/hunter/FileManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/hunter/ImageHunter.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/hunter/ImageHunter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/upload/Base64Uploader.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/upload/Base64Uploader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/upload/BinaryUploader.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/upload/BinaryUploader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/upload/StorageManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/upload/StorageManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/upload/Uploader.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/baidu/ueditor/upload/Uploader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/annotation/Table.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/annotation/Table.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/config/TableConfig$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/config/TableConfig$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/config/TableConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/config/TableConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/CommonTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/CommonTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Dictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Dictionary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Friendrelationship.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Friendrelationship.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Grouprelationship.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Grouprelationship.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Log.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Log.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Organize.java" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Organize.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/service/DictionaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/service/DictionaryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/service/OrganizeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/service/OrganizeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/service/UsersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/service/WorkFlowTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/service/WorkFlowTaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/utils/Unity.java" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/utils/Unity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Organize.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Organize.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/RoleApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/RoleApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Sysfriend.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Sysfriend.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Sysgroup.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Sysgroup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Sysim.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Sysim.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Users.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/WorkFlowArchives.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/WorkFlowArchives.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/WorkFlowTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/WorkFlowTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/WorkGroup.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/WorkGroup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Workflow.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Workflow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Workflowbuttons.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Workflowbuttons.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/xRoleApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/xRoleApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/task/EnumType$ExecuteType.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/task/EnumType$ExecuteType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/task/EnumType.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/task/EnumType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/task/Execute.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/task/Execute.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/task/Params.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/task/Params.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/task/Query.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/task/Query.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/task/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/task/Result.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Behavior.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Behavior.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Buttons.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Buttons.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Databases.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Databases.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Event.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/FieldStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/FieldStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Forms.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Forms.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Lines.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Lines.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/RunModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/RunModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Steps.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Steps.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/TitleField.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/TitleField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/WorkFlowCustomEventParams.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/WorkFlowCustomEventParams.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/CommomService.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/CommomService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/DictionaryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/DictionaryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/ImService.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/ImService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/LogService.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/LogService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/OrganizeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/OrganizeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/RoleAppService.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/RoleAppService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/TaoBaoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/TaoBaoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/TaskService.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/TaskService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/UsersIntegralService.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/UsersIntegralService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/UsersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/UsersService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/WorkFlowTaskService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/WorkFlowTaskService$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/WorkFlowTaskService.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/WorkFlowTaskService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/WorkflowService.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/WorkflowService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/WorkflowbuttonsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/WorkflowbuttonsService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/utils/Unity$SysOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/utils/Unity$SysOperation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/utils/Unity.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/utils/Unity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/utils/data/MySql.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/utils/data/MySql.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/utils/data/MySqlStructure.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/utils/data/MySqlStructure.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/utils/data/mysqlserver/FromData.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/utils/data/mysqlserver/FromData.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webcore/webcore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/webcore.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webos/.idea/artifacts/webos_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/webos/.idea/artifacts/webos_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/webos/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_asxsyd92_asxsydutils_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/webos/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log" beforeDir="false" afterPath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log_2021-10-07.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log_2021-10-24.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log_2021-10-25.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log_2021-10-26.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log_2021-10-27.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log_2021-10-29.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log_2021-10-30.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/webos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/webos/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/jwt/Auth.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/jwt/Auth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/jwt/JwtInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/jwt/JwtInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/jwt/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/jwt/JwtUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/Common.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/WebosConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/WebosConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/applets/AppletsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/applets/AppletsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/oa/WorkFlowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/oa/WorkFlowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/oa/WorkFlowTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/oa/WorkFlowTaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/oa/WorkflowbuttonsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/oa/WorkflowbuttonsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/portalsite/PortalSiteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/portalsite/PortalSiteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/CommomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/CommomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/DictionaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/DictionaryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/FormControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/FormControllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/FormDesignController.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/FormDesignController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/LogControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/LogControllers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/LoginControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/LoginControllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/TasksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/TasksController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/OrganizeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/OrganizeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/UsersControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/UsersControllers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/jwt/JwtInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/jwt/JwtInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/jwt/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/jwt/JwtUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/target/classes/WEB-INF/views/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/target/classes/WEB-INF/views/swagger/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/target/classes/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/target/classes/static/swagger/favicon-16x16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/target/classes/static/swagger/favicon-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/target/classes/static/swagger/swagger-ui-bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/target/classes/static/swagger/swagger-ui-bundle.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/target/classes/static/swagger/swagger-ui-standalone-preset.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/target/classes/static/swagger/swagger-ui-standalone-preset.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/target/classes/static/swagger/swagger-ui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/target/classes/static/swagger/swagger-ui.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/target/classes/static/swagger/swagger-ui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/target/classes/static/swagger/swagger-ui.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/target/classes/static/swagger/swagger.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/target/classes/web/WEB-INF/web.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/webos/webos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/webos/webos.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -199,21 +162,32 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="21zb8Y8NfndXaYPmp0kA2bE8xcK" />
+  <component name="ProjectId" id="22wHR6lqBWGYuc2RP1VsFi7TnfE" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/swagger" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/webcore" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15136719" />
     <property name="project.structure.side.proportion" value="0.665066" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RunManager">
+    <configuration name="WebosConfig" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="D:\Program Files\Java\jdk1.8.0_171\jre" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.webos.WebosConfig" />
+      <module name="webos" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/webos" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/webos" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -225,29 +199,53 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f86ba1f6-f1c5-4ece-a310-06414c8b69c8" name="Changes" comment="" />
-      <created>1638946711906</created>
+      <changelist id="309f5146-50be-46d8-b199-1f043f2663fd" name="Changes" comment="" />
+      <created>1640741717445</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1638946711906</updated>
-      <workItem from="1638946725646" duration="169000" />
-      <workItem from="1638946939291" duration="1000" />
-      <workItem from="1638946960553" duration="28000" />
-      <workItem from="1638947003058" duration="2000" />
-      <workItem from="1638947076471" duration="209000" />
-      <workItem from="1638947332844" duration="145000" />
-      <workItem from="1638947512184" duration="3000" />
-      <workItem from="1638948310452" duration="59000" />
-      <workItem from="1638948383943" duration="2000" />
-      <workItem from="1638948405801" duration="276000" />
-      <workItem from="1638948704111" duration="760000" />
-      <workItem from="1638950208470" duration="42000" />
-      <workItem from="1638950290904" duration="1000" />
-      <workItem from="1638950331153" duration="98000" />
+      <updated>1640741717445</updated>
+      <workItem from="1640741719241" duration="4788000" />
+      <workItem from="1640769043332" duration="1846000" />
+      <workItem from="1640826790027" duration="6845000" />
+      <workItem from="1641293500303" duration="2901000" />
+      <workItem from="1641349591038" duration="2652000" />
+      <workItem from="1641558099012" duration="2373000" />
+      <workItem from="1641633384482" duration="1358000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/FormControllers.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/FormControllers.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/FormControllers.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/FormControllers.java</url>
+          <line>181</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/webcore/src/main/java/com/webcore/utils/data/mysqlserver/FromData.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

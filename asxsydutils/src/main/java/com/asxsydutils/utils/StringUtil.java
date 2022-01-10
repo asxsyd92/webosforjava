@@ -1,6 +1,7 @@
 package com.asxsydutils.utils;
 
 
+ import net.sourceforge.pinyin4j.PinyinHelper;
  import org.apache.commons.lang3.StringUtils;
  import java.io.UnsupportedEncodingException;
  import java.lang.reflect.Field;
@@ -211,6 +212,25 @@ public static  String getDateFormat(java.util.Date date,String format){
             System.out.print("ObjectToMap转换错误");
             return  null;
         }
+    }
+    /**
+     * 获取汉字首字母
+     *
+     * @param text 文本
+     * @return {@link String}
+     */
+    public static String getPinyinInitials(String text) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < text.length(); i++) {
+            char ch = text.charAt(i);
+            String[] s = PinyinHelper.toHanyuPinyinStringArray(ch);
+            if (s != null) {
+                sb.append(s[0].charAt(0));
+            } else {
+                sb.append(ch);
+            }
+        }
+        return sb.toString();
     }
 }
 

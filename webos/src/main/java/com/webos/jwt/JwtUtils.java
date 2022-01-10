@@ -16,7 +16,7 @@ public class JwtUtils {
      * JWT_WEB_TTL：WEBAPP应用中token的有效时间,默认30分钟
      */
     public static final long JWT_WEB_TTL = 60 * 60 * 1000;
-
+    public static final long JWT_TTL = 0;
     /**
      * 将jwt令牌保存到header中的key
      */
@@ -57,12 +57,14 @@ public class JwtUtils {
      *            JWT的有效时间(单位毫秒)，当前时间+有效时间=过期时间
      * @return jwt令牌
      */
-    public static String createJwt(Map<String, Object> claims, long ttlMillis) {
+    public static AuthResult createJwt(Map<String, Object> claims, long ttlMillis) {
         // 生成JWT的时间，即签发时间
         long nowMillis = System.currentTimeMillis();
+        AuthResult authResult=new AuthResult();
 
         // 下面就是在为payload添加各种标准声明和私有声明了
         // 这里其实就是new一个JwtBuilder，设置jwt的body
+       Date date= new Date(nowMillis + ttlMillis);
         JwtBuilder builder = Jwts.builder()
                 // 如果有私有声明，一定要先设置这个自己创建的私有的声明，这个是给builder的claim赋值，一旦写在标准的声明赋值之后，就是覆盖了那些标准的声明的
                 .setClaims(claims)
@@ -78,9 +80,10 @@ public class JwtUtils {
                 // 设置签名使用的签名算法和签名使用的秘钥
                 .signWith(SIGNATURE_ALGORITHM, JWT_KEY)
                 // 设置JWT的过期时间
-                .setExpiration(new Date(nowMillis + ttlMillis));
-
-        return builder.compact();
+                .setExpiration(date);
+        authResult.setExpires_in(date.getTime());
+        authResult.setJwt(builder.compact());
+        return authResult;
     }
 
     /**
@@ -92,12 +95,12 @@ public class JwtUtils {
      *            jwt的有效时间(单位毫秒)，当前时间+有效时间=过期时间
      * @return
      */
-    public static String copyJwt(String jwt, Long ttlMillis) {
+    public static AuthResult copyJwt(String jwt, Long ttlMillis) {
         Claims claims = parseJwt(jwt);
-
+        AuthResult authResult=new AuthResult();
         // 生成JWT的时间，即签发时间
         long nowMillis = System.currentTimeMillis();
-
+        Date date= new Date(nowMillis + ttlMillis);
         // 下面就是在为payload添加各种标准声明和私有声明了
         // 这里其实就是new一个JwtBuilder，设置jwt的body
         JwtBuilder builder = Jwts.builder()
@@ -115,7 +118,11 @@ public class JwtUtils {
                 // 设置签名使用的签名算法和签名使用的秘钥
                 .signWith(SIGNATURE_ALGORITHM, JWT_KEY)
                 // 设置JWT的过期时间
-                .setExpiration(new Date(nowMillis + ttlMillis));
-        return builder.compact();
+
+                   .setExpiration(date);
+        authResult.setExpires_in(date.getTime());
+        authResult.setJwt(builder.compact());
+        return authResult;
+
     }
 }

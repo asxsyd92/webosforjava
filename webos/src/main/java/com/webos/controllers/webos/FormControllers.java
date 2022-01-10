@@ -2,10 +2,14 @@ package com.webos.controllers.webos;
 
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.asxsydutils.utils.JosnUtils;
 import com.asxsydutils.utils.StringUtil;
+import com.google.gson.GsonBuilder;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Path;
+import com.webcore.config.LoginUsers;
+import com.webcore.oa.workflow.RunJson;
 import com.webcore.service.DictionaryService;
 import com.webcore.service.LogService;
 import com.webcore.service.TaskService;
@@ -26,6 +30,7 @@ import com.jfinal.plugin.activerecord.Record;
 import com.webos.jwt.JwtInterceptor;
 import com.webos.Common;
 import io.jsonwebtoken.Claims;
+import kotlin.collections.ArrayDeque;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -33,6 +38,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Before({JwtInterceptor.class, POST.class})
 
@@ -57,20 +63,104 @@ public class FormControllers extends Controller {
         }
         return res.toString();
     }
-    @Clear
 
+public  void  getFormJsonById(){
+         try {
+             String fromid = getPara("fromid");
+             Record fmdata= Db.findById("sysformdesign","id",fromid);
+             setAttr("code", 0);
+             setAttr("count", 0);
+             setAttr("data", fmdata);
+
+             setAttr("msg","成功") ;
+             setAttr("success",true);
+         }catch (Exception ex){
+             setAttr("success", false);
+             setAttr("msg", "表单查询异常");
+         }
+renderJson();
+}
     public  void getFormJson(){
          try{
-             String key = getPara("key");
-             Record fmdata= Db.findById("sysformdesign","id",key);
+             LoginUsers usersModel= Common.getLoginUser(this);
+
+             Record formdata=null;
+             String fromid = getPara("fromid");
+             String instanceid= getPara("instanceid");
+             Record fmdata= Db.findById("sysformdesign","id",fromid);
              if (fmdata!=null){
-                 setAttr("success", true);
-                 setAttr("data", fmdata);
-                 setAttr("msg", "获取成功");
-             }else {
-                 setAttr("success", false);
-                 setAttr("msg", "表单不存在");
+
+                 RunJson json= JSON.parseObject(fmdata.get("DesignHtml"), RunJson.class);
+                 JSONObject from= (JSONObject) json.getFrom().get("data");
+                 if (from!=null){
+                     String table= from.get("table").toString();
+                     if (instanceid!=null&&!instanceid.equals("undefined")&&!instanceid.equals("")){
+                         formdata= Db.findById(table, "ID", instanceid);
+                     }
+
+                 }
+                 List<Map<String,Object>>listdata=new ArrayDeque<>();
+                 for (Map<String,Object> item:json.getData()  ) {
+                     //赋值
+                     try {
+                         JSONObject fd = (JSONObject) item.get("data");
+                         if (fd.get("name") != null && fd.get("name").toString() != null) {
+                             if (formdata!=null) {
+                                 fd.put("value", formdata.get(fd.get("name").toString()));
+                             }else {
+                                 switch (fd.get("value").toString())
+                                 {
+
+                                     case "@_SYS_DATETIME":
+                                         fd.put("value", new Date());
+                                         break;
+                                     case "@_SYS_ORGNAME":
+                                         fd.put("value", usersModel.getOrgname());
+                                         break;
+                                     case "@_SYS_GW":
+                                         fd.put("value", "");
+                                         break;
+                                     case "@_SYS_GETUSERID":
+                                         fd.put("value", usersModel.getId());
+                                         break;
+                                     case "@_SYS_ORGID":
+                                         fd.put("value", usersModel.getOrgid());
+                                         break;
+                                     case "@_SYS_GETUSERNICKNAME":
+                                         fd.put("value", usersModel.getName());
+                                         break;
+                                     case "@_SYS_GETUSERNAME":
+                                         fd.put("value", usersModel.getAccount());
+                                         break;
+
+                                 }
+
+                             }
+                             //设置字段状态
+//                             List<FieldStatus> field = currentdata.getFieldStatus().stream().filter(fiele -> fiele.getField().equals(fd.get("name").toString())).collect(Collectors.toList());
+//                             if (field.size() > 0) {
+//                                 fd.put("showtext", field.get(0).getStatus());
+//                                 fd.put("required", field.get(0).getStatus().equals("0") ? "false" : "true");
+//                             }
+                             item.put("data", fd);
+                             listdata.add(item);
+                         }
+                     }catch (Exception ex){
+                         System.out.print(ex.getMessage());
+                     }
+
+
+                 }
+                 json.setData(listdata);
+                 fmdata.set("DesignHtml",new GsonBuilder().serializeNulls().setDateFormat("yyyy-MM-dd HH:mm:ss").create().toJson(json));
              }
+
+             setAttr("code", 0);
+             setAttr("count", 0);
+             setAttr("data", fmdata);
+
+             setAttr("msg","成功") ;
+             setAttr("success",true);
          }catch (Exception ex){
              setAttr("success", false);
              setAttr("msg", "表单查询异常");
@@ -547,7 +637,7 @@ else {
         }
         renderJson();
     }
-    @Clear
+ 
     public void GetDictionaryByID()  {
          try{
              String id = getPara("id");
@@ -570,7 +660,7 @@ else {
 
         renderJson();
     }
-    @Clear
+ 
     public void GetDictionaryByCode()  {
         try{
             String id = getPara("id");

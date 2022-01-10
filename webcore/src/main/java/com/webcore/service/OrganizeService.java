@@ -1,21 +1,36 @@
 package com.webcore.service;
 
+import com.asxsydutils.utils.StringUtil;
 import com.jfinal.aop.Inject;
+import com.webcore.modle.*;
 import com.webcore.modle.Dictionary;
-import com.webcore.modle.Organize;
-import com.webcore.modle.Users;
-import com.webcore.modle.WorkGroup;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class OrganizeService {
-    private  static final Organize instance =new Organize().dao();
+    private  static Organize instance = new Organize();
+
     @Inject
     UsersService usersService;
   public   List<Organize> GetOrganizeById(String id){
         String sql="select * from Organize where ParentID='" + id + "' ";
         return instance.find(sql);
+    }
+    public  Organize GetOrganizeRoot(){
+        String sql="select * from Organize where ParentID='" + StringUtil.GuidEmpty() + "' ";
+        return instance.findFirst(sql);
+    }
+    public static List<Organize>  getOrgandUserlist(String id){
+      System.out.print(id);
+        if (id.indexOf("_u") > -1) {
+            return null;
+        } else {
+            String sql = "SELECT id, title from organize  WHERE ParentID='" + id + "'" +
+                    "UNION\n" +
+                    "SELECT CONCAT_WS('_','u',id) as id,name as title  from users WHERE ID IN(SELECT UserID FROM usersrelation u,organize o WHERE u.OrganizeID=o.id and u.OrganizeID='" + id+ "')";
+            return instance.find(sql);
+        }
     }
     /// <summary>
     /// 得到一组机构字符串下所有人员

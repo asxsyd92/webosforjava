@@ -6,6 +6,7 @@ import com.jfinal.ext.handler.ContextPathHandler;
 import com.jfinal.ext.handler.UrlSkipHandler;
 import com.jfinal.plugin.ehcache.EhCachePlugin;
 import com.webcore.config.TableConfig;
+import com.webcore.ftp.Ftp;
 import com.webos.controllers.UeditorController;
 import com.jfinal.config.*;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
@@ -15,6 +16,8 @@ import com.jfinal.server.undertow.UndertowServer;
 import com.jfinal.template.Engine;
 import com.webos.jwt.JwtInterceptor;
 import com.webos.controllers.websocket.WebSocket;
+
+import java.io.File;
 
 
 public class WebosConfig extends JFinalConfig {
@@ -111,6 +114,22 @@ public class WebosConfig extends JFinalConfig {
     }
     public void onStart() {
         System.out.println("系统启动完成后回调");
+
+//        try{
+//            Ftp f=new Ftp();
+//            f.setIpAddr("112.13.205.40");
+//            f.setUserName("asxsyd92@foxmail.com");
+//            f.setPwd("..642135..");
+//            Common.connectFtp(f);
+////            File file = new File("F:/test/com/test/Testng.java");
+////            Common.upload(file);//把文件上传在ftp上
+////            Common.startDown(f, "e:/",  "/xxtest");//下载ftp文件测试
+////            System.out.println("ok");
+//
+//        }catch (Exception e){
+//            System.out.println(e.getMessage());
+//        }
+
     }
 
 

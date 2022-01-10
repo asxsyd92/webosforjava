@@ -171,8 +171,7 @@ public class WorkFlowTaskService {
 
         //保存业务数据 "1" != Request.QueryString["isSystemDetermine"]:当前步骤流转类型如果是系统判断，则先保存数据，在这里就不需要保存数据了。
         if (execute.getExecuteType() == Save ||
-                execute.getExecuteType() == Completed ||
-               ! "1".equals( querys.getIsSystemDetermine())
+                execute.getExecuteType() == Completed ||   ! "1".equals( querys.getIsSystemDetermine())
         )
         {
             try {
@@ -341,7 +340,7 @@ public class WorkFlowTaskService {
                     break;
 
                 case Save:
-                     executeSave(executeModel,wfInstalled);
+                    result=  executeSave(executeModel,wfInstalled);
                     break;
                 case Submit:
                 case Completed:
@@ -907,7 +906,7 @@ public class WorkFlowTaskService {
 
 
 
-    private static void executeSave(Execute executeModel, RunModel wfInstalled) {
+    private static Result  executeSave(Execute executeModel, RunModel wfInstalled) {
         List<WorkFlowTask> nextTasks = new ArrayList<WorkFlowTask>();
         Result result=new Result();
         //如果是第一步提交并且没有实例则先创建实例
@@ -926,14 +925,14 @@ public class WorkFlowTaskService {
             result.setDebugmessages("未能创建或找到当前任务");
             result.setIssuccess(false) ;
             result.setMessages("未能创建或找到当前任务");
-            return;
+            return result;
         }
         else if (currentTask.getStatus().equals(2)&&currentTask.getStatus().equals(3)&&currentTask.getStatus().equals(4))
         {
             result.setDebugmessages( "当前任务已处理");
             result.setIssuccess(false);
             result.setMessages("当前任务已处理");
-            return;
+            return result;
         }
         else
         {
@@ -959,6 +958,7 @@ public class WorkFlowTaskService {
         result.setDebugmessages("保存成功");
         result.setIssuccess(true);
         result.setMessages("保存成功");
+        return result;
     }
 
     /// <summary>
@@ -1535,21 +1535,10 @@ try
 
     }
 
-    public static Record getOaData(String query) {
+    public static List<WorkFlowTask> getcomment(String query) {
         Query querys = JSON.parseObject(query, Query.class);
-       List<WorkFlowTask> d= instance.find("SELECT * FROM workflowtask WHERE InstanceID='"+ querys.getInstanceid()+"' ORDER BY sort ");
-       Record o=new Record();
-        o.set("task",d);
-       try {
-           if (d.size()>0){
-           if (d.get(0).getUrls() != null && !d.get(0).getUrls().equals("")) {
-              Record record= Db.findById(d.get(0).getUrls(), "ID", d.get(0).getInstanceID());
-               o.set("data",record);
-           }}
-       }catch (Exception ex){
-           o.set("data",null);
-       }
-        return o;
+       List<WorkFlowTask> d= instance.find("SELECT * FROM workflowtask WHERE InstanceID='"+ querys.getInstanceid()+"' and FlowID='"+querys.getFlowid()+"' and GroupID='"+querys.getGroupid()+"' AND comment  IS NOT NULL ORDER BY sort ");
+       return  d;
     }
 
 

@@ -26,7 +26,11 @@ public class JwtInterceptor implements Interceptor {
         try {
             // 检测请求头是否为空
             if (jwt == null) {
+             response.setStatus(401);
+                inv.getController().renderError(401);
                 System.out.println("用户未登录，验证失败");
+                return  false;
+
             } else {
                 Claims c =JwtUtils.parseJwt(jwt);
                 String ip=  Common.getRemoteLoginUserIp(request);
@@ -42,17 +46,14 @@ public class JwtInterceptor implements Interceptor {
                 inv.invoke();
                 return true;
             }
-            System.out.println("token解析错误，验证失败");
-            response.getWriter().write("未登录，请重新登录后操作");
+            //System.out.println("token解析错误，验证失败");
+            //response.getWriter().write("未登录，请重新登录后操作");
         } catch (Exception e) {
             System.out.print(e.getMessage());
-            if (e.getMessage()==null){
-                inv.getController().renderError(500);  e.printStackTrace();
 
-            }else {
                 inv.getController().renderError(401);  e.printStackTrace();
 
-            }
+
     }
         return false;
     }

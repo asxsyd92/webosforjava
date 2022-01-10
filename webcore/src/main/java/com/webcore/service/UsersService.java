@@ -19,7 +19,12 @@ public  class UsersService {
         return  Db.findFirst(sql);
 
     }
+    //微信授权登录
+    public  Record wxlogin(String user) {
+        String sql="SELECT u.ID,u.Account,u.Islock,u.locktime,o.Community,u.avatar,u.Status,u.Name,o.Title as Organize,u.identifier,o.ID as OrganizeID,o.Leader ,u.Password from  Users u,Organize o,UsersRelation ur where o.ID=ur.OrganizeID and ur.ID=u.ID and o.Status=0 and u.openid='" + user.toLowerCase()+ "'";
+        return  Db.findFirst(sql);
 
+    }
     public  List<Users> GetUsersTreeAsync() {
         String sql="select u.ID,u.Name,o.Community ,o.Title as Organize,o.ID as OrganizeID  from UsersRelation ur,Users u, Organize o where u.ID = ur.UserID and o.ID = ur.OrganizeID";
        return instance.find(sql);

@@ -47,7 +47,14 @@ public class PortalSiteController extends Controller {
         setAttr("data", da.getList());
         renderJson();
     }
+   public void GetRandomNew(){
+        String sql="select  *from a_article order by rand() desc LIMIT 20";
+    List<Record>  index=  Db.find(sql);
 
+    setAttr("data",   index);
+    setAttr("success", true);
+    renderJson();
+    }
     public void GetNewIndex() {
         //获取缓存中数据
        // List<Record> index=   CacheKit.get("logincache","getsiteindex");

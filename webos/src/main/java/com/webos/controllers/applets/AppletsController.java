@@ -14,16 +14,14 @@ import com.jfinal.ext.interceptor.POST;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
 import com.webos.Common;
+import com.webos.jwt.AuthResult;
+import com.webos.jwt.JwtUtils;
 import kotlin.collections.ArrayDeque;
 import org.apache.commons.lang3.StringUtils;
 
 import java.text.NumberFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
-import java.util.Collections;
-import java.util.Comparator;
 
 @Path("/api/applets")
 @Clear
@@ -48,10 +46,18 @@ public class AppletsController extends Controller {
             }
             String KK = HttpHelper.sendGet(requestUrl, s);
             Map<String, Object> kk = JSON.parseObject(KK, Map.class);
+
+           Record u= Db.findById("users","openid",kk.get("openid").toString());
+            Map<String, Object> claims = new HashMap<String, Object>();
+            claims.put("id", u.getStr("ID"));
+            claims.put("account",  u.getStr("Account"));
+            claims.put("avatar", u.getStr("avatar"));
+            claims.put("ip",Common.getRemoteLoginUserIp(this.getRequest()));
             kk.put("unionid", "");
             setAttr("msg", "成功！");
             setAttr("success", true);
             setAttr("data", kk);
+
         } catch (Exception exception) {
             setAttr("msg", "失败！" + exception.getMessage());
             setAttr("success", false);
@@ -180,6 +186,17 @@ public class AppletsController extends Controller {
                 setAttr("msg", "成功！");
                 setAttr("success", true);
                 setAttr("data", da);
+                Map<String, Object> claims = new HashMap<String, Object>();
+                claims.put("id", da.getStr("ID"));
+                claims.put("account",  da.getStr("Account"));
+                claims.put("avatar", da.getStr("avatar"));
+                claims.put("ip",Common.getRemoteLoginUserIp(this.getRequest()));
+                AuthResult result= JwtUtils.createJwt(claims, JwtUtils.JWT_WEB_TTL);
+                String token =result .getJwt();
+                long expires_in =result.getExpires_in();
+
+                setAttr("expires_in",expires_in);
+                setAttr("token",token);
                 UsersIntegralService.AddIntegral(da.getStr("id"), 10);
             } else {
                 Record users = new Record();
@@ -206,9 +223,21 @@ public class AppletsController extends Controller {
                 } else {
                     users.set("openid", openid);
                 }
+                Map<String, Object> claims = new HashMap<String, Object>();
+                claims.put("id", users.getStr("ID"));
+                claims.put("account",  users.getStr("Account"));
+                claims.put("avatar", users.getStr("avatar"));
+                claims.put("ip",Common.getRemoteLoginUserIp(this.getRequest()));
+                AuthResult result= JwtUtils.createJwt(claims, JwtUtils.JWT_WEB_TTL);
+                String token =result .getJwt();
+                long expires_in =result.getExpires_in();
+
+                setAttr("expires_in",expires_in);
+                setAttr("token",token);
                 setAttr("data", users);
 
             }
+
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
             setAttr("msg", "失败！");

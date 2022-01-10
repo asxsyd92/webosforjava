@@ -1,8 +1,11 @@
 package com.webcore.modle;
 
+import com.jfinal.aop.Inject;
 import com.webcore.annotation.Table;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.jfinal.plugin.activerecord.Model;
+import com.webcore.service.OrganizeService;
+import org.checkerframework.common.returnsreceiver.qual.This;
 
 import java.util.List;
 
@@ -106,6 +109,9 @@ public class Organize extends Model<Organize> {
         return get("Note");
     }
 
+    public java.lang.String getValue() {
+        return get("ID");
+    }
     public void setCommunity(java.lang.String Community) {
         set("Community", Community);
     }
@@ -113,9 +119,16 @@ public class Organize extends Model<Organize> {
     public java.lang.String getCommunity() {
         return get("Community");
     }
+
     public List<Organize> children;
-    public List<Organize>  getchildren() {
-        String sql = "select * from organize where ParentID='" + this.getID() + "'  order by Sort";
-        return this.find(sql);
+    public java.lang.String getName() {
+        return get("Title");
+    }
+    public List<Organize> getchildren() {
+        if (this.getID()!=null&&!this.getID().equals("")){
+            return OrganizeService.getOrgandUserlist(this.getID());
+        }
+        return null;
+
     }
 }

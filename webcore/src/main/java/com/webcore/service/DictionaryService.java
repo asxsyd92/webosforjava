@@ -65,7 +65,7 @@ public class DictionaryService {
     {
 
 
-        return    instance.find("select  id as value  ,title  from dictionary where  IsUse=1 and ParentID in (select ID from dictionary where Code='" + code + "')");
+        return    instance.find("select  id as value  ,title,title as name  from dictionary where  IsUse=1 and ParentID in (select ID from dictionary where Code='" + code + "')");
 
     }
 

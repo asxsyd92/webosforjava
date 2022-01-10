@@ -22,7 +22,12 @@ public class Unity<T> {
         _SYS_GETUSERNAME,
         //当前昵称
         _SYS_GETUSERNICKNAME,
-        _SYS_ORGID,_SYS_ORGNAME
+        //组织id
+        _SYS_ORGID,
+        //组织名称
+        _SYS_ORGNAME,
+        //岗位
+        _SYS_GW
     }
     public static String getJsonSetData(String data, Claims claims){
         data= data.replace(SysOperation._SYS_DATETIME.name(), StringUtil.getDatatime().toString());
