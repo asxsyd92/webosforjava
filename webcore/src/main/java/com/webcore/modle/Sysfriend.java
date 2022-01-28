@@ -1,6 +1,5 @@
 package com.webcore.modle;
 
-import com.jfinal.aop.Inject;
 import com.jfinal.plugin.activerecord.Model;
 import java.util.List;
 import com.webcore.annotation.Table;

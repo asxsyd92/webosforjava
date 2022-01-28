@@ -1,4 +1,4 @@
-package  com.webcore.modle;
+package com.webcore.modle;
 
 import com.webcore.annotation.Table;
 import com.fasterxml.jackson.annotation.JsonInclude;

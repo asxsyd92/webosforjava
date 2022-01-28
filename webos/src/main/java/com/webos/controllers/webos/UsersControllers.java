@@ -6,7 +6,6 @@ import com.asxsyd92.swagger.annotation.Api;
 import com.asxsyd92.swagger.annotation.ApiOperation;
 import com.asxsydutils.utils.JosnUtils;
 import com.asxsydutils.utils.StringUtil;
-import com.jfinal.aop.Clear;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Path;
 import com.jfinal.kit.Kv;

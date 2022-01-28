@@ -9,6 +9,7 @@ import com.google.gson.GsonBuilder;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Path;
 import com.webcore.config.LoginUsers;
+import com.webcore.modle.Dictionarys;
 import com.webcore.oa.workflow.RunJson;
 import com.webcore.service.DictionaryService;
 import com.webcore.service.LogService;
@@ -19,7 +20,6 @@ import com.webcore.modle.Dictionary;
 import com.webcore.utils.data.MySql;
 import com.webcore.utils.data.mysqlserver.FromData;
 import com.jfinal.aop.Before;
-import com.jfinal.aop.Clear;
 import com.jfinal.core.Controller;
 import com.jfinal.core.NotAction;
 import com.jfinal.ext.interceptor.GET;
@@ -38,7 +38,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 @Before({JwtInterceptor.class, POST.class})
 
@@ -590,6 +589,11 @@ public  void  saveFormJson(){
 
                     }
                     try {
+                        if (cls!=null){
+                            DAS.set("classid",cls.toString());
+                        }else {
+                            DAS.set("classid",StringUtil.GuidEmpty());
+                        }
                         tag= FromData.save(DAS,"commontask");
                     }catch (Exception ex){
                         setAttr("msg", ex.getMessage());
@@ -664,9 +668,9 @@ else {
     public void GetDictionaryByCode()  {
         try{
             String id = getPara("id");
-            List<Dictionary> da= DictionaryService.GetByCode(id);
-
-            setAttr("data", da);
+            List<Dictionarys> da= DictionaryService.GetByCode(id);
+            Object data =  new JosnUtils<Dictionarys>().toJson(da);
+            setAttr("data", data);
             setAttr("msg", "获取成功！");
             setAttr("success", true);
         }catch (Exception ex){

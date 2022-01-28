@@ -2,8 +2,9 @@ package com.webcore.service;
 
 import com.asxsydutils.utils.StringUtil;
 import com.jfinal.aop.Inject;
-import com.webcore.modle.*;
-import com.webcore.modle.Dictionary;
+import com.webcore.modle.Organize;
+import com.webcore.modle.Users;
+import com.webcore.modle.WorkGroup;
 
 import java.util.*;
 import java.util.stream.Collectors;

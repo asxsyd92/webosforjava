@@ -8,6 +8,7 @@ import com.jfinal.core.Controller;
 import com.jfinal.core.Path;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.plugin.activerecord.Page;
+import com.webcore.modle.Dictionarys;
 import com.webos.jwt.JwtInterceptor;
 import com.webcore.modle.Dictionary;
 import com.webcore.service.DictionaryService;
@@ -26,7 +27,7 @@ public class DictionaryController  extends Controller {
    public void GetByCode() throws Exception {
        String code=getPara("code");
 
-       Object da =  new JosnUtils<Dictionary>().toJson(service.GetByCode(code));
+       Object da =  new JosnUtils<Dictionarys>().toJson(service.GetByCode(code));
 
         setAttr("data", da);
         setAttr("success", true);

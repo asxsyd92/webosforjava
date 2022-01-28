@@ -1,11 +1,9 @@
 package com.webcore.modle;
 
-import com.jfinal.aop.Inject;
 import com.webcore.annotation.Table;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.jfinal.plugin.activerecord.Model;
 import com.webcore.service.OrganizeService;
-import org.checkerframework.common.returnsreceiver.qual.This;
 
 import java.util.List;
 

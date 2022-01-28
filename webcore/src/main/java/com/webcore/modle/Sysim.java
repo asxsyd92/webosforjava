@@ -1,7 +1,6 @@
 package com.webcore.modle;
 
 import com.jfinal.plugin.activerecord.Model;
-import com.jfinal.plugin.activerecord.IBean;
 import com.webcore.annotation.Table;
 
 /**

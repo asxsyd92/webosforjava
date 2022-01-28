@@ -1,19 +1,19 @@
 package com.webcore.service;
 
 import com.asxsydutils.utils.StringUtil;
-import com.jfinal.aop.Inject;
 import com.jfinal.plugin.activerecord.Page;
 import com.webcore.modle.Dictionary;
 import com.jfinal.kit.Kv;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.activerecord.SqlPara;
+import com.webcore.modle.Dictionarys;
 
 import java.util.List;
 
 public class DictionaryService {
     private  static final Dictionary instance =new  Dictionary().dao();
-
+    private  static final Dictionarys instances =new  Dictionarys().dao();
     public static List<Dictionary> GetDictionary( Kv kv)
     {
 
@@ -61,11 +61,11 @@ public class DictionaryService {
     /// </summary>
     /// <param name="code"></param>
     /// <returns></returns>
-    public static List<Dictionary> GetByCode(String code)
+    public static List<Dictionarys> GetByCode(String code)
     {
 
 
-        return    instance.find("select  id as value  ,title,title as name  from dictionary where  IsUse=1 and ParentID in (select ID from dictionary where Code='" + code + "')");
+        return    instances.find("select  id as value ,id ,title,title as name  from dictionary where  IsUse=1 and ParentID in (select ID from dictionary where Code='" + code + "')");
 
     }
 

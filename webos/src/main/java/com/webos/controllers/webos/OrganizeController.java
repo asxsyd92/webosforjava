@@ -2,7 +2,6 @@ package com.webos.controllers.webos;
 
 import com.asxsydutils.utils.JosnUtils;
 import com.asxsydutils.utils.StringUtil;
-import com.jfinal.aop.Clear;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
 import com.jfinal.core.Path;
