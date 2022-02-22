@@ -17,7 +17,7 @@ public class CtdiskController extends Controller {
             Map<String,Object> user=new HashMap<>();
             String  token=   CacheKit.get("ctdisktokencache","ctdisktokencache");
             user.put("email","asxsyd92@foxmail.com");
-            user.put("password","..642135..");
+            user.put("password","1111");
             user.put("device_id","");
             user.put("unique_id","");
             if (token==null){
