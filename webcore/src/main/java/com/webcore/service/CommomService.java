@@ -5,8 +5,10 @@ import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.activerecord.SqlPara;
+import com.webcore.modle.Dictionarys;
 
 public class CommomService {
+
     private static volatile CommomService instance = null;
     public static CommomService Instance() {
         if (instance == null) {
@@ -39,5 +41,8 @@ public class CommomService {
     }
 
 
-
+    public Page<Record> getDownload(int page,int limit,Kv kv) {
+        SqlPara sqlPara =  Db.getSqlPara("webos-article.getdownload", kv);
+       return Db.paginate(page,limit,sqlPara);
+    }
 }

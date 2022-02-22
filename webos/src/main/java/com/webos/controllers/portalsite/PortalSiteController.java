@@ -13,7 +13,7 @@ import com.jfinal.kit.Kv;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
-import com.jfinal.plugin.ehcache.CacheKit;
+import com.jfinal.plugin.activerecord.SqlPara;
 import com.taobao.api.DefaultTaobaoClient;
 import com.taobao.api.TaobaoClient;
 import com.taobao.api.request.TbkDgMaterialOptionalRequest;
@@ -55,6 +55,14 @@ public class PortalSiteController extends Controller {
     setAttr("data",   index);
     setAttr("success", true);
     renderJson();
+    }
+    public  void GetRandomDown(){
+        String sql="select  *from download order by rand() desc LIMIT 20";
+        List<Record>  index=  Db.find(sql);
+
+        setAttr("data",   index);
+        setAttr("success", true);
+        renderJson();
     }
     public void GetNewIndex() {
         //获取缓存中数据
@@ -192,5 +200,56 @@ if (title==null){
         }
         renderJson();
     }
+public  void  getDownload(){
+    try
+    {
+        String title = getPara("title");
+        int page = getInt("page");
+        String type = getPara("type");
+        int limit = getInt("limit");
+        Kv kv = Kv.by("title", title).set("type",type);
+        Page<Record> da=  CommomService.Instance().getDownload(page,limit,kv);
 
+        setAttr("code", 0);
+        setAttr("msg", "成功！");
+        setAttr("success", true);
+        setAttr("count", da.getTotalRow());
+        setAttr("data", da.getList());
+    } catch (Exception ex){
+        setAttr("code", 0);
+        setAttr("msg", ex.getMessage());
+        setAttr("count", 1);
+        setAttr("data", null);
+    }
+    renderJson();
+
+}
+public  void  setHot(){
+    try
+    {
+        String id = getPara("id");
+     Record record= Db.findById("download","ID",id);
+  if (record!=null){
+     Integer views= record.getInt("views");
+     if (views==null){
+         views=1;
+     }else {
+         views=views+1;
+     }
+      record.set("views",views);
+      Db.update("download",record);
+  }
+
+        setAttr("code", 0);
+        setAttr("msg", "成功！");
+        setAttr("success", true);
+
+    } catch (Exception ex){
+        setAttr("code", 0);
+        setAttr("msg", ex.getMessage());
+        setAttr("count", 1);
+        setAttr("data", null);
+    }
+    renderJson();
+}
 }

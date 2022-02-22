@@ -31,3 +31,18 @@ select  *from a_article order by rand() desc LIMIT 5
 #sql("t_map_dataitem")
 select  * from t_map_dataitem order by rand()
 #end
+
+#sql("getdownload")
+select  * from download
+where 1=1
+    #if(title)
+
+  and title like CONCAT('%',#para(title),'%')
+    #end
+
+    #if(type)
+     and Classid = #para(type)
+    #end
+
+order by views DESC
+    #end

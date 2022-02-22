@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/asxsydutils/asxsydutils.iml" filepath="$PROJECT_DIR$/asxsydutils/asxsydutils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/authservice/authservice.iml" filepath="$PROJECT_DIR$/authservice/authservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ctdisk/ctdisk.iml" filepath="$PROJECT_DIR$/ctdisk/ctdisk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iworkflow/iworkflow.iml" filepath="$PROJECT_DIR$/iworkflow/iworkflow.iml" />
       <module fileurl="file://$PROJECT_DIR$/swagger/swagger.iml" filepath="$PROJECT_DIR$/swagger/swagger.iml" />
       <module fileurl="file://$PROJECT_DIR$/webcore/webcore.iml" filepath="$PROJECT_DIR$/webcore/webcore.iml" />
       <module fileurl="file://$PROJECT_DIR$/webos/webos.iml" filepath="$PROJECT_DIR$/webos/webos.iml" />

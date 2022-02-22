@@ -1,12 +1,12 @@
-package com.webos;
+package com;
 
 
 import com.asxsyd92.swagger.config.routes.SwaggerRoutes;
 import com.jfinal.ext.handler.ContextPathHandler;
 import com.jfinal.ext.handler.UrlSkipHandler;
 import com.jfinal.plugin.ehcache.EhCachePlugin;
+import com.security.JwtInterceptor;
 import com.webcore.config.TableConfig;
-import com.webcore.ftp.Ftp;
 import com.webos.controllers.UeditorController;
 import com.jfinal.config.*;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
@@ -14,10 +14,7 @@ import com.jfinal.plugin.activerecord.CaseInsensitiveContainerFactory;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.server.undertow.UndertowServer;
 import com.jfinal.template.Engine;
-import com.webos.jwt.JwtInterceptor;
 import com.webos.controllers.websocket.WebSocket;
-
-import java.io.File;
 
 
 public class WebosConfig extends JFinalConfig {
@@ -49,8 +46,8 @@ public class WebosConfig extends JFinalConfig {
       me.setDevMode(true);
         //开启支持注解，支持 Controller、Interceptor 之中使用 @Inject 注入业务层，并且自动实现 AOP
         me.setInjectDependency(true);
-        me.setError404View("/error.html");
-        me.setError500View("/error.html");
+        //me.setError404View("/error.html");
+        //me.setError500View("/error.html");
      //   me.setJsonFactory(new FastJsonFactory());
     }
 
@@ -59,8 +56,10 @@ public class WebosConfig extends JFinalConfig {
        me.add("/api/ueditor", UeditorController.class);
        // me.add("/api/Users", UsersControllers.class);
         me.add(new SwaggerRoutes());
+
         me.scan("com.webos.controllers");
-    }
+        me.scan("com.ctdisk.controllers");
+  }
 
     public void configEngine(Engine me) {
     //  me.setBaseTemplatePath("webapp");

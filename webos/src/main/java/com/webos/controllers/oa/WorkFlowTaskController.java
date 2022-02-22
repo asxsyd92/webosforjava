@@ -23,7 +23,7 @@ import com.webcore.oa.workflow.*;
 import com.webcore.service.WorkFlowTaskService;
 import com.webcore.service.WorkflowService;
 import com.webos.Common;
-import com.webos.jwt.JwtInterceptor;
+
 import io.jsonwebtoken.Claims;
 import kotlin.collections.ArrayDeque;
 
@@ -39,7 +39,7 @@ public class WorkFlowTaskController extends Controller {
     @Inject
     WorkFlowTaskService workFlowTaskService;
     //获取待办事项
-    @Before({JwtInterceptor.class})
+
     public  void  WaitList(){
 try {
     String title = getPara("title");
@@ -67,7 +67,7 @@ try {
 
         renderJson();
     }
-    @Before({JwtInterceptor.class})
+
     public void CompletedList()
     {
         try {

@@ -1,5 +1,5 @@
 
-package com.webos.jwt;
+package com.security;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;

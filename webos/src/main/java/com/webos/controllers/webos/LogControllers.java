@@ -1,22 +1,26 @@
 package com.webos.controllers.webos;
 
 import com.jfinal.aop.Before;
+import com.jfinal.aop.Clear;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
 import com.jfinal.core.Path;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.kit.Kv;
 import com.jfinal.plugin.activerecord.Page;
-import com.webos.jwt.JwtInterceptor;
+import com.security.Authentication;
 import com.webcore.modle.Log;
 import com.webcore.service.LogService;
 
 import java.util.Date;
 @Path("/api/log")
-@Before({JwtInterceptor.class, POST.class})
+@Before({  POST.class})
+@Clear
 public class LogControllers extends Controller {
     @Inject
     LogService logService;
+
+    @Authentication
     public void getLogList(){
         try{
         String title = getPara("title");

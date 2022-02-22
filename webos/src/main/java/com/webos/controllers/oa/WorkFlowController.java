@@ -9,7 +9,7 @@ import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.ehcache.CacheKit;
-import com.webos.jwt.JwtInterceptor;
+
 import com.webcore.modle.Workflow;
 import com.webcore.service.DictionaryService;
 import com.webcore.service.WorkflowService;
@@ -17,7 +17,7 @@ import io.jsonwebtoken.Claims;
 
 import java.util.List;
 @Path("/api/workflow")
-@Before({JwtInterceptor.class})
+
 public class WorkFlowController extends Controller {
 
     public void WorkFlowList() {

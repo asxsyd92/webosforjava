@@ -15,7 +15,6 @@ import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 
-import com.webos.jwt.JwtInterceptor;
 import com.webos.Common;
 import io.jsonwebtoken.Claims;
 
@@ -27,7 +26,7 @@ import java.util.Date;
 
 import java.util.List;
 
-@Before({JwtInterceptor.class})
+
 @Path("/api/tasks")
 public class TasksController  extends Controller {
     @Inject

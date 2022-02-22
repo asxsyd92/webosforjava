@@ -1,4 +1,4 @@
-package com.webos.jwt;
+package com.security;
 
 public class AuthResult {
     public String getJwt() {

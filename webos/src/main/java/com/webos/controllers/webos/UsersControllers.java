@@ -24,7 +24,6 @@ import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 
-import com.webos.jwt.JwtInterceptor;
 import com.webos.socket.util.util;
 import io.jsonwebtoken.Claims;
 
@@ -33,7 +32,7 @@ import java.util.*;
 
 import static com.asxsydutils.utils.MD5.MD5_32bit;
 @Api(tag = "Users", description = "用户控制器")
-@Before({JwtInterceptor.class, POST.class})
+@Before({ POST.class})
 @Path("/api/users")
 public class UsersControllers extends Controller {
     @Inject
@@ -371,7 +370,7 @@ public void getPageById(){
         renderJson();
     }
 
-    @Before({JwtInterceptor.class, POST.class})
+    @Before({ POST.class})
     public void EditPw() {
         Claims claims = getAttr("claims");
         String id = claims.get("id").toString();
@@ -494,7 +493,7 @@ public void getPageById(){
         }
         renderJson();
     }
-    @Before({JwtInterceptor.class, POST.class})
+    @Before({ POST.class})
    @ApiOperation(url = "/api/users/GetUsersListAsync", tag = "GetUsersListAsync", httpMethod = "post", description = "需要授权：im用户列表 ")
     //获取用户朋友、群列表
     public void GetUsersListAsync()
@@ -526,7 +525,7 @@ public void getPageById(){
         }
         renderJson();
   }
-    @Before({JwtInterceptor.class, POST.class})
+    @Before({ POST.class})
     @ApiOperation(url = "/api/users/getMembers", tag = "GetUsersListAsync", httpMethod = "post", description = "需要授权：im用户列表 ")
     //获取群员
     public void getMembers()

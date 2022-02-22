@@ -27,7 +27,6 @@ import com.jfinal.ext.interceptor.POST;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
-import com.webos.jwt.JwtInterceptor;
 import com.webos.Common;
 import io.jsonwebtoken.Claims;
 import kotlin.collections.ArrayDeque;
@@ -39,7 +38,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-@Before({JwtInterceptor.class, POST.class})
+@Before({  POST.class})
 
 @Path("/api/form")
 public class FormControllers extends Controller {
@@ -267,7 +266,7 @@ public  void  saveFormJson(){
         renderJson();
     }
 
-    @Before({JwtInterceptor.class, POST.class})
+    @Before({  POST.class})
 
     public void FormDesignHtml()
     {
@@ -499,7 +498,7 @@ public  void  saveFormJson(){
 
     renderJson();
     }
-    @Before({JwtInterceptor.class, POST.class})
+    @Before({  POST.class})
     public void  FormCommonTaskSave(){
         String table= getPara("table");
         String data= getPara("data");
@@ -622,7 +621,7 @@ else {
     }
 
 
-    @Before({JwtInterceptor.class, GET.class})
+    @Before({  GET.class})
     public void  GetCheckName() {
         PropKit.use("config.properties");
         String Name = getPara("Name");
@@ -681,7 +680,7 @@ else {
 
         renderJson();
     }
-    @Before({JwtInterceptor.class, POST.class})
+    @Before({  POST.class})
     public  void  FormDel(){
 
         String key = getPara("id");

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ctdisk:war">
+    <output-path>$PROJECT_DIR$/ctdisk/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>ctdisk</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="ctdisk-1.0.war">
+      <element id="artifact" artifact-name="ctdisk:war exploded" />
+    </root>
+  </artifact>
+</component>

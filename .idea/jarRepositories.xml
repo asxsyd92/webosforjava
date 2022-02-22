@@ -9,6 +9,11 @@
     <remote-repository>
       <option name="id" value="com.e-iceblue" />
       <option name="name" value="e-iceblue" />
+      <option name="url" value="http://maven.asxsyd92.com/repository/webos" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="com.e-iceblue" />
+      <option name="name" value="e-iceblue" />
       <option name="url" value="http://repo.e-iceblue.com/nexus/content/groups/public/" />
     </remote-repository>
     <remote-repository>

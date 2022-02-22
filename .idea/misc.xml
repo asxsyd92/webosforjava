@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/ctdisk" />
     <file type="web" url="file://$PROJECT_DIR$/webos" />
   </component>
   <component name="MavenProjectsManager">
@@ -10,6 +11,10 @@
         <option value="$PROJECT_DIR$/webos/pom.xml" />
         <option value="$PROJECT_DIR$/swagger/pom.xml" />
         <option value="$PROJECT_DIR$/webcore/pom.xml" />
+        <option value="$PROJECT_DIR$/iworkflow/pom.xml" />
+        <option value="$PROJECT_DIR$/ctdisk/pom.xml" />
+        <option value="$PROJECT_DIR$/AuthenticationService/pom.xml" />
+        <option value="$PROJECT_DIR$/authservice/pom.xml" />
       </list>
     </option>
   </component>

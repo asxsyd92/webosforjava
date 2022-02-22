@@ -13,7 +13,7 @@ import com.jfinal.kit.Kv;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
-import com.webos.jwt.JwtInterceptor;
+
 import com.webcore.modle.Dictionary;
 import com.webcore.service.CommomService;
 import com.webcore.service.DictionaryService;
@@ -32,7 +32,7 @@ public class CommomController extends Controller {
     /// <param name="tab"></param>
     /// <param name="data"></param>
     /// <returns></returns>
-    @Before({JwtInterceptor.class, POST.class})
+    @Before({ POST.class})
     public void save()
     {
         String tab= getPara("tab");
@@ -64,7 +64,7 @@ public class CommomController extends Controller {
         }
       renderJson();
     }
-    @Before({JwtInterceptor.class, POST.class})
+    @Before({ POST.class})
     public void Del()
     {
         String key= getPara("key");
@@ -96,7 +96,7 @@ public class CommomController extends Controller {
     /// <param name="limit"></param>
     /// <returns></returns>
     //获取公共list
-    @Before({JwtInterceptor.class, GET.class})
+    @Before({ GET.class})
 
     public void GetCommonList()
     {
@@ -125,7 +125,7 @@ public class CommomController extends Controller {
     renderJson();
     }
 
-    @Before({JwtInterceptor.class, POST.class})
+    @Before({ POST.class})
     public void GetDictionary(){
 
 

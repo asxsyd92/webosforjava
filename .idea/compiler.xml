@@ -8,12 +8,18 @@
         <outputRelativeToContentRoot value="true" />
         <module name="webcore" />
         <module name="webos" />
-        <module name="swagger" />
+        <module name="iworkflow" />
+        <module name="authservice" />
         <module name="asxsydutils" />
+        <module name="swagger" />
+        <module name="ctdisk" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="asxsydutils" target="1.8" />
+      <module name="authservice" target="1.8" />
+      <module name="ctdisk" target="1.8" />
+      <module name="iworkflow" target="1.8" />
       <module name="swagger" target="8" />
       <module name="webcore" target="1.8" />
       <module name="webos" target="1.8" />
