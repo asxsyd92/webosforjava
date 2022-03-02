@@ -18,7 +18,7 @@ import com.security.AuthResult;
 import com.security.JwtUtils;
 import com.webcore.service.LogService;
 import com.webcore.service.UsersService;
-import com.webos.Common;
+import com.asxsydutils.utils.Common;
 
 import java.io.IOException;
 import java.util.HashMap;

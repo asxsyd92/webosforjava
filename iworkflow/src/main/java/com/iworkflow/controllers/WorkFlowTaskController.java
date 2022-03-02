@@ -1,4 +1,4 @@
-package com.service.controllers;
+package com.iworkflow.controllers;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -7,25 +7,26 @@ import com.asxsydutils.utils.Common;
 import com.asxsydutils.utils.JosnUtils;
 import com.asxsydutils.utils.StringUtil;
 import com.google.gson.GsonBuilder;
+import com.iworkflow.service.oa.workflow.*;
+import com.jfinal.aop.Before;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
 import com.jfinal.core.Path;
+import com.jfinal.ext.interceptor.POST;
 import com.jfinal.kit.Kv;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.ehcache.CacheKit;
-
-import com.service.modle.WorkFlowTask;
-import com.service.modle.Workflow;
-import com.service.oa.WorkFlowTaskService;
-import com.service.oa.WorkflowService;
-import com.service.oa.task.Query;
-import com.service.oa.task.Result;
-import com.service.oa.workflow.*;
+import com.iworkflow.service.modle.WorkFlowTask;
+import com.iworkflow.service.modle.Workflow;
+import com.iworkflow.service.oa.WorkFlowTaskService;
+import com.iworkflow.service.oa.WorkflowService;
+import com.iworkflow.service.oa.task.Query;
+import com.iworkflow.service.oa.task.Result;
+import com.security.JwtInterceptor;
 import io.jsonwebtoken.Claims;
 import kotlin.collections.ArrayDeque;
-
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -34,11 +35,11 @@ import java.util.stream.Collectors;
 
 
 @Path("/api/workflowtasks")
+@Before({ POST.class, JwtInterceptor.class})
 public class WorkFlowTaskController extends Controller {
     @Inject
     WorkFlowTaskService workFlowTaskService;
     //获取待办事项
-
     public  void  WaitList(){
 try {
     String title = getPara("title");
@@ -50,7 +51,7 @@ try {
     String receiveid="";  Claims claims = getAttr("claims");
     receiveid=claims.get("id").toString();
     Kv kv= Kv.by("title",title).set("type",type).set("receiveid",receiveid);
-    Page<WorkFlowTask> da= workFlowTaskService.getWaitList(kv,page,limit);
+    Page<WorkFlowTask> da= WorkFlowTaskService.getWaitList(kv,page,limit);
     setAttr("code", 0);
     setAttr("msg", "成功！");
     setAttr("count", da.getTotalRow());
@@ -66,7 +67,6 @@ try {
 
         renderJson();
     }
-
     public void CompletedList()
     {
         try {
@@ -103,8 +103,7 @@ try {
 
 
     //初始流程
-    //@Before({JwtInterceptor.class, POST.class})
-
+    //@Before({Authentication.class, POST.class})
     public void  FlowInit(){
         try
         {
@@ -264,9 +263,8 @@ try {
 /*
 流程处理
  */
-    //@Before({JwtInterceptor.class, POST.class})
-
-    public  void sendTask() {
+    //@Before({Authentication.class, POST.class})
+public  void sendTask() {
         try {
             String receiveid = "";
             Claims claims = getAttr("claims");
@@ -298,7 +296,6 @@ try {
     /*
     获取业务表单数据
      */
-
     public void getcomment(){
         try {
         String query = getPara("query");
@@ -320,7 +317,7 @@ try {
 /*
 /流程退回
  */
-    public void FlowBack(){
+public void FlowBack(){
         try {
             String receiveid = "";
             Claims claims = getAttr("claims");

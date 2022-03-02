@@ -4,7 +4,6 @@ import com.asxsydutils.utils.StringUtil;
 import com.jfinal.aop.Inject;
 import com.webcore.modle.Organize;
 import com.webcore.modle.Users;
-import com.webcore.modle.WorkGroup;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -46,7 +45,7 @@ public class OrganizeService {
         }
         String[] idArray = idString.split(",");
         List<Users> userList = new ArrayList<Users>();
-        WorkGroup bwg = new WorkGroup();
+
         for (String id : idArray)
         {
             if (id.startsWith("u_"))//人员

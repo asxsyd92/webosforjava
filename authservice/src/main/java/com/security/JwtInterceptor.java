@@ -50,13 +50,13 @@ System.out.print("请求"+request.getRequestURI());
         System.out.print("请求"+inv.getController().getRequest().getRequestURI());
         Controller controller = inv.getController();
         Method method = inv.getMethod();
-        if (!method.isAnnotationPresent(Authentication.class)) {
-            inv.invoke();
-        }else {
+//        if (!method.isAnnotationPresent(Authentication.class)) {
+//            inv.invoke();
+//        }else {
             preHandle(controller.getRequest(),controller.getResponse(),inv);
             inv.getController().getRequest().removeAttribute("me");// 移除避免暴露当前角色信息
             inv.getController().getRequest().removeAttribute("claims");
-        }
+//        }
 
 
 

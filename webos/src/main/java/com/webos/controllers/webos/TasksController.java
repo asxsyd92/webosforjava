@@ -5,6 +5,7 @@ import com.jfinal.aop.Inject;
 import com.jfinal.core.Path;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.kit.PropKit;
+import com.security.JwtInterceptor;
 import com.webcore.service.LogService;
 import com.webcore.service.TaskService;
 import com.jfinal.aop.Before;
@@ -15,7 +16,7 @@ import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 
-import com.webos.Common;
+import com.asxsydutils.utils.Common;
 import io.jsonwebtoken.Claims;
 
 
@@ -26,13 +27,12 @@ import java.util.Date;
 
 import java.util.List;
 
-
+@Before({ POST.class, JwtInterceptor.class})
 @Path("/api/tasks")
 public class TasksController  extends Controller {
     @Inject
     LogService logService;
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
     public void WaitList() {
         try {
             //根据用户获取待办

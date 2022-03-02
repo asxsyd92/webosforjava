@@ -1,4 +1,4 @@
-package com.service.oa.task;
+package com.iworkflow.service.oa.task;
 
 public class EnumType {
     /// <summary>

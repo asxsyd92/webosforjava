@@ -224,6 +224,26 @@ public  void  getDownload(){
     renderJson();
 
 }
+    public  void  getgroup(){
+        try
+        {
+            String group = getPara("group");
+            List<Record> da=Db.find("SELECT * FROM download WHERE groupname= '"+group+"' ORDER BY Title");
+            setAttr("code", 0);
+            setAttr("msg", "成功！");
+            setAttr("success", true);
+            setAttr("count", 0);
+            setAttr("data", da);
+        } catch (Exception ex){
+            setAttr("code", 0);
+            setAttr("msg", ex.getMessage());
+            setAttr("count", 1);
+            setAttr("data", null);
+        }
+        renderJson();
+
+    }
+
 public  void  setHot(){
     try
     {

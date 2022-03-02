@@ -1,7 +1,7 @@
 package com.webcore.modle;
 
 import com.asxsydutils.utils.StringUtil;
-import com.webcore.annotation.Table;
+import com.asxsydutils.annotation.Table;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.jfinal.plugin.activerecord.Db;

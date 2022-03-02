@@ -1,4 +1,4 @@
-package com.webcore.config;
+package com.asxsydutils.config;
 
 public class LoginUsers {
     private String id;

@@ -8,9 +8,10 @@ import com.asxsydutils.utils.StringUtil;
 import com.google.gson.GsonBuilder;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Path;
-import com.webcore.config.LoginUsers;
+import com.asxsydutils.config.LoginUsers;
+import com.iworkflow.service.oa.workflow.RunJson;
+import com.security.JwtInterceptor;
 import com.webcore.modle.Dictionarys;
-import com.webcore.oa.workflow.RunJson;
 import com.webcore.service.DictionaryService;
 import com.webcore.service.LogService;
 import com.webcore.service.TaskService;
@@ -27,7 +28,7 @@ import com.jfinal.ext.interceptor.POST;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
-import com.webos.Common;
+import com.asxsydutils.utils.Common;
 import io.jsonwebtoken.Claims;
 import kotlin.collections.ArrayDeque;
 
@@ -38,8 +39,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-@Before({  POST.class})
 
+@Before({ POST.class, JwtInterceptor.class})
 @Path("/api/form")
 public class FormControllers extends Controller {
     @Inject
@@ -61,8 +62,7 @@ public class FormControllers extends Controller {
         }
         return res.toString();
     }
-
-public  void  getFormJsonById(){
+    public  void  getFormJsonById(){
          try {
              String fromid = getPara("fromid");
              Record fmdata= Db.findById("sysformdesign","id",fromid);
@@ -166,8 +166,7 @@ renderJson();
 
     renderJson();
 }
-
-public  void  saveFormJson(){
+    public  void  saveFormJson(){
     try{
         String key = getPara("key");
         String data = getPara("data");
@@ -267,7 +266,6 @@ public  void  saveFormJson(){
     }
 
     @Before({  POST.class})
-
     public void FormDesignHtml()
     {
         PropKit.use("config.properties");
@@ -469,7 +467,6 @@ public  void  saveFormJson(){
             return  "";
 
     }
-
     public  void  FormTable(){
         String id = getPara("id");
         String table = getPara("table");
@@ -640,7 +637,6 @@ else {
         }
         renderJson();
     }
- 
     public void GetDictionaryByID()  {
          try{
              String id = getPara("id");
@@ -663,7 +659,6 @@ else {
 
         renderJson();
     }
- 
     public void GetDictionaryByCode()  {
         try{
             String id = getPara("id");

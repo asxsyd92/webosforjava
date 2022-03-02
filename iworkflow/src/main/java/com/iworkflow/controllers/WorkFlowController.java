@@ -1,23 +1,24 @@
-package com.service.controllers;
+package com.iworkflow.controllers;
 
 
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
 import com.jfinal.core.Path;
+import com.jfinal.ext.interceptor.POST;
 import com.jfinal.kit.Kv;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.ehcache.CacheKit;
-import com.service.modle.Workflow;
-import com.service.oa.WorkflowService;
+import com.iworkflow.service.modle.Workflow;
+import com.iworkflow.service.oa.WorkflowService;
+import com.security.JwtInterceptor;
 import io.jsonwebtoken.Claims;
 
 import java.util.List;
 @Path("/api/workflow")
-
+@Before({ POST.class, JwtInterceptor.class})
 public class WorkFlowController extends Controller {
-
     public void WorkFlowList() {
         try {
             String title = getPara("title");
@@ -98,7 +99,6 @@ public class WorkFlowController extends Controller {
         }
          renderJson(); //WorkFlowBll.Instance.GetJSON(flowid, type);
     }
-
     public void GetTable_SqlServer()
     {
        // return DBConnectionBll.Instance.GetTable_SqlServer();

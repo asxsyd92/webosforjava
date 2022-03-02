@@ -1,8 +1,8 @@
-package com.webcore.config;
+package com.asxsydutils.config;
 
 
 import com.asxsydutils.utils.StringUtil;
-import com.webcore.annotation.Table;
+import com.asxsydutils.annotation.Table;
 
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.activerecord.Model;
@@ -21,21 +21,15 @@ import java.util.jar.JarFile;
 
 public class TableConfig {
   
-       private static final String FRAMEWORK_MODELPACKAGES = "com.webcore.models";
-       private static final String APP_MODELPACKAGES = "asxsyd92.app.modelpackages";
-    
+
        public static void mapping(String DataSourceName, ActiveRecordPlugin arp)
        {
-         createTableModel("com.webcore.models", DataSourceName, arp);
-          if (StringUtil.isNotEmpty("com.webcore.modle")) {
-                 String[] _routesArray = "com.webcore.modle".split(",");
-               if ((_routesArray != null) && (_routesArray.length > 0)) {
-                     for (String _routesString : _routesArray)
-                             {
-                             createTableModel(_routesString, DataSourceName, arp);
-                             }
-                       }
-                 }
+         String a[]=  DataSourceName.split(",");
+           for (String item:a  ) {
+           createTableModel(item, DataSourceName, arp);
+
+       }
+
            }
     
        private static void createTableModel(String packageName, String DataSourceName, ActiveRecordPlugin arp)

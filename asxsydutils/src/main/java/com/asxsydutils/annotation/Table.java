@@ -1,4 +1,4 @@
-package com.webcore.annotation;
+package com.asxsydutils.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;

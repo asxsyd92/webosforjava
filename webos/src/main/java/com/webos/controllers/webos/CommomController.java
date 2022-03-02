@@ -14,6 +14,7 @@ import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 
+import com.security.JwtInterceptor;
 import com.webcore.modle.Dictionary;
 import com.webcore.service.CommomService;
 import com.webcore.service.DictionaryService;
@@ -22,7 +23,7 @@ import com.webcore.utils.data.mysqlserver.FromData;
 import io.jsonwebtoken.Claims;
 
 import java.util.Map;
-
+@Before({JwtInterceptor.class})
 @Path("/api/common")
 public class CommomController extends Controller {
 
@@ -32,7 +33,7 @@ public class CommomController extends Controller {
     /// <param name="tab"></param>
     /// <param name="data"></param>
     /// <returns></returns>
-    @Before({ POST.class})
+    @Before({JwtInterceptor.class, POST.class})
     public void save()
     {
         String tab= getPara("tab");
@@ -97,7 +98,6 @@ public class CommomController extends Controller {
     /// <returns></returns>
     //获取公共list
     @Before({ GET.class})
-
     public void GetCommonList()
     {
         String tab= getPara("tab");

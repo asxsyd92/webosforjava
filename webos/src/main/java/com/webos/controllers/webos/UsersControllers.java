@@ -10,12 +10,14 @@ import com.jfinal.aop.Inject;
 import com.jfinal.core.Path;
 import com.jfinal.kit.Kv;
 import com.jfinal.plugin.ehcache.CacheKit;
+import com.security.Authentication;
+import com.security.JwtInterceptor;
 import com.webcore.modle.*;
 import com.webcore.service.ImService;
 import com.webcore.service.LogService;
 import com.webcore.service.RoleAppService;
 import com.webcore.service.UsersService;
-import com.webos.Common;
+import com.asxsydutils.utils.Common;
 
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
@@ -32,7 +34,7 @@ import java.util.*;
 
 import static com.asxsydutils.utils.MD5.MD5_32bit;
 @Api(tag = "Users", description = "用户控制器")
-@Before({ POST.class})
+
 @Path("/api/users")
 public class UsersControllers extends Controller {
     @Inject
@@ -43,12 +45,14 @@ public class UsersControllers extends Controller {
     UsersService usersService;
 @Inject
     ImService imService;
+    @Before({ POST.class, JwtInterceptor.class})
+
     public void GetAppList() {
         try {
             //从缓存中读取
             Claims claims = getAttr("claims");
             String userid = claims.get("id").toString();
-            Object  menucache=  null; //CacheKit.get("menucache",userid);
+            Object  menucache=  CacheKit.get("menucache",userid);
 
             if (menucache!=null){
                 setAttr("msg", "");
@@ -92,7 +96,6 @@ public class UsersControllers extends Controller {
     /**
      * 获取菜单项
      */
-
     public void getMenuList(){
         try {
 
@@ -123,7 +126,7 @@ public class UsersControllers extends Controller {
         }
         renderJson();
     }
-public void getPageById(){
+    public void getPageById(){
     try {
         String id = getPara("id");
         int page = getInt("page");
@@ -169,7 +172,6 @@ public void getPageById(){
 
     }
 
-
     public void OrganizeAndRole() {
 
         try {
@@ -190,8 +192,7 @@ public void getPageById(){
         renderJson();
 
     }
-
-     public void UsersSave() {
+    public void UsersSave() {
         try {
 
             String data = getPara("data");
@@ -412,7 +413,6 @@ public void getPageById(){
         renderJson();
     }
 
-
     public void delMenu() {
         Claims claims = getAttr("claims");
         try {
@@ -475,7 +475,6 @@ public void getPageById(){
         renderJson();
 
     }
-  
     public void GetUsersTreeAsync() {
         try {
             List<Users> users = usersService.GetUsersTreeAsync();

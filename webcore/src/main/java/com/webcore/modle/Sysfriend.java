@@ -2,7 +2,7 @@ package com.webcore.modle;
 
 import com.jfinal.plugin.activerecord.Model;
 import java.util.List;
-import com.webcore.annotation.Table;
+import com.asxsydutils.annotation.Table;
 import com.webcore.service.ImService;
 
 /**

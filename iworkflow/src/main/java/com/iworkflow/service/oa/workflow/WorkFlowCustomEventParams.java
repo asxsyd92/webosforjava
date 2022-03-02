@@ -1,4 +1,4 @@
-package com.service.oa.workflow;
+package com.iworkflow.service.oa.workflow;
 
 /// <summary>
 /// 调用流程事件时的参数实体

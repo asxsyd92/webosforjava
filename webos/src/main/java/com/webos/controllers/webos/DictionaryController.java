@@ -8,22 +8,24 @@ import com.jfinal.core.Controller;
 import com.jfinal.core.Path;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.plugin.activerecord.Page;
+import com.jfinal.plugin.activerecord.Record;
+import com.security.JwtInterceptor;
 import com.webcore.modle.Dictionarys;
 import com.webcore.modle.Dictionary;
 import com.webcore.service.DictionaryService;
 import com.webcore.service.LogService;
-import com.webos.Common;
+import com.asxsydutils.utils.Common;
 import io.jsonwebtoken.Claims;
 
 @Path("/api/dictionary")
-@Before({ POST.class})
+@Before({ POST.class, JwtInterceptor.class})
+
 public class DictionaryController  extends Controller {
     @Inject
     private DictionaryService service;
     @Inject
     LogService logService;
-
-   public void GetByCode() throws Exception {
+    public void GetByCode() throws Exception {
        String code=getPara("code");
 
        Object da =  new JosnUtils<Dictionarys>().toJson(service.GetByCode(code));
@@ -130,5 +132,18 @@ public class DictionaryController  extends Controller {
             setAttr("success", false);        renderJson();
         }
         renderJson();
+    }
+
+    public void GetTypeOptions()
+    {
+        try {
+            String value = getPara("value");
+            Record d= DictionaryService.GetOptionsByCode("FlowTypes", value);
+            renderJson(d);
+        } catch (Exception ex) {
+
+            renderJson("{}");
+        }
+        //return  DictionaryService.Instance.GetOptionsByCode("FlowTypes", value);
     }
 }

@@ -1,4 +1,4 @@
-package com;
+package com.webos;
 
 
 import com.asxsyd92.swagger.config.routes.SwaggerRoutes;

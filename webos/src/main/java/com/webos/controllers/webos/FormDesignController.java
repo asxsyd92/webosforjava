@@ -9,15 +9,14 @@ import com.jfinal.core.Path;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
-import com.security.Authentication;
-import com.webcore.config.LoginUsers;
+import com.asxsydutils.config.LoginUsers;
+import com.security.JwtInterceptor;
 import com.webcore.service.LogService;
-import com.webos.Common;
+import com.asxsydutils.utils.Common;
 
 import java.util.Date;
 
-@Authentication
-@Before({POST.class})
+@Before({ POST.class, JwtInterceptor.class})
 @Path("/api/formdesign")
 public class FormDesignController extends Controller {
     @Inject

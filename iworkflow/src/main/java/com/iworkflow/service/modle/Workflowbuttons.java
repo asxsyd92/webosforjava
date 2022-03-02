@@ -1,6 +1,6 @@
-package com.service.modle;
+package com.iworkflow.service.modle;
 
-import com.webcore.annotation.Table;
+import com.asxsydutils.annotation.Table;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.jfinal.plugin.activerecord.Model;
 

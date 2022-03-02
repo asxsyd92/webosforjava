@@ -1,4 +1,4 @@
-package com.service.oa.workflow;
+package com.iworkflow.service.oa.workflow;
 public class Behavior
 {
     private String flowType;

@@ -1,7 +1,11 @@
-package com.service.oa;
+package com.iworkflow.service.oa;
 import com.alibaba.fastjson.JSON;
 import com.asxsydutils.utils.JosnUtils;
 import com.asxsydutils.utils.StringUtil;
+import com.iworkflow.service.modle.WorkFlowTask;
+import com.iworkflow.service.modle.Workflow;
+import com.iworkflow.service.oa.task.*;
+import com.iworkflow.service.oa.workflow.*;
 import com.jfinal.aop.Inject;
 import com.jfinal.plugin.ehcache.CacheKit;
 
@@ -10,11 +14,8 @@ import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.activerecord.SqlPara;
-import com.service.modle.WorkFlowArchives;
-import com.service.modle.WorkFlowTask;
-import com.service.modle.Workflow;
-import com.service.oa.task.*;
-import com.service.oa.workflow.*;
+import com.iworkflow.service.modle.WorkFlowArchives;
+
 import com.webcore.modle.Users;
 import com.webcore.service.OrganizeService;
 import com.webcore.service.UsersService;
@@ -23,8 +24,6 @@ import kotlin.collections.ArrayDeque;
 
 import java.util.*;
 import java.util.stream.Collectors;
-
-import static com.service.oa.task.EnumType.ExecuteType.*;
 
 
 public class WorkFlowTaskService {
@@ -91,19 +90,19 @@ public class WorkFlowTaskService {
         switch (opation)
         {
             case "submit":
-                execute.setExecuteType(Submit);
+                execute.setExecuteType(EnumType.ExecuteType.Submit);
                 break;
             case "save":
-                execute.setExecuteType(Save);
+                execute.setExecuteType(EnumType.ExecuteType.Save);
 
                 break;
-            case "back":  execute.setExecuteType(Back);
+            case "back":  execute.setExecuteType(EnumType.ExecuteType.Back);
 
                 break;
-            case "completed":execute.setExecuteType(Completed);
+            case "completed":execute.setExecuteType(EnumType.ExecuteType.Completed);
 
                 break;
-            case "redirect":execute.setExecuteType(Redirect);
+            case "redirect":execute.setExecuteType(EnumType.ExecuteType.Redirect);
 
                 break;
         }
@@ -154,7 +153,7 @@ public class WorkFlowTaskService {
                             break;
                     }
                 }
-                if (execute.getExecuteType() == Redirect)
+                if (execute.getExecuteType() == EnumType.ExecuteType.Redirect)
                 {
 
                    // execute.setSteps(StringUtil.GuidEmpty(),).Add(Guid.Empty, OrganizeService.Instance.GetAllUsers(member));
@@ -171,8 +170,8 @@ public class WorkFlowTaskService {
         eventParams.setInstanceid(execute.getInstanceid());
 
         //保存业务数据 "1" != Request.QueryString["isSystemDetermine"]:当前步骤流转类型如果是系统判断，则先保存数据，在这里就不需要保存数据了。
-        if (execute.getExecuteType() == Save ||
-                execute.getExecuteType() == Completed ||   ! "1".equals( querys.getIsSystemDetermine())
+        if (execute.getExecuteType() == EnumType.ExecuteType.Save ||
+                execute.getExecuteType() == EnumType.ExecuteType.Completed ||   ! "1".equals( querys.getIsSystemDetermine())
         )
         {
             try {
@@ -205,13 +204,13 @@ public class WorkFlowTaskService {
         {
             //步骤提交前事件
             if (!step.getEvent().getSubmitBefore().equals(null) &&
-                    (execute.getExecuteType() == Submit
-                            || execute.getExecuteType() == Completed))
+                    (execute.getExecuteType() == EnumType.ExecuteType.Submit
+                            || execute.getExecuteType() == EnumType.ExecuteType.Completed))
             {
                 //object obj = WorkFlowTaskService.Instance.ExecuteFlowCustomEvent(step.Event.SubmitBefore.Trim(), eventParams);
          }
             //步骤退回前事件
-            if (!(step.getEvent().getSubmitBefore()==null) && execute.getExecuteType() == Back)
+            if (!(step.getEvent().getSubmitBefore()==null) && execute.getExecuteType() == EnumType.ExecuteType.Back)
             {
                 //Record obj = WorkFlowTaskService.ExecuteFlowCustomEvent(step.getEvent().getBackBefore().toString().trim(), eventParams);
                 // Response.Write(String.Format("执行步骤退回前事件：({0}) 返回值：{1}<br/>", step.Event.BackBefore.Trim(), obj.ToString()));
@@ -248,8 +247,8 @@ public class WorkFlowTaskService {
         {
             //步骤提交后事件
             if (!(step.getEvent().getSubmitAfter()==null) &&
-                    (execute.getExecuteType() == Submit
-                            || execute.getExecuteType() == Completed))
+                    (execute.getExecuteType() == EnumType.ExecuteType.Submit
+                            || execute.getExecuteType() == EnumType.ExecuteType.Completed))
             {
                // object obj = WorkFlowTaskService.Instance.ExecuteFlowCustomEvent(step.Event.SubmitAfter.Trim(), eventParams);
                 //Response.Write(String.Format("执行步骤提交后事件：({0}) 返回值：{1}<br/>", step.Event.SubmitAfter.Trim(), obj.ToString()));
@@ -263,8 +262,8 @@ public class WorkFlowTaskService {
         }
 
         //归档
-        if (execute.getExecuteType() == Submit
-                || execute.getExecuteType() == Completed)
+        if (execute.getExecuteType() == EnumType.ExecuteType.Submit
+                || execute.getExecuteType() == EnumType.ExecuteType.Completed)
         {
             List<Steps> currentsteps = wfInstalled.getSteps().stream().filter(Steps -> Steps.getId().equals(execute.getStepid())).collect(Collectors.toList());
             if (currentsteps.size() > 0 && currentsteps.get(0).getArchives().equals(1))

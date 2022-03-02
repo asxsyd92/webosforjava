@@ -1,15 +1,18 @@
-package com.service.controllers;
+package com.iworkflow.controllers;
 
 import java.util.List;
 
+import com.jfinal.aop.Before;
 import com.jfinal.core.Path;
 import com.jfinal.core.Controller;
+import com.jfinal.ext.interceptor.POST;
 import com.jfinal.plugin.activerecord.Record;
-import com.service.oa.WorkflowbuttonsService;
+import com.iworkflow.service.oa.WorkflowbuttonsService;
+import com.security.JwtInterceptor;
 
 
 @Path("/api/workflowbuttons")
-
+@Before({ POST.class, JwtInterceptor.class})
 public class WorkflowbuttonsController extends Controller {
     //获取按钮
     public  void  ButtonByoa(){

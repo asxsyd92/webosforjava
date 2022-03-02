@@ -26,7 +26,7 @@
   <name>ctdisk</name>
   <groupId>com.asxsyd92</groupId>
   <artifactId>ctdisk</artifactId>
-  <version>1.0</version>
+  <version>1.5</version>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>1.8</java.version>
@@ -64,13 +64,13 @@
       <artifactId>jfinal</artifactId>
       <version>4.9.11</version>
     </dependency>
-
     <dependency>
-      <groupId>com.asxsyd92.utils</groupId>
+      <groupId>com.asxsyd92</groupId>
       <artifactId>asxsydutils</artifactId>
-      <version>1.3</version>
-      <scope>compile</scope>
+      <version>1.5</version>
+
     </dependency>
+
     <dependency>
       <groupId>net.sf.ehcache</groupId>
       <artifactId>ehcache-core</artifactId>
@@ -78,8 +78,8 @@
     </dependency>
     <dependency>
       <groupId>com.asxsyd92</groupId>
-      <artifactId>authenticationservice</artifactId>
-      <version>1.0-SNAPSHOT</version>
+      <artifactId>authservice</artifactId>
+      <version>1.5</version>
     </dependency>
   </dependencies>
 

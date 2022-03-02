@@ -4,13 +4,52 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.asxsyd92.iworkflow</groupId>
+    <groupId>com.asxsyd92</groupId>
     <artifactId>iworkflow</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.5</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
+<dependencies>
+    <dependency>
+        <groupId>net.sf.ehcache</groupId>
+        <artifactId>ehcache-core</artifactId>
+        <version>2.6.11</version>
+    </dependency>
+    <dependency>
+        <groupId>com.jfinal</groupId>
+        <artifactId>jfinal</artifactId>
+        <version>4.9.11</version>
+    </dependency>
+    <dependency>
+        <groupId>com.asxsyd92</groupId>
+        <artifactId>asxsydutils</artifactId>
+        <version>1.5</version>
 
+    </dependency>
+
+    <dependency>
+        <groupId>net.sf.ehcache</groupId>
+        <artifactId>ehcache-core</artifactId>
+        <version>2.6.11</version>
+    </dependency>
+    <dependency>
+        <groupId>com.asxsyd92</groupId>
+        <artifactId>authservice</artifactId>
+        <version>1.5</version>
+    </dependency>
+    <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>2.8.5</version>
+    </dependency>
+    <dependency>
+        <groupId>com.asxsyd92</groupId>
+        <artifactId>webcore</artifactId>
+        <version>1.5</version>
+
+    </dependency>
+</dependencies>
 </project>

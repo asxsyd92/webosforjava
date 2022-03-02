@@ -1,7 +1,7 @@
-package com.service.oa.task;
+package com.iworkflow.service.oa.task;
 
 
-import com.service.modle.WorkFlowTask;
+import com.iworkflow.service.modle.WorkFlowTask;
 
 import java.util.List;
 
