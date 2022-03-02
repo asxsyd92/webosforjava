@@ -15,7 +15,7 @@ public class JwtInterceptor implements Interceptor {
 
     // 拦截每个请求
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Invocation inv) {
-
+System.out.print("请求"+request.getRequestURI());
         String jwt = request.getHeader("Authorization");
         try {
             // 检测请求头是否为空
@@ -47,6 +47,7 @@ public class JwtInterceptor implements Interceptor {
 
     @Override
     public void intercept(Invocation inv) {
+        System.out.print("请求"+inv.getController().getRequest().getRequestURI());
         Controller controller = inv.getController();
         Method method = inv.getMethod();
         if (!method.isAnnotationPresent(Authentication.class)) {

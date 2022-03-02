@@ -1,13 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="webos:war exploded">
-    <output-path>$PROJECT_DIR$/webos/target/webos</output-path>
-    <properties id="maven-jee-properties">
-      <options>
-        <exploded>true</exploded>
-        <module>webos</module>
-        <packaging>war</packaging>
-      </options>
-    </properties>
+    <output-path>$PROJECT_DIR$/out/artifacts/webos_war_exploded</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -23,10 +16,6 @@
           <element id="library" level="project" name="Maven: com.sun.xml.bind:jaxb-impl:2.3.0" />
           <element id="library" level="project" name="Maven: com.sun.xml.bind:jaxb-core:2.3.0" />
           <element id="library" level="project" name="Maven: javax.activation:activation:1.1.1" />
-          <element id="archive" name="webcore-1.3.jar">
-            <element id="module-output" name="webcore" />
-          </element>
-          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:4.0.1" />
           <element id="library" level="project" name="Maven: org.apache.directory.studio:org.apache.commons.codec:1.8" />
           <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.4" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.2" />
@@ -34,10 +23,6 @@
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.6" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.6" />
-          <element id="library" level="project" name="Maven: com.asxsyd92.utils:utils:1.3" />
-          <element id="archive" name="swagger-1.3.jar">
-            <element id="module-output" name="swagger" />
-          </element>
           <element id="library" level="project" name="Maven: com.google.guava:guava:30.1.1-jre" />
           <element id="library" level="project" name="Maven: com.google.guava:failureaccess:1.0.1" />
           <element id="library" level="project" name="Maven: com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava" />
@@ -45,9 +30,6 @@
           <element id="library" level="project" name="Maven: org.checkerframework:checker-qual:3.8.0" />
           <element id="library" level="project" name="Maven: com.google.errorprone:error_prone_annotations:2.5.1" />
           <element id="library" level="project" name="Maven: com.google.j2objc:j2objc-annotations:1.3" />
-          <element id="archive" name="asxsydutils-1.3.jar">
-            <element id="module-output" name="asxsydutils" />
-          </element>
           <element id="library" level="project" name="Maven: com.belerweb:pinyin4j:2.5.0" />
           <element id="library" level="project" name="Maven: com.squareup.okhttp3:okhttp:4.8.1" />
           <element id="library" level="project" name="Maven: com.squareup.okio:okio:2.7.0" />
@@ -57,9 +39,6 @@
           <element id="library" level="project" name="Maven: cglib:cglib:2.2.2" />
           <element id="library" level="project" name="Maven: asm:asm:3.3.1" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.15" />
-          <element id="archive" name="authservice-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="authservice" />
-          </element>
           <element id="library" level="project" name="Maven: com.auth0:java-jwt:3.3.0" />
           <element id="library" level="project" name="Maven: com.alibaba:druid:1.0.23" />
           <element id="library" level="project" name="Maven: commons-net:commons-net:2.2" />
@@ -83,14 +62,7 @@
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.16" />
           <element id="library" level="project" name="Maven: org.ehcache:ehcache:3.5.2" />
           <element id="library" level="project" name="Maven: org.jsoup:jsoup:1.14.2" />
-          <element id="archive" name="ctdisk-1.0.jar">
-            <element id="module-output" name="ctdisk" />
-          </element>
-          <element id="library" level="project" name="Maven: com.asxsyd92:authenticationservice:1.0-SNAPSHOT" />
         </element>
-      </element>
-      <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/webos/target/webos/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="webos/web/Web" />
     </root>

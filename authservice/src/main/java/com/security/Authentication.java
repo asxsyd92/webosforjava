@@ -5,6 +5,7 @@ import java.lang.annotation.*;
 
 @Target({ElementType.METHOD,ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Authentication {
+@Documented
+public @interface Authenticationt {
 	boolean required() default true;
 }
