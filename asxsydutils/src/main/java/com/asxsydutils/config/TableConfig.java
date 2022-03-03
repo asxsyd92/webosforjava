@@ -1,9 +1,7 @@
 package com.asxsydutils.config;
-
-
-import com.asxsydutils.utils.StringUtil;
 import com.asxsydutils.annotation.Table;
 
+import com.asxsydutils.utils.StringUtil;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.activerecord.Model;
 
@@ -24,32 +22,24 @@ public class TableConfig {
 
        public static void mapping(String DataSourceName, ActiveRecordPlugin arp)
        {
-         String a[]=  DataSourceName.split(",");
-           for (String item:a  ) {
-           createTableModel(item, DataSourceName, arp);
-
-       }
-
+           if(!StringUtil.isBlank(DataSourceName)) {
+               String a[] = DataSourceName.split(",");
+               for (String item : a) {
+                   createTableModel(item, DataSourceName, arp);
+               }
+           }
            }
     
        private static void createTableModel(String packageName, String DataSourceName, ActiveRecordPlugin arp)
        {
         
            Set<Class<? extends Model<?>>> _clsList = getClasses(packageName);
-           // logger.info("初始化class文件的数量为：" + _clsList.size());
             if ((_clsList != null) && (_clsList.size() > 0)) {
                  for (Class<? extends Model<?>> _cls : _clsList) {
-                     System.out.println("table初始化");
-                     System.out.println(_cls);
+
                     if (_cls.getAnnotation(Table.class) != null) {
-                        System.out.println(_cls);
                         Table _model = (Table)_cls.getAnnotation(Table.class);
-                        System.out.println(_model);
-                          //   if (_model.dataSourceName().equals(DataSourceName))
-                                   {
-                                   System.out.println("Model-DataSource数据库表映射： " + DataSourceName + "--->" + _cls.getName() + "--->" + _model.tableName());
-                                  arp.addMapping(_model.tableName(), _model.primaryKey(), _cls);
-                                   }
+                                arp.addMapping(_model.tableName(), _model.primaryKey(), _cls);
                              }
                        }
                  }

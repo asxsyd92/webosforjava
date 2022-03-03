@@ -10,7 +10,7 @@ import com.jfinal.aop.Inject;
 import com.jfinal.core.Path;
 import com.asxsydutils.config.LoginUsers;
 import com.iworkflow.service.oa.workflow.RunJson;
-import com.security.JwtInterceptor;
+import com.security.Authorization;
 import com.webcore.modle.Dictionarys;
 import com.webcore.service.DictionaryService;
 import com.webcore.service.LogService;
@@ -40,7 +40,7 @@ import java.util.List;
 import java.util.Map;
 
 
-@Before({ POST.class, JwtInterceptor.class})
+@Before({ POST.class, Authorization.class})
 @Path("/api/form")
 public class FormControllers extends Controller {
     @Inject

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.asxsyd92</groupId>
+    <artifactId>portalsite</artifactId>
+    <version>1.5</version>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+<dependencies>
+
+    <!-- 开发 缓存 时开启下面的依赖 -->
+    <dependency>
+        <groupId>net.sf.ehcache</groupId>
+        <artifactId>ehcache-core</artifactId>
+        <version>2.6.11</version>
+    </dependency>
+    <dependency>
+        <groupId>com.jfinal</groupId>
+        <artifactId>jfinal</artifactId>
+        <version>4.9.11</version>
+    </dependency>
+    <!-- 开发 WebSockets 时开启下面的依赖 -->
+    <dependency>
+        <groupId>com.asxsyd92</groupId>
+        <artifactId>webcore</artifactId>
+        <version>1.5</version>
+
+    </dependency>
+    <dependency>
+        <groupId>com.taobao.api</groupId>
+        <artifactId>taobao-sdk-java-auto</artifactId>
+        <version>1564051214605.20201229</version>
+    </dependency>
+</dependencies>
+</project>

@@ -1,10 +1,8 @@
-package com.webos.controllers.portalsite;
+package com.portalsite.controllers;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-
-
 import com.asxsydutils.utils.StringUtil;
 import com.jfinal.aop.Clear;
 import com.jfinal.core.Controller;
@@ -13,7 +11,6 @@ import com.jfinal.kit.Kv;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
-import com.jfinal.plugin.activerecord.SqlPara;
 import com.taobao.api.DefaultTaobaoClient;
 import com.taobao.api.TaobaoClient;
 import com.taobao.api.request.TbkDgMaterialOptionalRequest;
@@ -21,7 +18,6 @@ import com.taobao.api.response.TbkDgMaterialOptionalResponse;
 import com.webcore.service.CommomService;
 import com.webcore.service.TaoBaoService;
 import com.webcore.utils.data.mysqlserver.FromData;
-
 
 import java.util.Date;
 import java.util.List;
@@ -66,13 +62,10 @@ public class PortalSiteController extends Controller {
     }
     public void GetNewIndex() {
         //获取缓存中数据
-       // List<Record> index=   CacheKit.get("logincache","getsiteindex");
 
-            String rewen = getPara("rewen");
-            String tuijian = getPara("tuijian");
-            String sql = "select * from ( SELECT   *,'cai'  type FROM a_article     order by rand() desc LIMIT 10) as t UNION (SELECT  *,'rewen' as type FROM a_article where Classid='" + rewen + "'  LIMIT 10)UNION (SELECT *,'tuijian' as type FROM a_article where Classid='" + tuijian + "'  LIMIT 10)";
-            //  String sql = "select * from ( SELECT TOP 10 'cai' as type, *FROM A_Article    order by newid()) as t UNION (SELECT TOP 10 'rewen' as type,*FROM A_Article where Classid='"+rewen+ "')UNION (SELECT TOP 10 'tuijian' as type,*FROM A_Article where Classid='" + tuijian+ "')";
-        List<Record>  index=  Db.findByCache("getsiteindex","getsiteindex",sql);
+            String id = getPara("id");
+            String sql ="SELECT * FROM `a_article` WHERE Classid LIKE'%"+id+"%' order by rand() LIMIT 10";// "select * from ( SELECT   *,'cai'  type FROM a_article     order by rand() desc LIMIT 10) as t UNION (SELECT  *,'rewen' as type FROM a_article where Classid='" + rewen + "'  LIMIT 10)UNION (SELECT *,'tuijian' as type FROM a_article where Classid='" + tuijian + "'  LIMIT 10)";
+            List<Record>  index=  Db.findByCache(id,"getsiteindex",sql);
 
         setAttr("data",   index);
         setAttr("Success", true);

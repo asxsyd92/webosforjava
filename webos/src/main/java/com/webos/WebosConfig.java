@@ -2,11 +2,13 @@ package com.webos;
 
 
 import com.asxsyd92.swagger.config.routes.SwaggerRoutes;
+import com.asxsydutils.utils.StringUtil;
 import com.jfinal.ext.handler.ContextPathHandler;
 import com.jfinal.ext.handler.UrlSkipHandler;
 import com.jfinal.plugin.ehcache.EhCachePlugin;
 import com.asxsydutils.config.TableConfig;
-import com.security.JwtInterceptor;
+import com.security.Authorization;
+import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 import com.webos.controllers.UeditorController;
 import com.jfinal.config.*;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
@@ -52,14 +54,17 @@ public class WebosConfig extends JFinalConfig {
     }
 
     public void configRoute(Routes me) {
-
+        loadPropertyFile("config.properties");
        me.add("/api/ueditor", UeditorController.class);
        // me.add("/api/Users", UsersControllers.class);
         me.add(new SwaggerRoutes());
-
-        me.scan("com.webos.controllers");
-        me.scan("com.ctdisk.controllers");
-        me.scan("com.iworkflow.controllers");
+        String controllers=getProperty("controllers");
+        if (!StringUtil.isBlank(controllers)){
+          String a[]=  controllers.split(",");
+            for (String item:a) {
+                me.scan(item);
+            }
+        }
   }
 
     public void configEngine(Engine me) {
@@ -67,7 +72,7 @@ public class WebosConfig extends JFinalConfig {
         //me.setToClassPathSourceFactory();
     }
     public void configPlugin(Plugins me) {
-   loadPropertyFile("config.properties");
+        loadPropertyFile("config.properties");
       //  me.add(new JwtTokenPlugin(UserService.me));                                /**配置权限拦截插件*/
         int initialSize = getPropertyToInt("initialSize");
         int minIdle = getPropertyToInt("minIdle");
@@ -78,35 +83,29 @@ public class WebosConfig extends JFinalConfig {
         String pw=getProperty("password");
         String driver=getProperty("driver");
         DruidPlugin druidPlugin = new DruidPlugin(url,user, pw,driver);
-
-
         me.add(druidPlugin);
-
         ActiveRecordPlugin arp = new ActiveRecordPlugin(druidPlugin);
-       arp. setContainerFactory(new CaseInsensitiveContainerFactory(true));
-       // arp.getEngine().setToClassPathSourceFactory();
+        arp.setContainerFactory(new CaseInsensitiveContainerFactory(true));
         arp.setShowSql(true);
-        arp.addSqlTemplate("/sql/webos.sql");
-        arp.addSqlTemplate("/sql/oa.sql");
-       // arp.setDialect(new SqlServerDialect());
-       // arp.addMapping("RoleApp", RoleAppDal.class);
-       // arp.setShowSql(getPropertyToBoolean("showSql",true));
-        TableConfig.mapping("com.webcore.modle,com.iworkflow.service.modle",arp);
-
+        String sqltemplate=getProperty("sqltemplate");
+        if (!StringUtil.isBlank(sqltemplate)){
+            String a[]=  sqltemplate.split(",");
+            for (String item:a
+            ) {
+                arp.addSqlTemplate(item);
+            }
+        }
+        arp.setShowSql(getPropertyToBoolean("showSql",false));
+        String modle=getProperty("modle");
+        TableConfig.mapping(modle,arp);
         me.add(new EhCachePlugin());
         me.add(arp);
-        System.out.println(arp.getConfig());
-//        me.add(new SwaggerPlugin(new SwaggerDoc().setBasePath("/").setHost("127.0.0.1:99").setSwagger("2.0")
-//                .setInfo(new SwaggerApiInfo("jfinal swagger demo", "1.0", "jfinal swagger", ""))));
-
-
- 
 
     }
     public void configInterceptor(Interceptors me)
     {
 
-        me.add(new JwtInterceptor()); // 权限拦截器
+        me.add(new Authorization()); // 权限拦截器
     }
 
     public void configHandler(Handlers me) {
@@ -114,23 +113,12 @@ public class WebosConfig extends JFinalConfig {
         me.add(new ContextPathHandler("basePath"));
 
     }
-    public void onStart() {
-        System.out.println("系统启动完成后回调");
 
-//        try{
-//            Ftp f=new Ftp();
-//            f.setIpAddr("112.13.205.40");
-//            f.setUserName("asxsyd92@foxmail.com");
-//            f.setPwd("..642135..");
-//            Common.connectFtp(f);
-////            File file = new File("F:/test/com/test/Testng.java");
-////            Common.upload(file);//把文件上传在ftp上
-////            Common.startDown(f, "e:/",  "/xxtest");//下载ftp文件测试
-////            System.out.println("ok");
-//
-//        }catch (Exception e){
-//            System.out.println(e.getMessage());
-//        }
+    public void onStart() {
+        String fozuStr="IC4uLi4uLi4uLi4uLi4uLi4uLi4uLi53ZWJvcy4uLi4uLi4uLi4uLi4uLi4uLi4uLi4KICAgICAgICAgICAgICAgICAgICAgICBfb28wb29fICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgb293ZWJvc29vICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICA4OCIgLiAiODggICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICh8IC1fLSB8KSAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgMFwgID0gIC8wICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgX19fL+KAmC0tLeKAmVxfX18gICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgIC4nIFx8ICAgICAgIHwvICcuICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAvIFxcfHx8ICA6ICB8fHwvLyBcICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgLyBffHx8fHwgLeWNjS18fHx8fF8gXCAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICB8ICAgfCBcXFwgIC0gIC8vLyB8ICAgfCAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgIHwgXF98ICAnJ1wtLS0vJycgIHxfLyB8ICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgXCAgLi1cX18gICctJyAgX19fLy0uIC8gICAgICAgICAgICAgIAogICAgICAgICAgICAgX19fJy4gLicgIC8tLS4tLVwgICcuIC4nX19fICAgICAgICAgICAgCiAgICAgICAgICAuIiIg4oCYPCAg4oCYLl9fX1xfPHw+Xy9fX18u4oCZID7igJkgIiIuICAgICAgICAgIAogICAgICAgICB8IHwgOiAg4oCYLSBc4oCYLjvigJhcIF8gL+KAmTsu4oCZLyAtIOKAmSA6IHwgfCAgICAgICAgCiAgICAgICAgIFwgIFwg4oCYXy4gICBcXyBfX1wgL19fIF8vICAgLi3igJkgLyAgLyAgICAgICAgCiAgICAgPT09PT3igJgtLl9fX1/igJguX19fIFxfX19fXy9fX18uLeKAmV9fXy4t4oCZPT09PT0gICAgIAogICAgICAgICAgICAgICAgICAgICAgIOKAmD0tLS094oCZICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLnYxLjUuLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4=";
+        byte[] decode = Base64.decode(String.valueOf(fozuStr.toCharArray()));
+        System.out.print("\n"+new String(decode));
+        System.out.print("\n");
 
     }
 

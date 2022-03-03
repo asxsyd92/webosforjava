@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.lang.reflect.Method;
 
-public class JwtInterceptor implements Interceptor {
+public class Authorization implements Interceptor {
 
 
 

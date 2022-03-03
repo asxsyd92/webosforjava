@@ -5,7 +5,7 @@ import com.jfinal.aop.Inject;
 import com.jfinal.core.Path;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.kit.PropKit;
-import com.security.JwtInterceptor;
+import com.security.Authorization;
 import com.webcore.service.LogService;
 import com.webcore.service.TaskService;
 import com.jfinal.aop.Before;
@@ -27,7 +27,7 @@ import java.util.Date;
 
 import java.util.List;
 
-@Before({ POST.class, JwtInterceptor.class})
+@Before({ POST.class, Authorization.class})
 @Path("/api/tasks")
 public class TasksController  extends Controller {
     @Inject

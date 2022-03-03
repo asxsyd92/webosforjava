@@ -3,8 +3,10 @@ package com.webos.controllers.applets;
 import com.alibaba.fastjson.JSON;
 import com.asxsydutils.utils.HttpHelper;
 import com.asxsydutils.utils.*;
+import com.jfinal.aop.Inject;
 import com.jfinal.core.Path;
 
+import com.mailservice.MailUtils;
 import com.security.AuthResult;
 import com.security.JwtUtils;
 import com.webcore.service.UsersIntegralService;
@@ -26,6 +28,7 @@ import java.util.*;
 @Path("/api/applets")
 @Clear
 public class AppletsController extends Controller {
+
     public void getUserWXLoginInfo() {
         try {
             String code = getPara("code");

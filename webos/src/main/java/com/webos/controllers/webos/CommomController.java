@@ -4,7 +4,10 @@ import com.alibaba.fastjson.JSON;
 
 import com.asxsydutils.utils.JosnUtils;
 import com.asxsydutils.utils.StringUtil;
+import com.asxsydutils.utils.WebosResponse;
 import com.jfinal.aop.Before;
+import com.jfinal.aop.Clear;
+import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
 import com.jfinal.core.Path;
 import com.jfinal.ext.interceptor.GET;
@@ -14,7 +17,8 @@ import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 
-import com.security.JwtInterceptor;
+import com.mailservice.impl.MailImpl;
+import com.security.Authorization;
 import com.webcore.modle.Dictionary;
 import com.webcore.service.CommomService;
 import com.webcore.service.DictionaryService;
@@ -23,17 +27,18 @@ import com.webcore.utils.data.mysqlserver.FromData;
 import io.jsonwebtoken.Claims;
 
 import java.util.Map;
-@Before({JwtInterceptor.class})
+@Before({Authorization.class})
 @Path("/api/common")
 public class CommomController extends Controller {
-
+    @Inject
+    MailImpl mailUtils;
     /// <summary>
     /// 公共单表保存
     /// </summary>
     /// <param name="tab"></param>
     /// <param name="data"></param>
     /// <returns></returns>
-    @Before({JwtInterceptor.class, POST.class})
+    @Before({Authorization.class, POST.class})
     public void save()
     {
         String tab= getPara("tab");
@@ -142,5 +147,16 @@ public class CommomController extends Controller {
 
         renderJson();
 
+    }
+@Clear
+    public void test(){
+        try{
+            System.out.print(11);
+         WebosResponse response= mailUtils.SendMessage("asxsyd92@foxmail.com","rlubbveonexoheaa","asxsyd92@foxmail.com","asxsyd92@foxmail.com","邮件测试","这是webos发出的邮件");
+            setAttr("mgs",response);
+        }catch (Exception ex){
+            setAttr("erroe",ex.getMessage());
+        }
+renderJson();
     }
 }

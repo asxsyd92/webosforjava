@@ -9,7 +9,7 @@ import com.jfinal.core.Path;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
-import com.security.JwtInterceptor;
+import com.security.Authorization;
 import com.webcore.modle.Dictionarys;
 import com.webcore.modle.Dictionary;
 import com.webcore.service.DictionaryService;
@@ -18,7 +18,7 @@ import com.asxsydutils.utils.Common;
 import io.jsonwebtoken.Claims;
 
 @Path("/api/dictionary")
-@Before({ POST.class, JwtInterceptor.class})
+@Before({ POST.class, Authorization.class})
 
 public class DictionaryController  extends Controller {
     @Inject

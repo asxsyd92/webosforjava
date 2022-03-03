@@ -7,13 +7,13 @@ import com.jfinal.core.Path;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.kit.Kv;
 import com.jfinal.plugin.activerecord.Page;
-import com.security.JwtInterceptor;
+import com.security.Authorization;
 import com.webcore.modle.Log;
 import com.webcore.service.LogService;
 
 import java.util.Date;
 @Path("/api/log")
-@Before({ POST.class, JwtInterceptor.class})
+@Before({ POST.class, Authorization.class})
 public class LogControllers extends Controller {
     @Inject
     LogService logService;

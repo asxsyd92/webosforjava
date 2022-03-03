@@ -12,12 +12,12 @@ import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.ehcache.CacheKit;
 import com.iworkflow.service.modle.Workflow;
 import com.iworkflow.service.oa.WorkflowService;
-import com.security.JwtInterceptor;
+import com.security.Authorization;
 import io.jsonwebtoken.Claims;
 
 import java.util.List;
 @Path("/api/workflow")
-@Before({ POST.class, JwtInterceptor.class})
+@Before({ POST.class, Authorization.class})
 public class WorkFlowController extends Controller {
     public void WorkFlowList() {
         try {

@@ -10,8 +10,7 @@ import com.jfinal.aop.Inject;
 import com.jfinal.core.Path;
 import com.jfinal.kit.Kv;
 import com.jfinal.plugin.ehcache.CacheKit;
-import com.security.Authentication;
-import com.security.JwtInterceptor;
+import com.security.Authorization;
 import com.webcore.modle.*;
 import com.webcore.service.ImService;
 import com.webcore.service.LogService;
@@ -45,7 +44,7 @@ public class UsersControllers extends Controller {
     UsersService usersService;
 @Inject
     ImService imService;
-    @Before({ POST.class, JwtInterceptor.class})
+    @Before({ POST.class, Authorization.class})
 
     public void GetAppList() {
         try {

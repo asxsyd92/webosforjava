@@ -3,270 +3,74 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="AutomaticModuleUnloader">
+    <loaded-modules>
+      <module name="swagger" />
+      <module name="asxsydutils" />
+      <module name="webos" />
+      <module name="webcore" />
+      <module name="authservice" />
+      <module name="ctdisk" />
+      <module name="iworkflow" />
+    </loaded-modules>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="11a8433d-5ee7-443e-a212-b3eb8b245452" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/asxsydutils/src/main/java/com/asxsydutils/utils/WebosResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/annotation/Table.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/config/LoginUsers.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/config/TableConfig$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/config/TableConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/Common.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/WebosResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authservice/authservice.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log_2022-02-22.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log_2022-02-23.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ctdisk_war.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ctdisk_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/webos_war.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailservice/mailservice.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailservice/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailservice/src/main/java/com/mailservice/MailUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailservice/src/main/java/com/mailservice/impl/MailImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portalsite/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portalsite/portalsite.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/webos_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/webos_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_asxsyd92_authenticationservice_1_0_SNAPSHOT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_asxsyd92_utils_utils_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/asxsydutils.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/swagger.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/webcore.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webos.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/asxsydutils/asxsydutils.iml" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/asxsydutils.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asxsydutils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asxsydutils/target/asxsydutils-1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asxsydutils/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asxsydutils/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asxsydutils/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/src/main/java/com/security/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/authservice/src/main/java/com/security/Authentication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/src/main/java/com/security/JwtInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/authservice/src/main/java/com/security/JwtInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/target/authenticationservice-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/authservice/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/authservice/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ctdisk/ctdisk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ctdisk/ctdisk.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ctdisk/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ctdisk/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asxsydutils/src/main/java/com/asxsydutils/config/TableConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/src/main/java/com/asxsydutils/config/TableConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/config/TableConfig$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/config/TableConfig$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/config/TableConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/config/TableConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authservice/authservice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/authservice/authservice.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authservice/src/main/java/com/security/JwtInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/authservice/src/main/java/com/security/Authorization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authservice/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/authservice/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ctdisk/src/main/java/com/ctdisk/controllers/CtdiskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ctdisk/src/main/java/com/ctdisk/controllers/CtdiskController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/iworkflow/iworkflow.iml" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/iworkflow.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iworkflow/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/WorkFlowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/WorkFlowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/WorkFlowTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/WorkFlowTaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/WorkflowbuttonsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/WorkflowbuttonsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swagger/swagger.iml" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/swagger.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/.gitee/ISSUE_TEMPLATE.zh-CN.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/.gitee/PULL_REQUEST_TEMPLATE.zh-CN.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/annotation/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/src/main/java/com/asxsydutils/annotation/Table.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/config/LoginUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/src/main/java/com/asxsydutils/config/LoginUsers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/config/TableConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/src/main/java/com/asxsydutils/config/TableConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/CommonTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/CommonTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Dictionary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Dictionarys.java" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Dictionarys.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Friendrelationship.java" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Friendrelationship.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Grouprelationship.java" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Grouprelationship.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Organize.java" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Organize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/RoleApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/RoleApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Sysfriend.java" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Sysfriend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Sysgroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Sysgroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Sysim.java" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Sysim.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/WorkFlowArchives.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/modle/WorkFlowArchives.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/WorkFlowTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/modle/WorkFlowTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/WorkGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/modle/WorkGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/modle/Workflow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Workflowbuttons.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/modle/Workflowbuttons.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/xRoleApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/xRoleApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/oa/task/EnumType.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/task/EnumType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/oa/task/Execute.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/task/Execute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/oa/task/Params.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/task/Params.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/oa/task/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/task/Query.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/oa/task/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/task/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/oa/workflow/Behavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/workflow/Behavior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/oa/workflow/Buttons.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/workflow/Buttons.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/oa/workflow/Databases.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/workflow/Databases.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/oa/workflow/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/workflow/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/oa/workflow/FieldStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/workflow/FieldStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/oa/workflow/Forms.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/workflow/Forms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/oa/workflow/Lines.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/workflow/Lines.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/oa/workflow/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/workflow/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/oa/workflow/RunJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/workflow/RunJson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/oa/workflow/RunModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/workflow/RunModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/oa/workflow/Steps.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/workflow/Steps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/oa/workflow/TitleField.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/workflow/TitleField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/oa/workflow/WorkFlowCustomEventParams.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/workflow/WorkFlowCustomEventParams.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/service/OrganizeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/service/OrganizeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/service/WorkFlowTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/WorkFlowTaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/service/WorkflowService.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/WorkflowService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/service/WorkflowbuttonsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/WorkflowbuttonsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/resources/sql/oa.sql" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/resources/sql/oa.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/resources/sql/oa/workflow.sql" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/resources/sql/oa/workflow.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/resources/sql/oa/workflowtask.sql" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/resources/sql/oa/workflowtask.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/annotation/Table.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/config/LoginUsers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/config/TableConfig$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/config/TableConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/CommonTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/CommonTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Dictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Dictionary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Dictionarys.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Dictionarys.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Friendrelationship.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Friendrelationship.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Grouprelationship.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Grouprelationship.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Log.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Log.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Organize.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Organize.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/RoleApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/RoleApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Sysfriend.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Sysfriend.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Sysgroup.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Sysgroup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Sysim.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Sysim.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Users.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/WorkFlowArchives.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/WorkFlowTask.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/WorkGroup.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Workflow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Workflowbuttons.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/xRoleApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/xRoleApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/task/EnumType$ExecuteType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/task/EnumType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/task/Execute.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/task/Params.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/task/Query.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/task/Result.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Behavior.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Buttons.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Databases.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Event.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/FieldStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Forms.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Lines.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Position.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/RunJson.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/RunModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/Steps.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/TitleField.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/oa/workflow/WorkFlowCustomEventParams.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/OrganizeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/OrganizeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/WorkFlowTaskService$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/WorkFlowTaskService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/WorkflowService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/WorkflowbuttonsService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/sql/oa.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/sql/oa/workflow.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/sql/oa/workflowtask.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/webcore-1.3.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/webcore/webcore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/webcore.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.gradle/6.7/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.gradle/6.7/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.gradle/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.gradle/configuration-cache/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/artifacts/asxsydutils_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/artifacts/swagger_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/artifacts/webcore_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/artifacts/webos_war.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/artifacts/webos_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__asm_asm_3_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__cglib_cglib_2_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_alibaba_druid_1_0_23.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_alibaba_fastjson_1_2_68.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_auth0_java_jwt_3_3_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_google_guava_failureaccess_1_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_google_guava_guava_30_1_1_jre.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_6_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_jfinal_jfinal_4_9_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_jfinal_jfinal_undertow_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_microsoft_sqlserver_sqljdbc4_4_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_4_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_squareup_okio_okio_2_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_sun_xml_bind_jaxb_core_2_3_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_sun_xml_bind_jaxb_impl_2_3_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_taobao_api_taobao_sdk_java_auto_1564051214605_20201229.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_thetransactioncompany_cors_filter_2_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__com_thetransactioncompany_java_property_utils_1_9_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__commons_codec_commons_codec_1_15.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__commons_codec_commons_codec_1_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__commons_io_commons_io_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_9_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__io_undertow_undertow_core_2_0_32_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__io_undertow_undertow_servlet_2_0_32_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__io_undertow_undertow_websockets_jsr_2_1_3_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__javax_activation_activation_1_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__javax_servlet_javax_servlet_api_4_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__junit_junit_4_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__log4j_log4j_1_2_16.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__net_sf_ehcache_ehcache_core_2_6_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_3_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__org_apache_directory_studio_org_apache_commons_codec_1_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__org_apache_tomcat_tomcat_websocket_api_7_0_47.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__org_checkerframework_checker_qual_3_8_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__org_ehcache_ehcache_3_5_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_0_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__org_jboss_spec_javax_websocket_jboss_websocket_api_1_1_spec_2_0_0_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__org_jboss_xnio_xnio_api_3_3_8_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__org_jboss_xnio_xnio_nio_3_3_8_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__org_jetbrains_annotations_13_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_1_3_72.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_70.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__org_json_org_json_chargebee_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__org_jsoup_jsoup_1_14_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/asxsydutils.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/swagger.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/libraries/webcore.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/hs_err_pid30000.log" beforeDir="false" afterPath="$PROJECT_DIR$/webos/hs_err_pid30000.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log" beforeDir="false" afterPath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log_2021-12-11.log" beforeDir="false" afterPath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log_2021-12-11.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log_2021-12-12.log" beforeDir="false" afterPath="$PROJECT_DIR$/webos/log/jfinal_demo_for_maven.log_2021-12-12.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/webos/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/WebosConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/WebosConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/src/main/java/com/asxsydutils/utils/Common.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/WebosConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/WebosConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/HomeController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/applets/AppletsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/applets/AppletsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/oa/WorkFlowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/WorkFlowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/oa/WorkFlowTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/WorkFlowTaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/oa/WorkflowbuttonsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/WorkflowbuttonsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/portalsite/PortalSiteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/portalsite/PortalSiteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/portalsite/HtmlController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/portalsite/PortalSiteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/portalsite/src/main/java/com/portalsite/controllers/PortalSiteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/CommomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/CommomController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/DictionaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/DictionaryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/FormControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/FormControllers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/FormDesignController.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/FormDesignController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/LogControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/LogControllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/LoginControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/LoginControllers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/OrganizeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/OrganizeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/TasksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/TasksController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/UsersControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/UsersControllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/webapp/web/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/start.bat" beforeDir="false" afterPath="$PROJECT_DIR$/webos/start.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/resources/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webos/start.sh" beforeDir="false" afterPath="$PROJECT_DIR$/webos/start.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webos/stop.sh" beforeDir="false" afterPath="$PROJECT_DIR$/webos/stop.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webos/webos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/webos/webos.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -293,11 +97,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../webos" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mailservice/src/main/java/portalsite/controllers" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15136719" />
     <property name="project.structure.side.proportion" value="0.665066" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Work\webosforjava\webos\mailservice\src\main\java\portalsite\controllers" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="WebosConfig" type="Application" factoryName="Application">
@@ -339,11 +149,74 @@
       <option name="presentableId" value="Default" />
       <updated>1646185070859</updated>
       <workItem from="1646185083733" duration="290000" />
-      <workItem from="1646185423964" duration="1838000" />
+      <workItem from="1646185423964" duration="2318000" />
+      <workItem from="1646195732366" duration="11600000" />
+      <workItem from="1646271876439" duration="10481000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/applets/AppletsController.java</url>
+          <line>387</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/CommomController.java</url>
+          <line>154</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/CommomController.java</url>
+          <line>152</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/CommomController.java</url>
+          <line>156</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/CommomController.java</url>
+          <line>153</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/CommomController.java</url>
+          <line>155</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mailservice/src/main/java/com/mailservice/impl/MailImpl.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mailservice/src/main/java/com/mailservice/impl/MailImpl.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mailservice/src/main/java/com/mailservice/impl/MailImpl.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mailservice/src/main/java/com/mailservice/impl/MailImpl.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mailservice/src/main/java/com/mailservice/impl/MailImpl.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

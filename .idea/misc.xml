@@ -13,6 +13,8 @@
         <option value="$PROJECT_DIR$/iworkflow/pom.xml" />
         <option value="$PROJECT_DIR$/asxsydutils/pom.xml" />
         <option value="$PROJECT_DIR$/authservice/pom.xml" />
+        <option value="$PROJECT_DIR$/mailservice/pom.xml" />
+        <option value="$PROJECT_DIR$/portalsite/pom.xml" />
       </list>
     </option>
   </component>

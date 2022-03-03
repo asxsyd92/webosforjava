@@ -24,7 +24,7 @@ import com.iworkflow.service.oa.WorkFlowTaskService;
 import com.iworkflow.service.oa.WorkflowService;
 import com.iworkflow.service.oa.task.Query;
 import com.iworkflow.service.oa.task.Result;
-import com.security.JwtInterceptor;
+import com.security.Authorization;
 import io.jsonwebtoken.Claims;
 import kotlin.collections.ArrayDeque;
 import java.util.Date;
@@ -35,7 +35,7 @@ import java.util.stream.Collectors;
 
 
 @Path("/api/workflowtasks")
-@Before({ POST.class, JwtInterceptor.class})
+@Before({ POST.class, Authorization.class})
 public class WorkFlowTaskController extends Controller {
     @Inject
     WorkFlowTaskService workFlowTaskService;

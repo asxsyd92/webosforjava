@@ -13,13 +13,13 @@ import com.jfinal.ext.interceptor.POST;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.ehcache.CacheKit;
-import com.security.JwtInterceptor;
+import com.security.Authorization;
 
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 @Path("/api/ctdisk")
-@Before({ POST.class, JwtInterceptor.class})
+@Before({ POST.class})
 public class CtdiskController extends Controller {
 
     @NotAction

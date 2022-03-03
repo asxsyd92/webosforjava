@@ -1,21 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
 
     <groupId>com.asxsyd92</groupId>
     <artifactId>webos</artifactId>
     <version>1.5</version>
+    <packaging>jar</packaging>
 
+
+    <name>webos</name>
+
+    <url>https://asxsyd92.com</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+    </properties>
+
+    <!-- 使用阿里 maven 库 -->
     <repositories>
-<!--        <repository>-->
-<!--            <id>com.e-iceblue</id>-->
-<!--            <name>e-iceblue</name>-->
-<!--            <url>http://repo.e-iceblue.com/nexus/content/groups/public/</url>-->
-<!--        </repository>-->
-
+        <repository>
+            <id>ali-maven</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+        </repository>
     </repositories>
+
+    <!-- 添加快照版本库,updatePolicy: always、daily、interval、never -->
+    <!-- repositories>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Sonatype Nexus Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories -->
+
     <dependencies>
         <dependency>
             <groupId>commons-logging</groupId>
@@ -23,11 +58,7 @@
             <version>1.2</version>
         </dependency>
 
-     <dependency>
-            <groupId>com.taobao.api</groupId>
-            <artifactId>taobao-sdk-java-auto</artifactId>
-            <version>1564051214605.20201229</version>
-        </dependency>
+
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
@@ -85,6 +116,17 @@
         <dependency>
             <groupId>com.asxsyd92</groupId>
             <artifactId>iworkflow</artifactId>
+            <version>1.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asxsyd92</groupId>
+            <artifactId>portalsite</artifactId>
+            <version>1.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asxsyd92</groupId>
+            <artifactId>mailservice</artifactId>
             <version>1.5</version>
         </dependency>
         <dependency>
@@ -206,144 +248,116 @@
 
         </dependency>
 
-<!--        jfinal实现webService-->
-<!--        <dependency>-->
-<!--            <groupId>com.sun.xml.ws</groupId>-->
-<!--            <artifactId>jaxws-rt</artifactId>-->
-<!--            <version>2.2.8</version>-->
-<!--        </dependency>-->
+        <!--        jfinal实现webService-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.sun.xml.ws</groupId>-->
+        <!--            <artifactId>jaxws-rt</artifactId>-->
+        <!--            <version>2.2.8</version>-->
+        <!--        </dependency>-->
 
     </dependencies>
 
-    <packaging>war</packaging>
-
-    <name>webos Maven Webapp</name>
-
-    <url>http://www.example.com</url>
-
-    <properties>
-
-
-
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <jfinal.jetty.version>8.1.8</jfinal.jetty.version>
-
-    </properties>
-
-
-
     <build>
-        <finalName>webos</finalName>
-        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-            <plugins>
-                <!-- 合并多个war -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <configuration>
-                        <failOnMissingWebXml>false</failOnMissingWebXml>
-                        <overlays>
-<!--                            <overlay>-->
-<!--                                <groupId>com.asxsyd92</groupId>-->
-<!--                                <artifactId>ctdisk</artifactId>-->
-<!--                            </overlay>-->
-
-                        </overlays>
 
 
+        <!--
+            添加 includes 配置后，excludes 默认为所有文件 **/*.*，反之亦然
+            该规则在 maven-jar-plugin 等插件中同样适用
+        -->
+        <resources>
+            <!-- 添加该配置是为了将 .sql 文件打入 jar 包 -->
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <!-- **/* 前缀用法，可以匹配所有路径 -->
+                    <include>**/*.sql</include>
+                </includes>
+            </resource>
 
-                    </configuration>
-                </plugin>
-<!--                <plugin>-->
-<!--                    <artifactId>maven-jar-plugin</artifactId>-->
-<!--                    <executions>-->
-<!--                        <execution>-->
-<!--                            <id>service</id>-->
-<!--                            <phase>compile</phase>-->
-<!--                            <goals>-->
-<!--                                <goal>jar</goal>-->
-<!--                            </goals>-->
-<!--                            <configuration>-->
-<!--                                <classifier>service</classifier>-->
-<!--                                <includes>-->
-<!--                                    <include>**/com/ctdisk/</include>-->
-
-<!--                                </includes>-->
-<!--                            </configuration>-->
-<!--                        </execution>-->
-<!--                    </executions>-->
-<!--                </plugin>-->
-                <plugin>
-                    <artifactId>maven-clean-plugin</artifactId>
-                    <version>3.1.0</version>
-                </plugin>
-                <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
-                <plugin>
-                    <artifactId>maven-resources-plugin</artifactId>
-                    <version>3.0.2</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.0</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.22.1</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <version>3.2.2</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-jar-plugin</artifactId>
-                    <version>2.6</version>
-                    <configuration>
-                        <excludes>
-                            <!--
-                                *.* 用法，可以匹配 jar 包根目录下所有文件
-                                *.xxx 用法，可以匹配 jar 包根目录下特定扩展名文件，例如：*.xml
-                                **/* 前缀用法，可以匹配所有路径，例如：**/*.txt
-                            -->
-                            <exclude>*.*</exclude>
-                        </excludes>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-assembly-plugin</artifactId>
-                    <version>3.1.0</version>
-                    <executions>
-                        <execution>
-                            <id>make-assembly</id>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>single</goal>
-                            </goals>
-
-                            <configuration>
-                                <!-- 打包生成的文件名 -->
-                                <finalName>${project.artifactId}</finalName>
-                                <!-- jar 等压缩文件在被打包进入 zip、tar.gz 时是否压缩，设置为 false 可加快打包速度 -->
-                                <recompressZippedFiles>false</recompressZippedFiles>
-                                <!-- 打包生成的文件是否要追加 release.xml 中定义的 id 值 -->
-                                <appendAssemblyId>true</appendAssemblyId>
-                                <!-- 指向打包描述文件 package.xml -->
-                                <descriptors>
-                                    <descriptor>package.xml</descriptor>
-                                </descriptors>
-                                <!-- 打包结果输出的基础目录 -->
-                                <outputDirectory>${project.build.directory}/</outputDirectory>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
-            </plugins>
+            <!--
+                没有添加 resources 配置时，src/main/resources 目录是默认配置
+                一旦添加 resources 配置指向 src/main/java 目录时，原先的默认配置被取代，
+                所以需要添加如下配置将默认配置再添加进来，否则无法使用 src/main/resources
+                下的资源文件
+            -->
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
 
 
-        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                    <!-- java8 保留参数名编译参数 -->
+                    <compilerArgument>-parameters</compilerArgument>
+                    <compilerArguments><verbose /></compilerArguments>
+                </configuration>
+            </plugin>
+
+            <!--
+                jar 包中的配置文件优先级高于 config 目录下的 "同名文件"
+                因此，打包时需要排除掉 jar 包中来自 src/main/resources 目录的
+                配置文件，否则部署时 config 目录中的同名配置文件不会生效
+             -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <excludes>
+                        <!--
+                             *.* 用法，可以匹配 jar 包根目录下所有文件
+                             *.xxx 用法，可以匹配 jar 包根目录下特定扩展名文件，例如：*.xml
+                             **/* 前缀用法，可以匹配所有路径，例如：**/*.txt
+                        -->
+                        <exclude>*.*</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+            <!--
+                使用 mvn clean package 打包
+                更多配置可参考官方文档：http://maven.apache.org/plugins/maven-assembly-plugin/single-mojo.html
+             -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+
+                        <configuration>
+                            <!-- 打包生成的文件名 -->
+                            <finalName>${project.artifactId}</finalName>
+                            <!-- jar 等压缩文件在被打包进入 zip、tar.gz 时是否压缩，设置为 false 可加快打包速度 -->
+                            <recompressZippedFiles>false</recompressZippedFiles>
+                            <!-- 打包生成的文件是否要追加 package.xml 中定义的 id 值 -->
+                            <appendAssemblyId>true</appendAssemblyId>
+                            <!-- 指向打包描述文件 package.xml -->
+                            <descriptors>
+                                <descriptor>package.xml</descriptor>
+                            </descriptors>
+                            <!-- 打包结果输出的基础目录 -->
+                            <outputDirectory>${project.build.directory}/</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
     </build>
+
 </project>

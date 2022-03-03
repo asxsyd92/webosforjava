@@ -8,11 +8,11 @@ import com.jfinal.core.Controller;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.plugin.activerecord.Record;
 import com.iworkflow.service.oa.WorkflowbuttonsService;
-import com.security.JwtInterceptor;
+import com.security.Authorization;
 
 
 @Path("/api/workflowbuttons")
-@Before({ POST.class, JwtInterceptor.class})
+@Before({ POST.class, Authorization.class})
 public class WorkflowbuttonsController extends Controller {
     //获取按钮
     public  void  ButtonByoa(){
