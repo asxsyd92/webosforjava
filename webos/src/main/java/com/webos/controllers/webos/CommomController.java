@@ -152,7 +152,7 @@ public class CommomController extends Controller {
     public void test(){
         try{
             System.out.print(11);
-         WebosResponse response= mailUtils.SendMessage("asxsyd92@foxmail.com","rlubbveonexoheaa","asxsyd92@foxmail.com","asxsyd92@foxmail.com","邮件测试","这是webos发出的邮件");
+         WebosResponse response= mailUtils.SendMessage("**","rlubbveonexoheaa","**","**","邮件测试","这是webos发出的邮件");
             setAttr("mgs",response);
         }catch (Exception ex){
             setAttr("erroe",ex.getMessage());
