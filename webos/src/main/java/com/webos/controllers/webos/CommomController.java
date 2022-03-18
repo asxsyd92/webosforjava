@@ -1,10 +1,8 @@
 package com.webos.controllers.webos;
 
 import com.alibaba.fastjson.JSON;
-
 import com.asxsydutils.utils.JosnUtils;
 import com.asxsydutils.utils.StringUtil;
-import com.asxsydutils.utils.WebosResponse;
 import com.jfinal.aop.Before;
 import com.jfinal.aop.Clear;
 import com.jfinal.aop.Inject;
@@ -25,7 +23,10 @@ import com.webcore.service.DictionaryService;
 import com.webcore.utils.Unity;
 import com.webcore.utils.data.mysqlserver.FromData;
 import io.jsonwebtoken.Claims;
-
+import org.checkerframework.framework.qual.DefaultQualifier;
+import org.ehcache.xml.model.TimeUnit;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.Map;
 @Before({Authorization.class})
 @Path("/api/common")
@@ -150,13 +151,42 @@ public class CommomController extends Controller {
     }
 @Clear
     public void test(){
-        try{
-            System.out.print(11);
-         WebosResponse response= mailUtils.SendMessage("**","rlubbveonexoheaa","**","**","邮件测试","这是webos发出的邮件");
-            setAttr("mgs",response);
-        }catch (Exception ex){
-            setAttr("erroe",ex.getMessage());
+
+    try{
+
+      java.util.  List<Record> recordList= Db.find("select * from seo ");
+        for (Record item:recordList
+             ) {
+            try {
+                System.setProperty("webdriver.chrome.driver", "d:\\chromedriver.exe");
+                WebDriver driver = new ChromeDriver();
+                driver.get(item.getStr("url").replace("asxsyd92.com", "127.0.0.1"));
+                driver.manage().timeouts().pageLoadTimeout(1000 * 60, java.util.concurrent.TimeUnit.SECONDS);
+                String html_source = driver.getPageSource();
+                System.out.print(html_source);
+                Record record = Db.findById("seo", "url", item.getStr("url"));
+                if (record == null) {
+                    Record r = new Record();
+                    r.set("id", StringUtil.getPrimaryKey());
+                    r.set("url", item.getStr("url"));
+                    r.set("html", html_source.replace("127.0.0.1", "asxsyd92.com"));
+                    System.out.print(r.getStr("html"));
+                    Db.save("seo", r);
+                } else {
+                    record.set("html", html_source);
+                    Db.update("seo", record);
+                }
+                driver.close();
+            }catch (Exception ex){}
         }
-renderJson();
+
+        setAttr("mgs","操作成功");
+    }catch (Exception ex){
+
+        setAttr("erroe",ex.getMessage());
     }
+    renderJson();
+    }
+
+
 }

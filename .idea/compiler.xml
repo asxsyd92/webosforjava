@@ -7,12 +7,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="webcore" />
+        <module name="quartzservice" />
         <module name="webos" />
         <module name="iworkflow" />
         <module name="authservice" />
         <module name="mailservice" />
         <module name="asxsydutils" />
         <module name="portalsite" />
+        <module name="vueseo" />
+        <module name="seoservice" />
         <module name="swagger" />
         <module name="ctdisk" />
       </profile>
@@ -24,13 +27,18 @@
       <module name="iworkflow" target="1.8" />
       <module name="mailservice" target="1.8" />
       <module name="portalsite" target="8" />
+      <module name="quartzservice" target="1.5" />
+      <module name="seoservice" target="1.8" />
       <module name="swagger" target="8" />
+      <module name="vueseo" target="1.8" />
       <module name="webcore" target="1.8" />
       <module name="webos" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="seoservice" options="-verbose -parameters" />
+      <module name="vueseo" options="-verbose -parameters" />
       <module name="webos" options="-verbose -parameters" />
     </option>
   </component>

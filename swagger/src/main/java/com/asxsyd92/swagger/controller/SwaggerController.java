@@ -10,7 +10,6 @@ import com.asxsyd92.swagger.model.SwaggerDoc;
 import com.asxsyd92.swagger.model.SwaggerGlobalPara;
 import com.asxsyd92.swagger.model.SwaggerPath;
 import com.asxsyd92.swagger.utils.ClassHelper;
-import com.google.common.collect.Maps;
 import com.jfinal.aop.Clear;
 import com.jfinal.core.Controller;
 
@@ -36,7 +35,7 @@ public class SwaggerController extends Controller {
     public void api() {
         SwaggerDoc doc = new SwaggerDoc();
         Map<String, Map<String, SwaggerPath.ApiMethod>> paths = new HashMap<>();
-        Map<String, String> classMap = Maps.newHashMap();
+        Map<String, String> classMap = new HashMap();
         Set<Class<?>> classSet = ClassHelper.getBeanClassSet();
         for (Class<?> cls : classSet) {
             if (cls.isAnnotationPresent(Api.class)) {

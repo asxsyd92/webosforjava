@@ -8,7 +8,10 @@
       <module fileurl="file://$PROJECT_DIR$/iworkflow/iworkflow.iml" filepath="$PROJECT_DIR$/iworkflow/iworkflow.iml" />
       <module fileurl="file://$PROJECT_DIR$/mailservice/mailservice.iml" filepath="$PROJECT_DIR$/mailservice/mailservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/portalsite/portalsite.iml" filepath="$PROJECT_DIR$/portalsite/portalsite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quartzservice/quartzservice.iml" filepath="$PROJECT_DIR$/quartzservice/quartzservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seoservice/seoservice.iml" filepath="$PROJECT_DIR$/seoservice/seoservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/swagger/swagger.iml" filepath="$PROJECT_DIR$/swagger/swagger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vueseo/vueseo.iml" filepath="$PROJECT_DIR$/vueseo/vueseo.iml" />
       <module fileurl="file://$PROJECT_DIR$/webcore/webcore.iml" filepath="$PROJECT_DIR$/webcore/webcore.iml" />
       <module fileurl="file://$PROJECT_DIR$/webos/webos.iml" filepath="$PROJECT_DIR$/webos/webos.iml" />
     </modules>

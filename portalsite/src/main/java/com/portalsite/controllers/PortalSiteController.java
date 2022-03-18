@@ -18,10 +18,13 @@ import com.taobao.api.response.TbkDgMaterialOptionalResponse;
 import com.webcore.service.CommomService;
 import com.webcore.service.TaoBaoService;
 import com.webcore.utils.data.mysqlserver.FromData;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 @Path ("/api/portalsite")
 @Clear
@@ -68,7 +71,7 @@ public class PortalSiteController extends Controller {
             List<Record>  index=  Db.findByCache(id,"getsiteindex",sql);
 
         setAttr("data",   index);
-        setAttr("Success", true);
+        setAttr("success", true);
         renderJson();
     }
 
@@ -103,7 +106,7 @@ public class PortalSiteController extends Controller {
 
     renderJson();
     }
-public  void getTaoBao(){
+   public  void getTaoBao(){
         try
         {
     List<Record> da = Db.find("select  *from t_map_dataitem order by rand() desc LIMIT 10");
@@ -177,6 +180,7 @@ if (title==null){
        setAttr("msg","获取成功");
        setAttr("count", total_results);
        setAttr("data", dsa);
+       setAttr("success", true);
    }else {
        setAttr("code", 0);
        setAttr("msg","无结果");
@@ -193,7 +197,7 @@ if (title==null){
         }
         renderJson();
     }
-public  void  getDownload(){
+    public  void  getDownload(){
     try
     {
         String title = getPara("title");
@@ -236,8 +240,7 @@ public  void  getDownload(){
         renderJson();
 
     }
-
-public  void  setHot(){
+    public  void  setHot(){
     try
     {
         String id = getPara("id");
@@ -262,6 +265,60 @@ public  void  setHot(){
         setAttr("msg", ex.getMessage());
         setAttr("count", 1);
         setAttr("data", null);
+    }
+    renderJson();
+}
+
+public  void  seo(){
+    try {
+        String url = getPara("url");
+       Thread t= new Thread(
+               new Runnable() {
+                   @Override
+                   public void run() {
+                       try {
+                       System.setProperty("webdriver.chrome.driver", "d:\\chromedriver.exe");
+                       WebDriver driver = new ChromeDriver();
+                       driver.get(url);
+                       driver.manage().timeouts().pageLoadTimeout(1000 * 60, TimeUnit.SECONDS);
+                       //休眠10分钟后
+                       Thread.sleep(1000*60);
+                       String html_source = driver.getPageSource();
+
+                       Record r = Db.findById("seo", "url", url);
+                       if (r == null) {
+                           Record rr = new Record();
+                           rr.set("id", StringUtil.getPrimaryKey());
+                           rr.set("url", url);
+                           rr.set("html", html_source);
+                           Db.save("seo", rr);
+                       } else {
+                           r.set("html", html_source);
+                           Db.update("seo", r);
+                       }
+                       driver.quit();
+                       //结束当前线程
+                       Thread.currentThread().interrupt();
+                       }catch (Exception ex){
+                           System.out.print(ex.getMessage());
+                       }
+                   }
+               }
+       );
+       t.start();
+
+
+        setAttr("code", 0);
+        setAttr("msg", "推送成功");
+        setAttr("count", 1);
+        setAttr("data", null);
+        setAttr("success", true);
+    }catch (Exception ex){
+        setAttr("code", 0);
+        setAttr("msg", ex.getMessage());
+        setAttr("count", 1);
+        setAttr("data", null);
+
     }
     renderJson();
 }

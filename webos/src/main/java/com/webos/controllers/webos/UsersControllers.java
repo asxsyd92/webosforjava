@@ -35,6 +35,7 @@ import static com.asxsydutils.utils.MD5.MD5_32bit;
 @Api(tag = "Users", description = "用户控制器")
 
 @Path("/api/users")
+@Before({POST.class,Authorization.class})
 public class UsersControllers extends Controller {
     @Inject
     LogService logService;

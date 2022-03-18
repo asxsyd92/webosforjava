@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="ehcache.xsd"
+         updateCheck="false" monitoring="autodetect"
+         dynamicConfig="true">
+
+    <diskStore path="java.io.tmpdir"/>
+
+    <defaultCache
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="120"
+            timeToLiveSeconds="120"
+
+            diskSpoolBufferSizeMB="30"
+            maxEntriesLocalDisk="10000000"
+            diskExpiryThreadIntervalSeconds="120"
+            memoryStoreEvictionPolicy="LRU"
+            statistics="false">
+        <persistence strategy="localTempSwap"/>
+    </defaultCache>
+    <cache name="getsiteindex"
+           maxEntriesLocalHeap="500"
+           eternal="false"
+           overflowToDisk="true"
+           diskPersistent="true"
+           timeToIdleSeconds="300"
+           timeToLiveSeconds="1800000">
+    </cache>
+    <cache name="menucache"
+           maxEntriesLocalHeap="500"
+           eternal="false"
+           overflowToDisk="true"
+           diskPersistent="true"
+           timeToIdleSeconds="300"
+           timeToLiveSeconds="6400000">
+    </cache>
+    <cache name="logincache"
+           maxEntriesLocalHeap="500"
+           eternal="false"
+           overflowToDisk="true"
+           diskPersistent="true"
+           timeToIdleSeconds="300"
+           timeToLiveSeconds="1800000">
+    </cache>
+    <cache name="flowcache"
+           maxEntriesLocalHeap="500"
+           eternal="false"
+           overflowToDisk="true"
+           diskPersistent="true"
+           timeToIdleSeconds="300"
+           timeToLiveSeconds="1800000">
+    </cache>
+    <cache name="ctdisktokencache"
+           maxEntriesLocalHeap="500"
+           eternal="false"
+           overflowToDisk="true"
+           diskPersistent="true"
+           timeToIdleSeconds="300"
+           timeToLiveSeconds="10800000">
+    </cache>
+</ehcache>

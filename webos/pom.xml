@@ -248,12 +248,8 @@
 
         </dependency>
 
-        <!--        jfinal实现webService-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.sun.xml.ws</groupId>-->
-        <!--            <artifactId>jaxws-rt</artifactId>-->
-        <!--            <version>2.2.8</version>-->
-        <!--        </dependency>-->
+
+
 
     </dependencies>
 

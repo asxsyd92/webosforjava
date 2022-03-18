@@ -7,8 +7,7 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import java.util.List;
 import  java.util.Map;
 
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
+import kotlin.collections.ArrayDeque;
 import net.sf.cglib.beans.BeanMap;
 
 public  class   JosnUtils<T> {
@@ -76,7 +75,7 @@ public  class   JosnUtils<T> {
      * @return
      */
     public static <T> Map<String, Object> beanToMap(T bean) {
-        Map<String, Object> map = Maps.newHashMap();
+        Map<String, Object> map = new java.util.HashMap<>();
         if (bean != null) {
             BeanMap beanMap = BeanMap.create(bean);
             for (Object key : beanMap.keySet()) {
@@ -102,12 +101,10 @@ public  class   JosnUtils<T> {
      * 将List<T>转换为List<Map<String, Object>>
      * @param objList
      * @return
-     * @throws JsonGenerationException
-     * @throws JsonMappingException
-     * @throws IOException
+
      */
     public static <T> List<Map<String, Object>> objectsToMaps(List<T> objList) {
-        List<Map<String, Object>> list = Lists.newArrayList();
+        List<Map<String, Object>> list = new java.util.ArrayList<>();
         if (objList != null && objList.size() > 0) {
             Map<String, Object> map = null;
             T bean = null;
@@ -129,7 +126,7 @@ public  class   JosnUtils<T> {
      * @throws IllegalAccessException
      */
     public static <T> List<T> mapsToObjects(List<Map<String, Object>> maps,Class<T> clazz) throws InstantiationException, IllegalAccessException {
-        List<T> list = Lists.newArrayList();
+        List<T> list = new ArrayDeque<>();
         if (maps != null && maps.size() > 0) {
             Map<String, Object> map = null;
             T bean = null;

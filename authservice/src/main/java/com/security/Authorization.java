@@ -7,7 +7,6 @@ import io.jsonwebtoken.Claims;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.lang.reflect.Method;
 
 public class Authorization implements Interceptor {
 
@@ -15,7 +14,7 @@ public class Authorization implements Interceptor {
 
     // 拦截每个请求
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Invocation inv) {
-System.out.print("请求"+request.getRequestURI());
+
         String jwt = request.getHeader("Authorization");
         try {
             // 检测请求头是否为空
@@ -38,7 +37,8 @@ System.out.print("请求"+request.getRequestURI());
         } catch (Exception e) {
             System.out.print(e.getMessage());
 
-                inv.getController().renderError(401);  e.printStackTrace();
+                inv.getController().renderError(401);
+                e.printStackTrace();
 
 
     }
@@ -49,14 +49,14 @@ System.out.print("请求"+request.getRequestURI());
     public void intercept(Invocation inv) {
         System.out.print("请求"+inv.getController().getRequest().getRequestURI());
         Controller controller = inv.getController();
-        Method method = inv.getMethod();
+      //  Method method = inv.getMethod();
 //        if (!method.isAnnotationPresent(Authentication.class)) {
 //            inv.invoke();
 //        }else {
             preHandle(controller.getRequest(),controller.getResponse(),inv);
             inv.getController().getRequest().removeAttribute("me");// 移除避免暴露当前角色信息
             inv.getController().getRequest().removeAttribute("claims");
-//        }
+      //  }
 
 
 

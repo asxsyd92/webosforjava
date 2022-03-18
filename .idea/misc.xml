@@ -15,6 +15,9 @@
         <option value="$PROJECT_DIR$/authservice/pom.xml" />
         <option value="$PROJECT_DIR$/mailservice/pom.xml" />
         <option value="$PROJECT_DIR$/portalsite/pom.xml" />
+        <option value="$PROJECT_DIR$/vueseo/pom.xml" />
+        <option value="$PROJECT_DIR$/seoservice/pom.xml" />
+        <option value="$PROJECT_DIR$/quartzservice/pom.xml" />
       </list>
     </option>
   </component>
