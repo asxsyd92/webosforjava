@@ -420,29 +420,39 @@ public static String SendPostFormData(String url,RequestBody body) throws IOExce
      * @date 2018年1月9日 下午2:06:56
      */
     public static boolean downloadFile(String url, String param, String outFileName) throws IOException {
-        boolean result = false;
-        String urlNameString = url + "?" + param;
-        Request req = new Request.Builder().url(url).build();
-        Response response = httpClient.newCall(req).execute();
-        if (!response.isSuccessful()) {
-            throw new IOException("Unexpected code " + response);
-        }
-        if (response.body().contentType().toString().toLowerCase().contains("application/json") || response.body().contentType().toString().toLowerCase().contains("text/plain")) {
-            throw new IOException("下载资源失败,下载地址为=" + urlNameString);
-        } else {
-            InputStream in = response.body().byteStream();
-            FileOutputStream out = new FileOutputStream(outFileName);
-            int bufferSize = 2048;
-            byte[] data = new byte[bufferSize];
-            int length = 0;
-            while ((length = in.read(data, 0, bufferSize)) > 0) {
-                out.write(data, 0, length);
-            }
-            out.close();
-            in.close();
-            result = true;
-        }
-        return result;
+     try {
+         File file=new File(outFileName);
+
+
+         boolean result = false;
+         String urlNameString = url ;
+         Request req = new Request.Builder().header("Referer","https://www.tooopen.com/view/2358284.html").url(url).build();
+
+         Response response = httpClient.newCall(req).execute();
+         if (!response.isSuccessful()) {
+             throw new IOException("Unexpected code " + response);
+         }
+         if (response.body().contentType().toString().toLowerCase().contains("application/json") || response.body().contentType().toString().toLowerCase().contains("text/plain")) {
+             throw new IOException("下载资源失败,下载地址为=" + urlNameString);
+         } else {
+             InputStream in = response.body().byteStream();
+             response.body().contentType();
+
+             FileOutputStream out = new FileOutputStream(outFileName);
+             int bufferSize = 2048;
+             byte[] data = new byte[bufferSize];
+             int length = 0;
+             while ((length = in.read(data, 0, bufferSize)) > 0) {
+                 out.write(data, 0, length);
+             }
+             out.close();
+             in.close();
+             result = true;
+         }
+         return result;
+     }catch (Exception ex){
+         System.out.print(ex.getMessage());
+      return  false;}
     }
 
 

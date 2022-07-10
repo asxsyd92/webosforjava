@@ -10,20 +10,21 @@
         <module name="quartzservice" />
         <module name="webos" />
         <module name="iworkflow" />
-        <module name="authservice" />
-        <module name="mailservice" />
         <module name="asxsydutils" />
         <module name="portalsite" />
         <module name="vueseo" />
-        <module name="seoservice" />
         <module name="swagger" />
         <module name="ctdisk" />
+        <module name="authservice" />
+        <module name="mailservice" />
+        <module name="seoservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="asxsydutils" target="1.8" />
       <module name="authservice" target="1.8" />
       <module name="ctdisk" target="1.8" />
+      <module name="importexcel" target="1.8" />
       <module name="iworkflow" target="1.8" />
       <module name="mailservice" target="1.8" />
       <module name="portalsite" target="8" />
@@ -37,6 +38,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="importexcel" options="-verbose -parameters" />
       <module name="seoservice" options="-verbose -parameters" />
       <module name="vueseo" options="-verbose -parameters" />
       <module name="webos" options="-verbose -parameters" />

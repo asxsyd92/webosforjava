@@ -75,6 +75,8 @@ public class WebSocket {
                             } else {
                                 Session session = user.getSession();
                                 if (session.isOpen()) {
+
+
                                     //构造用户需要接收到的消息
                                    // session.getAsyncRemote().sendText(message);
                                     da.getTo().setType(MessageType.GROUP);

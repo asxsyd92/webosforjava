@@ -48,7 +48,13 @@ public class WorkFlowTaskService {
 
         Query querys = JSON.parseObject(query, Query.class);
 
-
+if (table==null){
+    Result reslut=new    Result ();
+    reslut.setIssuccess(false);
+    reslut.setMessages("无法获取table");
+    reslut.setDebugmessages("无法获取table");
+    return reslut;
+}
         if (querys == null) { return null; }
 
         String issign = querys.getIssign();
@@ -485,7 +491,7 @@ public class WorkFlowTaskService {
             if (executeModel.getExecuteType() == EnumType.ExecuteType.Completed
                     || executeModel.getSteps() == null || executeModel.getSteps().size() == 0)
             {
-                executeComplete(executeModel,wfInstalled,false);
+                executeComplete(executeModel,wfInstalled,true);
                 result.setDebugmessages( "完成");
                 result.setIssuccess(true);
                 result.setMessages("完成");
@@ -1406,7 +1412,7 @@ public class WorkFlowTaskService {
     /// <param name="isCompleteTask">是否需要调用Completed方法完成当前任务</param>
     private static Result executeComplete(Execute executeModel, RunModel wfInstalled, Boolean isCompleteTask)
     { Result result= new Result();
-        isCompleteTask=isCompleteTask==null?true:false;
+        isCompleteTask=(executeModel.getExecuteType()== EnumType.ExecuteType.Completed?true:false);
         if (executeModel.getStepid().toLowerCase().equals(StringUtil.GuidEmpty()) || executeModel.getFlowid().equals(StringUtil.GuidEmpty()))
         {
             result.setDebugmessages("完成流程参数错误");

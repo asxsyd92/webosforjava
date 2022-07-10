@@ -9,6 +9,8 @@ import com.jfinal.core.Path;
 import com.mailservice.MailUtils;
 import com.security.AuthResult;
 import com.security.JwtUtils;
+import com.webcore.modle.xRoleApp;
+import com.webcore.service.RoleAppService;
 import com.webcore.service.UsersIntegralService;
 
 import com.jfinal.aop.Before;
@@ -29,6 +31,8 @@ import java.util.*;
 @Clear
 public class AppletsController extends Controller {
 
+    @Inject
+    RoleAppService roleAppService;
     public void getUserWXLoginInfo() {
         try {
             String code = getPara("code");
@@ -151,6 +155,35 @@ public class AppletsController extends Controller {
         }
 
     }
+@Before({POST.class})
+   public void ByOpenId(){
+    String openid = getPara("openid");
+    String userid = getPara("userid");
+
+    Record da = Db.findFirst("select *from users where openid='"+openid+"' and id='"+userid+"'");
+    if (da != null) {
+        setAttr("msg", "成功！");
+        setAttr("success", true);
+        setAttr("data", da);
+        Map<String, Object> claims = new HashMap<String, Object>();
+        claims.put("id", da.getStr("ID"));
+        claims.put("account",  da.getStr("Account"));
+        claims.put("avatar", da.getStr("avatar"));
+        claims.put("ip",Common.getRemoteLoginUserIp(this.getRequest()));
+        AuthResult result= JwtUtils.createJwt(claims, JwtUtils.JWT_WEB_TTL);
+        String token =result .getJwt();
+        long expires_in =result.getExpires_in();
+
+        setAttr("expires_in",expires_in);
+        setAttr("token",token);
+    }else {
+        setAttr("success", false);
+        setAttr("msg", "找不到用户！");
+
+    }
+    renderJson();
+}
+
 
     @Before({ POST.class })
     public void updateUserInfo() {
@@ -167,13 +200,7 @@ public class AppletsController extends Controller {
             System.out.println(nickname);
             String headUrl = getPara("headUrl");
             Record da = null;
-            if (type.equals("qq")) {
-                da = Db.findById("users", "qqopenid", openid);
-
-            } else {
-                da = Db.findById("users", "openid", openid);
-
-            }
+            da = Db.findById("users", "openid", openid);
             if (da != null) {
                 da.set("unionid", unionid);
                 if (type.equals("qq")) {
@@ -472,6 +499,29 @@ public class AppletsController extends Controller {
             setAttr("msg", "签到失败！");
             setAttr("success", false);
             setAttr("data", null);
+        }
+        renderJson();
+    }
+    @Before({POST.class})
+//获取小程序菜单
+    public void getMenuList(){
+        try {
+
+
+            Object  da = RoleAppService.GetxAppList(0);
+
+            setAttr("msg", "");
+            setAttr("code", 0);
+            setAttr("count", 0);
+            setAttr("data", da);
+            setAttr("success", true);
+        } catch (Exception ex) {
+
+            setAttr("msg", "");
+            setAttr("code", 0);
+            setAttr("count", 0);
+            setAttr("data", ex.getMessage());
+            setAttr("success", false);
         }
         renderJson();
     }

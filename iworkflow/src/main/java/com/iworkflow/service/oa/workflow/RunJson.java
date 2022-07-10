@@ -3,6 +3,10 @@ import java.util.List;
 import java.util.Map;
 
 public class RunJson {
+
+
+  List<Map<String,Object>> data;
+
   public List<Map<String, Object>> getData() {
     return data;
   }
@@ -11,13 +15,24 @@ public class RunJson {
     this.data = data;
   }
 
-  public Map<String, Object> getFrom() {
-    return from;
+  public Map<String, Object> getForm() {
+    return form;
   }
 
-  public void setFrom(Map<String, Object> from) {
-    this.from = from;
+  public void setForm(Map<String, Object> form) {
+    this.form = form;
   }
+
+  public Map<String, Object> getRules() {
+    return rules;
+  }
+
+  public void setRules(Map<String, Object> rules) {
+    this.rules = rules;
+  }
+
+  Map<String,Object> form;
+  Map<String,Object> rules;
 
   public Map<String, Object> getField() {
     return field;
@@ -27,7 +42,5 @@ public class RunJson {
     this.field = field;
   }
 
-  List<Map<String,Object>> data;
-  Map<String,Object> from;
-  Map<String,Object> field;
+  Map<String,Object>  field;
 }

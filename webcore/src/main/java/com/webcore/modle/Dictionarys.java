@@ -9,7 +9,7 @@ import java.util.List;
 @JsonInclude(value= JsonInclude.Include.NON_NULL)
 @Table(dataSourceName="webos", tableName="dictionary", primaryKey="id")
 public  class  Dictionarys extends Model<Dictionarys> {
-    public java.lang.String getName() {
+    public java.lang.String getLabel() {
         return get("Title");
     }
     public java.lang.String getID() {
@@ -18,7 +18,9 @@ public  class  Dictionarys extends Model<Dictionarys> {
     public java.lang.String getValue() {
         return get("ID");
     }
-
+    public java.lang.String getName() {
+        return get("Title");
+    }
     public Boolean getselected() {
         return get("selected");
     }

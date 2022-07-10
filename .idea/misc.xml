@@ -18,6 +18,7 @@
         <option value="$PROJECT_DIR$/vueseo/pom.xml" />
         <option value="$PROJECT_DIR$/seoservice/pom.xml" />
         <option value="$PROJECT_DIR$/quartzservice/pom.xml" />
+        <option value="$PROJECT_DIR$/importexcel/pom.xml" />
       </list>
     </option>
   </component>

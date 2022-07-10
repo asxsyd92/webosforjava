@@ -49,20 +49,24 @@ public class LoginControllers extends Controller {
             String user = getPara("user");
             String pw = getPara("pw");
             String code = getPara("code");
+            String mobile=getPara("mobile");
             String key= StringUtil.getDateFormat(new Date(),"yyyyMMdd");
             key= "webos"+ key+"591";
             user= AESHelper.aesDecrypt(user,key);
             pw= AESHelper.aesDecrypt(pw,key);
             code= AESHelper.aesDecrypt(code,key);
 
-            boolean validate = com.webcore.utils.CaptchaRender.validate(this, code);//inputRandomCode是用户提交过来的验证码
-           if (!validate){
-               setAttr("msg", "验证码错误！");
-               setAttr("default", false);
-               setAttr("success", false);
-               renderJson();
-               return;
-           }
+            if (StringUtil.isBlank(mobile)){
+                boolean validate = com.webcore.utils.CaptchaRender.validate(this, code);//inputRandomCode是用户提交过来的验证码
+                if (!validate){
+                    setAttr("msg", "验证码错误！");
+                    setAttr("default", false);
+                    setAttr("success", false);
+                    renderJson();
+                    return;
+                }
+            }
+
             Integer islock=   CacheKit.get("logincache",user);
             if (islock!=null) {
 
@@ -170,6 +174,7 @@ public class LoginControllers extends Controller {
             long expires_in =result.getExpires_in();
             setAttr("expires_in", expires_in);
             setAttr("access_token", token);
+            setAttr("success", true);
         }catch (Exception ex){
             setAttr("msg", "系统异常");
             setAttr("success", false);

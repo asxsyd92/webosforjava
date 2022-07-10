@@ -23,21 +23,38 @@ public class RoleAppService {
         List<RoleApp> da=userDao.find(sql);
        return da;
     }
+    public static List<xRoleApp> GetxAppList() {
 
-    public static List<xRoleApp> GetxAppList(String role) {
+
+        String sql = "select *from RoleApp where ParentID='"+StringUtil.GuidEmpty()+"' order by Sort";
+        List<xRoleApp> da=xDao.find(sql);
+
+        return da;
+
+    }
+    public static List<xRoleApp> GetxAppList(int type) {
+
+
+        String sql = "select *from RoleApp where Type="+type+" order by Sort";
+        List<xRoleApp> da=xDao.find(sql);
+
+        return da;
+
+    }
+    public static List<xRoleApp> GetxAppList(String role,Integer type) {
 
         if (role.equals("")){
             role="00000000-0000-0000-0000-000000000000";
         }
-            String sql = "select *from RoleApp where ParentID='"+role+"' order by Sort";
+            String sql = "select *from RoleApp where ParentID='"+role+"' and Type="+type+" order by Sort";
             List<xRoleApp> da=xDao.find(sql);
 
             return da;
 
     }
-    public static List<RoleApp> GetAppList(int role)
+    public static List<RoleApp> GetAppList(int role,Integer type)
   {
-            String sql = "select *from RoleApp RA,( select MenuID,ur.identifier from  UsersRole ur,Role r where  ur.identifier=r.identifier and r.identifier=" + role + ") as tab  where  ParentID='00000000-0000-0000-0000-000000000000' and tab.MenuID=RA.ID  order by Sort";
+            String sql = "select *from RoleApp RA,( select MenuID,ur.identifier from  UsersRole ur,Role r where  ur.identifier=r.identifier and r.identifier=" + role + ") as tab  where  ParentID='00000000-0000-0000-0000-000000000000' and Type="+type+"  and tab.MenuID=RA.ID  order by Sort";
             List<RoleApp> da=userDao.find(sql);
             return da;
 

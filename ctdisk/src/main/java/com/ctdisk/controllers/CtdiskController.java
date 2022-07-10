@@ -11,10 +11,9 @@ import com.jfinal.core.NotAction;
 import com.jfinal.core.Path;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.plugin.activerecord.Db;
+import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.ehcache.CacheKit;
-import com.security.Authorization;
-
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
@@ -55,6 +54,7 @@ public class CtdiskController extends Controller {
 
     public void filelist(){
         try{
+            
             String folder_id = getPara("folder_id");
             Integer start=getInt("start");
             if (start==null){
@@ -116,7 +116,123 @@ public class CtdiskController extends Controller {
         }
         renderJson();
     }
-public  void  syndown(){
+
+    public void cffile(){
+        try{
+            String key = getPara("key");
+            int page = getInt("page");
+
+            int limit = getInt("limit");
+            Page<Record> file=  Db.paginate(page,limit,"select *  ","from ctfile where parentid='"+key+"'");
+            setAttr("code", 0);
+            setAttr("msg", "获取成功");
+            setAttr("success", true);
+            setAttr("count", 0);
+            setAttr("data", file.getList());
+            setAttr("count", file.getTotalRow());
+
+        }catch (Exception ex) {
+            setAttr("code", 1);
+            setAttr("msg", "错误：" + ex.getMessage());
+            setAttr("success", false);
+            setAttr("count", 0);
+            setAttr("data", null);
+        }
+        renderJson();
+  }
+  public void synfile(){
+      try{
+          String folder_id = getPara("folder_id");
+
+          Integer start=getInt("start");
+
+          if (start==null){
+              start=0;
+          }
+          if (folder_id==null){
+              folder_id="d0";
+          }
+          int total=0;
+          Map<String,Object> da=new HashMap<>();
+          da.put("folder_id",folder_id);
+          da.put("start",0);
+          String token=  CacheKit.get("ctdisktokencache","ctdisktokencache");
+          if (token==null){
+              WebosResponse response= login();
+              if (response.getSuccess()){
+                  token=  CacheKit.get("ctdisktokencache","ctdisktokencache");
+
+              }else {
+                  setAttr("code", 1);
+                  setAttr("msg", response.getMessage());
+                  setAttr("success", false);
+                  setAttr("count", 0);
+                  setAttr("data", null);
+                  renderJson();
+                  return;
+              }
+
+          }
+          da.put("session",token);
+          String data=   HttpHelper.sendPost("https://rest.ctfile.com/v1/public/file/list",JSON.toJSONString(da));
+          Map<String,Object> list=  JSON.parseObject(data, Map.class);
+          total=Integer.parseInt(list.get("num").toString());
+          if (list.get("code").equals(200)){
+              List<Map<String,Object>> lists=  JSON.parseObject(list.get("results").toString(), List.class);
+              for (Map<String,Object> item:lists) {
+                  Record e= Db.findById("ctfile","key",item.get("key").toString());
+                  if (e==null){
+                      Record record=new Record();
+                      record.set("id", StringUtil.getPrimaryKey());
+                      record.set("name",item.get("name").toString());
+                      record.set("weblink",item.get("weblink").toString());
+
+
+                      record.set("date",item.get("date").toString());
+                      record.set("size",item.get("size")==null?0:item.get("size"));
+                      record.set("key",item.get("key").toString());
+                      record.set("status",item.get("status").toString());
+
+                      record.set("imgsrc",item.get("imgsrc")==null?"":item.get("imgsrc"));
+                      record.set("icon",item.get("icon").toString());
+                      record.set("parentid",folder_id);
+                      Db.save("ctfile","id",record);
+                  }
+                  else {
+
+
+                      e.set("name",item.get("name").toString());
+
+                      Db.update("ctfile","id",e);
+
+                  }
+              }
+              setAttr("code", 0);
+              setAttr("msg", "成功！");
+              setAttr("success", true);
+              setAttr("count", total);
+              setAttr("data", lists);
+          }else {
+              setAttr("code", 1);
+              setAttr("msg", list.get("message"));
+              setAttr("success", false);
+              setAttr("count", 0);
+              setAttr("data", null);
+
+          }
+
+
+      }catch (Exception ex){
+          setAttr("code", 1);
+          setAttr("msg", "错误："+ex.getMessage());
+          setAttr("success", false);
+          setAttr("count", 0);
+          setAttr("data", null);
+
+      }
+      renderJson();
+  }
+    public  void  syndown(){
     try{
         String folder_id = getPara("folder_id");
         String group= getPara("group");
@@ -172,9 +288,22 @@ public  void  syndown(){
                    record.set("groupname",group);
                    record.set("imgsrc",item.get("imgsrc").toString());
                    record.set("icon",item.get("icon").toString());
+                   record.set("directory",folder_id);
                    Db.save("download",record);
                }
+               else {
 
+                   e.set("Title",item.get("name").toString());
+                   e.set("size",item.get("size").toString());
+                   e.set("key",item.get("key").toString());
+                   e.set("status",item.get("status").toString());
+                   e.set("groupname",group);
+                   e.set("imgsrc",item.get("imgsrc").toString());
+                   e.set("icon",item.get("icon").toString());
+                   e.set("directory",folder_id);
+                   Db.update("download","id",e);
+
+               }
             }
             setAttr("code", 0);
             setAttr("msg", "成功！");

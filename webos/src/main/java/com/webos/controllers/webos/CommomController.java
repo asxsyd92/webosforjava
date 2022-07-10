@@ -103,7 +103,7 @@ public class CommomController extends Controller {
     /// <param name="limit"></param>
     /// <returns></returns>
     //获取公共list
-    @Before({ GET.class})
+
     public void GetCommonList()
     {
         String tab= getPara("tab");
@@ -125,7 +125,7 @@ public class CommomController extends Controller {
             setAttr("msg", "成功！");
             setAttr("count", da.getTotalRow());
             setAttr("data", da.getList());
-
+            setAttr("success", true);
 
     }
     renderJson();
@@ -140,9 +140,13 @@ public class CommomController extends Controller {
             setAttr("count",10);
             setAttr("code", 0);
             setAttr("msg", "成功！");
+            setAttr("success", true);
+
             setAttr("data", new JosnUtils<Dictionary>().toJson(DictionaryService.GetDictionary(kv)));
         }
         catch (Exception ex){
+            setAttr("msg",ex.getLocalizedMessage());
+            setAttr("success", false);
             setAttr("data",ex.getLocalizedMessage());
         }
 

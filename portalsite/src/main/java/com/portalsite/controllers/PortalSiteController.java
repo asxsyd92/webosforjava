@@ -280,11 +280,11 @@ public  void  seo(){
                        System.setProperty("webdriver.chrome.driver", "d:\\chromedriver.exe");
                        WebDriver driver = new ChromeDriver();
                        driver.get(url);
-                       driver.manage().timeouts().pageLoadTimeout(1000 * 60, TimeUnit.SECONDS);
+                       //driver.manage().timeouts().pageLoadTimeout(1000 * 60, TimeUnit.SECONDS);
                        //休眠10分钟后
-                       Thread.sleep(1000*60);
+                       Thread.sleep(1000*30);
                        String html_source = driver.getPageSource();
-
+                       System.out.print(html_source);
                        Record r = Db.findById("seo", "url", url);
                        if (r == null) {
                            Record rr = new Record();

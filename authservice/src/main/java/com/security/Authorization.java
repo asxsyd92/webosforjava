@@ -15,6 +15,13 @@ public class Authorization implements Interceptor {
     // 拦截每个请求
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Invocation inv) {
 
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Methods", "POST, GET");
+        response.setHeader("Access-Control-Max-Age", "3600");
+        response.setHeader(
+                "Access-Control-Allow-Headers",
+                "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
         String jwt = request.getHeader("Authorization");
         try {
             // 检测请求头是否为空

@@ -1,6 +1,8 @@
 package com.webos;
 
 
+import cn.hutool.crypto.SecureUtil;
+import cn.hutool.crypto.symmetric.AES;
 import com.asxsyd92.swagger.config.routes.SwaggerRoutes;
 import com.asxsydutils.utils.StringUtil;
 import com.jfinal.ext.handler.ContextPathHandler;
@@ -17,6 +19,8 @@ import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.server.undertow.UndertowServer;
 import com.jfinal.template.Engine;
 import com.webos.controllers.websocket.WebSocket;
+
+import java.nio.charset.StandardCharsets;
 
 
 public class WebosConfig extends JFinalConfig {
@@ -119,6 +123,15 @@ public class WebosConfig extends JFinalConfig {
         byte[] decode = Base64.decode(String.valueOf(fozuStr.toCharArray()));
         System.out.print("\n"+new String(decode));
         System.out.print("\n");
+
+
+        String uid = "123abc";       //测试字符串
+        String key = "u1e2b3n4f5d6k7i83990142zpUIpGu1f";   //加密用到的key，这个不是固定的，需要用户提供二级域名来获取key
+        AES aes = SecureUtil.aes(key.getBytes(StandardCharsets.UTF_8));
+        String code = aes.encryptBase64(uid);    //aes加密，这个是加密后的字符串
+        System.out.println(code);
+        uid =  aes.decryptStr(code);           //解密，获取加密之前的字符串
+        System.out.println(uid);
 
     }
 

@@ -39,21 +39,25 @@ import static com.asxsydutils.utils.MD5.MD5_32bit;
 public class UsersControllers extends Controller {
     @Inject
     LogService logService;
-@Inject
+    @Inject
     RoleAppService roleAppService;
-@Inject
+    @Inject
     UsersService usersService;
-@Inject
+    @Inject
     ImService imService;
     @Before({ POST.class, Authorization.class})
 
     public void GetAppList() {
         try {
             //从缓存中读取
+            Integer type = getInt("type");
             Claims claims = getAttr("claims");
             String userid = claims.get("id").toString();
             Object  menucache=  CacheKit.get("menucache",userid);
-
+            //0是手机 1为pc
+            if (type==null){
+             type=1;
+            }
             if (menucache!=null){
                 setAttr("msg", "");
                 setAttr("code", 0);
@@ -68,9 +72,9 @@ public class UsersControllers extends Controller {
                 List<Record> list = new ArrayList<>();
                 Object da = null;
                 if (role == 1) {
-                    da = new JosnUtils<xRoleApp>().toJson(roleAppService.GetxAppList(""));
+                    da = new JosnUtils<xRoleApp>().toJson(roleAppService.GetxAppList("",type));
                 } else {
-                    da = new JosnUtils<RoleApp>().toJson(roleAppService.GetAppList(role));
+                    da = new JosnUtils<RoleApp>().toJson(roleAppService.GetAppList(role,type));
                 }
                 //设置缓存
                 CacheKit.put("menucache",userid,da);
@@ -99,22 +103,13 @@ public class UsersControllers extends Controller {
     public void getMenuList(){
         try {
 
-            Claims claims = getAttr("claims");
-            String Role = claims.get("role").toString();
-            int role = Integer.parseInt(Role);
-            List<Record> list = new ArrayList<>();
 
-          Object  da = new JosnUtils<xRoleApp>().toJson(roleAppService.GetxAppList(""));
-          Record o=new Record();
-          o.set("children",da);
-            o.set("id","00000000-0000-0000-0000-000000000000");
-            o.set("parentid","00000000-0000-0000-0000-000000000000");
-            o.set("title","根目录");
-            list.add(o);
+          Object  da = new JosnUtils<xRoleApp>().toJson(roleAppService.GetxAppList());
+
             setAttr("msg", "");
             setAttr("code", 0);
             setAttr("count", 0);
-            setAttr("data", list);
+            setAttr("data", da);
             setAttr("success", true);
         } catch (Exception ex) {
 

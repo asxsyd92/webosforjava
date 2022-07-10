@@ -34,7 +34,8 @@ public class LogControllers extends Controller {
         setAttr("code", 0);
         setAttr("count",da.getTotalRow());
         setAttr("data", da.getList());
-        setAttr("success", true);}catch (Exception ex){
+        setAttr("success", true);
+        }catch (Exception ex){
 
             setAttr("msg", ex.getLocalizedMessage());
             setAttr("code", 0);

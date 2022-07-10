@@ -125,15 +125,36 @@ try {
 
             if (wfl == null)
             {
-                //  Response.Write("未找到流程运行时!");
+                setAttr("code", 0);
+                setAttr("count", 0);
+                setAttr("data", null);
+                setAttr("msg","未找到流程运行时") ;
+                setAttr("success",false);
+                renderJson();
+                return;
+
 
             }
             else if (wfl.getStatus().equals(3))
             {
+                setAttr("code", 0);
+                setAttr("count", 0);
+                setAttr("data", null);
+                setAttr("msg","该流程已被卸载,不能发起新的流程实例") ;
+                setAttr("success",false);
+                renderJson();
+                return;
                // return JSONhelper.ToJson(new { code = 0, msg = "该流程已被卸载,不能发起新的流程实例", count = 0, data = new { } }, false);
             }
             else if (wfl.getStatus().equals(4))
             {
+                setAttr("code", 0);
+                setAttr("count", 0);
+                setAttr("data", null);
+                setAttr("msg","该流程已被删除,不能发起新的实例") ;
+                setAttr("success",false);
+                renderJson();
+                return;
               //  return JSONhelper.ToJson(new { code = 0, msg = "该流程已被删除,不能发起新的实例", count = 0, data = new { } }, false);
 
             }
@@ -172,71 +193,71 @@ try {
              //   String nextSteps = WorkFlowBll.Instance.GetNextSteps(wfInstalled.id.ToGuid(), currentStep.id.ToGuid());
              //获取表单
            String key= currentdata.getForms().get(0).getId();
+
             Record fmdata= Db.findById("sysformdesign","id",key);
             if (fmdata!=null){
 
                 RunJson json= JSON.parseObject(fmdata.get("DesignHtml"), RunJson.class);
-                JSONObject from= (JSONObject) json.getFrom().get("data");
+                Map<String,Object> from= json.getForm();
                 if (from!=null){
-                   String table= from.get("table").toString();
-                   if (instanceid!=null&&!instanceid.equals("undefined")&&!instanceid.equals("")){
-                       formdata= Db.findById(table, "ID", instanceid);
-                   }
+                    String table= from.get("table").toString();
+                    if (instanceid!=null&&!instanceid.equals("undefined")&&!instanceid.equals("")){
+                        formdata= Db.findById(table, "ID", instanceid);
+                    }
 
                 }
-                List<Map<String,Object>>listdata=new ArrayDeque<>();
-                    for (Map<String,Object> item:json.getData()  ) {
-                        //赋值
-                        try {
-                            JSONObject fd = (JSONObject) item.get("data");
-                            if (fd.get("name") != null && fd.get("name").toString() != null) {
-                                if (formdata!=null) {
-                                    fd.put("value", formdata.get(fd.get("name").toString()));
-                                }else {
-                                    switch (fd.get("value").toString())
-                                    {
-
-                                        case "@_SYS_DATETIME":
-                                            fd.put("value", new Date());
-                                           break;
-                                        case "@_SYS_ORGNAME":
-                                            fd.put("value", usersModel.getOrgname());
-                                            break;
-                                        case "@_SYS_GW":
-                                            fd.put("value", "");
-                                            break;
-                                        case "@_SYS_GETUSERID":
-                                            fd.put("value", usersModel.getId());
-                                            break;
-                                        case "@_SYS_ORGID":
-                                            fd.put("value", usersModel.getOrgid());
-                                            break;
-                                        case "@_SYS_GETUSERNICKNAME":
-                                            fd.put("value", usersModel.getName());
-                                            break;
-                                        case "@_SYS_GETUSERNAME":
-                                            fd.put("value", usersModel.getAccount());
-                                            break;
-
-                                    }
-
-                                }
-                                //设置字段状态
-                                List<FieldStatus> field = currentdata.getFieldStatus().stream().filter(fiele -> fiele.getField().equals(fd.get("name").toString())).collect(Collectors.toList());
-                                if (field.size() > 0) {
-                                    fd.put("showtext", field.get(0).getStatus());
-                                    fd.put("required", field.get(0).getStatus().equals("0") ? "false" : "true");
-                                }
-                                item.put("data", fd);
-                                listdata.add(item);
-                            }
-                        }catch (Exception ex){
-                            System.out.print(ex.getMessage());
-                        }
+               // List<Map<String,Object>>listdata=new ArrayDeque<>();
+              //  for (Map<String,Object> item:json.getData()  ) {
+                    //赋值
+//                    try {
+//                        JSONObject fd = (JSONObject) item.get("data");
+//                        if (fd.get("name") != null && fd.get("name").toString() != null) {
+//                            if (formdata!=null) {
+//                                fd.put("value", formdata.get(fd.get("name").toString()));
+//                            }else
+//                            {
+//                                switch (fd.get("value").toString())
+//                                {
+//
+//                                    case "@_SYS_DATETIME":
+//                                        fd.put("value", new Date());
+//                                        break;
+//                                    case "@_SYS_ORGNAME":
+//                                        fd.put("value", usersModel.getOrgname());
+//                                        break;
+//                                    case "@_SYS_GW":
+//                                        fd.put("value", "");
+//                                        break;
+//                                    case "@_SYS_GETUSERID":
+//                                        fd.put("value", usersModel.getId());
+//                                        break;
+//                                    case "@_SYS_ORGID":
+//                                        fd.put("value", usersModel.getOrgid());
+//                                        break;
+//                                    case "@_SYS_GETUSERNICKNAME":
+//                                        fd.put("value", usersModel.getName());
+//                                        break;
+//                                    case "@_SYS_GETUSERNAME":
+//                                        fd.put("value", usersModel.getAccount());
+//                                        break;
+//
+//                                }
+//
+//                            }
+//
+//                            item.put("data", fd);
+//                            listdata.add(item);
+//                        }
+//                    }catch (Exception ex){
+//                        System.out.print(ex.getMessage());
+//                    }
 
 
-                    }
-                json.setData(listdata);
+              //  }
+                json.setData(json.getData());
+                json.setForm(json.getForm());
+                json.setRules(json.getRules());
+                json.setField(formdata==null?null:formdata.getColumns());
                 fmdata.set("DesignHtml",new GsonBuilder().serializeNulls().setDateFormat("yyyy-MM-dd HH:mm:ss").create().toJson(json));
             }
             setAttr("code", 0);
@@ -248,13 +269,14 @@ try {
             setAttr("msg","成功") ;
             setAttr("success",true);
           //  return JSONhelper.ToJson(new { code = 0, msg = "成功", count = 1, data = nextSteps, currentStep = currentStep }, false);
-
+            renderJson();
+            return;
         }
         catch (Exception ex) {
             setAttr("code", 0);
             setAttr("count", 0);
             setAttr("data", null);
-            setAttr("msg","未找到流程步骤") ;
+            setAttr("msg","错误"+ex.getMessage()) ;
             setAttr("success",false);
           //  return JSONhelper.ToJson(new { code = 0, msg = "未找到流程步骤", count = 0, data = "", currentStep = "" }, false);
         }
