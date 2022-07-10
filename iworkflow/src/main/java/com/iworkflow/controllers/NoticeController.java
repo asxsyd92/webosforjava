@@ -5,6 +5,7 @@ import com.asxsydutils.config.LoginUsers;
 import com.asxsydutils.utils.Common;
 import com.asxsydutils.utils.StringUtil;
 import com.iworkflow.service.modle.Notice;
+import com.iworkflow.service.modle.NoticeRead;
 import com.iworkflow.service.oa.NoticeService;
 import com.jfinal.aop.Before;
 import com.jfinal.aop.Inject;
@@ -124,12 +125,25 @@ public class NoticeController extends Controller {
         }
         renderJson();
     }
+
     public void GetNoticeDetails() {
         try {
             String id = getPara("id");
             LoginUsers usersModel = Common.getLoginUser(this);
 
-           Notice notice= service.GetNoticeDetails(id);
+            Notice notice = service.GetNoticeDetails(id);
+            NoticeRead noticeRead = new NoticeRead();
+            noticeRead.setNoticeId(notice.getId());
+            noticeRead.setUserAccount(usersModel.getName());
+            noticeRead.setReadTime(new Date());
+            noticeRead.setId(StringUtil.getPrimaryKey());
+            noticeRead.setUserId(usersModel.getId());
+            noticeRead.setIsRead(1);
+
+            NoticeRead read = (NoticeRead) noticeRead.findFirst("select * from NoticeRead where UserId= '" + noticeRead.getUserId() + "' and NoticeId='" + noticeRead.getNoticeId() + "'");
+            if (read == null) {
+                noticeRead.save();
+            }
             setAttr("code", 0);
             setAttr("msg", "发布成功");
             setAttr("count", 1);

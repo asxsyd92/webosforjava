@@ -11,16 +11,23 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings("serial")
 @JsonInclude(value= JsonInclude.Include.NON_NULL)
 @Table(dataSourceName="webos", tableName="NoticeRead", primaryKey="id")
-public abstract class NoticeRead<M extends NoticeRead<M>> extends Model<M> implements IBean {
+public class NoticeRead<M extends NoticeRead<M>> extends Model<M> implements IBean {
+
 
 	public void setId(String Id) {
 		set("Id", Id);
 	}
 
 	public String getId() {
-		return get("Id");
+		return get("UserId");
+	}
+	public void setUserId(String UserId) {
+		set("UserId", UserId);
 	}
 
+	public String getUserId() {
+		return get("UserId");
+	}
 	public void setUserAccount(String UserAccount) {
 		set("UserAccount", UserAccount);
 	}
@@ -29,11 +36,11 @@ public abstract class NoticeRead<M extends NoticeRead<M>> extends Model<M> imple
 		return get("UserAccount");
 	}
 
-	public void setNoticeId(Integer NoticeId) {
+	public void setNoticeId(String NoticeId) {
 		set("NoticeId", NoticeId);
 	}
 
-	public Integer getNoticeId() {
+	public String getNoticeId() {
 		return get("NoticeId");
 	}
 

@@ -16,53 +16,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11a8433d-5ee7-443e-a212-b3eb8b245452" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/NoticeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/modle/Notice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/modle/NoticeRead.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/NoticeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/iworkflow/src/main/resources/sql/oa/notice.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asxsydutils/asxsydutils.iml" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/asxsydutils.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asxsydutils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asxsydutils/src/main/java/com/asxsydutils/utils/HttpHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/src/main/java/com/asxsydutils/utils/HttpHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/HttpHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/HttpHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/src/main/java/com/security/Authorization.java" beforeDir="false" afterPath="$PROJECT_DIR$/authservice/src/main/java/com/security/Authorization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authservice/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/authservice/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ctdisk/ctdisk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ctdisk/ctdisk.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ctdisk/src/main/java/com/ctdisk/controllers/CtdiskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ctdisk/src/main/java/com/ctdisk/controllers/CtdiskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iworkflow/iworkflow.iml" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/iworkflow.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/WorkFlowTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/WorkFlowTaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/WorkFlowTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/WorkFlowTaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/workflow/RunJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/workflow/RunJson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iworkflow/src/main/resources/sql/oa.sql" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/resources/sql/oa.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailservice/mailservice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mailservice/mailservice.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portalsite/src/main/java/com/portalsite/controllers/PortalSiteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/portalsite/src/main/java/com/portalsite/controllers/PortalSiteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seoservice/seoservice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/seoservice/seoservice.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seoservice/src/main/java/com/seoservice/SeoServiceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/seoservice/src/main/java/com/seoservice/SeoServiceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seoservice/src/main/java/com/seoservice/taskjob/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/seoservice/src/main/java/com/seoservice/taskjob/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/swagger.iml" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/swagger.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vueseo/vueseo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/vueseo/vueseo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Dictionarys.java" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/modle/Dictionarys.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/service/DictionaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/service/DictionaryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/service/RoleAppService.java" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/src/main/java/com/webcore/service/RoleAppService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Dictionarys.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/modle/Dictionarys.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/DictionaryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/DictionaryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/RoleAppService.class" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/classes/com/webcore/service/RoleAppService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webcore/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/webcore/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/webos/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/WebosConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/WebosConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/applets/AppletsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/applets/AppletsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/CommomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/CommomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/FormControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/FormControllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/LogControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/LogControllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/LoginControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/LoginControllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/UsersControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/UsersControllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/websocket/WebSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/websocket/WebSocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/webos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/webos/webos.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/NoticeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/NoticeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/modle/NoticeRead.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/modle/NoticeRead.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -295,7 +251,7 @@
       <workItem from="1656945486573" duration="2217000" />
       <workItem from="1656989783031" duration="6454000" />
       <workItem from="1657072972914" duration="1419000" />
-      <workItem from="1657452239470" duration="3883000" />
+      <workItem from="1657452239470" duration="5343000" />
     </task>
     <task id="LOCAL-00001" summary="优化">
       <created>1646296857219</created>
@@ -318,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647590273900</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="新增通知公告">
+      <created>1657459324493</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1657459324493</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,7 +290,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化" />
+    <MESSAGE value="新增通知公告" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增通知公告" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -849,18 +813,43 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/NoticeController.java</url>
-          <line>65</line>
+          <line>66</line>
           <option name="timeStamp" value="219" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/NoticeController.java</url>
-          <line>69</line>
+          <line>70</line>
           <option name="timeStamp" value="220" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/NoticeController.java</url>
-          <line>36</line>
+          <line>37</line>
           <option name="timeStamp" value="221" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/NoticeController.java</url>
+          <line>135</line>
+          <option name="timeStamp" value="222" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/NoticeController.java</url>
+          <line>138</line>
+          <option name="timeStamp" value="223" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/NoticeController.java</url>
+          <line>144</line>
+          <option name="timeStamp" value="224" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/NoticeController.java</url>
+          <line>147</line>
+          <option name="timeStamp" value="225" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../../javajar/com/jfinal/jfinal/4.9.11/jfinal-4.9.11.jar!/com/jfinal/plugin/activerecord/Model.class</url>
+          <line>587</line>
+          <option name="timeStamp" value="226" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.ClassCastException" package="java.lang" />
