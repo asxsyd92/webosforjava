@@ -519,6 +519,12 @@ renderJson();
             os.set("Adddate",StringUtil.getDatatime());
 
         }
+        if(table==null){
+            setAttr("msg", "表单中未检测到table，请配置table");
+            setAttr("success", false);
+            renderJson();
+            return;
+        }
       Object cls=  os.get("Classid");
         //var cls=  os.FirstOrDefault(c => c.Key.ToString() == "");
         String id=StringUtil.GuidEmpty();
@@ -528,11 +534,13 @@ renderJson();
             setAttr("msg", ex.getMessage());
             setAttr("success", false);
             renderJson();
+            return;
         }
         if (id.equals(StringUtil.GuidEmpty()) )
         {   setAttr("msg", "添加失败！");
             setAttr("success", false);
             renderJson();
+            return;
         }else {
             //是否存导公共task表中统一管理
             if (istask) {
@@ -572,6 +580,7 @@ renderJson();
                         setAttr("msg", ex.getMessage());
                         setAttr("success", false);
                         renderJson();
+                        return;
                     }
 
 
@@ -598,6 +607,7 @@ renderJson();
                         setAttr("msg", ex.getMessage());
                         setAttr("success", false);
                         renderJson();
+                        return;
                     }
 
                 }
@@ -605,11 +615,13 @@ renderJson();
                     setAttr("success", true);
                     setAttr("msg", "成功");
                     renderJson();
+                    return;
                 } else {
                     setAttr("success", false);
                     setAttr("msg", "失败");
                     renderJson();
-                };
+                    return;
+                }
             }
 else {
                 setAttr("success", true);

@@ -1,6 +1,7 @@
 package com.webos.controllers.applets;
 
 import com.alibaba.fastjson.JSON;
+import com.asxsydutils.config.LoginUsers;
 import com.asxsydutils.utils.HttpHelper;
 import com.asxsydutils.utils.*;
 import com.jfinal.aop.Inject;
@@ -8,6 +9,7 @@ import com.jfinal.core.Path;
 
 import com.mailservice.MailUtils;
 import com.security.AuthResult;
+import com.security.Authorization;
 import com.security.JwtUtils;
 import com.webcore.modle.xRoleApp;
 import com.webcore.service.RoleAppService;
@@ -25,6 +27,7 @@ import kotlin.collections.ArrayDeque;
 import org.apache.commons.lang3.StringUtils;
 
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Path("/api/applets")
@@ -155,7 +158,7 @@ public class AppletsController extends Controller {
         }
 
     }
-@Before({POST.class})
+   @Before({POST.class})
    public void ByOpenId(){
     String openid = getPara("openid");
     String userid = getPara("userid");
@@ -286,8 +289,8 @@ public class AppletsController extends Controller {
     /// <param name="integral">获得的积分</param>
     /// <returns></returns>
 
-    // 小程序点赞功能
-    @Before({ POST.class })
+    // 小程序点赞功能@Before({Authorization.class})
+    @Before({ POST.class, Authorization.class })
     public void ThumbsUp() {
         String id = getPara("id");
         String userid = getPara("userid");
@@ -333,7 +336,7 @@ public class AppletsController extends Controller {
         }
         renderJson();
     }
-
+    @Before({ POST.class, Authorization.class })
     public void GetUserUsersIntegral() {
         String id = getPara("id");
         Record da = Db.findById("usersintegral", "Userid", id);
@@ -346,16 +349,17 @@ public class AppletsController extends Controller {
         }
 
     }
-
+    @Before({ POST.class, Authorization.class })
     public void Integral() {
-        String id = getPara("id");
-        if (UsersIntegralService.AddIntegral(id, 10)) {
-            setAttr("msg", "点赞成功！");
+        LoginUsers usersModel = Common.getLoginUser(this);
+
+        if (UsersIntegralService.AddIntegral(usersModel.getId(), 10)) {
+            setAttr("msg", "恭喜获得10积分");
             setAttr("success", true);
             setAttr("data", null);
 
         } else {
-            setAttr("msg", "点赞失败！");
+            setAttr("msg", "获取失败！");
             setAttr("success", true);
             setAttr("data", null);
 
@@ -383,25 +387,27 @@ public class AppletsController extends Controller {
     /**
      * 签到
      */
+    @Before({ POST.class, Authorization.class })
     public void Signin() {
         try {
-            String userid = getPara("userid");
-            String sql = "select * from u_signin where to_days(SignDate) = to_days(now()) and Userid='" + userid + "'";
-            Record record = Db.findFirst(sql);
+            LoginUsers usersModel = Common.getLoginUser(this);
+
+            SimpleDateFormat dfs = new SimpleDateFormat("yyyy/MM/dd");//设置日期格式
+            String tiem = dfs.format(new Date());
+            Record record= Db.findFirst( "select * from u_signin where  date_format(SignDate,'%Y/%m/%d')='"+tiem+"' and Userid='" + usersModel.getId() + "'");
             if (record == null) {
                 Record o = new Record();
                 o.set("ID", StringUtil.getPrimaryKey());
-                o.set("SignDate", new Date());
-                o.set("Userid", userid);
+                o.set("SignDate", tiem);
+                o.set("Userid", usersModel.getId());
                 Db.save("u_signin", o);
-                UsersIntegralService.AddIntegral(userid, 10);
                 setAttr("msg", "签到成功！");
                 setAttr("success", true);
-                setAttr("data", "");
+
             } else {
                 setAttr("msg", "今日已签到！");
                 setAttr("success", true);
-                setAttr("data", "");
+
             }
         } catch (Exception ex) {
             setAttr("msg", "签到失败！");
@@ -410,7 +416,25 @@ public class AppletsController extends Controller {
         }
         renderJson();
     }
+    @Before({ POST.class, Authorization.class })
+    public void  getSinList(){
+        try{
+            LoginUsers usersModel = Common.getLoginUser(this);
 
+            List<Record> qdlist=Db.find("select DISTINCT date_format(SignDate,'%Y/%m/%d') as date,'已签到' as info  from u_signin where SignDate BETWEEN '"+StringUtil.FirstDate()+"' and '"+StringUtil.LastDte()+"' and Userid='"+usersModel.getId()+"'" );
+
+            setAttr("msg", "获取成功！");
+            setAttr("success", true);
+            setAttr("data", qdlist);
+
+    } catch (Exception ex) {
+        setAttr("msg", "获取失败！"+ex.getMessage());
+        setAttr("success", false);
+        setAttr("data", null);
+    }
+    renderJson();
+
+    }
     public void fund() {
         try {
             NumberFormat ddf1 = NumberFormat.getNumberInstance();
@@ -507,13 +531,16 @@ public class AppletsController extends Controller {
     public void getMenuList(){
         try {
 
-
+             //获取菜单
             Object  da = RoleAppService.GetxAppList(0);
-
+            //获取公告
+           List<Record> notice= Db.find(  "select  * from notice  where  Users is null limit 5");
             setAttr("msg", "");
             setAttr("code", 0);
             setAttr("count", 0);
             setAttr("data", da);
+            setAttr("notice", notice);
+
             setAttr("success", true);
         } catch (Exception ex) {
 

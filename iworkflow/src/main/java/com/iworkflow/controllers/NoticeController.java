@@ -68,7 +68,7 @@ public class NoticeController extends Controller {
             LoginUsers usersModel = Common.getLoginUser(this);
             Notice notice = JSON.parseObject(data, Notice.class);
 
-            notice.setId(StringUtil.getPrimaryKey());
+
             if (notice.getTitle().isEmpty()) {
                 setAttr("code", 0);
                 setAttr("msg", "标题不能为空！");
@@ -106,11 +106,18 @@ public class NoticeController extends Controller {
                 notice.setDeptID(String.join(",", org));
                 notice.setUsers(String.join(",", user));
             }
-            notice.setUserID(usersModel.getId());
-            notice.setUserName(usersModel.getName());
-            notice.setAddTime(new Date());
 
-            notice.save();
+
+            if (notice.getId().equals(StringUtil.GuidEmpty())||notice.getId()==null||notice.getId().equals("")){
+                notice.setId(StringUtil.getPrimaryKey());
+                notice.setAddTime(new Date());
+                notice.setUserID(usersModel.getId());
+                notice.setUserName(usersModel.getName());
+                notice.save();
+            }else {
+                notice.update();
+            }
+
             setAttr("code", 0);
             setAttr("msg", "发布成功");
             setAttr("count", 1);
@@ -159,4 +166,54 @@ public class NoticeController extends Controller {
         renderJson();
     }
 
+
+    public void DelNotice(){
+        try {
+            String id = getPara("id");
+            Notice notice = service.GetNoticeDetails(id);
+            if (notice!=null){
+
+                if (notice.deleteById(notice.getId())){
+                    NoticeRead noticeRead = new NoticeRead();
+                    NoticeRead read = (NoticeRead) noticeRead.findFirst("select * from NoticeRead where  NoticeId='" + notice.getId() + "'");
+                    if (read == null) {
+                        read.delete();
+                        setAttr("code", 0);
+                        setAttr("msg", "删除成功");
+                        setAttr("count", 1);
+                        setAttr("data", notice);
+                        setAttr("success", true);
+                        renderJson();
+                        return;
+                    }else {
+                        setAttr("code", 0);
+                        setAttr("msg", "删除成功");
+                        setAttr("count", 1);
+                        setAttr("data", notice);
+                        setAttr("success", true);
+                        renderJson();
+                        return;
+                    }
+
+
+                };
+
+            }
+            setAttr("code", 0);
+            setAttr("msg", "删除失败，找不到相关信息");
+            setAttr("count", 1);
+            setAttr("data", notice);
+            setAttr("success", false);
+            renderJson();
+            return;
+        }catch (Exception ex){
+            setAttr("code", 0);
+            setAttr("msg", ex.getMessage());
+            setAttr("count", 1);
+            setAttr("data", null);
+            setAttr("success", false);
+        }
+        renderJson();
+
+    }
 }

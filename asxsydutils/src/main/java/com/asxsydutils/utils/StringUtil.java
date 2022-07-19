@@ -11,9 +11,11 @@ package com.asxsydutils.utils;
  import java.security.NoSuchAlgorithmException;
  import java.sql.Timestamp;
  import java.text.SimpleDateFormat;
+ import java.time.LocalDate;
  import java.time.LocalDateTime;
  import java.time.ZoneId;
  import java.time.format.DateTimeFormatter;
+ import java.time.temporal.TemporalAdjusters;
  import java.util.*;
  import java.util.regex.Matcher;
  import java.util.regex.Pattern;
@@ -231,6 +233,20 @@ public static  String getDateFormat(java.util.Date date,String format){
             }
         }
         return sb.toString();
+    }
+     ///获取当月第一天
+    public static String FirstDate(){
+        LocalDate today = LocalDate.now();
+        // 获取本月的第一天
+        LocalDate firstday = LocalDate.of(today.getYear(), today.getMonth(), 1);
+        return  firstday.toString()+" 00:00:00";
+    }
+    ///获取最后一天
+    public static String LastDte (){
+        LocalDate today = LocalDate.now();
+        // 获取本月的第一天
+        LocalDate lastDay = today.with(TemporalAdjusters.lastDayOfMonth());
+        return  lastDay.toString()+" 23:59:59";
     }
 }
 
