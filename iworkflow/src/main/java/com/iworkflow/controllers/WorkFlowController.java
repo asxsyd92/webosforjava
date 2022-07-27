@@ -36,6 +36,7 @@ public class WorkFlowController extends Controller {
             setAttr("msg", "成功！");
             setAttr("count", da.getTotalRow());
             setAttr("data", da.getList());
+            setAttr("success",true);
 
         } catch (Exception ex) {
             setAttr("code", 0);
@@ -53,18 +54,27 @@ public class WorkFlowController extends Controller {
             String type = getPara("type");
 
 
-            Workflow da=   CacheKit.get("flowcache",flowid);
+            Workflow    da = WorkflowService.Get(flowid);
             if (da==null){
-                da = WorkflowService.Get(flowid);
+
                 CacheKit.put("flowcache",flowid,da);
             }
             String d = "0".equals(type) ? da.getRunJSON() : da.getDesignJSON();
-            renderJson(d);
+            setAttr("code", 0);
+            setAttr("count", 0);
+            setAttr("data", d);
+            setAttr("msg", "获取成功");
+            setAttr("success", true);
         } catch (Exception ex) {
 
-            renderJson("{}");
-        }
+            setAttr("code", 0);
+            setAttr("count", 0);
+            setAttr("data", null);
+            setAttr("msg", ex.getMessage());
+            setAttr("success", false);
 
+        }
+        renderJson();
     }
     public void Save()
     {
@@ -104,11 +114,25 @@ public class WorkFlowController extends Controller {
        // return DBConnectionBll.Instance.GetTable_SqlServer();
     }
     public void GetFields() {
-        String table = getPara("table");
+        try{
+            String table = getPara("table");
 
-        List<Record> da= Db.find("SELECT COLUMN_NAME f_name,COLUMN_COMMENT value FROM INFORMATION_SCHEMA.COLUMNS where table_name  = '"+table.toLowerCase()+"'");
-        renderJson( da );  ;
+            List<Record> da= Db.find("SELECT COLUMN_NAME f_name,COLUMN_COMMENT value FROM INFORMATION_SCHEMA.COLUMNS where table_name  = '"+table.toLowerCase()+"'");
+            renderJson( da );  ;
+            setAttr("code", 0);
+            setAttr("count", 0);
+            setAttr("data", da);
+            setAttr("msg", "获取成功");
+            setAttr("success", true);
+        }catch (Exception ex){
+            setAttr("code", 0);
+            setAttr("count", 0);
+            setAttr("data", null);
+            setAttr("msg", ex.getMessage());
+            setAttr("success", false);
+        }
 
+        renderJson();
     }
     public  void  Delinfo(){
         String id = getPara("keyid");

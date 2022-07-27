@@ -15,14 +15,10 @@
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11a8433d-5ee7-443e-a212-b3eb8b245452" name="Changes" comment="通知公告新增阅读记录">
+    <list default="true" id="11a8433d-5ee7-443e-a212-b3eb8b245452" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asxsydutils/src/main/java/com/asxsydutils/utils/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/src/main/java/com/asxsydutils/utils/StringUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/StringUtil$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/StringUtil$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/StringUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/asxsydutils/target/classes/com/asxsydutils/utils/StringUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/NoticeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/NoticeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/applets/AppletsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/applets/AppletsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/FormControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/webos/FormControllers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/WorkFlowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/WorkFlowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/WorkflowService.java" beforeDir="false" afterPath="$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/WorkflowService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,7 +256,12 @@
       <workItem from="1657505228508" duration="3653000" />
       <workItem from="1657701668596" duration="600000" />
       <workItem from="1657761651366" duration="16960000" />
-      <workItem from="1658194269082" duration="5901000" />
+      <workItem from="1658194269082" duration="7694000" />
+      <workItem from="1658369985815" duration="12000" />
+      <workItem from="1658582351548" duration="1310000" />
+      <workItem from="1658713750199" duration="284000" />
+      <workItem from="1658714579758" duration="696000" />
+      <workItem from="1658890135726" duration="4838000" />
     </task>
     <task id="LOCAL-00001" summary="优化">
       <created>1646296857219</created>
@@ -297,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657461012831</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="通知公告新增阅读记录">
+      <created>1658219180409</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1658219180418</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -859,11 +867,6 @@
           <option name="timeStamp" value="225" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$PROJECT_DIR$/../../javajar/com/jfinal/jfinal/4.9.11/jfinal-4.9.11.jar!/com/jfinal/plugin/activerecord/Model.class</url>
-          <line>587</line>
-          <option name="timeStamp" value="226" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/webos/src/main/java/com/webos/controllers/applets/AppletsController.java</url>
           <line>391</line>
           <option name="timeStamp" value="227" />
@@ -912,6 +915,26 @@
           <url>file://$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/NoticeController.java</url>
           <line>173</line>
           <option name="timeStamp" value="237" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/WorkFlowController.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="238" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/WorkFlowController.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="239" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/service/oa/WorkflowService.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="240" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/iworkflow/src/main/java/com/iworkflow/controllers/WorkFlowController.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="241" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.ClassCastException" package="java.lang" />

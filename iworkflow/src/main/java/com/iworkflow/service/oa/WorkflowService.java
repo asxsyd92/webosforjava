@@ -48,11 +48,14 @@ public class WorkflowService {
         {
 
             Workflow bwf = new Workflow();
-            Workflow wf=   CacheKit.get("flowcache",id);
-            if (wf==null){
-                wf= WorkflowService.Get(id);
-                CacheKit.put("flowcache",id,wf);
-            }
+            Workflow  wf= WorkflowService.Get(id);
+//            Workflow wf=   CacheKit.get("flowcache",id);
+//            if (wf==null){
+//                wf= WorkflowService.Get(id);
+//                CacheKit.put("flowcache",id,wf);
+//            }else {
+//
+//            }
 
             Boolean isAdd = false;
             if (wf == null)
@@ -74,11 +77,22 @@ public class WorkflowService {
             {
                 if (isAdd)
                 {
-                    if (wf.save()) return "保存成功";
+                    if (wf.save()){
+                        //更新换成
+                        wf= WorkflowService.Get(id);
+                        CacheKit.put("flowcache",id,wf);
+                        return "保存成功";
+                    }
+
+
                 }
                 else
                 {
-                    if (wf.update()) return "保存成功";
+                    if (wf.update()){
+                        //更新换成
+                        wf= WorkflowService.Get(id);
+                        CacheKit.put("flowcache",id,wf);
+                        return "保存成功";}
                 }
                 return "保存失败";
             }
